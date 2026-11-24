@@ -76,10 +76,12 @@ export function ToastProvider({ children }: { children: ReactNode }) {
                   data-testid={`toast-${item.tone}`}
                   role={item.tone === "error" ? "alert" : "status"}
                 >
-                  <div className="ui-toast-title">{item.title}</div>
-                  {item.description ? <div className="ui-toast-description">{item.description}</div> : null}
-                  {item.actionLabel ? (
-                    <div className="ui-toast-actions">
+                  <div className="ui-toast-content">
+                    <div className="ui-toast-title">{item.title}</div>
+                    {item.description ? <div className="ui-toast-description ui-toast-desc">{item.description}</div> : null}
+                  </div>
+                  <div className="ui-toast-actions">
+                    {item.actionLabel ? (
                       <Button
                         variant="ghost"
                         size="sm"
@@ -90,16 +92,16 @@ export function ToastProvider({ children }: { children: ReactNode }) {
                       >
                         {item.actionLabel}
                       </Button>
-                    </div>
-                  ) : null}
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    iconOnly
-                    icon="close"
-                    aria-label="Dismiss notification"
-                    onClick={() => dismiss(item.id)}
-                  />
+                    ) : null}
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      iconOnly
+                      icon="close"
+                      aria-label="Dismiss notification"
+                      onClick={() => dismiss(item.id)}
+                    />
+                  </div>
                 </div>
               ))}
             </div>,

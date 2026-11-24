@@ -7,7 +7,11 @@ export function StickyActionBar() {
   const { content } = useLanding();
 
   return (
-    <div className="lp-sticky-bar">
+    <div className="lp-sticky-bar" role="region" aria-label={content.stickyBar.consultLabel}>
+      <div className="lp-sticky-meta" aria-hidden="true">
+        <span>{content.brand.legalName}</span>
+        <span>{content.header.phoneDisplay}</span>
+      </div>
       <a
         className="lp-btn lp-btn-light"
         href={`tel:${content.header.phoneTel}`}

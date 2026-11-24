@@ -28,8 +28,8 @@ export function AppShell({ user, role, children }: { user: AppUser; role: CrmRol
       <div className="ui-app-shell">
         <aside className="ui-sidebar" aria-label="Sidebar">
           <div className="ui-sidebar-brand">
-            <span>MIRAI Lab</span>
-            <span className="ui-sidebar-brand-sub">Internal</span>
+            <span className="ui-sidebar-brand-mark"><span>MIRAI Lab</span></span>
+            <span className="ui-sidebar-brand-sub ui-sidebar-brand-tag">Internal</span>
           </div>
           <SidebarNav role={role} />
         </aside>

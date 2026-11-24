@@ -1,46 +1,88 @@
 "use client";
 
-import { DataTable, type DataTableColumn } from "@/ui";
+import { Badge, ButtonLink, DataTable, Icon, type DataTableColumn } from "@/ui";
 
-export interface DocumentListRow {
+export type DocumentRow = {
   id: string;
   type: string;
   partnerName: string;
   issueDate: string;
   templateVariant: string;
+};
+
+interface DocumentListTableProps {
+  rows: DocumentRow[];
 }
 
-export function DocumentListTable({ rows }: { rows: DocumentListRow[] }) {
-  const columns: DataTableColumn<DocumentListRow>[] = [
-    { id: "type", header: "Type", sortValue: (row) => row.type, cell: (row) => row.type },
-    { id: "recipient", header: "Recipient", sortValue: (row) => row.partnerName, cell: (row) => row.partnerName },
-    { id: "issueDate", header: "Issue date", sortValue: (row) => row.issueDate, cell: (row) => row.issueDate },
+function formatDate(value: string) {
+  return value.slice(0, 10);
+}
+
+export function DocumentListTable({ rows }: DocumentListTableProps) {
+  const columns: DataTableColumn<DocumentRow>[] = [
+    {
+      id: "type",
+      header: "Type",
+      cell: (row) => (
+        <span className="document-type-cell">
+          <Icon name="file" />
+          <span>{row.type}</span>
+        </span>
+      ),
+    },
+    {
+      id: "recipient",
+      header: "Recipient",
+      cell: (row) => <span className="ui-font-medium">{row.partnerName}</span>,
+    },
+    {
+      id: "issueDate",
+      header: "Issue date",
+      cell: (row) => <span className="ui-mono">{formatDate(row.issueDate)}</span>,
+      sortValue: (row) => formatDate(row.issueDate),
+    },
     {
       id: "variant",
       header: "Variant",
-      sortValue: (row) => row.templateVariant,
-      cell: (row) => row.templateVariant,
+      cell: (row) => (
+        <Badge tone={row.templateVariant === "branded" ? "brand" : "neutral"}>
+          {row.templateVariant}
+        </Badge>
+      ),
     },
     {
       id: "pdf",
       header: "PDF",
-      cell: (row) => <a href={`/api/documents/${row.id}/pdf`} download>Download PDF</a>,
+      cell: (row) => (
+        <ButtonLink
+          className="document-download"
+          href={`/api/documents/${row.id}/pdf`}
+          variant="ghost"
+          size="sm"
+          download
+          aria-label={`Download PDF for ${row.partnerName}`}
+        >
+          <Icon name="download" />
+          Download PDF
+        </ButtonLink>
+      ),
     },
   ];
 
   return (
     <DataTable
+      className="document-list"
       rows={rows}
       columns={columns}
       rowId={(row) => row.id}
-      className="document-list"
       caption="Documents"
       initialSort={{ id: "issueDate", dir: "desc" }}
       searchPlaceholder="Search documents"
       getSearchText={(row) => [row.type, row.partnerName, row.issueDate, row.templateVariant].join(" ")}
       emptyState={{
-        title: "No documents yet",
+        title: "No documents yet.",
         description: "Create a document to see it in this list.",
+        action: <ButtonLink href="/documents/new">New document</ButtonLink>,
       }}
     />
   );

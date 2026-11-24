@@ -21,10 +21,10 @@ export const siteContent = {
   },
   contact: {
     phone: "03-5555-0188",
-    structuredDataEmail: "contact@example.jp",
+    structuredDataEmail: "contact@mirailab.example.jp",
     email: {
-      ja: "contact@example.jp",
-      en: "contact@example.jp",
+      ja: "contact@mirailab.example.jp",
+      en: "contact@mirailab.example.jp",
     },
     address: {
       ja: "東京都中央区日本橋1-2-3 4F",
@@ -106,7 +106,7 @@ export const siteContent = {
     {
       meta: { ja: "レンタルプラットフォーム", en: "Rental platform" },
       title: {
-        ja: "予約 Flow を簡素化し運用負担を削減",
+        ja: "予約フローを簡素化し運用負担を削減",
         en: "Simplified booking and reduced operational overhead",
       },
       summary: {
@@ -162,7 +162,7 @@ export const siteContent = {
       en: "Selected work",
     },
     caseStudiesLead: {
-      ja: "Web_siteと業務システムの両面から、実務に直結する改善を進めています。",
+      ja: "Webサイトと業務システムの両面から、実務に直結する改善を進めています。",
       en: "We improve both public websites and internal systems with practical day-to-day impact.",
     },
     contact: {

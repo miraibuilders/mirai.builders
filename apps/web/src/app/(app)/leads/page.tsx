@@ -7,8 +7,10 @@ import { ButtonLink, InlineBanner, PageHeader, SubmitButton } from "@/ui";
 import {
   buildLeadsUrl,
   filterLeads,
+  isOverdue,
   LEAD_SEGMENTS,
   sortLeads,
+  tierForScore,
   type LeadViewRow,
 } from "@/lib/lead-view";
 import { LeadsBoard } from "./_components/leads-board";
@@ -33,6 +35,10 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
   const painSeverity = first(params.pain) || "all";
   const sort = first(params.sort) || "score";
   const direction = first(params.dir) === "asc" ? "asc" : "desc";
+  const densityParam = first(params.density);
+  const density = densityParam === "compact" || densityParam === "default" ? densityParam : null;
+  const withDensity = (url: string) =>
+    density ? `${url}${url.includes("?") ? "&" : "?"}density=${encodeURIComponent(density)}` : url;
 
   const [leadRows, scanRows] = await Promise.all([
     getDb()
@@ -94,8 +100,25 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
     });
   }
 
+  const allLeads = [...byId.values()];
+  const leadMetrics = [
+    { label: "Total leads", index: "01", value: allLeads.length },
+    { label: "Tier A", index: "02", value: allLeads.filter((lead) => tierForScore(lead.score) === "A").length },
+    { label: "New stage", index: "03", value: allLeads.filter((lead) => lead.stage === "new").length },
+    { label: "Overdue", index: "04", value: allLeads.filter((lead) => isOverdue(lead)).length },
+    {
+      label: "Pending scans",
+      index: "05",
+      value: allLeads.filter(
+        (lead) => lead.latestScanStatus === "queued" || lead.latestScanStatus === "running",
+      ).length,
+    },
+  ];
+  const activeFilterCount =
+    (segment !== "all" ? 1 : 0) + (painSeverity !== "all" ? 1 : 0) + (overdue ? 1 : 0);
+
   const rows = sortLeads(
-    filterLeads([...byId.values()], {
+    filterLeads(allLeads, {
       segment,
       overdue,
       painSeverity,
@@ -119,7 +142,7 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
     <div className="leads-page">
       <PageHeader
         title="Leads"
-        description="Review scored leads, manage stages, and trigger scans."
+        description="Qualified SMB prospects, passive scan readiness, and active deal pipeline."
         actions={
           <>
             <ButtonLink href="/leads/new">New lead</ButtonLink>
@@ -127,10 +150,23 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
           </>
         }
       />
-      <form className="leads-toolbar" method="get" action="/leads">
+
+      <div className="crm-kpi-strip" aria-label="Lead metrics">
+        {leadMetrics.map((metric) => (
+          <div className="crm-kpi-card" key={metric.index}>
+            <div className="crm-kpi-label">
+              <span>{metric.label}</span>
+              <span className="ui-mono">{metric.index}</span>
+            </div>
+            <div className="crm-kpi-value">{metric.value}</div>
+          </div>
+        ))}
+      </div>
+
+      <form className="leads-toolbar crm-filter-bar" method="get" action="/leads">
         <input type="hidden" name="view" value={view} />
-        <label>
-          Segment
+        <label className="crm-filter-item">
+          <span>Segment</span>
           <select name="segment" defaultValue={segment}>
             <option value="all">all</option>
             {LEAD_SEGMENTS.map((option) => (
@@ -138,8 +174,8 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
             ))}
           </select>
         </label>
-        <label>
-          Pain
+        <label className="crm-filter-item">
+          <span>Pain</span>
           <select name="pain" defaultValue={painSeverity}>
             <option value="all">all</option>
             <option value="high">high</option>
@@ -148,28 +184,99 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
             <option value="none">none</option>
           </select>
         </label>
-        <label>
-          Overdue
+        <label className="crm-filter-check">
           <input type="checkbox" name="overdue" value="1" defaultChecked={overdue} />
+          <span>Overdue only</span>
         </label>
         <SubmitButton variant="secondary">Apply</SubmitButton>
+        {activeFilterCount > 0 ? (
+          <ButtonLink
+            href={withDensity(buildLeadsUrl({
+              view,
+              segment: "all",
+              overdue: false,
+              painSeverity: "all",
+              sort,
+              direction,
+            }))}
+            variant="ghost"
+            size="sm"
+          >
+            Clear ({activeFilterCount})
+          </ButtonLink>
+        ) : null}
       </form>
+
+      {activeFilterCount > 0 ? (
+        <div className="crm-filter-chips" aria-label="Active filters">
+          {segment !== "all" ? (
+            <ButtonLink
+              size="sm"
+              variant="secondary"
+              href={withDensity(buildLeadsUrl({
+                view,
+                segment: "all",
+                overdue,
+                painSeverity,
+                sort,
+                direction,
+              }))}
+            >
+              Segment: {segment}
+            </ButtonLink>
+          ) : null}
+          {painSeverity !== "all" ? (
+            <ButtonLink
+              size="sm"
+              variant="secondary"
+              href={withDensity(buildLeadsUrl({
+                view,
+                segment,
+                overdue,
+                painSeverity: "all",
+                sort,
+                direction,
+              }))}
+            >
+              Pain: {painSeverity}
+            </ButtonLink>
+          ) : null}
+          {overdue ? (
+            <ButtonLink
+              size="sm"
+              variant="secondary"
+              href={withDensity(buildLeadsUrl({
+                view,
+                segment,
+                overdue: false,
+                painSeverity,
+                sort,
+                direction,
+              }))}
+            >
+              Overdue
+            </ButtonLink>
+          ) : null}
+        </div>
+      ) : null}
+
       <div className="ui-tabs ui-view-tabs" role="group" aria-label="Lead view">
         <ButtonLink
-          href={buildLeadsUrl({ view: "board", segment, overdue, painSeverity, sort, direction })}
+          href={withDensity(buildLeadsUrl({ view: "board", segment, overdue, painSeverity, sort, direction }))}
           variant={view === "board" ? "primary" : "secondary"}
           aria-current={view === "board" ? "page" : undefined}
         >
           Board
         </ButtonLink>
         <ButtonLink
-          href={buildLeadsUrl({ view: "table", segment, overdue, painSeverity, sort, direction })}
+          href={withDensity(buildLeadsUrl({ view: "table", segment, overdue, painSeverity, sort, direction }))}
           variant={view === "table" ? "primary" : "secondary"}
           aria-current={view === "table" ? "page" : undefined}
         >
           Table
         </ButtonLink>
       </div>
+
       <LeadsBoard
         leads={rows}
         view={view}

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
+  Badge,
   DataTable,
   KanbanBoard,
   KanbanHint,
@@ -14,6 +15,7 @@ import {
 } from "@/ui";
 import { moveLeadStage, triggerLeadScan } from "../actions";
 import {
+  isOverdue,
   LEAD_STAGES,
   tierForScore,
   topPainFlag,
@@ -82,27 +84,56 @@ export function LeadsBoard({
       id: "company",
       header: "Company",
       sortValue: (lead) => lead.company,
-      cell: (lead) => <Link href={`/leads/${lead.id}`}>{lead.company}</Link>,
+      cell: (lead) => (
+        <span className="crm-company-cell">
+          <Link href={`/leads/${lead.id}`}>{lead.company}</Link>
+          <span className="ui-mono crm-company-url">{lead.websiteUrl}</span>
+        </span>
+      ),
     },
-    { id: "segment", header: "Segment", sortValue: (lead) => lead.segment, cell: (lead) => lead.segment },
-    { id: "score", header: "Score", numeric: true, sortValue: (lead) => lead.score, cell: (lead) => lead.score },
-    { id: "tier", header: "Tier", cell: (lead) => tierForScore(lead.score) },
-    { id: "stage", header: "Stage", sortValue: (lead) => lead.stage, cell: (lead) => lead.stage },
-    { id: "pain", header: "Pain", sortValue: (lead) => topPainFlag(lead.painFlags), cell: (lead) => topPainFlag(lead.painFlags) },
+    {
+      id: "segment",
+      header: "Segment",
+      sortValue: (lead) => lead.segment,
+      cell: (lead) => <Badge tone="neutral">{lead.segment}</Badge>,
+    },
+    {
+      id: "score",
+      header: "Score",
+      numeric: true,
+      sortValue: (lead) => lead.score,
+      cell: (lead) => (
+        <span className="crm-score-cell">
+          <span className="crm-score-track" aria-hidden="true">
+            <span className="crm-score-fill" style={{ width: `${Math.max(0, Math.min(100, lead.score))}%` }} />
+          </span>
+          <span className="ui-mono">{lead.score}</span>
+        </span>
+      ),
+    },
+    { id: "tier", header: "Tier", cell: (lead) => <Badge tone={tierForScore(lead.score) === "A" ? "brand" : "neutral"}>{tierForScore(lead.score)}</Badge> },
+    { id: "stage", header: "Stage", sortValue: (lead) => lead.stage, cell: (lead) => <Badge tone="info">{lead.stage}</Badge> },
+    { id: "pain", header: "Pain", sortValue: (lead) => topPainFlag(lead.painFlags), cell: (lead) => <Badge tone="neutral">{topPainFlag(lead.painFlags)}</Badge> },
     {
       id: "nextStepDate",
       header: "Next date",
       sortValue: (lead) => lead.nextStepDate ?? "",
-      cell: (lead) => lead.nextStepDate ?? "-",
+      cell: (lead) => (
+        <span className={isOverdue(lead) ? "ui-mono crm-date crm-date-overdue" : "ui-mono crm-date"}>
+          {lead.nextStepDate ?? "-"}
+        </span>
+      ),
     },
     {
       id: "contact",
       header: "Contact",
-      cell: (lead) => [
-        lead.contactName,
-        lead.contactEmail,
-        lead.contactPhone,
-      ].filter(Boolean).join(" / ") || "-",
+      cell: (lead) => (
+        <span className="crm-contact-cell">
+          <strong>{lead.contactName ?? "-"}</strong>
+          <span>{lead.contactEmail ?? "-"}</span>
+          <span>{lead.contactPhone ?? "-"}</span>
+        </span>
+      ),
     },
   ], []);
 
@@ -126,6 +157,9 @@ export function LeadsBoard({
           meta: (
             <>
               <span className="ui-kanban-tier">Tier: {tierForScore(lead.score)}</span>
+              <span className="crm-card-score-track" aria-hidden="true">
+                <span style={{ width: `${Math.max(0, Math.min(100, lead.score))}%` }} />
+              </span>
               <span>Pain: {topPainFlag(lead.painFlags)}</span>
             </>
           ),
@@ -133,10 +167,16 @@ export function LeadsBoard({
             className: "lead-card",
             "data-lead-id": lead.id,
             "data-stage": currentStage,
+            "data-scan-status": lead.latestScanStatus ?? "none",
           },
           actions: (
             <div className="lead-card-actions">
               <Link className="lead-card-link" href={`/leads/${lead.id}`}>Open</Link>
+              {lead.latestScanStatus ? (
+                <Badge tone={lead.latestScanStatus === "failed" ? "danger" : "info"}>
+                  {lead.latestScanStatus}
+                </Badge>
+              ) : null}
               {canEdit ? (
                 <form action={triggerLeadScan}>
                   <input type="hidden" name="leadId" value={lead.id} />
@@ -215,6 +255,7 @@ export function LeadsBoard({
             title: "No leads match",
             description: "Adjust the segment, pain, overdue, or search controls to see more leads.",
           }}
+          syncUrl
         />
       </>
     );

@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { getCrmActor } from "@/lib/crm-auth";
 import { getPricingTiers, getPublishedCaseStudies, getSiteSettings } from "@/lib/settings";
-import { ButtonLink, InlineBanner, PageHeader } from "@/ui";
+import { Badge, ButtonLink, InlineBanner, PageHeader } from "@/ui";
 import { SiteForm } from "./site-form";
 
 export const dynamic = "force-dynamic";
@@ -39,9 +39,14 @@ export default async function CmsSitePage({
       <PageHeader
         title="Site settings"
         description="Homepage copy, pricing tiers, and published case studies."
-        actions={<ButtonLink href="/cms" variant="secondary">CMS</ButtonLink>}
+        actions={
+          <>
+            <Badge tone="brand" icon="shield">Admin</Badge>
+            <ButtonLink href="/cms" variant="secondary">CMS</ButtonLink>
+          </>
+        }
       />
-      {notice ? <InlineBanner tone="success">{notice}</InlineBanner> : null}
+      {notice ? <div className="cms-notice"><InlineBanner tone="success">{notice}</InlineBanner></div> : null}
       <SiteForm
         values={values}
         tiers={tiers.map((tier) => ({

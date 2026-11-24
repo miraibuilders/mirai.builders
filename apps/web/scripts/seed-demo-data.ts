@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto";
 import { getDb } from "@mirai/db";
 import {
   authors,
+  caseStudies,
   contactRequests,
   doNotContact,
   documents,
@@ -9,6 +10,7 @@ import {
   leads,
   media,
   posts,
+  pricingTiers,
   scans,
   siteSettings,
   users,
@@ -452,9 +454,9 @@ const documentSeeds = [
     issuerName: "MIRAI Lab",
     invoiceNumber: "INV-2026-0142",
     transactionDate: dateFromNow(-6),
-    taxBreakdown: [{ rate: 0.1, subtotal: 280000, tax: 28000 }],
+    taxBreakdown: [{ rate: 10, subtotal: 280000, tax: 28000 }],
     registrationNumber: "T1234567890123",
-    lineItems: [{ description: "Website planning and design", quantity: 1, unitPrice: 280000, taxRate: 0.1 }],
+    lineItems: [{ description: "Website planning and design", quantity: 1, unitPrice: 280000, taxRate: 10 }],
     templateVariant: "branded",
   },
   {
@@ -466,11 +468,11 @@ const documentSeeds = [
     issuerName: "MIRAI Lab",
     invoiceNumber: "QUO-2026-0067",
     transactionDate: null,
-    taxBreakdown: [{ rate: 0.1, subtotal: 360000, tax: 36000 }],
+    taxBreakdown: [{ rate: 10, subtotal: 360000, tax: 36000 }],
     registrationNumber: "T1234567890123",
     lineItems: [
-      { description: "Booking flow redesign", quantity: 1, unitPrice: 220000, taxRate: 0.1 },
-      { description: "Local search clean-up", quantity: 1, unitPrice: 140000, taxRate: 0.1 },
+      { description: "Booking flow redesign", quantity: 1, unitPrice: 220000, taxRate: 10 },
+      { description: "Local search clean-up", quantity: 1, unitPrice: 140000, taxRate: 10 },
     ],
     templateVariant: "branded",
   },
@@ -511,9 +513,9 @@ const documentSeeds = [
     issuerName: "MIRAI Lab",
     invoiceNumber: "INV-2026-0131",
     transactionDate: dateFromNow(-12),
-    taxBreakdown: [{ rate: 0.1, subtotal: 150000, tax: 15000 }],
+    taxBreakdown: [{ rate: 10, subtotal: 150000, tax: 15000 }],
     registrationNumber: "T1234567890123",
-    lineItems: [{ description: "Discovery workshop", quantity: 1, unitPrice: 150000, taxRate: 0.1 }],
+    lineItems: [{ description: "Discovery workshop", quantity: 1, unitPrice: 150000, taxRate: 10 }],
     templateVariant: "mono",
   },
   {
@@ -525,9 +527,9 @@ const documentSeeds = [
     issuerName: "MIRAI Lab",
     invoiceNumber: "QUO-2026-0074",
     transactionDate: null,
-    taxBreakdown: [{ rate: 0.1, subtotal: 420000, tax: 42000 }],
+    taxBreakdown: [{ rate: 10, subtotal: 420000, tax: 42000 }],
     registrationNumber: "T1234567890123",
-    lineItems: [{ description: "Case study content package", quantity: 1, unitPrice: 420000, taxRate: 0.1 }],
+    lineItems: [{ description: "Case study content package", quantity: 1, unitPrice: 420000, taxRate: 10 }],
     templateVariant: "branded",
   },
 ] as const;
@@ -647,6 +649,141 @@ const dncSeeds = [
   { kind: "name_key", valueNorm: "旧みらい工務店", reason: "Renamed business, old record retired", origin: "manual" },
   { kind: "domain", valueNorm: "spam-invoice.example", reason: "Bounced outreach twice", origin: "bounce" },
 ] as const;
+
+const siteSettingsValues = (adminId: string) => ({
+  id: 1,
+  phone: "03-5555-0188",
+  emailJa: "contact@mirailab.example.jp",
+  emailEn: "contact@mirailab.example.jp",
+  addressJa: "東京都中央区日本橋1-2-3 4F",
+  addressEn: "1-2-3 Nihonbashi, Chuo-ku, Tokyo",
+  heroHeadlineJa: "公開情報から始めて、Webと業務を整える。",
+  heroHeadlineEn: "Practical web security and systems, starting with public signals.",
+  heroSubheadlineJa:
+    "公開情報のみを確認する無料サイト診断から、初めてのホームページ制作、表計算・Access等の業務改善まで一貫してご相談いただけます。",
+  heroSubheadlineEn:
+    "From non-intrusive website health checks to first-time company websites and modernization of fragile spreadsheets, Access files, and legacy PHP systems.",
+  heroCtaJa: "無料相談を申し込む",
+  heroCtaEn: "Request a free consultation",
+  heroImageUrl: "/brand/hero_tokyo_architecture_1795524957427.jpg",
+  heroImageWidth: 1376,
+  heroImageHeight: 768,
+  heroImageAltJa: "光が差し込む静謐な東京のエンジニアリングオフィス建築空間",
+  offerNameJa: "無料サイト診断",
+  offerNameEn: "Free Website Health Check",
+  offerDescriptionJa:
+    "HTTP応答ヘッダ、TLS証明書、DNSメール認証、公開ファイルを外部から確認し、優先対応事項をまとめます。",
+  offerDescriptionEn:
+    "A passive review of HTTP response headers, TLS certificates, DNS email authentication, and publicly exposed files, with prioritized next steps.",
+  offerPrice: 0,
+  aboutAuthorNameJa: "ミライラボ 代表",
+  aboutAuthorNameEn: "MIRAI Lab",
+  aboutAuthorBioJa: "中小企業のWebと業務を、実務に即して整える",
+  aboutAuthorBioEn: "Practical web and systems support for growing businesses",
+  aboutAuthorImageUrl: "/brand/team_client_lead_1795527162144.jpg",
+  aboutAuthorImageWidth: 896,
+  aboutAuthorImageHeight: 1200,
+  footerCopyrightJa: "MIRAI Lab. All rights reserved.",
+  footerCopyrightEn: "MIRAI Lab. All rights reserved.",
+  updatedAt: now(),
+  updatedBy: adminId,
+});
+
+const pricingSeeds = [
+  {
+    id: randomUUID(),
+    nameJa: "ホームページ制作・刷新",
+    nameEn: "Website Build & Renewal",
+    price: "￥29,800",
+    noteJa: "スマートフォン対応とお問い合わせ導線を含む基本プラン",
+    noteEn: "Starter plan with responsive pages and a working contact flow",
+    sortOrder: 0,
+    createdAt: daysFromNow(-12),
+  },
+  {
+    id: randomUUID(),
+    nameJa: "業務システム刷新",
+    nameEn: "Business System Modernization",
+    price: "￥98,000–￥198,000",
+    noteJa: "Excel・Access・旧PHPからの段階的なWeb移行",
+    noteEn: "Phased migration from Excel, Access, or legacy PHP to a web system",
+    sortOrder: 1,
+    createdAt: daysFromNow(-12),
+  },
+  {
+    id: randomUUID(),
+    nameJa: "保守・伴走プラン",
+    nameEn: "Maintenance & Support",
+    price: "￥30,000 / ￥60,000 / ￥100,000–￥150,000",
+    noteJa: "公開後の更新、監視、改善を月額でご支援します",
+    noteEn: "Monthly support for updates, monitoring, and continuous improvement",
+    sortOrder: 2,
+    createdAt: daysFromNow(-12),
+  },
+];
+
+const caseStudySeeds = [
+  {
+    id: randomUUID(),
+    status: "published",
+    metaJa: "自動車販売店",
+    metaEn: "Auto dealership",
+    titleJa: "スマートフォンからの問い合わせを改善",
+    titleEn: "Better mobile inquiries for a local dealer",
+    summaryJa: "古いサイトを整理し、車両情報と来店予約への導線を分かりやすくしました。",
+    summaryEn: "We restructured an aging site and made vehicle information and visit requests easier to find.",
+    imageUrl: "/brand/service_system_modernization_1795524958871.jpg",
+    imageWidth: 1200,
+    imageHeight: 896,
+    sortOrder: 0,
+    createdAt: daysFromNow(-10),
+  },
+  {
+    id: randomUUID(),
+    status: "published",
+    metaJa: "レンタルプラットフォーム",
+    metaEn: "Rental platform",
+    titleJa: "予約フローを簡素化し運用負担を削減",
+    titleEn: "Simplified booking and reduced operational overhead",
+    summaryJa: "申込から確認までの一連の流れを見直し、担当者の手作業を減らしました。",
+    summaryEn: "We reviewed the request-to-confirmation flow and reduced manual work for staff.",
+    imageUrl: "/brand/service_security_inspection_1795524957677.jpg",
+    imageWidth: 1200,
+    imageHeight: 896,
+    sortOrder: 1,
+    createdAt: daysFromNow(-9),
+  },
+  {
+    id: randomUUID(),
+    status: "published",
+    metaJa: "コワーキングアプリ",
+    metaEn: "Co-working app",
+    titleJa: "会員導線と情報設計を刷新",
+    titleEn: "Renewed member journeys and information design",
+    summaryJa: "会員向け案内と公開情報を整理し、初めての利用者にも分かりやすい構成にしました。",
+    summaryEn: "We clarified public content and member guidance for first-time visitors and returning users.",
+    imageUrl: "/brand/hero_tokyo_architecture_1795524957427.jpg",
+    imageWidth: 1376,
+    imageHeight: 768,
+    sortOrder: 2,
+    createdAt: daysFromNow(-8),
+  },
+  {
+    id: randomUUID(),
+    status: "draft",
+    metaJa: "製造業",
+    metaEn: "Manufacturing",
+    titleJa: "Access台帳から権限付きWeb管理画面への並行移行",
+    titleEn: "Parallel Migration from Legacy Access to Web Ledger",
+    summaryJa: "製造現場の稼働を止めずにデータ検証と段階移行を実施。",
+    summaryEn: "Validated records and phased the move without interrupting workshop operations.",
+    imageUrl: "/brand/service_system_modernization_1795524958871.jpg",
+    imageWidth: 1200,
+    imageHeight: 896,
+    sortOrder: 3,
+    createdAt: daysFromNow(-3),
+  },
+];
 
 async function main() {
   if (process.env.NODE_ENV === "production") {
@@ -786,30 +923,14 @@ async function main() {
     })),
   );
 
+  const siteValues = siteSettingsValues(admin.id);
   await db
     .insert(siteSettings)
-    .values({
-      id: 1,
-      phone: "03-5555-0188",
-      emailJa: "contact@example.jp",
-      emailEn: "contact@example.jp",
-      addressJa: "東京都中央区日本橋1-2-3 4F",
-      addressEn: "1-2-3 Nihonbashi, Chuo-ku, Tokyo",
-      updatedAt: now(),
-      updatedBy: admin.id,
-    })
-    .onConflictDoUpdate({
-      target: siteSettings.id,
-      set: {
-        phone: "03-5555-0188",
-        emailJa: "contact@example.jp",
-        emailEn: "contact@example.jp",
-        addressJa: "東京都中央区日本橋1-2-3 4F",
-        addressEn: "1-2-3 Nihonbashi, Chuo-ku, Tokyo",
-        updatedAt: now(),
-        updatedBy: admin.id,
-      },
-    });
+    .values(siteValues)
+    .onConflictDoUpdate({ target: siteSettings.id, set: siteValues });
+
+  await db.insert(pricingTiers).values(pricingSeeds);
+  await db.insert(caseStudies).values(caseStudySeeds);
 
   console.log(
     JSON.stringify(
@@ -823,6 +944,8 @@ async function main() {
         authors: authorRows.length,
         media: mediaSeeds.length,
         dnc: dncSeeds.length,
+        pricingTiers: pricingSeeds.length,
+        caseStudies: caseStudySeeds.length,
       },
       null,
       2,

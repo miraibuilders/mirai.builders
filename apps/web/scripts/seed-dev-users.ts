@@ -7,13 +7,13 @@ import { getAuth } from "../src/lib/auth";
 const specs = [
   {
     email: "admin@mirai-lab.local",
-    name: "Dev Admin",
+    name: "Mika Sato",
     role: "admin" as const,
     passwordEnv: "SEED_ADMIN_PASSWORD",
   },
   {
     email: "editor@mirai-lab.local",
-    name: "Dev Editor",
+    name: "Kenji Tanaka",
     role: "editor" as const,
     passwordEnv: "SEED_EDITOR_PASSWORD",
   },

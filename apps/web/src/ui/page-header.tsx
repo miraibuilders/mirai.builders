@@ -17,7 +17,7 @@ export function PageHeader({ title, description, actions, breadcrumbs, tabs }: P
       <div className="ui-page-header-main">
         <div>
           <h1>{title}</h1>
-          {description ? <p>{description}</p> : null}
+          {description ? <p className="ui-page-header-desc">{description}</p> : null}
         </div>
         {actions ? <div className="ui-page-header-actions">{actions}</div> : null}
       </div>
@@ -31,7 +31,7 @@ export function SectionHeader({ title, description, actions }: Omit<PageHeaderPr
     <div className="ui-section-header">
       <div>
         <h2>{title}</h2>
-        {description ? <p>{description}</p> : null}
+        {description ? <p className="ui-page-header-desc">{description}</p> : null}
       </div>
       {actions ? <div className="ui-page-header-actions">{actions}</div> : null}
     </div>

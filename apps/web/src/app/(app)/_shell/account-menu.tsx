@@ -17,6 +17,7 @@ export function AccountMenu({ user, role }: { user: AppUser; role: CrmRole }) {
       trigger={
         <Button
           variant="ghost"
+          className="ui-account-trigger"
           aria-label={`Account: ${user.name}, ${role}`}
           onClick={() => setOpen((value) => !value)}
         >
@@ -28,14 +29,25 @@ export function AccountMenu({ user, role }: { user: AppUser; role: CrmRole }) {
       }
     >
       <div className="ui-account-menu">
-        <p className="ui-account-email">{user.email}</p>
-        <Button
-          variant="secondary"
-          icon="external-link"
-          onClick={() => void signOut()}
-        >
-          Sign out
-        </Button>
+        <div className="ui-account-popover-head">
+          <Avatar name={user.name} size="md" />
+          <span className="ui-account-meta">
+            <span className="ui-account-name">{user.name}</span>
+            <span className="ui-account-email">{user.email}</span>
+          </span>
+        </div>
+        <div className="ui-account-popover-body">
+          <div className="ui-account-popover-role">
+            <Badge tone={role === "admin" ? "brand" : "neutral"}>{role}</Badge>
+          </div>
+          <Button
+            variant="secondary"
+            icon="external-link"
+            onClick={() => void signOut()}
+          >
+            Sign out
+          </Button>
+        </div>
       </div>
     </Popover>
   );

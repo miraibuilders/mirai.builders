@@ -10,6 +10,7 @@ import { Button, Icon, Input, Modal, type IconName } from "@/ui";
 interface Command {
   id: string;
   label: string;
+  group: string;
   keywords: string;
   icon: IconName;
   run: () => void | Promise<void>;
@@ -38,6 +39,7 @@ export function CommandPalette({
       ...allowed.map((item) => ({
         id: item.id,
         label: item.label,
+        group: item.group,
         keywords: `${item.label} ${item.href} ${item.group}`,
         icon: item.icon,
         run: () => router.push(item.href),
@@ -45,6 +47,7 @@ export function CommandPalette({
       {
         id: "sign-out",
         label: "Sign out",
+        group: "Session",
         keywords: "sign out logout account",
         icon: "external-link",
         run: signOut,
@@ -129,11 +132,13 @@ export function CommandPalette({
               role="option"
               aria-selected={index === selected}
               data-selected={index === selected ? "true" : undefined}
+              data-group={command.group}
               onMouseEnter={() => setSelected(index)}
               onClick={() => activate(command)}
             >
+              <span className="ui-command-group" aria-hidden="true">{command.group}</span>
               <Icon name={command.icon} />
-              <span>{command.label}</span>
+              <span className="ui-command-label">{command.label}</span>
               <span className="ui-command-shortcut" aria-hidden="true">↵</span>
             </li>
           ))}

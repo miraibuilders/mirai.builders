@@ -4,6 +4,8 @@ import Link from "next/link";
 import type { LegalSlug } from "../types";
 import { useLanding } from "./landing-provider";
 
+const legalSlugs: LegalSlug[] = ["privacy", "terms", "tokushoho", "security-policy"];
+
 export function LegalPageView({ slug }: { slug: LegalSlug }) {
   const { content } = useLanding();
   const doc = content.legal[slug];
@@ -20,6 +22,21 @@ export function LegalPageView({ slug }: { slug: LegalSlug }) {
             <span>{doc.updatedValue}</span>
           </p>
         </header>
+        <nav className="lp-legal-nav" aria-label={content.a11y.footerNavLabel}>
+          <Link className="lp-text-link" href="/">
+            ← {content.footer.backToTopLabel}
+          </Link>
+          {legalSlugs.map((item) => (
+            <Link
+              className="lp-legal-nav-link"
+              href={`/${item}`}
+              aria-current={item === slug ? "page" : undefined}
+              key={item}
+            >
+              {content.legal[item].title}
+            </Link>
+          ))}
+        </nav>
         <div className="lp-legal-doc">
           {slug === "tokushoho" && doc.rows ? (
             <table className="lp-legal-rows">

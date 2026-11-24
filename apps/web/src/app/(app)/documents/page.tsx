@@ -1,14 +1,16 @@
-import { desc } from "drizzle-orm";
-import { documents } from "@mirai/db";
-import { getDb } from "@/lib/db";
 import { ButtonLink, PageHeader } from "@/ui";
-import { DocumentListTable } from "./_components/document-list-table";
+
+import { DocumentListTable, type DocumentRow } from "./_components/document-list-table";
+import { getDb } from "@/lib/db";
+import { documents } from "@mirai/db";
+import { desc } from "drizzle-orm";
+
 import "./documents.css";
 
 export const dynamic = "force-dynamic";
 
 export default async function DocumentsPage() {
-  const rows = await getDb()
+  const rows: DocumentRow[] = await getDb()
     .select({
       id: documents.id,
       type: documents.type,
@@ -23,8 +25,12 @@ export default async function DocumentsPage() {
     <div className="documents-page">
       <PageHeader
         title="Documents"
-        description="Generated PDFs and their delivery status."
-        actions={<ButtonLink href="/documents/new">New document</ButtonLink>}
+        description="Invoices, quotes, and agreements with mirrored PDF output."
+        actions={
+          <ButtonLink href="/documents/new" icon="plus">
+            New document
+          </ButtonLink>
+        }
       />
       <DocumentListTable rows={rows} />
     </div>

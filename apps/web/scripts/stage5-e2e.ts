@@ -15,7 +15,7 @@ const fixturePath = path.resolve(new URL("../../../state/fixtures/stage5/stage5-
 const workerLogPath = path.join(evidenceDir, "worker.log");
 const evidencePath = path.join(evidenceDir, "user-path.log");
 const manifestPath = path.resolve(new URL("../.next/server/server-reference-manifest.json", import.meta.url).pathname);
-const pnpmPath = "/tmp/opencode/bin/pnpm";
+const pnpmPath = process.env.PNPM_PATH ?? "pnpm";
 
 let fixtureServer: Server | null = null;
 let fixtureUrl = "";

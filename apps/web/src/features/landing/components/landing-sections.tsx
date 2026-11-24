@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "./contact-form";
+import { EditorialSections } from "./editorial-sections";
 import { useLanding } from "./landing-provider";
 
 export function LandingSections() {
@@ -27,6 +28,16 @@ export function LandingSections() {
     <main id="main-content" className="lp-lang-stage">
       <section id="top" className="lp-hero">
         <div className="lp-hero-grid-bg" aria-hidden="true" />
+        <div className="lp-hero-image-frame" aria-hidden="true">
+          <Image
+            src="/brand/hero_tokyo_architecture_1795524957427.jpg"
+            alt=""
+            width={1600}
+            height={1067}
+            priority
+            unoptimized
+          />
+        </div>
         <div className="lp-container lp-hero-layout">
           <div>
             <p className="lp-eyebrow">{hero.eyebrow}</p>
@@ -175,6 +186,8 @@ export function LandingSections() {
           </div>
         </div>
       </section>
+
+      <EditorialSections />
 
       <section id="pricing" className="lp-section lp-section-muted">
         <div className="lp-container">

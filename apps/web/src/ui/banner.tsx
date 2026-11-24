@@ -21,10 +21,14 @@ export interface InlineBannerProps {
 export function InlineBanner({ tone = "info", title, children, onDismiss }: InlineBannerProps) {
   return (
     <div className="ui-banner" data-tone={tone} role={tone === "danger" ? "alert" : "status"}>
-      <Icon name={toneIcons[tone]} />
-      <div className="ui-banner-body">
-        {title ? <strong>{title}</strong> : null}
-        <div>{children}</div>
+      <div className="ui-banner-main">
+        <span className="ui-banner-icon" aria-hidden="true">
+          <Icon name={toneIcons[tone]} />
+        </span>
+        <div className="ui-banner-copy">
+          {title ? <p className="ui-banner-title">{title}</p> : null}
+          <div className="ui-banner-body">{children}</div>
+        </div>
       </div>
       {onDismiss ? (
         <Button variant="ghost" size="sm" iconOnly icon="close" aria-label="Dismiss message" onClick={onDismiss} />

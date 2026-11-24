@@ -43,7 +43,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   const faq = faqJsonLd(post.faqJsonLd);
 
   return (
-    <main id="main-content">
+    <main id="main-content" className="lp-legal-main lp-blog-post-main">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }}
@@ -54,12 +54,14 @@ export default async function BlogPostPage({ params }: PageProps) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }}
         />
       ) : null}
-      <article className="section">
-        <div className="container">
+      <article className="lp-section">
+        <div className="lp-container lp-blog-post-shell">
           <p className="case-meta">
-            <Link href="/blog">{t(siteContent.blogPage.back, locale)}</Link>
+            <Link className="lp-text-link" href="/blog">
+              ← {t(siteContent.blogPage.back, locale)}
+            </Link>
           </p>
-          <h1>{post.title}</h1>
+          <h1 className="lp-h1">{post.title}</h1>
           <p className="case-meta">
             {post.authorName ?? t(siteContent.blogPage.authorPlaceholder, locale)} —{" "}
             {post.publishedAt?.toISOString().slice(0, 10) ?? t(siteContent.blogPage.datePlaceholder, locale)}

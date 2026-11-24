@@ -20,7 +20,7 @@ export default async function NewCmsPostPage({
         description="Create a draft, then publish it when it is ready."
         actions={<ButtonLink href="/cms" variant="secondary">Back to CMS</ButtonLink>}
       />
-      {notice ? <InlineBanner tone="success">{notice}</InlineBanner> : null}
+      {notice ? <div className="cms-notice"><InlineBanner tone="success">{notice}</InlineBanner></div> : null}
       <PostForm action={createPost} />
     </div>
   );

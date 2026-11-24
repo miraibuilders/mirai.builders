@@ -18,7 +18,7 @@ const evidenceDir = path.resolve(new URL("../../../state/evidence/stage6/", impo
 const evidencePath = path.join(evidenceDir, "user-path.log");
 const nextLogPath = path.join(evidenceDir, "next-dev.log");
 const manifestPath = path.resolve(new URL("../.next/server/server-reference-manifest.json", import.meta.url).pathname);
-const pnpmPath = "/tmp/opencode/bin/pnpm";
+const pnpmPath = process.env.PNPM_PATH ?? "pnpm";
 
 const stamp = Date.now();
 const adminEmail = `stage6-admin-${stamp}@example.jp`;

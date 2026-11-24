@@ -35,6 +35,7 @@ export function LoginForm({ next }: { next: string }) {
 
   return (
     <form className="login-form" onSubmit={onSubmit}>
+      <p className="ui-mono login-form-eyebrow">Secure workspace access</p>
       <label className="field">
         {t(siteContent.loginPage.email, locale)}
         <input
@@ -58,7 +59,7 @@ export function LoginForm({ next }: { next: string }) {
       <button className="button" type="submit" disabled={pending}>
         {t(siteContent.loginPage.submit, locale)}
       </button>
-      {message ? <p>{message}</p> : null}
+      {message ? <p className="login-form-message" role="alert">{message}</p> : null}
     </form>
   );
 }

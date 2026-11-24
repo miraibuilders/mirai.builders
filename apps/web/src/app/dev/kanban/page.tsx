@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Badge } from "@/ui";
+import { Badge, ButtonLink, PageHeader } from "@/ui";
 import { KanbanBoard, KanbanHint, type KanbanColumnData } from "@/ui/kanban";
+
+import "../dev.css";
 
 const STAGES = [
   { id: "new", title: "New" },
@@ -66,10 +68,19 @@ export default function KanbanDemoPage() {
   }));
 
   return (
-    <main className="ui-demo-page" style={{ maxWidth: "1120px", margin: "0 auto", padding: "24px" }}>
-      <h1 style={{ fontSize: "32px", lineHeight: 1.25 }}>Kanban demo</h1>
+    <main className="ui-demo-page dev-kanban">
+      <PageHeader
+        title="Kanban demo"
+        description="Keyboard dragging, optimistic moves, rollback, and localStorage persistence."
+        actions={
+          <>
+            <ButtonLink href="/dev/components" variant="secondary">Components</ButtonLink>
+            <ButtonLink href="/dev/data-table" variant="secondary">Data table</ButtonLink>
+          </>
+        }
+      />
       <KanbanHint />
-      <p aria-live="polite">Move log: {moveLog}</p>
+      <p className="dev-status-line ui-mono" aria-live="polite">Move log: {moveLog}</p>
       <KanbanBoard
         columns={columns}
         onMove={(cardId, from, to) => {

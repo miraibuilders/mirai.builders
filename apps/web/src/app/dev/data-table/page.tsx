@@ -1,8 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Badge, Button, InlineBanner } from "@/ui";
+import { Badge, Button, ButtonLink, InlineBanner, PageHeader } from "@/ui";
 import { DataTable, type DataTableColumn, type DataTableFilter } from "@/ui/data-table";
+
+import "../dev.css";
 
 interface DemoRow {
   id: string;
@@ -93,9 +95,18 @@ export default function DataTableDemoPage() {
   }, [showEmpty, large]);
 
   return (
-    <main className="ui-demo-page" style={{ maxWidth: "1120px", margin: "0 auto", padding: "24px" }}>
-      <h1 style={{ fontSize: "32px", lineHeight: 1.25 }}>Data table demo</h1>
-      <div className="ui-demo-inline" style={{ margin: "16px 0" }}>
+    <main className="ui-demo-page dev-data-table">
+      <PageHeader
+        title="Data table demo"
+        description="Benchmark rows, filters, selection, virtualization, and state previews."
+        actions={
+          <>
+            <ButtonLink href="/dev/components" variant="secondary">Components</ButtonLink>
+            <ButtonLink href="/dev/kanban" variant="secondary">Kanban</ButtonLink>
+          </>
+        }
+      />
+      <div className="dev-control-strip">
         <Button variant="secondary" onClick={() => setLoading((value) => !value)}>
           {loading ? "Stop loading" : "Show loading"}
         </Button>
@@ -110,7 +121,7 @@ export default function DataTableDemoPage() {
         </Button>
       </div>
       {showError ? <InlineBanner tone="warning">Error state is active.</InlineBanner> : null}
-      <p aria-live="polite">Last bulk action: {lastBulkAction}</p>
+      <p className="dev-status-line ui-mono" aria-live="polite">Last bulk action: {lastBulkAction}</p>
       <DataTable
         rows={data}
         columns={columns}

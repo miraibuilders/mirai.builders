@@ -35,13 +35,14 @@ export function TopBar({
       <div className="ui-topbar-actions">
         <Button
           variant="secondary"
+          className="ui-command-trigger"
           aria-label="Open command palette"
           aria-keyshortcuts="Meta+K Control+K"
           onClick={onOpenPalette}
         >
           <Icon name="search" />
-          <span>Search</span>
-          <kbd>⌘K</kbd>
+          <span className="ui-command-trigger-text">Search</span>
+          <kbd className="ui-kbd">⌘K</kbd>
         </Button>
         <AccountMenu user={user} role={role} />
       </div>

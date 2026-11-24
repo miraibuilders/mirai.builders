@@ -15,6 +15,7 @@ import {
   InlineBanner,
   Input,
   Modal,
+  PageHeader,
   Popover,
   Select,
   Skeleton,
@@ -28,6 +29,8 @@ import {
   motion,
   zIndex,
 } from "@/ui";
+
+import "../dev.css";
 
 function Cell({ label, children }: { label: string; children: ReactNode }) {
   return (
@@ -52,11 +55,17 @@ export default function ComponentsPage() {
   }, []);
 
   return (
-    <main className="ui-demo-page" data-hydrated={hydrated ? "true" : undefined} style={{ maxWidth: "1120px", margin: "0 auto", padding: spacing[5] }}>
-      <h1 style={{ fontSize: fontSizes[32], lineHeight: 1.25, marginBottom: spacing[2] }}>Component review</h1>
-      <p style={{ color: "var(--ui-color-muted)", marginBottom: spacing[5] }}>
-        Visual and keyboard review surface for Stage 1 primitives. No product screen consumes these yet.
-      </p>
+    <main className="ui-demo-page dev-components" data-hydrated={hydrated ? "true" : undefined}>
+      <PageHeader
+        title="Component review"
+        description="Visual and keyboard review surface for Stage 1 primitives. No product screen consumes these yet."
+        actions={
+          <>
+            <ButtonLink href="/dev/data-table" variant="secondary">Data table</ButtonLink>
+            <ButtonLink href="/dev/kanban" variant="secondary">Kanban</ButtonLink>
+          </>
+        }
+      />
 
       <section className="ui-demo-section" data-demo-section="tokens">
         <h2>Tokens</h2>
@@ -193,7 +202,7 @@ export default function ComponentsPage() {
             <Tooltip content="Shows on hover and keyboard focus.">
               <Button variant="secondary">Hover or focus me</Button>
             </Tooltip>
-            <Tooltip content="Forced visible state." demoState="hover">
+            <Tooltip content="Forced hover." demoState="hover">
               <Button variant="secondary">Forced hover</Button>
             </Tooltip>
           </Cell>

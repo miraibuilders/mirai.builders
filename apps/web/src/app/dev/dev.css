@@ -1,0 +1,98 @@
+.ui-demo-page {
+  width: min(100% - 2rem, 1240px);
+  margin-inline: auto;
+  padding: var(--ui-space-6) 0 var(--ui-space-8);
+  display: grid;
+  gap: var(--ui-space-5);
+}
+
+.ui-demo-page .ui-page-header {
+  border-bottom: 1px solid var(--ui-color-border);
+  padding-bottom: var(--ui-space-4);
+}
+
+.ui-demo-page .ui-page-header-actions {
+  flex-wrap: wrap;
+}
+
+.ui-demo-page .ui-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ui-demo-page .ui-demo-section {
+  gap: var(--ui-space-4);
+  padding: var(--ui-space-5);
+  border: 1px solid var(--ui-color-border);
+  border-bottom-width: 1px;
+  border-radius: var(--ui-radius-card);
+  background: var(--ui-gradient-panel);
+  box-shadow: var(--ui-shadow-card);
+}
+
+.ui-demo-page .ui-demo-section > h2 {
+  padding-bottom: var(--ui-space-3);
+  border-bottom: 1px solid var(--ui-color-border);
+  font-size: var(--ui-text-20);
+}
+
+.ui-demo-page .ui-demo-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--ui-space-4);
+}
+
+.ui-demo-page .ui-demo-cell {
+  gap: var(--ui-space-3);
+  padding: var(--ui-space-4);
+}
+
+.ui-demo-page .ui-demo-cell-label {
+  font-weight: var(--ui-weight-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.dev-control-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ui-space-2);
+  padding: var(--ui-space-3);
+  border: 1px solid var(--ui-color-border);
+  border-radius: var(--ui-radius-card);
+  background: var(--ui-color-surface-raised);
+}
+
+.dev-status-line {
+  margin: 0;
+  padding: var(--ui-space-2) var(--ui-space-3);
+  border-left: 3px solid var(--ui-color-accent);
+  background: var(--ui-color-surface);
+  color: var(--ui-color-muted);
+}
+
+.dev-data-table .ui-table-component,
+.dev-kanban .ui-kanban {
+  border: 1px solid var(--ui-color-border);
+  border-radius: var(--ui-radius-card);
+  background: var(--ui-color-surface-raised);
+  box-shadow: var(--ui-shadow-card);
+}
+
+.dev-kanban .ui-kanban-hint {
+  border: 1px solid var(--ui-color-border);
+  border-radius: var(--ui-radius-card);
+  background: var(--ui-color-surface-raised);
+}
+
+@media (max-width: 780px) {
+  .ui-demo-page {
+    width: min(100% - 1rem, 1240px);
+    padding-top: var(--ui-space-4);
+  }
+
+  .ui-demo-page .ui-demo-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -1,23 +1,76 @@
 .leads-page,
 .contact-requests-page,
 .lead-detail-page {
+  --crm-obsidian: #111827;
+  --crm-cyan: #38bdf8;
+  --crm-cyan-soft: #a5f3fc;
   width: min(100% - 2rem, 1180px);
   margin-inline: auto;
-  padding: 2rem 0 3rem;
+  padding: 1.75rem 0 3rem;
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.leads-page .ui-mono,
+.contact-requests-page .ui-mono,
+.lead-detail-page .ui-mono,
+.lead-review-page .ui-mono,
+.lead-sources-page .ui-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
 }
 
 .leads-page h1,
 .contact-requests-page h1,
 .lead-detail-page h1 {
-  font-size: 1.75rem;
+  font-size: var(--ui-text-32);
   margin-bottom: 1rem;
+}
+
+.crm-kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-border);
+  box-shadow: var(--ui-shadow-card);
+}
+
+.crm-kpi-card {
+  display: grid;
+  gap: 0.4rem;
+  padding: 1rem 1.15rem;
+  background: var(--color-surface);
+}
+
+.crm-kpi-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--ui-color-muted);
+  font-size: var(--ui-text-12);
+  font-weight: 600;
+}
+
+.crm-kpi-value {
+  color: var(--color-fg);
+  font-size: 1.65rem;
+  font-weight: 600;
+  line-height: var(--ui-leading-heading);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
 }
 
 .ui-view-tabs {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 .leads-toolbar {
@@ -25,13 +78,42 @@
   flex-wrap: wrap;
   gap: 0.75rem;
   align-items: flex-end;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0;
 }
 
-.leads-toolbar label {
+.leads-toolbar.crm-filter-bar {
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: color-mix(in oklab, var(--color-surface) 70%, var(--color-bg));
+  box-shadow: var(--ui-shadow-card);
+}
+
+.crm-filter-item {
   display: grid;
-  gap: 0.25rem;
+  gap: 0.3rem;
+  min-width: 150px;
+}
+
+.crm-filter-item > span,
+.leads-toolbar label {
   font-size: 0.9rem;
+}
+
+.crm-filter-item > span {
+  color: var(--ui-color-muted);
+  font-size: var(--ui-text-12);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.crm-filter-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 38px;
+  font-size: var(--ui-text-14);
 }
 
 .leads-toolbar select,
@@ -49,24 +131,79 @@
   font: inherit;
 }
 
+.leads-toolbar input[type="checkbox"] {
+  padding: 0;
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--crm-cyan);
+}
+
+.crm-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ui-kanban {
+  min-width: 0;
+}
+
+.ui-kanban-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--ui-color-muted);
+  font-size: var(--ui-text-12);
+}
+
 .leads-kanban {
   display: block;
 }
 
-.lead-card-actions {
+.ui-kanban-board {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(235px, 1fr);
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.ui-kanban-column.leads-column {
+  min-height: 240px;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--crm-cyan);
+  border-radius: var(--radius);
+  background: color-mix(in oklab, var(--color-surface) 70%, var(--color-bg));
+}
+
+.ui-kanban-column.leads-column[data-stage="won"] {
+  border-top-color: var(--ui-color-success);
+}
+
+.ui-kanban-column.leads-column[data-stage="lost"] {
+  border-top-color: var(--ui-color-danger);
+}
+
+.ui-kanban-column-heading {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
   gap: 0.5rem;
+  margin: 0 0 0.75rem;
+  font-size: var(--ui-text-14);
 }
 
-.lead-card-actions form {
-  display: inline;
-}
-
-.lead-card-link {
-  font-size: 0.85rem;
-  color: var(--color-accent);
+.ui-kanban-count {
+  min-width: 1.5rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--ui-color-muted);
+  font-size: var(--ui-text-12);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
 }
 
 .ui-kanban-card-wrap.lead-card {
@@ -75,19 +212,6 @@
   border: 0;
   background: transparent;
   cursor: default;
-}
-
-.leads-column {
-  min-height: 180px;
-  padding: 0.75rem;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  background: var(--color-surface);
-}
-
-.leads-column h2 {
-  font-size: 1rem;
-  margin-bottom: 0.75rem;
 }
 
 .lead-card {
@@ -99,10 +223,89 @@
   cursor: grab;
 }
 
+.ui-kanban-card {
+  display: grid;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--crm-cyan);
+  border-radius: calc(var(--radius) / 2);
+  background: var(--color-surface);
+  color: var(--color-fg);
+  text-align: left;
+  cursor: grab;
+}
+
+.ui-kanban-card[data-moving="true"] {
+  opacity: 0.55;
+}
+
+.ui-kanban-card-title {
+  font-weight: 600;
+  font-size: var(--ui-text-14);
+  line-height: var(--ui-leading-heading);
+  overflow-wrap: anywhere;
+}
+
+.ui-kanban-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  color: var(--ui-color-muted);
+  font-size: var(--ui-text-12);
+}
+
+.ui-kanban-score {
+  color: var(--crm-cyan);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.ui-kanban-tier {
+  color: var(--color-fg);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.crm-card-score-track {
+  flex-basis: 100%;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--color-fg) 12%, var(--color-bg));
+}
+
+.crm-card-score-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--crm-cyan), var(--crm-cyan-soft));
+}
+
 .lead-card p {
   margin: 0.25rem 0;
   font-size: 0.85rem;
   overflow-wrap: anywhere;
+}
+
+.lead-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.lead-card-actions form {
+  display: inline;
+}
+
+.lead-card-link {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  font-weight: 600;
 }
 
 .leads-table,
@@ -110,7 +313,14 @@
 .lead-activity-list {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
+  margin-top: 0;
+}
+
+.ui-data-table-scroll {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--ui-shadow-card);
 }
 
 .leads-table th,
@@ -125,16 +335,94 @@
   overflow-wrap: anywhere;
 }
 
+.leads-table th,
+.contact-requests-table th,
+.lead-activity-list th {
+  background: color-mix(in oklab, var(--color-surface) 70%, var(--color-bg));
+  color: var(--ui-color-muted);
+  font-size: var(--ui-text-12);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.crm-company-cell,
+.crm-contact-cell {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.crm-company-cell a {
+  font-weight: 600;
+}
+
+.crm-company-url,
+.crm-contact-cell span {
+  color: var(--ui-color-muted);
+  font-size: var(--ui-text-12);
+}
+
+.crm-score-cell {
+  display: grid;
+  gap: 0.3rem;
+  min-width: 92px;
+}
+
+.crm-score-track {
+  display: block;
+  height: 5px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--color-fg) 12%, var(--color-bg));
+}
+
+.crm-score-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--crm-cyan), var(--crm-cyan-soft));
+}
+
+.crm-date-overdue {
+  color: var(--ui-color-danger);
+  font-weight: 600;
+}
+
 .leads-timeout {
   padding: 0.75rem 1rem;
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--ui-color-warning);
   border-radius: calc(var(--radius) / 2);
+  background: var(--ui-color-warning-bg);
+  color: var(--ui-color-warning);
+  font-size: var(--ui-text-14);
 }
 
 .lead-form {
   display: grid;
   gap: 1rem;
-  max-width: 640px;
+  max-width: 760px;
+}
+
+.lead-form-section {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.lead-form-section > h2 {
+  margin: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--ui-text-16);
+}
+
+.lead-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
 }
 
 .lead-form .field,
@@ -146,7 +434,7 @@
 .lead-activity-form {
   display: grid;
   gap: 0.75rem;
-  max-width: 640px;
+  max-width: 760px;
   margin-bottom: 1.5rem;
 }
 
@@ -167,14 +455,84 @@
 
 .lead-notice {
   padding: 0.65rem 0.85rem;
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--ui-color-warning);
   border-radius: calc(var(--radius) / 2);
+  background: var(--ui-color-warning-bg);
+  color: var(--ui-color-warning);
 }
 
 .lead-section,
 .lead-overview,
 .lead-detail-brief-section {
   margin-top: 1.5rem;
+}
+
+.lead-detail-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border: 1px solid color-mix(in oklab, var(--crm-cyan) 35%, var(--color-border));
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at 85% 10%, color-mix(in oklab, var(--crm-cyan) 18%, transparent), transparent 38%),
+    linear-gradient(135deg, var(--crm-obsidian), color-mix(in oklab, var(--crm-obsidian) 82%, var(--crm-cyan)));
+  box-shadow: var(--ui-shadow-modal);
+  color: #f8fafc;
+}
+
+.lead-detail-hero h2 {
+  margin: 0 0 0.35rem;
+  font-size: var(--ui-text-24);
+  color: #f8fafc;
+}
+
+.lead-detail-hero p {
+  margin: 0;
+  color: var(--crm-cyan-soft);
+}
+
+.lead-detail-hero .lead-detail-eyebrow {
+  margin: 0 0 0.35rem;
+  color: var(--crm-cyan);
+  font-size: var(--ui-text-12);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.lead-detail-metrics {
+  display: grid;
+  gap: 0.75rem;
+  align-content: center;
+}
+
+.lead-detail-metric-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 0.6rem;
+}
+
+.lead-detail-metric {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  border: 1px solid color-mix(in oklab, var(--crm-cyan) 28%, transparent);
+  border-radius: calc(var(--radius) / 2);
+  background: color-mix(in oklab, var(--crm-obsidian) 55%, transparent);
+}
+
+.lead-detail-metric span {
+  color: var(--crm-cyan-soft);
+  font-size: var(--ui-text-12);
+}
+
+.lead-detail-metric strong {
+  font-size: var(--ui-text-20);
+  font-variant-numeric: tabular-nums;
+}
+
+.lead-detail-metric .ui-mono {
+  font-size: var(--ui-text-14);
 }
 
 .lead-detail-list {
@@ -200,4 +558,48 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   background: var(--color-surface);
+}
+
+.lead-review-page,
+.lead-sources-page {
+  display: grid;
+  gap: 1rem;
+}
+
+.crm-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.75rem;
+}
+
+.crm-panel {
+  display: grid;
+  gap: 0.65rem;
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--ui-shadow-card);
+}
+
+.crm-panel-metric {
+  margin: 0;
+  color: var(--crm-cyan);
+  font-size: var(--ui-text-14);
+}
+
+@media (max-width: 760px) {
+  .lead-form-grid,
+  .lead-detail-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .crm-kpi-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .crm-kpi-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
 }

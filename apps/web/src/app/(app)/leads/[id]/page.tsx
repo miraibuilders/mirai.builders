@@ -58,6 +58,12 @@ export default async function LeadDetailPage({
 
   const contact = contacts[0];
   const latestScan = scanRows[0];
+  const nextStepOverdue = Boolean(
+    lead.nextStepDate &&
+      lead.stage !== "won" &&
+      lead.stage !== "lost" &&
+      lead.nextStepDate < new Date().toISOString().slice(0, 10),
+  );
 
   return (
     <div className="lead-detail-page">
@@ -68,6 +74,41 @@ export default async function LeadDetailPage({
       />
       {notice ? <p className="lead-notice">Scan notice: {notice}</p> : null}
       {!canEdit ? <InlineBanner tone="danger" title="Forbidden">This lead is read-only for your role.</InlineBanner> : null}
+
+      <section className="lead-detail-hero" aria-label="Lead intelligence summary">
+        <div>
+          <p className="ui-mono lead-detail-eyebrow">Lead intelligence</p>
+          <h2>{lead.company}</h2>
+          <p>{lead.segment} / Stage: {lead.stage}</p>
+        </div>
+        <div className="lead-detail-metrics">
+          <div className="lead-detail-metric-row">
+            <div className="lead-detail-metric">
+              <span>Score</span>
+              <strong>{lead.score}</strong>
+              <span className="crm-score-track" aria-hidden="true">
+                <span className="crm-score-fill" style={{ width: `${Math.max(0, Math.min(100, lead.score))}%` }} />
+              </span>
+            </div>
+            <div className="lead-detail-metric">
+              <span>Tier</span>
+              <strong className="ui-mono">{tierForScore(lead.score)}</strong>
+            </div>
+            <div className="lead-detail-metric">
+              <span>Pain</span>
+              <strong className="ui-mono">{topPainFlag(lead.painFlags)}</strong>
+            </div>
+            <div className="lead-detail-metric">
+              <span>Scan</span>
+              <strong className="ui-mono">{latestScan?.status ?? "none"}</strong>
+            </div>
+            <div className="lead-detail-metric">
+              <span>Documents</span>
+              <strong>{docs.length}</strong>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="lead-overview">
         <SectionHeader title="Overview" />
@@ -81,7 +122,8 @@ export default async function LeadDetailPage({
           <dt>Stage</dt><dd>{lead.stage}</dd>
           <dt>Preferred template</dt><dd>{lead.preferredTemplate ?? "branded"}</dd>
           <dt>Next step</dt><dd>{lead.nextStep ?? "-"}</dd>
-          <dt>Next step date</dt><dd>{lead.nextStepDate ?? "-"}</dd>
+          <dt>Next step date</dt>
+          <dd className={nextStepOverdue ? "ui-mono crm-date-overdue" : "ui-mono"}>{lead.nextStepDate ?? "-"}</dd>
         </dl>
       </section>
 
