@@ -5,6 +5,7 @@ import { siteContent, t, type Locale } from "@/content/site";
 import { getPublishedPostBySlug } from "@/lib/cms";
 import { articleJsonLd, faqJsonLd } from "@/lib/json-ld";
 import { renderMarkdown } from "@/lib/markdown";
+import { withPublicFallback } from "@/lib/public-content";
 import { siteOrigin } from "@/lib/site";
 
 const locale: Locale = "ja";
@@ -17,7 +18,11 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = await getPublishedPostBySlug(slug);
+  const post = await withPublicFallback<Awaited<ReturnType<typeof getPublishedPostBySlug>>>(
+    () => getPublishedPostBySlug(slug),
+    null,
+    { kind: "public_blog_post_fallback", route: "/blog/[slug]" },
+  );
   if (!post) return { title: t(siteContent.metaDescriptions.blogPostNotFound, locale) };
   return {
     title: post.seoTitle ?? post.title,
@@ -27,7 +32,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
-  const post = await getPublishedPostBySlug(slug);
+  const post = await withPublicFallback<Awaited<ReturnType<typeof getPublishedPostBySlug>>>(
+    () => getPublishedPostBySlug(slug),
+    null,
+    { kind: "public_blog_post_fallback", route: "/blog/[slug]" },
+  );
   if (!post) notFound();
 
   const article = articleJsonLd(post, siteOrigin());

@@ -1,5 +1,6 @@
 import { siteContent, t, type Locale } from "@/content/site";
 import { listPublishedPosts } from "@/lib/cms";
+import { withPublicFallback } from "@/lib/public-content";
 import { mergeSiteContent, getSiteSettings } from "@/lib/settings";
 import { siteOrigin } from "@/lib/site";
 
@@ -8,7 +9,18 @@ const locale: Locale = "ja";
 export const dynamic = "force-dynamic";
 
 export async function GET() {
-  const [posts, settings] = await Promise.all([listPublishedPosts(), getSiteSettings()]);
+  const [posts, settings] = await Promise.all([
+    withPublicFallback<Awaited<ReturnType<typeof listPublishedPosts>>>(
+      () => listPublishedPosts(),
+      [],
+      { kind: "public_llms_fallback", route: "/llms.txt" },
+    ),
+    withPublicFallback<Awaited<ReturnType<typeof getSiteSettings>>>(
+      () => getSiteSettings(),
+      null,
+      { kind: "public_llms_fallback", route: "/llms.txt" },
+    ),
+  ]);
   const content = mergeSiteContent(settings, [], []);
   const baseUrl = siteOrigin();
   const postLines = posts.map(

@@ -1,6 +1,7 @@
 import { asc, eq } from "drizzle-orm";
 import { caseStudies, getDb, pricingTiers, siteSettings } from "@mirai/db";
 import { siteContent } from "@/content/site";
+import { withPublicFallback } from "./public-content";
 
 type LocalizedText = { ja: string; en: string };
 type ImageSize = { src: string; width: number; height: number };
@@ -183,4 +184,12 @@ export async function loadSiteContent(): Promise<MergedSiteContent> {
     getPublishedCaseStudies(),
   ]);
   return mergeSiteContent(settings, tiers, published);
+}
+
+export async function loadPublicSiteContent(): Promise<MergedSiteContent> {
+  return await withPublicFallback(loadSiteContent, siteContent as MergedSiteContent, {
+    kind: "public_content_fallback",
+    route: "public",
+    reason: "database_unavailable",
+  });
 }

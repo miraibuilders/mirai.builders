@@ -1,13 +1,18 @@
 import Link from "next/link";
 import { siteContent, t, type Locale } from "@/content/site";
 import { listPublishedPosts } from "@/lib/cms";
+import { withPublicFallback } from "@/lib/public-content";
 
 const locale: Locale = "ja";
 
 export const dynamic = "force-dynamic";
 
 export default async function BlogPage() {
-  const posts = await listPublishedPosts();
+  const posts = await withPublicFallback<Awaited<ReturnType<typeof listPublishedPosts>>>(
+    () => listPublishedPosts(),
+    [],
+    { kind: "public_blog_fallback", route: "/blog" },
+  );
 
   return (
     <main id="main-content">

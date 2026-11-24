@@ -1,6 +1,7 @@
 "use server";
 
 import { siteContent, t, type Locale } from "@/content/site";
+import { notifyStaff } from "@/lib/staff-alert";
 import { getDb } from "@/lib/db";
 import { contactRequests } from "@mirai/db";
 
@@ -66,7 +67,12 @@ export async function submitContactRequest(
       message: storedMessage,
     });
     return { status: "success" };
-  } catch {
+  } catch (error) {
+    await notifyStaff(
+      "contact_database_failure",
+      { route: "/#contact", reason: "insert_failed" },
+      error,
+    );
     return { status: "error", message: t(siteContent.formErrors.generic, locale) };
   }
 }

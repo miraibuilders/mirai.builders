@@ -1,12 +1,17 @@
 import type { MetadataRoute } from "next";
 import { listPublishedPosts } from "@/lib/cms";
+import { withPublicFallback } from "@/lib/public-content";
 import { siteOrigin } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = siteOrigin();
-  const posts = await listPublishedPosts();
+  const posts = await withPublicFallback<Awaited<ReturnType<typeof listPublishedPosts>>>(
+    () => listPublishedPosts(),
+    [],
+    { kind: "public_sitemap_fallback", route: "/sitemap.xml" },
+  );
 
   return [
     {

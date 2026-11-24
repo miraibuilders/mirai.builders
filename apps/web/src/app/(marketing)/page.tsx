@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { siteContent, t, type Locale } from "@/content/site";
 import { LandingSections } from "@/features/landing/components/landing-sections";
-import { loadSiteContent } from "@/lib/settings";
+import { loadPublicSiteContent } from "@/lib/settings";
 import { siteOrigin } from "@/lib/site";
 
 const locale: Locale = "ja";
@@ -16,7 +16,7 @@ function serializeJsonLd(value: unknown): string {
 }
 
 export default async function MarketingPage() {
-  const content = await loadSiteContent();
+  const content = await loadPublicSiteContent();
 
   const organizationJsonLd = {
     "@context": "https://schema.org",

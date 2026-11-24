@@ -1,123 +1,133 @@
-# Bilingual Landing Port Handoff — zip landing into MIRAI Lab
+# Production Fallback Handoff — public site without a DB
 
-Date: 2026-11-24. The Demo Data Handoff was read first. The user approved the implementation plan with `go`. Work is complete and verified. No git repository exists and no commit was made.
+Date: 2026-11-24. The previous landing handoff was read first. The user approved static-safe production mode with `go`. Work is complete and verified. This handoff is included in the production fallback commit.
 
 ## Current state
 
-- The public root page is now the full bilingual landing experience ported from `/home/morpheus/Downloads/untitled (1).zip`, rewritten from Tailwind to plain CSS using app tokens.
-- Public shell (header, mobile drawer, footer, sticky CTA, language switch) is shared by `/`, `/blog`, `/blog/[slug]`, and the four legal pages.
-- Japanese is the SSR default. Switching to English is client-side via `localStorage["mirai-locale"]`; there are no `/en` routes.
-- CMS site settings still drive phone, email, address, hero headline/subheadline/CTA/image, pricing, case studies, and footer copyright.
-- Contact form keeps the `contact_requests` schema, server action export, and field names. Topic, website URL, and consent are folded into the stored `message`.
-- Dev server is live on `:3000` (`ROOT_HTTP=200`). Postgres remains on `127.0.0.1:5433/mirai_lab`.
-- Runtime env unchanged: `DATABASE_URL=postgres://postgres:postgres@127.0.0.1:5433/mirai_lab`, `BETTER_AUTH_SECRET=local-dev-mirai-lab-secret`, `BETTER_AUTH_URL=http://localhost:3000`, `SITE_ORIGIN=http://localhost:3000`, `INDEXNOW_ENABLED=true`, `INDEXNOW_ENDPOINT=http://127.0.0.1:4010/indexnow`, `INDEXNOW_KEY=dev-indexnow-key-9f3a1c7b`. pnpm shim: `/tmp/opencode/bin/pnpm`.
-- Final DB state is restored to demo data: leads `14`, activities `21`, scans `14`, contacts `7`, documents `6`, posts `7`, authors `3`, media `4`, DNC `5`, site settings `1`.
-- Logs and screenshots: `state/evidence/landing/`.
+- The public site can render from bundled `siteContent` when the production database is unavailable.
+- Public routes use `withPublicFallback`: `/`, `/blog`, `/blog/[slug]`, `/sitemap.xml`, and `/llms.txt`.
+- `/api/health` reports `{"status":"error","database":"disconnected"}` with HTTP `503` when the DB is absent; it does not expose DB error details.
+- Contact form DB failures are reported to staff and return a generic localized user message. No form data, names, emails, or phone numbers are sent to staff alerts.
+- Unexpected public errors render a bilingual maintenance screen with no raw error message.
+- `notifyStaff()` logs `[STAFF_ALERT]` by default. If `STAFF_ALERT_WEBHOOK_URL` is set, it posts a Slack-compatible `{ text }` payload with `AbortSignal.timeout(5000)`.
+- `POST /api/staff-alert` accepts sanitized `digest` and `reason` values only; it uses fixed route `public`.
+- Local `.env.production` exists with `SITE_ORIGIN=https://mirai.builders`, generated secrets, empty `DATABASE_URL`, IndexNow disabled, and empty `STAFF_ALERT_WEBHOOK_URL`. It is ignored by git and was not pasted in chat.
+- `.nvmrc` pins Node `20`; package `engines.node` was already `20.x`. The earlier Vercel build used Node `v26.13.1`, so the Vercel dashboard Node setting still needs checking.
+- Git repo exists with origin `https://github.com/miraibuilders/mirai.builders.git`; the first push reached `293ed0e`, and the production fallback follow-up is included in a separate commit.
+- Local Postgres was restarted on `127.0.0.1:5433` with socket dir `/tmp/opencode/pg`; local web and worker dev processes were used for verification.
+- Final local DB state is restored with `pnpm seed:demo`: leads `14`, activities `21`, scans `14`, contacts `7`, documents `6`, posts `7`, authors `3`, media `4`, DNC `5`.
+- Runtime env for web verification: `DATABASE_URL=postgres://postgres:postgres@127.0.0.1:5433/mirai_lab`, `BETTER_AUTH_SECRET=local-dev-mirai-lab-secret`, `BETTER_AUTH_URL=http://localhost:3000`, `SITE_ORIGIN=http://localhost:3000`, `INDEXNOW_ENABLED=true`, `INDEXNOW_ENDPOINT=http://127.0.0.1:4010/indexnow`, `INDEXNOW_KEY=dev-indexnow-key-9f3a1c7b`, `SCAN_POLL_MS=1000`. pnpm shim: `/tmp/opencode/bin/pnpm`.
+- Evidence is under `state/evidence/landing/`.
 
 ## In scope (completed)
 
-- Replaced the root marketing page with hero, problems, reasons, services, pricing, flow, commitments, case studies, FAQ, company, and contact sections.
-- Added production bilingual JA/EN copy for every landing section and four legal documents: privacy, terms, tokushoho, and security policy.
-- Added a shared marketing shell with sticky header, mobile drawer, skip link, scroll progress, English/Japanese switch, footer, and mobile sticky CTA.
-- Rewired the existing account link to the shared shell while preserving `a.marketing-account-link`.
-- Preserved CMS-driven blog and site settings; added `id="main-content"` to blog pages for the shared skip link.
-- Rebuilt the contact form with localized labels, topic select, website URL field, consent checkbox, honeypot, client validation, and server-action feedback.
-- Updated JSON-LD to stay placeholder-free and reflect the merged CMS content.
-- Fixed a 390px header overflow found during screenshot verification by hiding nonessential header CTAs on small screens.
+- Added DB-absent fallbacks for all public content routes and sitemap/llms output.
+- Added staff alert utility with a five-minute in-memory throttle and log-only fallback.
+- Added maintenance error boundaries for marketing routes and the root error boundary.
+- Added a sanitized staff alert API route used by client error boundaries.
+- Added health and contact alerting without leaking DB details or personal data.
+- Added a local, ignored production env template and Node version pin.
+- Initialized the git repository, resolved the remote `.gitignore` conflict, and pushed the prior stage to GitHub.
+- Verified static-safe behavior with `DATABASE_URL` unset and verified full behavior with the local DB and worker running.
 
 ## Out of scope (not built or altered)
 
-- No zip `/admin` routes, static zip blog pages, zip OG image templates, or zip sitemap/robots/manifest files were ported.
-- No scanner, PDF pipeline, auth guard, schema, migration, dependency, or paid service changes.
-- No Tailwind or heavy component library.
-- No extraction of personal names, emails, or phone numbers from scanned sites.
-- No commit and no git command beyond earlier read-only status/identity checks.
+- No production database was provisioned or configured on Vercel.
+- No Slack webhook was configured; only the env placeholder exists.
+- No Vercel dashboard settings were changed.
+- No paid services, paid SDKs, paid APIs, Tailwind, or heavy component library.
+- No scanner, auth guard, PDF font, schema, migration, or dependency changes.
+- No personal data extraction from scanned sites.
+- No Vercel deployment or live verification after the push.
+- No Japanese copy generated here; existing copy remains drafted for Mika approval.
 
 ## Changed files
 
-- `apps/web/src/content/site.ts` — production JA/EN defaults replaced all `[MIKA: ...]` placeholders; default phone `03-5555-0188`; hero default aligned with demo/CMS copy.
-- `apps/web/src/features/landing/types.ts` — new landing content and legal document types.
-- `apps/web/src/features/landing/validation.ts` — new client contact validation.
-- `apps/web/src/features/landing/landing.css` — new plain-CSS landing system mapped to app tokens with 3px focus rings.
-- `apps/web/src/features/landing/content/ja.ts` — production Japanese landing copy.
-- `apps/web/src/features/landing/content/en.ts` — production English landing copy.
-- `apps/web/src/features/landing/content/legal.ts` — bilingual legal documents.
-- `apps/web/src/features/landing/content/index.ts` — content builder for merged CMS data.
-- `apps/web/src/features/landing/components/landing-provider.tsx` — locale context and persistence.
-- `apps/web/src/features/landing/components/brand-mark.tsx` — inline gradient M mark.
-- `apps/web/src/features/landing/components/site-header.tsx` — shared public header.
-- `apps/web/src/features/landing/components/mobile-menu.tsx` — mobile drawer.
-- `apps/web/src/features/landing/components/sticky-action-bar.tsx` — mobile call/contact bar.
-- `apps/web/src/features/landing/components/site-footer.tsx` — shared public footer.
-- `apps/web/src/features/landing/components/legal-page-view.tsx` — shared legal page renderer.
-- `apps/web/src/features/landing/components/subpage-frame.tsx` — optional subpage frame.
-- `apps/web/src/features/landing/components/contact-form.tsx` — new localized form.
-- `apps/web/src/features/landing/components/landing-sections.tsx` — full landing section composition.
-- `apps/web/src/app/(marketing)/layout.tsx` — loads merged site content and renders the shared shell.
-- `apps/web/src/app/(marketing)/page.tsx` — new landing page and JSON-LD.
-- `apps/web/src/app/(marketing)/actions.ts` — folds topic/website/consent into `message`; keeps field names and action export.
-- `apps/web/src/app/(marketing)/_components/account-link.tsx` — localized dashboard/login label.
-- `apps/web/src/app/(marketing)/blog/page.tsx` — added main landmark id.
-- `apps/web/src/app/(marketing)/blog/[slug]/page.tsx` — added main landmark id.
-- `apps/web/src/app/(marketing)/privacy/page.tsx` — new legal route.
-- `apps/web/src/app/(marketing)/terms/page.tsx` — new legal route.
-- `apps/web/src/app/(marketing)/tokushoho/page.tsx` — new legal route.
-- `apps/web/src/app/(marketing)/security-policy/page.tsx` — new legal route.
-- `apps/web/tests/full-system.spec.ts` — updated expectations for new copy, contact fields, scoped blog markdown assertions, case-studies anchor, and production defaults.
-- `state/evidence/landing/*` — build, lint, typecheck, unit, E2E, seed logs and 7 screenshots.
-- `state/handoff.md` — this handoff.
+- `.gitignore` — combined remote and local ignores; ignores `.env`, `.env.*`, `.env.production`, and `accounts.txt`.
+- `.nvmrc` — new Node `20` pin.
+- `.env.production` — new ignored production env file; not tracked and not shown in chat.
+- `apps/web/src/lib/public-content.ts` — new `withPublicFallback<T>()` helper.
+- `apps/web/src/lib/staff-alert.ts` — new `notifyStaff()`, throttle, Slack-compatible webhook payload, log fallback.
+- `apps/web/src/lib/settings.ts` — added `loadPublicSiteContent()`.
+- `apps/web/src/app/(marketing)/layout.tsx` — uses `loadPublicSiteContent()`.
+- `apps/web/src/app/(marketing)/page.tsx` — uses `loadPublicSiteContent()`.
+- `apps/web/src/app/(marketing)/blog/page.tsx` — uses `withPublicFallback`.
+- `apps/web/src/app/(marketing)/blog/[slug]/page.tsx` — uses `withPublicFallback` in metadata and page render.
+- `apps/web/src/app/sitemap.ts` — uses `withPublicFallback`.
+- `apps/web/src/app/llms.txt/route.ts` — uses `withPublicFallback` for settings and posts.
+- `apps/web/src/app/api/health/route.ts` — alerts staff and returns a generic disconnected DB status.
+- `apps/web/src/app/api/staff-alert/route.ts` — new sanitized public error-alert endpoint.
+- `apps/web/src/app/(marketing)/error.tsx` — new marketing maintenance error boundary.
+- `apps/web/src/app/global-error.tsx` — new root maintenance error boundary.
+- `apps/web/src/app/(marketing)/actions.ts` — alerts staff on contact DB failure; returns a generic localized message.
+- `state/evidence/landing/build-production-ready.log` — final build evidence.
+- `state/evidence/landing/no-db-dev.log` — DB-absent route verification.
+- `state/evidence/landing/test-production-ready.log` — final unit test evidence.
+- `state/evidence/landing/e2e-production-ready.log` — final full E2E evidence.
+- `state/evidence/landing/seed-demo-production-ready.log` — final demo seed evidence.
+- `state/evidence/landing/dev-production-ready.log` — final dev server evidence.
+- `state/evidence/landing/worker-production-ready.log` — final worker evidence.
+- `state/handoff.md` — overwritten with this handoff.
 
 ## Decisions
 
-1. Ported only the root landing, public shell, and legal pages. The existing CMS-driven blog, OG images, sitemap, auth, and DB schema were kept.
-2. Japanese copy was drafted for Mika approval as the user requested; no visible draft markers or TODO tokens remain.
-3. Business facts use current CMS/demo values: phone `03-5555-0188`, email `contact@example.jp`, address `東京都中央区日本橋1-2-3 4F` / `1-2-3 Nihonbashi, Chuo-ku, Tokyo`, representative `ミライラボ 代表` / `MIRAI Lab`.
-4. Inferred review values are embedded for hours `平日 9:00〜18:00`, service area `日本全国（オンライン中心）・東京都中央区`, process durations, policy date `2026-11-24`, jurisdiction `東京地方裁判所`, and pricing labels from current defaults.
-5. The zip logo PNG was not copied. `BrandMark` uses an inline gradient `M` mark instead, avoiding an extra 1.9MB binary asset.
-6. Zip brand colors were preserved as role tokens, but layout spacing, radius, focus, and typography were mapped to the existing app design system. Focus remains 3px, not the zip's 2px.
-7. Contact validation now requires topic and consent in addition to the existing required fields. Server validation also rejects missing topic or consent.
-8. Contact storage remains schema-compatible: `Topic: ...`, optional `Website: ...`, and `Consent: agreed` are appended to the original message.
-9. CMS hero headline, subheadline, CTA, and image are consumed by the landing content builder. The h1 splits on `、` or `, ` for the gradient second line and has an `aria-label` containing the full headline so raw HTML assertions still pass.
-10. E2E assertions were updated without weakening coverage: contact submission now selects a topic and checks consent, blog markdown assertions are scoped to `.blog-body`, and default/no-settings expectations now require production copy and no `[MIKA:`.
-11. Full E2E can now run against the demo DB because test 2 expects the production default phone, which matches the demo value. The final demo seed is still applied last.
+1. DB absence on public pages is treated as a normal static-safe state; only unexpected errors show the maintenance UI and alert staff.
+2. Public fallbacks use bundled `siteContent` and keep the existing CMS merged-content shape, so no component contracts changed.
+3. Staff alerts never include form data, names, emails, phone numbers, raw error objects, or DB connection details.
+4. Staff alerts log by default when the webhook is empty; this keeps the current deployment functional without adding a service.
+5. In-memory throttling is per serverless instance; it reduces duplicate alerts but is not a durable global rate limit.
+6. The client error boundary sends only a sanitized digest and reason to `/api/staff-alert`.
+7. Production env keeps `DATABASE_URL` empty and disables IndexNow because no production DB, IndexNow key, Gotenberg URL, or PDF renderer was supplied.
+8. DB-backed admin/CMS/blog publishing/contact persistence stay disabled until a production DB is configured.
+9. Node `20` was pinned in the repository because the Vercel build log showed `v26.13.1` against `engines.node: 20.x`.
+10. The production fallback changes were kept local until the user explicitly requested a push, then committed as a follow-up to `293ed0e`.
+11. E2E scan tests require the worker process. The first run failed on scan waits because no worker was running; the final run passed after `pnpm --filter worker dev` was started.
 
 ## Checks run (exact output)
 
 ```
-$ pnpm typecheck                                      → Done
+$ pnpm typecheck                                       → Done
   packages/db, apps/web, apps/worker: no errors
-$ pnpm lint                                           → LINT_EXIT=0
+$ pnpm lint                                            → LINT_EXIT=0
   apps/web: No ESLint warnings or errors
-$ pnpm build                                          → BUILD_EXIT=0
-  Next.js 15.5.29, compiled successfully, 7/7 static pages
-$ pnpm test                                           → TEST_EXIT=0
+$ pnpm build                                           → BUILD_EXIT=0
+  compiled successfully in 10.6s; 7/7 static pages;
+  route list includes ƒ /api/staff-alert
+$ pnpm test                                            → TEST_EXIT=0
   packages/db: 3 pass, 0 fail
   apps/worker: 33 pass, 0 fail
   apps/web: 28 pass, 0 fail
-$ pnpm --filter @mirai/web test:e2e:full              → E2E_FULL_EXIT=0
-  1 skipped, 73 passed (5.7m)
-$ pnpm seed:demo                                      → SEED_DEMO_EXIT=0
+$ pnpm --filter @mirai/web test:e2e:full               → E2E_FULL_EXIT=0
+  1 skipped, 73 passed (8.6m)
+$ pnpm seed:demo                                       → SEED_DEMO_EXIT=0
   leads 14, activities 21, scans 14, contacts 7,
   documents 6, posts 7, authors 3, media 4, dnc 5
-$ curl http://localhost:3000/                         → ROOT_HTTP=200
-$ DB final check                                      → site_settings=1, test_leads=0
-$ Screenshot verification                             → 8 screenshots captured
-  home-ja-desktop, home-en-desktop, home-ja-mobile,
-  home-menu-mobile, privacy, terms, tokushoho,
-  security-policy under state/evidence/landing/screens/
+$ no-DB curl checks                                    → ROOT 200, /blog 200,
+  /privacy 200, /terms 200, /tokushoho 200,
+  /security-policy 200, /sitemap.xml 200, /llms.txt 200,
+  /api/health 503
+$ no-DB root HTML                                      → expected headline once,
+  "Application error" count 0
+$ no-DB /api/health                                    → {"status":"error","database":"disconnected"}
+$ POST /api/staff-alert                                → {"ok":true}, HTTP 200
+$ DB-up /api/health                                    → {"status":"ok","database":"connected"}
+$ git status --short                                   → production fallback files are uncommitted
 ```
 
 ## Known risks / follow-ups
 
-- Mika must approve the drafted Japanese landing and legal copy. Inferred business/legal values should be verified before production.
-- `JSON-LD.foundingDate` still follows the old implementation and uses `site.year` (current year). A real founding date should be added to settings in a future stage if required.
-- English is client-side only: no `/en` routes, hreflang, or English SEO metadata were added.
-- The mobile header hides its primary CTA below 480px; the sticky bottom bar still provides contact access.
-- The hidden `renderedAt` field is present but not enforced server-side; honeypot and required-field validation are enforced.
-- Blog pages keep their existing visual styling while sharing the new public header/footer.
-- `seed:demo` is destructive to local business tables and should never be run against production-like data.
-- No git repository exists, so no commit, branch, or PR was created.
+- Import or copy `.env.production` into Vercel before redeploying; do not commit it.
+- Set `STAFF_ALERT_WEBHOOK_URL` when the Slack webhook is ready; until then alerts are only server logs.
+- Confirm Vercel uses Node `20`; `.nvmrc` alone may not override an existing project setting.
+- Without `DATABASE_URL`, admin/CMS/blog publishing/contact persistence remain unavailable by design.
+- The Vercel runtime error digest `1198609198` was not matched to runtime logs; no explicit runtime stack trace was provided.
+- Mika must approve the drafted Japanese landing and legal copy and inferred business/legal values before treating them as final.
+- English is client-side only; no `/en` routes, hreflang, or English SEO metadata.
+- `seed:demo` is destructive to local business tables and must never be run against production-like data.
+- `git status --short` shows untracked E2E upload artifacts under `apps/web/public/uploads/site/`; do not commit them accidentally.
+- `state/evidence/landing/dev-complete.log` and `state/evidence/lb1/worker.log` were already modified before this stage; review before committing evidence logs.
+- Vercel deployment still needs to be triggered and verified after the push.
 
 ## Next stage
 
-Read this handoff first. Verify Japanese copy with Mika, confirm inferred legal/business values, and decide whether English needs dedicated routes and SEO metadata.
+Read this handoff first. After the production fallback push, deploy the new code, import `.env.production` into Vercel, set the Slack webhook when ready, confirm Node `20`, and verify the live public routes. Check `git status --short` and decide which evidence and upload artifacts to keep. Configure a production DB later when DB-backed CMS, contact, or admin features are required.

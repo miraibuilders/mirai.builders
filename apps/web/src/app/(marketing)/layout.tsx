@@ -5,7 +5,7 @@ import { LandingProvider } from "@/features/landing/components/landing-provider"
 import { SiteFooter } from "@/features/landing/components/site-footer";
 import { SiteHeader } from "@/features/landing/components/site-header";
 import { StickyActionBar } from "@/features/landing/components/sticky-action-bar";
-import { loadSiteContent } from "@/lib/settings";
+import { loadPublicSiteContent } from "@/lib/settings";
 import "@/features/landing/landing.css";
 
 const locale: Locale = "ja";
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 export default async function MarketingLayout({ children }: { children: React.ReactNode }) {
-  const site = await loadSiteContent();
+  const site = await loadPublicSiteContent();
   const contentByLocale = {
     ja: buildLandingContent(site, "ja"),
     en: buildLandingContent(site, "en"),
