@@ -1,0 +1,141 @@
+
+> worker@0.0.0 dev /home/morpheus/Downloads/mirai-lab/apps/worker
+> tsx src/index.ts
+
+worker: started
+worker: processing job=2d7e11d2-fadf-479d-b1e3-7aa684e9db95 kind=scan queued_at=2026-11-23T20:09:02.396Z at=2026-11-23T20:09:03.357Z
+worker: completed scan=2d7e11d2-fadf-479d-b1e3-7aa684e9db95 at=2026-11-23T20:09:03.357Z
+worker: processing job=1a0f9a90-f9a1-486f-a445-0083208d5735 kind=scan queued_at=2026-11-23T20:09:07.587Z at=2026-11-23T20:09:08.474Z
+worker: completed scan=1a0f9a90-f9a1-486f-a445-0083208d5735 at=2026-11-23T20:09:08.474Z
+worker: processing job=f94bf781-cedc-4979-9a7e-510bdf769dcd kind=detail queued_at=2026-11-23T20:09:17.243Z at=2026-11-23T20:09:17.590Z
+worker: completed detail=f94bf781-cedc-4979-9a7e-510bdf769dcd at=2026-11-23T20:09:17.590Z
+worker: processing job=7eacb9ba-b71e-4588-8144-038d1242ff60 kind=scan queued_at=2026-11-23T20:10:34.456Z at=2026-11-23T20:10:34.851Z
+worker: completed scan=7eacb9ba-b71e-4588-8144-038d1242ff60 at=2026-11-23T20:10:34.851Z
+worker: processing job=901bf2f2-29ab-485d-b19a-dfe2d7743494 kind=scan queued_at=2026-11-23T20:14:15.558Z at=2026-11-23T20:14:16.333Z
+worker: completed scan=901bf2f2-29ab-485d-b19a-dfe2d7743494 at=2026-11-23T20:14:16.333Z
+worker: processing job=ca948204-8073-4625-b62a-3581a633125f kind=scan queued_at=2026-11-23T20:14:20.399Z at=2026-11-23T20:14:21.401Z
+worker: completed scan=ca948204-8073-4625-b62a-3581a633125f at=2026-11-23T20:14:21.401Z
+worker: processing job=e896e8ee-c59e-4bef-8e28-7bab204f5bfc kind=detail queued_at=2026-11-23T20:14:29.666Z at=2026-11-23T20:14:30.491Z
+worker: completed detail=e896e8ee-c59e-4bef-8e28-7bab204f5bfc at=2026-11-23T20:14:30.491Z
+worker: processing job=336ad8c3-34f6-407d-8d61-a69ff122989c kind=scan queued_at=2026-11-23T20:15:33.568Z at=2026-11-23T20:15:33.712Z
+worker: completed scan=336ad8c3-34f6-407d-8d61-a69ff122989c at=2026-11-23T20:15:33.712Z
+worker: processing job=b548f0d0-4fef-4956-a99c-8cb80e3f8553 kind=scan queued_at=2026-11-23T20:20:03.911Z at=2026-11-23T20:20:04.254Z
+worker: completed scan=b548f0d0-4fef-4956-a99c-8cb80e3f8553 at=2026-11-23T20:20:04.254Z
+worker: processing job=0df6a886-725b-4720-920b-63938ec60ed9 kind=scan queued_at=2026-11-23T20:20:08.635Z at=2026-11-23T20:20:09.331Z
+worker: completed scan=0df6a886-725b-4720-920b-63938ec60ed9 at=2026-11-23T20:20:09.331Z
+worker: processing job=640aab40-306d-4678-b0c3-730e83aadfbf kind=detail queued_at=2026-11-23T20:20:17.425Z at=2026-11-23T20:20:18.413Z
+worker: completed detail=640aab40-306d-4678-b0c3-730e83aadfbf at=2026-11-23T20:20:18.413Z
+worker: processing job=aea8fed5-8829-42c6-9971-d64a73d11f3e kind=scan queued_at=2026-11-23T20:21:13.173Z at=2026-11-23T20:21:13.575Z
+worker: completed scan=aea8fed5-8829-42c6-9971-d64a73d11f3e at=2026-11-23T20:21:13.575Z
+worker: processing job=f5ff50ee-11b7-47c8-a294-feefee0cd907 kind=scan queued_at=2026-11-23T20:30:43.682Z at=2026-11-23T20:30:43.708Z
+worker: completed scan=f5ff50ee-11b7-47c8-a294-feefee0cd907 at=2026-11-23T20:30:43.708Z
+worker: processing job=d69cf24c-d121-4bbf-8e41-feac5825a514 kind=scan queued_at=2026-11-23T20:30:47.523Z at=2026-11-23T20:30:47.780Z
+worker: completed scan=d69cf24c-d121-4bbf-8e41-feac5825a514 at=2026-11-23T20:30:47.780Z
+worker: processing job=6d1cfc99-7658-43fd-a58d-b77ed660259e kind=detail queued_at=2026-11-23T20:30:56.919Z at=2026-11-23T20:30:57.889Z
+worker: completed detail=6d1cfc99-7658-43fd-a58d-b77ed660259e at=2026-11-23T20:30:57.889Z
+worker: processing job=7798b8b7-4591-4650-8913-78b1b606b550 kind=scan queued_at=2026-11-23T20:32:05.292Z at=2026-11-23T20:32:06.214Z
+worker: completed scan=7798b8b7-4591-4650-8913-78b1b606b550 at=2026-11-23T20:32:06.214Z
+worker: processing job=e5511bd3-0995-4e09-96c3-e2b23de487cd kind=scan queued_at=2026-11-23T20:43:46.326Z at=2026-11-23T20:43:46.695Z
+worker: completed scan=e5511bd3-0995-4e09-96c3-e2b23de487cd at=2026-11-23T20:43:46.695Z
+worker: processing job=ee55097e-c03a-49b6-8971-b9bf992ca54d kind=scan queued_at=2026-11-23T20:43:52.102Z at=2026-11-23T20:43:52.813Z
+worker: completed scan=ee55097e-c03a-49b6-8971-b9bf992ca54d at=2026-11-23T20:43:52.813Z
+worker: processing job=42aa7ca8-5d84-4e98-8f88-7a77c65c32f8 kind=detail queued_at=2026-11-23T20:44:02.291Z at=2026-11-23T20:44:02.971Z
+worker: completed detail=42aa7ca8-5d84-4e98-8f88-7a77c65c32f8 at=2026-11-23T20:44:02.971Z
+worker: processing job=ae78a83d-82d4-4e40-8a9a-0df997caeea2 kind=scan queued_at=2026-11-23T20:45:23.683Z at=2026-11-23T20:45:24.225Z
+worker: completed scan=ae78a83d-82d4-4e40-8a9a-0df997caeea2 at=2026-11-23T20:45:24.225Z
+worker: processing job=3fa226e9-9727-48ac-b677-cfe30a48e958 kind=scan queued_at=2026-11-23T21:02:38.528Z at=2026-11-23T21:02:39.180Z
+worker: completed scan=3fa226e9-9727-48ac-b677-cfe30a48e958 at=2026-11-23T21:02:39.180Z
+worker: processing job=8271e846-7e99-4c06-86b6-f0a79864f0a8 kind=scan queued_at=2026-11-23T21:02:43.857Z at=2026-11-23T21:02:44.330Z
+worker: completed scan=8271e846-7e99-4c06-86b6-f0a79864f0a8 at=2026-11-23T21:02:44.330Z
+worker: processing job=86544f84-d41a-499f-8dc4-26ee4eabbf71 kind=detail queued_at=2026-11-23T21:02:54.310Z at=2026-11-23T21:02:54.418Z
+worker: completed detail=86544f84-d41a-499f-8dc4-26ee4eabbf71 at=2026-11-23T21:02:54.418Z
+worker: processing job=764f8326-0b1a-484a-8d7a-4194df61f6bc kind=scan queued_at=2026-11-23T21:04:19.724Z at=2026-11-23T21:04:20.708Z
+worker: completed scan=764f8326-0b1a-484a-8d7a-4194df61f6bc at=2026-11-23T21:04:20.708Z
+worker: processing job=ecebfc9a-bc2f-407c-b091-bee43f6bb874 kind=scan queued_at=2026-11-23T21:27:50.377Z at=2026-11-23T21:27:50.429Z
+worker: completed scan=ecebfc9a-bc2f-407c-b091-bee43f6bb874 at=2026-11-23T21:27:50.429Z
+worker: processing job=52ed994a-b268-4b8b-aee0-6971b1b72ab4 kind=scan queued_at=2026-11-23T21:27:55.488Z at=2026-11-23T21:27:55.660Z
+worker: completed scan=52ed994a-b268-4b8b-aee0-6971b1b72ab4 at=2026-11-23T21:27:55.660Z
+worker: processing job=173d9c1e-7620-4604-b55b-0e600b19a0fe kind=detail queued_at=2026-11-23T21:28:05.904Z at=2026-11-23T21:28:06.813Z
+worker: completed detail=173d9c1e-7620-4604-b55b-0e600b19a0fe at=2026-11-23T21:28:06.813Z
+worker: processing job=f368faad-bcfd-4459-af53-57fd40286eaf kind=scan queued_at=2026-11-23T21:29:15.321Z at=2026-11-23T21:29:16.020Z
+worker: completed scan=f368faad-bcfd-4459-af53-57fd40286eaf at=2026-11-23T21:29:16.020Z
+worker: processing job=95514968-f570-4a6e-8e21-659af92c705f kind=scan queued_at=2026-11-23T21:44:24.797Z at=2026-11-23T21:44:25.745Z
+worker: completed scan=95514968-f570-4a6e-8e21-659af92c705f at=2026-11-23T21:44:25.745Z
+worker: processing job=f97ba61f-b3e5-435b-9295-db20029368ef kind=scan queued_at=2026-11-23T21:44:30.038Z at=2026-11-23T21:44:30.879Z
+worker: completed scan=f97ba61f-b3e5-435b-9295-db20029368ef at=2026-11-23T21:44:30.879Z
+worker: processing job=82ed933f-6cc2-4144-a63a-27660be4443b kind=detail queued_at=2026-11-23T21:44:41.587Z at=2026-11-23T21:44:42.001Z
+worker: completed detail=82ed933f-6cc2-4144-a63a-27660be4443b at=2026-11-23T21:44:42.001Z
+worker: processing job=10ee7d9e-667a-4326-b1d3-dfe46b53777d kind=scan queued_at=2026-11-23T21:46:01.145Z at=2026-11-23T21:46:01.281Z
+worker: completed scan=10ee7d9e-667a-4326-b1d3-dfe46b53777d at=2026-11-23T21:46:01.281Z
+worker: processing job=39c06f2d-e003-433f-8288-a29565edaafd kind=scan queued_at=2026-11-23T22:24:06.874Z at=2026-11-23T22:24:07.476Z
+worker: completed scan=39c06f2d-e003-433f-8288-a29565edaafd at=2026-11-23T22:24:07.476Z
+worker: processing job=b9bc2ad9-38cf-4749-bfd1-c0b06bf46c27 kind=scan queued_at=2026-11-23T22:24:12.713Z at=2026-11-23T22:24:13.548Z
+worker: completed scan=b9bc2ad9-38cf-4749-bfd1-c0b06bf46c27 at=2026-11-23T22:24:13.548Z
+worker: processing job=1709c27c-d37d-40c2-851e-e3ad18129057 kind=detail queued_at=2026-11-23T22:24:23.354Z at=2026-11-23T22:24:23.661Z
+worker: completed detail=1709c27c-d37d-40c2-851e-e3ad18129057 at=2026-11-23T22:24:23.661Z
+worker: processing job=9993172e-c43b-4139-a1f6-0ae050333190 kind=scan queued_at=2026-11-23T22:25:38.801Z at=2026-11-23T22:25:38.989Z
+worker: completed scan=9993172e-c43b-4139-a1f6-0ae050333190 at=2026-11-23T22:25:38.989Z
+worker: processing job=4899470f-15c6-47f0-85e6-4998c794160c kind=scan queued_at=2026-11-24T00:15:00.943Z at=2026-11-24T00:15:01.549Z
+worker: failed job=4899470f-15c6-47f0-85e6-4998c794160c at=2026-11-24T00:15:01.557Z fetch failed
+worker: processing job=28cebb3c-65d6-4a00-9aa1-e70ca7bfbbec kind=detail queued_at=2026-11-24T00:15:05.964Z at=2026-11-24T00:15:06.571Z
+worker: failed job=28cebb3c-65d6-4a00-9aa1-e70ca7bfbbec at=2026-11-24T00:15:06.574Z fetch failed
+worker: processing job=9effa24e-de5c-48b2-b438-dd092b653848 kind=scan queued_at=2026-11-22T00:30:03.370Z at=2026-11-24T00:30:04.352Z
+worker: failed job=9effa24e-de5c-48b2-b438-dd092b653848 at=2026-11-24T00:30:05.463Z fetch failed
+worker: processing job=76713543-55ec-41e1-8edd-bcaf38346140 kind=scan queued_at=2026-11-24T00:40:32.890Z at=2026-11-24T00:40:33.570Z
+worker: completed scan=76713543-55ec-41e1-8edd-bcaf38346140 at=2026-11-24T00:40:33.570Z
+worker: processing job=070e9c6b-4536-4d75-8195-040373b07898 kind=scan queued_at=2026-11-24T00:40:38.334Z at=2026-11-24T00:40:38.690Z
+worker: completed scan=070e9c6b-4536-4d75-8195-040373b07898 at=2026-11-24T00:40:38.690Z
+worker: processing job=13b0f104-677f-4592-886b-90c792eff15d kind=detail queued_at=2026-11-24T00:40:48.309Z at=2026-11-24T00:40:48.825Z
+worker: completed detail=13b0f104-677f-4592-886b-90c792eff15d at=2026-11-24T00:40:48.825Z
+worker: processing job=7a6458c9-fef7-4767-9e55-f14d615dc242 kind=scan queued_at=2026-11-24T00:41:54.064Z at=2026-11-24T00:41:54.130Z
+worker: completed scan=7a6458c9-fef7-4767-9e55-f14d615dc242 at=2026-11-24T00:41:54.130Z
+worker: processing job=a90efe74-5db4-42cc-886c-87c3b5aab481 kind=scan queued_at=2026-11-22T00:44:44.545Z at=2026-11-24T00:44:44.577Z
+worker: failed job=a90efe74-5db4-42cc-886c-87c3b5aab481 at=2026-11-24T00:44:44.677Z fetch failed
+worker: processing job=f6b599f5-e3cc-4f3d-9546-38c6bfce1ec5 kind=scan queued_at=2026-11-24T00:46:03.242Z at=2026-11-24T00:46:03.824Z
+worker: completed scan=f6b599f5-e3cc-4f3d-9546-38c6bfce1ec5 at=2026-11-24T00:46:03.824Z
+worker: processing job=3a47a795-0ee7-429c-8df4-3c6a11f49b24 kind=scan queued_at=2026-11-24T00:46:09.762Z at=2026-11-24T00:46:10.043Z
+worker: completed scan=3a47a795-0ee7-429c-8df4-3c6a11f49b24 at=2026-11-24T00:46:10.043Z
+worker: processing job=d49892bf-e1b8-470f-ba2f-409672299792 kind=detail queued_at=2026-11-24T00:46:18.682Z at=2026-11-24T00:46:19.134Z
+worker: completed detail=d49892bf-e1b8-470f-ba2f-409672299792 at=2026-11-24T00:46:19.134Z
+worker: processing job=069ba3d5-edd5-4aab-a948-3b6a5491c42f kind=scan queued_at=2026-11-24T00:47:42.910Z at=2026-11-24T00:47:43.365Z
+worker: completed scan=069ba3d5-edd5-4aab-a948-3b6a5491c42f at=2026-11-24T00:47:43.365Z
+worker: processing job=ea3c0cc5-9845-4dc9-8eb2-97b5a0433160 kind=scan queued_at=2026-11-22T00:51:18.704Z at=2026-11-24T00:51:18.857Z
+worker: failed job=ea3c0cc5-9845-4dc9-8eb2-97b5a0433160 at=2026-11-24T00:51:18.924Z fetch failed
+worker: processing job=492f1926-f897-4be5-9fa7-c49b20e5b0c3 kind=detail queued_at=2026-11-24T01:17:31.217Z at=2026-11-24T01:17:31.923Z
+worker: failed job=492f1926-f897-4be5-9fa7-c49b20e5b0c3 at=2026-11-24T01:17:32.003Z fetch failed
+worker: processing job=41ba42cf-d1de-4de7-aeb0-43eecc143d71 kind=scan queued_at=2026-11-24T03:58:26.224Z at=2026-11-24T03:58:26.828Z
+worker: completed scan=41ba42cf-d1de-4de7-aeb0-43eecc143d71 at=2026-11-24T03:58:26.828Z
+worker: processing job=08318f9d-44ce-47be-987d-2cdec5263c08 kind=scan queued_at=2026-11-24T03:58:32.160Z at=2026-11-24T03:58:32.898Z
+worker: completed scan=08318f9d-44ce-47be-987d-2cdec5263c08 at=2026-11-24T03:58:32.898Z
+worker: processing job=dcc2428f-a465-4ec2-8090-3e4acb2eeef2 kind=detail queued_at=2026-11-24T03:58:42.025Z at=2026-11-24T03:58:42.976Z
+worker: completed detail=dcc2428f-a465-4ec2-8090-3e4acb2eeef2 at=2026-11-24T03:58:42.976Z
+worker: processing job=f460394b-59d2-4c0c-b4a4-19ec700a8f33 kind=scan queued_at=2026-11-24T03:59:55.006Z at=2026-11-24T03:59:55.173Z
+worker: completed scan=f460394b-59d2-4c0c-b4a4-19ec700a8f33 at=2026-11-24T03:59:55.173Z
+worker: processing job=47e05b85-b6fd-4752-a400-ab87281a5457 kind=scan queued_at=2026-11-24T04:08:48.907Z at=2026-11-24T04:08:49.195Z
+worker: completed scan=47e05b85-b6fd-4752-a400-ab87281a5457 at=2026-11-24T04:08:49.195Z
+worker: processing job=92b97738-3f25-4968-a47b-6f3f8eeee959 kind=scan queued_at=2026-11-24T04:08:54.075Z at=2026-11-24T04:08:54.267Z
+worker: completed scan=92b97738-3f25-4968-a47b-6f3f8eeee959 at=2026-11-24T04:08:54.267Z
+worker: processing job=10e3b02a-b590-4491-ab64-aa83501e188c kind=detail queued_at=2026-11-24T04:09:05.459Z at=2026-11-24T04:09:06.352Z
+worker: completed detail=10e3b02a-b590-4491-ab64-aa83501e188c at=2026-11-24T04:09:06.352Z
+worker: processing job=5f6e3e11-0293-430a-b979-ea798693ba62 kind=scan queued_at=2026-11-24T04:10:34.350Z at=2026-11-24T04:10:34.588Z
+worker: completed scan=5f6e3e11-0293-430a-b979-ea798693ba62 at=2026-11-24T04:10:34.588Z
+worker: processing job=bf0a596e-bbda-4b25-a338-ed34e2234a58 kind=scan queued_at=2026-11-24T04:16:51.707Z at=2026-11-24T04:16:52.332Z
+worker: completed scan=bf0a596e-bbda-4b25-a338-ed34e2234a58 at=2026-11-24T04:16:52.332Z
+worker: processing job=06d251df-2da4-475d-a9ec-a3731f5cf63a kind=scan queued_at=2026-11-24T04:16:57.889Z at=2026-11-24T04:16:58.398Z
+worker: completed scan=06d251df-2da4-475d-a9ec-a3731f5cf63a at=2026-11-24T04:16:58.398Z
+worker: processing job=bdfb4ef7-93fe-4011-8240-917de788e7f3 kind=detail queued_at=2026-11-24T04:17:07.972Z at=2026-11-24T04:17:08.476Z
+worker: completed detail=bdfb4ef7-93fe-4011-8240-917de788e7f3 at=2026-11-24T04:17:08.476Z
+worker: processing job=084eb3b4-8cba-428c-b1c2-34d14ed92b4c kind=scan queued_at=2026-11-24T04:18:29.751Z at=2026-11-24T04:18:30.713Z
+worker: completed scan=084eb3b4-8cba-428c-b1c2-34d14ed92b4c at=2026-11-24T04:18:30.713Z
+worker: processing job=3e156363-4fbb-40ba-95ab-61be6beec4ca kind=scan queued_at=2026-11-22T04:21:37.604Z at=2026-11-24T04:21:38.114Z
+worker: failed job=3e156363-4fbb-40ba-95ab-61be6beec4ca at=2026-11-24T04:21:38.201Z fetch failed
+worker: processing job=d2fa7b42-39e1-49db-ac0a-65daf1fe8d7f kind=scan queued_at=2026-11-24T04:26:08.335Z at=2026-11-24T04:26:08.703Z
+worker: completed scan=d2fa7b42-39e1-49db-ac0a-65daf1fe8d7f at=2026-11-24T04:26:08.703Z
+worker: processing job=6e315725-de9d-4e6b-ab72-019661105ddf kind=scan queued_at=2026-11-24T04:26:14.449Z at=2026-11-24T04:26:14.775Z
+worker: completed scan=6e315725-de9d-4e6b-ab72-019661105ddf at=2026-11-24T04:26:14.775Z
+worker: processing job=e636d54d-7015-452f-a5e9-5dd609ca3d8c kind=detail queued_at=2026-11-24T04:26:26.201Z at=2026-11-24T04:26:26.861Z
+worker: completed detail=e636d54d-7015-452f-a5e9-5dd609ca3d8c at=2026-11-24T04:26:26.861Z
+worker: processing job=d051d81f-db1f-460e-8682-030f2071ece7 kind=scan queued_at=2026-11-24T04:27:47.358Z at=2026-11-24T04:27:48.094Z
+worker: completed scan=d051d81f-db1f-460e-8682-030f2071ece7 at=2026-11-24T04:27:48.094Z
+worker: processing job=997f7fc4-c9a1-46e3-9694-5a128db453a3 kind=scan queued_at=2026-11-22T04:30:54.334Z at=2026-11-24T04:30:54.584Z
+worker: failed job=997f7fc4-c9a1-46e3-9694-5a128db453a3 at=2026-11-24T04:30:54.888Z fetch failed

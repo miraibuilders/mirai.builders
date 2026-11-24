@@ -1,0 +1,66 @@
+
+> mirai-lab@ build /home/morpheus/Downloads/mirai-lab
+> pnpm -r --if-present build
+
+Scope: 3 of 4 workspace projects
+packages/db build$ tsc -p tsconfig.json
+packages/db build: Done
+apps/web build$ next build
+apps/worker build$ tsc -p tsconfig.json
+apps/web build:    ▲ Next.js 15.5.29
+apps/web build:    - Experiments (use with caution):
+apps/web build:      · serverActions
+apps/web build:    Creating an optimized production build ...
+apps/worker build: Done
+apps/web build: Retrying 1/3...
+apps/web build: Retrying 1/3...
+apps/web build: Retrying 1/3...
+apps/web build: Retrying 1/3...
+apps/web build: Retrying 1/3...
+apps/web build: Retrying 1/3...
+apps/web build:  ✓ Compiled successfully in 45s
+apps/web build:    Linting and checking validity of types ...
+apps/web build:    Collecting page data ...
+apps/web build:    Generating static pages (0/6) ...
+apps/web build:    Generating static pages (1/6) 
+apps/web build:    Generating static pages (2/6) 
+apps/web build:    Generating static pages (4/6) 
+apps/web build:  ✓ Generating static pages (6/6)
+apps/web build:    Finalizing page optimization ...
+apps/web build:    Collecting build traces ...
+apps/web build: Route (app)                                 Size  First Load JS  Revalidate  Expire
+apps/web build: ┌ ○ /                                    2.78 kB         110 kB          1h      1y
+apps/web build: ├ ○ /_not-found                            994 B         103 kB
+apps/web build: ├ ƒ /api/auth/[...all]                     151 B         103 kB
+apps/web build: ├ ƒ /api/documents/[id]/pdf                151 B         103 kB
+apps/web build: ├ ƒ /api/health                            151 B         103 kB
+apps/web build: ├ ƒ /api/scans                             151 B         103 kB
+apps/web build: ├ ƒ /blog                                  169 B         106 kB
+apps/web build: ├ ƒ /blog/[slug]                           169 B         106 kB
+apps/web build: ├ ƒ /cms                                   169 B         106 kB
+apps/web build: ├ ƒ /cms/authors                           151 B         103 kB
+apps/web build: ├ ƒ /cms/media                             151 B         103 kB
+apps/web build: ├ ƒ /cms/posts/[id]/edit                   151 B         103 kB
+apps/web build: ├ ƒ /cms/posts/new                         151 B         103 kB
+apps/web build: ├ ƒ /cms/site                            2.55 kB         105 kB
+apps/web build: ├ ƒ /contact-requests                      178 B         106 kB
+apps/web build: ├ ƒ /dashboard                             169 B         106 kB
+apps/web build: ├ ○ /dev/components                      8.04 kB         119 kB
+apps/web build: ├ ƒ /documents                             168 B         103 kB
+apps/web build: ├ ƒ /documents/new                       1.52 kB         104 kB
+apps/web build: ├ ƒ /leads                               1.99 kB         108 kB
+apps/web build: ├ ƒ /leads/[id]                            183 B         106 kB
+apps/web build: ├ ƒ /leads/[id]/edit                       183 B         106 kB
+apps/web build: ├ ƒ /leads/new                             183 B         106 kB
+apps/web build: ├ ƒ /llms.txt                              151 B         103 kB
+apps/web build: ├ ƒ /login                               2.23 kB         105 kB
+apps/web build: ├ ○ /robots.txt                            151 B         103 kB
+apps/web build: └ ƒ /sitemap.xml                           151 B         103 kB
+apps/web build: + First Load JS shared by all             102 kB
+apps/web build:   ├ chunks/465-4de958be68b75fc8.js       46.2 kB
+apps/web build:   ├ chunks/ea242689-b5c2ba5387663f7b.js  54.2 kB
+apps/web build:   └ other shared chunks (total)          1.96 kB
+apps/web build: ƒ Middleware                             34.2 kB
+apps/web build: ○  (Static)   prerendered as static content
+apps/web build: ƒ  (Dynamic)  server-rendered on demand
+apps/web build: Done

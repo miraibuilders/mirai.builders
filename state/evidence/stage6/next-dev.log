@@ -1,0 +1,43 @@
+   ▲ Next.js 15.5.29
+   - Local:        http://localhost:3110
+   - Network:      http://192.168.1.17:3110
+
+ ✓ Starting...
+ ✓ Ready in 1923ms
+ ✓ Compiled /middleware in 204ms (115 modules)
+ ○ Compiling /api/health ...
+ ✓ Compiled /api/health in 987ms (424 modules)
+ GET /api/health 200 in 1235ms
+ ✓ Compiled /robots.txt in 390ms (430 modules)
+ GET /robots.txt 200 in 469ms
+ ○ Compiling /api/auth/[...all] ...
+ ✓ Compiled /api/auth/[...all] in 1840ms (1184 modules)
+[2m2026-11-22T14:20:29.971Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-22T14:20:29.971Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /api/auth/sign-up/email 200 in 3587ms
+ POST /api/auth/sign-in/email 200 in 290ms
+ ○ Compiling /cms ...
+ ✓ Compiled /cms in 2.1s (1533 modules)
+[2m2026-11-22T14:20:33.250Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-22T14:20:33.250Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms 200 in 2833ms
+ ○ Compiling /cms/posts/new ...
+ ✓ Compiled /cms/posts/new in 570ms (1522 modules)
+[2m2026-11-22T14:20:34.299Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-22T14:20:34.299Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /cms/posts/new 303 in 897ms
+ ○ Compiling /cms/posts/[id]/edit ...
+ ✓ Compiled /cms/posts/[id]/edit in 510ms (1524 modules)
+[2m2026-11-22T14:20:35.835Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-22T14:20:35.835Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /cms/posts/5e1b081e-7179-4151-98d9-b804fa92c207/edit 303 in 1517ms
+indexnow: request {"host":"127.0.0.1:3110","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://127.0.0.1:3110/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://127.0.0.1:3110/blog/stage6-post-1795357221307"]}
+indexnow: response status=202
+ POST /cms 303 in 51ms
+ ○ Compiling /blog/[slug] ...
+ ✓ Compiled /blog/[slug] in 739ms (1529 modules)
+ GET /blog/stage6-post-1795357221307 200 in 1534ms
+ ○ Compiling /blog ...
+ ✓ Compiled /blog in 626ms (1531 modules)
+ GET /blog 200 in 800ms
+[?25h

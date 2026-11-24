@@ -1,0 +1,13 @@
+
+> @mirai/web@0.0.0 test:e2e:polish /home/morpheus/Downloads/mirai-lab/apps/web
+> playwright test --config playwright.config.ts tests/stage6-polish.spec.ts
+
+
+Running 4 tests using 1 worker
+
+[1/4] tests/stage6-polish.spec.ts:16:1 › premium table surfaces preserve data selectors
+[2/4] tests/stage6-polish.spec.ts:34:1 › lead activity table adopts the shared table treatment
+[3/4] tests/stage6-polish.spec.ts:44:1 › command palette and submit buttons have tactile microinteractions
+[4/4] tests/stage6-polish.spec.ts:68:1 › dialogs and toasts use elevated message surfaces
+  4 passed (38.2s)
+E2E_POLISH_EXIT=0

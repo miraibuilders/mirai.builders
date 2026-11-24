@@ -1,0 +1,192 @@
+$ pnpm install
+Scope: all 4 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+Done in 815ms using pnpm v10.11.0
+
+$ pnpm build
+
+> mirai-lab@ build /home/morpheus/Downloads/mirai-lab
+> pnpm -r --if-present build
+
+Scope: 3 of 4 workspace projects
+packages/db build$ tsc -p tsconfig.json
+packages/db build: Done
+apps/web build$ next build
+apps/worker build$ tsc -p tsconfig.json
+apps/web build:    ▲ Next.js 15.5.29
+apps/web build:    Creating an optimized production build ...
+apps/worker build: Done
+apps/web build:  ✓ Compiled successfully in 4.5s
+apps/web build:    Linting and checking validity of types ...
+apps/web build:    Collecting page data ...
+apps/web build:    Generating static pages (0/8) ...
+apps/web build:    Generating static pages (2/8) 
+apps/web build:    Generating static pages (4/8) 
+apps/web build:    Generating static pages (6/8) 
+apps/web build:  ✓ Generating static pages (8/8)
+apps/web build:    Finalizing page optimization ...
+apps/web build:    Collecting build traces ...
+apps/web build: Route (app)                                 Size  First Load JS  Revalidate  Expire
+apps/web build: ┌ ○ /                                    6.33 kB         109 kB          1h      1y
+apps/web build: ├ ○ /_not-found                            992 B         103 kB
+apps/web build: ├ ƒ /api/auth/[...all]                     148 B         103 kB
+apps/web build: ├ ƒ /api/documents/[id]/pdf                148 B         103 kB
+apps/web build: ├ ƒ /api/health                            148 B         103 kB
+apps/web build: ├ ƒ /api/scans                             148 B         103 kB
+apps/web build: ├ ƒ /contact-requests                      179 B         106 kB
+apps/web build: ├ ○ /dashboard                             148 B         103 kB
+apps/web build: ├ ƒ /documents                             169 B         103 kB
+apps/web build: ├ ƒ /documents/new                       1.63 kB         104 kB
+apps/web build: ├ ƒ /leads                               2.06 kB         108 kB
+apps/web build: ├ ƒ /leads/[id]                            182 B         106 kB
+apps/web build: ├ ƒ /leads/[id]/edit                       182 B         106 kB
+apps/web build: ├ ƒ /leads/new                             182 B         106 kB
+apps/web build: ├ ƒ /llms.txt                              148 B         103 kB
+apps/web build: ├ ○ /robots.txt                            148 B         103 kB
+apps/web build: └ ○ /sitemap.xml                           148 B         103 kB
+apps/web build: + First Load JS shared by all             102 kB
+apps/web build:   ├ chunks/901-4bb38870caa2eef7.js       46.2 kB
+apps/web build:   ├ chunks/e7e3044d-ffe374be2430ae06.js  54.2 kB
+apps/web build:   └ other shared chunks (total)          1.96 kB
+apps/web build: ○  (Static)   prerendered as static content
+apps/web build: ƒ  (Dynamic)  server-rendered on demand
+apps/web build: Done
+
+$ pnpm lint
+
+> mirai-lab@ lint /home/morpheus/Downloads/mirai-lab
+> pnpm -r --if-present lint
+
+Scope: 3 of 4 workspace projects
+packages/db lint$ eslint .
+packages/db lint: Done
+apps/web lint$ next lint
+apps/worker lint$ eslint .
+apps/web lint: `next lint` is deprecated and will be removed in Next.js 16.
+apps/web lint: For new projects, use create-next-app to choose your preferred linter.
+apps/web lint: For existing projects, migrate to the ESLint CLI:
+apps/web lint: npx @next/codemod@canary next-lint-to-eslint-cli .
+apps/worker lint: Done
+apps/web lint: ✔ No ESLint warnings or errors
+apps/web lint: Done
+
+$ pnpm typecheck
+
+> mirai-lab@ typecheck /home/morpheus/Downloads/mirai-lab
+> pnpm -r --if-present typecheck
+
+Scope: 3 of 4 workspace projects
+packages/db typecheck$ tsc -p tsconfig.json --noEmit
+packages/db typecheck: Done
+apps/web typecheck$ tsc -p tsconfig.json --noEmit
+apps/worker typecheck$ tsc -p tsconfig.json --noEmit
+apps/worker typecheck: Done
+apps/web typecheck: Done
+
+$ pnpm test
+
+> mirai-lab@ test /home/morpheus/Downloads/mirai-lab
+> pnpm -r --if-present test
+
+Scope: 3 of 4 workspace projects
+apps/web test$ node --import tsx --test src/lib/documents/documents.test.ts src/lib/crm-auth.test.ts src/lib/lead-view.test.ts
+apps/worker test$ node --test dist/scoring/score.test.js dist/scanner/privacy.test.js
+apps/worker test: TAP version 13
+apps/web test: TAP version 13
+apps/worker test: # Subtest: scanner output and every database write contain no personal data from fixture HTML
+apps/worker test: ok 1 - scanner output and every database write contain no personal data from fixture HTML
+apps/worker test:   ---
+apps/worker test:   duration_ms: 10.7951
+apps/worker test:   ...
+apps/worker test: # Subtest: weights live in one config object with the required maxima
+apps/worker test: ok 2 - weights live in one config object with the required maxima
+apps/worker test:   ---
+apps/worker test:   duration_ms: 2.247535
+apps/worker test:   ...
+apps/worker test: # Subtest: scores a clean target lead as B at 60
+apps/worker test: ok 3 - scores a clean target lead as B at 60
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.649892
+apps/worker test:   ...
+apps/worker test: # Subtest: scores all technical decay signals and caps at 40
+apps/worker test: ok 4 - scores all technical decay signals and caps at 40
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.282892
+apps/worker test:   ...
+apps/worker test: # Subtest: applies adjacent, non-target, reachability, presence, and size rules
+apps/worker test: ok 5 - applies adjacent, non-target, reachability, presence, and size rules
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.375475
+apps/worker test:   ...
+apps/worker test: # Subtest: applies B and C threshold boundaries
+apps/worker test: ok 6 - applies B and C threshold boundaries
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.304272
+apps/worker test:   ...
+apps/worker test: 1..6
+apps/worker test: # tests 6
+apps/worker test: # suites 0
+apps/worker test: # pass 6
+apps/worker test: # fail 0
+apps/worker test: # cancelled 0
+apps/worker test: # skipped 0
+apps/worker test: # todo 0
+apps/worker test: # duration_ms 85.843768
+apps/worker test: Done
+apps/web test: # Subtest: scan API authorization allows only admin and editor roles
+apps/web test: ok 1 - scan API authorization allows only admin and editor roles
+apps/web test:   ---
+apps/web test:   duration_ms: 0.923996
+apps/web test:   ...
+apps/web test: # Subtest: renders a non-empty branded invoice PDF
+apps/web test: ok 2 - renders a non-empty branded invoice PDF
+apps/web test:   ---
+apps/web test:   duration_ms: 2074.842641
+apps/web test:   ...
+apps/web test: # Subtest: renders a non-empty mono invoice PDF
+apps/web test: ok 3 - renders a non-empty mono invoice PDF
+apps/web test:   ---
+apps/web test:   duration_ms: 1874.467465
+apps/web test:   ...
+apps/web test: # Subtest: renders quote through the shared pipeline
+apps/web test: ok 4 - renders quote through the shared pipeline
+apps/web test:   ---
+apps/web test:   duration_ms: 1869.530897
+apps/web test:   ...
+apps/web test: # Subtest: renders nda through the shared pipeline
+apps/web test: ok 5 - renders nda through the shared pipeline
+apps/web test:   ---
+apps/web test:   duration_ms: 1838.751625
+apps/web test:   ...
+apps/web test: # Subtest: renders acceptance through the shared pipeline
+apps/web test: ok 6 - renders acceptance through the shared pipeline
+apps/web test:   ---
+apps/web test:   duration_ms: 1869.621817
+apps/web test:   ...
+apps/web test: # Subtest: tier thresholds and pain severity helpers
+apps/web test: ok 7 - tier thresholds and pain severity helpers
+apps/web test:   ---
+apps/web test:   duration_ms: 1.200646
+apps/web test:   ...
+apps/web test: # Subtest: filters segment, overdue, and pain severity
+apps/web test: ok 8 - filters segment, overdue, and pain severity
+apps/web test:   ---
+apps/web test:   duration_ms: 6.847461
+apps/web test:   ...
+apps/web test: # Subtest: sorts lead rows
+apps/web test: ok 9 - sorts lead rows
+apps/web test:   ---
+apps/web test:   duration_ms: 0.386557
+apps/web test:   ...
+apps/web test: 1..9
+apps/web test: # tests 9
+apps/web test: # suites 0
+apps/web test: # pass 9
+apps/web test: # fail 0
+apps/web test: # cancelled 0
+apps/web test: # skipped 0
+apps/web test: # todo 0
+apps/web test: # duration_ms 9772.377962
+apps/web test: Done

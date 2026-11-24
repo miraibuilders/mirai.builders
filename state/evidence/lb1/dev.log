@@ -1,0 +1,120 @@
+
+> @mirai/web@0.0.0 dev /home/morpheus/Downloads/mirai-lab/apps/web
+> next dev
+
+   ▲ Next.js 15.5.29
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.30:3000
+   - Experiments (use with caution):
+     · serverActions
+
+ ✓ Starting...
+ ✓ Ready in 2.3s
+ ✓ Compiled /middleware in 233ms (115 modules)
+ ○ Compiling /api/health ...
+ ✓ Compiled /api/health in 956ms (424 modules)
+ GET /api/health 200 in 1233ms
+ ✓ Compiled in 241ms (539 modules)
+ ✓ Compiled in 85ms (194 modules)
+ GET /api/health 200 in 131ms
+ GET /api/health 200 in 18ms
+ ○ Compiling / ...
+ ⨯ ./src/app/layout.tsx:6:1
+Module not found: Can't resolve './ui/ui.css'
+  4 | import { ToastProvider } from "@/ui/toast";
+  5 | import "./globals.css";
+> 6 | import "./ui/ui.css";
+    | ^
+  7 |
+  8 | const locale: Locale = "ja";
+  9 |
+
+https://nextjs.org/docs/messages/module-not-found
+ ⨯ ./src/app/layout.tsx:6:1
+Module not found: Can't resolve './ui/ui.css'
+  4 | import { ToastProvider } from "@/ui/toast";
+  5 | import "./globals.css";
+> 6 | import "./ui/ui.css";
+    | ^
+  7 |
+  8 | const locale: Locale = "ja";
+  9 |
+
+https://nextjs.org/docs/messages/module-not-found
+ ⨯ ./src/app/layout.tsx:6:1
+Module not found: Can't resolve './ui/ui.css'
+  4 | import { ToastProvider } from "@/ui/toast";
+  5 | import "./globals.css";
+> 6 | import "./ui/ui.css";
+    | ^
+  7 |
+  8 | const locale: Locale = "ja";
+  9 |
+
+https://nextjs.org/docs/messages/module-not-found
+React encountered an empty buffer when writing in an environment that does not support ArrayBuffer.prototype.detached. This could be a security issue if the buffer was not actually empty. Please use a modern Edge runtime that supports ArrayBuffer.prototype.detached.
+ GET / 500 in 10570ms
+ GET / 500 in 18ms
+ GET / 500 in 17ms
+ GET /api/health 500 in 19ms
+ ⨯ ./src/app/layout.tsx:6:1
+Module not found: Can't resolve './ui/ui.css'
+  4 | import { ToastProvider } from "@/ui/toast";
+  5 | import "./globals.css";
+> 6 | import "./ui/ui.css";
+    | ^
+  7 |
+  8 | const locale: Locale = "ja";
+  9 |
+
+https://nextjs.org/docs/messages/module-not-found
+ POST /api/scans 500 in 2902ms
+ ⨯ ./src/app/layout.tsx:6:1
+Module not found: Can't resolve './ui/ui.css'
+  4 | import { ToastProvider } from "@/ui/toast";
+  5 | import "./globals.css";
+> 6 | import "./ui/ui.css";
+    | ^
+  7 |
+  8 | const locale: Locale = "ja";
+  9 |
+
+https://nextjs.org/docs/messages/module-not-found
+ GET /leads 500 in 2433ms
+ ⨯ ./src/app/layout.tsx:6:1
+Module not found: Can't resolve './ui/ui.css'
+  4 | import { ToastProvider } from "@/ui/toast";
+  5 | import "./globals.css";
+> 6 | import "./ui/ui.css";
+    | ^
+  7 |
+  8 | const locale: Locale = "ja";
+  9 |
+
+https://nextjs.org/docs/messages/module-not-found
+ ⨯ [Error: ENOENT: no such file or directory, open '/home/morpheus/Downloads/mirai-lab/apps/web/.next/routes-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/morpheus/Downloads/mirai-lab/apps/web/.next/routes-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/home/morpheus/Downloads/mirai-lab/apps/web/.next/routes-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/morpheus/Downloads/mirai-lab/apps/web/.next/routes-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/home/morpheus/Downloads/mirai-lab/apps/web/.next/routes-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/morpheus/Downloads/mirai-lab/apps/web/.next/routes-manifest.json'
+}
+ GET /login 500 in 845ms
+ GET /login 500 in 35ms
+ ✓ Compiled /login in 1711ms (2927 modules)
+ GET /api/health 200 in 159ms
+ GET /api/health 200 in 19ms
+ GET /api/health 404 in 299ms
+ GET /api/health 404 in 213ms
+[?25h

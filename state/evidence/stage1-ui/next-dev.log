@@ -1,0 +1,2955 @@
+
+> @mirai/web@0.0.0 dev /home/morpheus/Downloads/mirai-lab/apps/web
+> next dev
+
+   ▲ Next.js 15.5.29
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.30:3000
+   - Experiments (use with caution):
+     · serverActions
+
+ ✓ Starting...
+ ✓ Ready in 2.3s
+ ○ Compiling /middleware ...
+ ✓ Compiled /middleware in 649ms (115 modules)
+ ○ Compiling /dev/components ...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 1/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 2/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+Request timed out after 3000ms
+
+Retrying 3/3...
+[Error: Request timed out after 3000ms]
+ ⨯ Failed to download `Noto Sans JP` from Google Fonts. Using fallback font instead.
+
+Failed to fetch `Noto Sans JP` from Google Fonts.}
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+[Error: Request timed out after 3000ms]
+ ✓ Compiled /dev/components in 27.4s (834 modules)
+ GET /api/health 200 in 28019ms
+ GET /dev/components 200 in 28335ms
+ GET /api/health 200 in 18ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1194ms (981 modules)
+ GET / 200 in 1654ms
+ GET / 200 in 133ms
+ ○ Compiling /api/auth/[...all] ...
+ ✓ Compiled /api/auth/[...all] in 3.9s (1733 modules)
+ GET / 200 in 4550ms
+ ○ Compiling /blog ...
+ ✓ Compiled /blog in 609ms (1741 modules)
+[2m2026-11-23T20:02:58.318Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:02:58.319Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /blog 200 in 1292ms
+ ✓ Compiled /llms.txt in 447ms (1743 modules)
+ GET /llms.txt 200 in 538ms
+ GET / 200 in 289ms
+ GET /api/health 200 in 20ms
+ ✓ Compiled /api/scans in 478ms (1747 modules)
+[2m2026-11-23T20:03:01.132Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:03:01.132Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /api/scans 401 in 771ms
+ GET /api/health 200 in 21ms
+ ○ Compiling /leads ...
+ ✓ Compiled /leads in 4s (2600 modules)
+[2m2026-11-23T20:03:06.044Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:03:06.044Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /leads 307 in 4894ms
+ ○ Compiling /leads/new ...
+ ✓ Compiled /leads/new in 966ms (2603 modules)
+[2m2026-11-23T20:03:07.663Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:03:07.663Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /leads/new 307 in 1591ms
+ ○ Compiling /documents ...
+ ✓ Compiled /documents in 812ms (2625 modules)
+[2m2026-11-23T20:03:08.872Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:03:08.872Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /documents 307 in 1197ms
+ ○ Compiling /documents/new ...
+ ✓ Compiled /documents/new in 918ms (2623 modules)
+[2m2026-11-23T20:03:10.114Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:03:10.114Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /documents/new 307 in 1223ms
+ ○ Compiling /dashboard ...
+ ✓ Compiled /dashboard in 786ms (2625 modules)
+[2m2026-11-23T20:03:11.179Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:03:11.179Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /dashboard 307 in 1050ms
+ ○ Compiling /contact-requests ...
+ ✓ Compiled /contact-requests in 952ms (2649 modules)
+[2m2026-11-23T20:03:12.437Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:03:12.437Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /contact-requests 307 in 1254ms
+ ○ Compiling /cms ...
+ ✓ Compiled /cms in 1120ms (2663 modules)
+[2m2026-11-23T20:03:13.891Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:03:13.891Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms 307 in 1459ms
+ ○ Compiling /cms/posts/new ...
+ ✓ Compiled /cms/posts/new in 1085ms (2652 modules)
+[2m2026-11-23T20:03:15.309Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:03:15.309Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ ⨯ Error: CMS_FORBIDDEN
+    at requireCmsEditor (src/lib/cms-auth.ts:44:54)
+    at async NewCmsPostPage (src/app/(app)/cms/posts/new/page.tsx:12:3)
+  42 | export async function requireCmsEditor(): Promise<CrmActor> {
+  43 |   const actor = await getCrmActor();
+> 44 |   if (!actor || !canCreateCmsPost(actor.role)) throw new Error("CMS_FORBIDDEN");
+     |                                                      ^
+  45 |   return actor;
+  46 | }
+  47 | {
+  digest: '2791235741'
+}
+ GET /cms/posts/new 307 in 1405ms
+ ○ Compiling /login ...
+ ✓ Compiled /login in 1152ms (2660 modules)
+ GET /login 200 in 1294ms
+[2m2026-11-23T20:03:17.440Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:03:17.440Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+[2m2026-11-23T20:03:17.619Z[0m [33mWARN[0m [1m[Better Auth]:[0m Invalid password
+ POST /api/auth/sign-in/email 401 in 356ms
+ GET /login 200 in 145ms
+ POST /api/auth/sign-in/email 200 in 186ms
+ GET /dashboard 200 in 146ms
+ GET /login 200 in 62ms
+ POST /api/auth/sign-in/email 200 in 162ms
+ GET /dashboard 200 in 117ms
+ GET /login 200 in 101ms
+ GET / 200 in 168ms
+ GET /api/auth/get-session 200 in 39ms
+ GET / 200 in 139ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST / 200 in 223ms
+ GET / 200 in 140ms
+ GET /api/auth/get-session 200 in 45ms
+ POST / 200 in 48ms
+ GET /login 200 in 52ms
+ POST /api/auth/sign-in/email 200 in 156ms
+ GET /dashboard 200 in 108ms
+ GET /leads/new 200 in 197ms
+failed to get redirect response [TypeError: fetch failed] {
+  [cause]: [Error [ConnectTimeoutError]: Connect Timeout Error (attempted address: localhost:3000, timeout: 10000ms)] {
+    code: 'UND_ERR_CONNECT_TIMEOUT'
+  }
+}
+ POST /leads/new 303 in 10903ms
+ ○ Compiling /leads/[id] ...
+ ✓ Compiled /leads/[id] in 2.9s (2665 modules)
+[2m2026-11-23T20:03:43.718Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:03:43.719Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /leads/69790fbf-577d-4694-a70c-09178a35d430 200 in 4567ms
+ GET /leads 200 in 147ms
+ GET /login 200 in 70ms
+ POST /api/auth/sign-in/email 200 in 196ms
+ GET /dashboard 200 in 117ms
+ GET /leads/new 200 in 203ms
+ GET /leads/46f3d846-8d00-43f4-936a-25ab1db096b2 200 in 140ms
+ POST /leads/new 303 in 208ms
+ GET /leads?view=table&segment=professional_office&sort=score&dir=desc 200 in 155ms
+ GET /login 200 in 113ms
+ POST /api/auth/sign-in/email 200 in 158ms
+ GET /dashboard 200 in 95ms
+ GET /leads/new 200 in 131ms
+ GET /leads/165a5e04-c705-4bb6-adbc-508c366c0040 200 in 121ms
+ POST /leads/new 303 in 183ms
+ GET /leads/165a5e04-c705-4bb6-adbc-508c366c0040 200 in 135ms
+ POST /leads/165a5e04-c705-4bb6-adbc-508c366c0040 200 in 98ms
+ GET /leads 200 in 77ms
+ POST /leads/165a5e04-c705-4bb6-adbc-508c366c0040 303 in 148ms
+ GET /login 200 in 80ms
+ POST /api/auth/sign-in/email 200 in 162ms
+ GET /dashboard 200 in 101ms
+ GET /leads/new 200 in 148ms
+ GET /leads/abba093c-3acc-4bb1-a572-7bf696f1d030 200 in 132ms
+ POST /leads/new 303 in 175ms
+ GET /blog 200 in 223ms
+ GET /llms.txt 200 in 36ms
+ GET /api/health 200 in 31ms
+ GET /leads/abba093c-3acc-4bb1-a572-7bf696f1d030 307 in 89ms
+ GET / 200 in 126ms
+ GET /login 200 in 70ms
+ POST /api/auth/sign-in/email 200 in 182ms
+ GET /dashboard 200 in 107ms
+ GET /leads/new 200 in 161ms
+ GET /leads/566f1667-ac2a-46e6-913d-53579714ac2b 200 in 117ms
+ POST /leads/new 303 in 220ms
+ GET /leads 200 in 142ms
+ GET / 200 in 111ms
+ GET /api/health 200 in 31ms
+[2m2026-11-23T20:03:59.070Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:03:59.070Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /leads 200 in 507ms
+ GET /login 200 in 61ms
+ POST /api/auth/sign-in/email 200 in 172ms
+ GET /dashboard 200 in 128ms
+ GET /leads/new 200 in 131ms
+ GET /leads/f8146ada-19e5-472d-ad6a-42659db5d5e5 200 in 120ms
+ POST /leads/new 303 in 168ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST /leads/f8146ada-19e5-472d-ad6a-42659db5d5e5 303 in 35ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST /leads/f8146ada-19e5-472d-ad6a-42659db5d5e5 200 in 156ms
+ GET /login 200 in 61ms
+ POST /api/auth/sign-in/email 200 in 187ms
+ GET /dashboard 200 in 100ms
+ GET /leads/new 200 in 138ms
+ GET /leads/e79e1d65-62d5-4556-9658-89a18cb5f3ca 200 in 126ms
+ POST /leads/new 303 in 178ms
+ GET /leads 200 in 183ms
+ GET /leads/e79e1d65-62d5-4556-9658-89a18cb5f3ca?notice=scan+queued 200 in 81ms
+ POST /leads 303 in 152ms
+ GET /leads 200 in 144ms
+ GET /api/health 200 in 26ms
+ GET /login 200 in 48ms
+ POST /api/auth/sign-in/email 200 in 161ms
+ GET /dashboard 200 in 104ms
+ GET /leads/new 200 in 151ms
+ GET /leads/da600b63-ab4b-449d-b824-07b3b322d0dc 200 in 119ms
+ POST /leads/new 303 in 173ms
+ GET /leads 200 in 132ms
+ GET /leads/da600b63-ab4b-449d-b824-07b3b322d0dc?notice=scan+queued 200 in 89ms
+ POST /leads 303 in 146ms
+ GET /leads/da600b63-ab4b-449d-b824-07b3b322d0dc?notice=scan+queued 200 in 93ms
+ POST /leads/da600b63-ab4b-449d-b824-07b3b322d0dc?notice=scan%20queued 303 in 181ms
+ GET /leads/da600b63-ab4b-449d-b824-07b3b322d0dc?notice=scan+queued 200 in 74ms
+ GET /leads/da600b63-ab4b-449d-b824-07b3b322d0dc?notice=scan+queued 200 in 53ms
+ GET / 200 in 108ms
+ GET /api/auth/get-session 200 in 47ms
+ POST / 200 in 35ms
+ GET /login 200 in 66ms
+ POST /api/auth/sign-in/email 200 in 149ms
+ GET /dashboard 200 in 92ms
+ GET /contact-requests 200 in 246ms
+ GET /leads/d1a2bb55-00b3-4e1e-8aff-ac22575db800 200 in 118ms
+ POST /contact-requests 303 in 167ms
+ GET /login 200 in 67ms
+ POST /api/auth/sign-in/email 200 in 178ms
+ GET /dashboard 200 in 105ms
+ GET /leads/new 200 in 135ms
+ GET /leads/4b766a18-5aa3-4943-bcb9-6ef4bbd795b7 200 in 140ms
+ POST /leads/new 303 in 198ms
+ GET /leads/4b766a18-5aa3-4943-bcb9-6ef4bbd795b7 200 in 142ms
+ GET /leads/4b766a18-5aa3-4943-bcb9-6ef4bbd795b7?notice=detail+queued 200 in 119ms
+ POST /leads/4b766a18-5aa3-4943-bcb9-6ef4bbd795b7 303 in 185ms
+ GET /leads/4b766a18-5aa3-4943-bcb9-6ef4bbd795b7?notice=detail+queued 200 in 85ms
+ GET /leads/4b766a18-5aa3-4943-bcb9-6ef4bbd795b7?notice=detail+queued 200 in 90ms
+ GET /api/health 200 in 18ms
+ GET /leads/4b766a18-5aa3-4943-bcb9-6ef4bbd795b7 200 in 155ms
+ GET / 200 in 86ms
+ GET / 200 in 141ms
+ GET /login 200 in 90ms
+ GET /api/auth/get-session 200 in 52ms
+ GET / 200 in 89ms
+ POST /api/auth/sign-in/email 200 in 152ms
+ GET /dashboard 200 in 130ms
+ GET /blog 200 in 291ms
+ GET /llms.txt 200 in 17ms
+ GET / 200 in 133ms
+ GET /documents/new 200 in 146ms
+ GET /api/health 200 in 22ms
+ POST /api/scans 401 in 20ms
+ GET /api/health 200 in 13ms
+ GET /leads 307 in 84ms
+ GET /leads/new 307 in 98ms
+ GET /documents 307 in 102ms
+ GET /documents/new 307 in 104ms
+ GET /dashboard 307 in 80ms
+ GET /contact-requests 307 in 90ms
+ POST /documents/new 200 in 91ms
+ GET /cms 307 in 94ms
+ ⨯ Error: CMS_FORBIDDEN
+    at requireCmsEditor (src/lib/cms-auth.ts:44:54)
+    at async NewCmsPostPage (src/app/(app)/cms/posts/new/page.tsx:12:3)
+  42 | export async function requireCmsEditor(): Promise<CrmActor> {
+  43 |   const actor = await getCrmActor();
+> 44 |   if (!actor || !canCreateCmsPost(actor.role)) throw new Error("CMS_FORBIDDEN");
+     |                                                      ^
+  45 |   return actor;
+  46 | }
+  47 | {
+  digest: '1940149847'
+}
+ GET /cms/posts/new 307 in 113ms
+ ○ Compiling /api/documents/[id]/pdf ...
+ ✓ Compiled /api/documents/[id]/pdf in 2.9s (2654 modules)
+ GET /login 200 in 3086ms
+[2m2026-11-23T20:04:44.578Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:04:44.579Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+[2m2026-11-23T20:04:44.727Z[0m [33mWARN[0m [1m[Better Auth]:[0m Invalid password
+ POST /api/auth/sign-in/email 401 in 437ms
+ GET /login 200 in 76ms
+ POST /api/auth/sign-in/email 200 in 217ms
+ GET /dashboard 200 in 144ms
+ GET /api/documents/70179b74-7340-4f5b-a345-4e2ac0d83bb5/pdf 200 in 6087ms
+ GET /login 200 in 76ms
+ GET /login 200 in 64ms
+ POST /api/auth/sign-in/email 200 in 176ms
+ POST /api/auth/sign-in/email 200 in 178ms
+ GET /dashboard 200 in 138ms
+ GET /dashboard 200 in 125ms
+ GET /documents/new 200 in 221ms
+ GET /login 200 in 117ms
+ POST /documents/new 200 in 113ms
+ GET / 200 in 258ms
+ GET /api/auth/get-session 200 in 52ms
+ GET / 200 in 103ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST / 200 in 109ms
+ GET / 200 in 140ms
+ GET /api/auth/get-session 200 in 79ms
+ GET /api/documents/2c4d6e75-b930-40d4-9388-b7dae78b9f75/pdf 200 in 2522ms
+ GET /login 200 in 114ms
+ POST / 200 in 52ms
+ GET /login 200 in 74ms
+ POST /api/auth/sign-in/email 200 in 183ms
+ GET /dashboard 200 in 154ms
+ POST /api/auth/sign-in/email 200 in 172ms
+ GET /dashboard 200 in 117ms
+ GET /cms/posts/new 200 in 295ms
+ GET /leads/new 200 in 166ms
+ ○ Compiling /cms/posts/[id]/edit ...
+ ✓ Compiled /cms/posts/[id]/edit in 2.5s (2656 modules)
+[2m2026-11-23T20:04:57.513Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:04:57.513Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /leads/775bee66-77ff-44bc-adbf-fcc1085f1997 200 in 182ms
+ POST /leads/new 303 in 2766ms
+ GET /leads 200 in 359ms
+ GET /cms/posts/51a9f57d-88a0-4151-8d2c-af1ee414104b/edit?notice=Draft+created 200 in 4180ms
+ POST /cms/posts/new 303 in 4234ms
+ GET /login 200 in 103ms
+ GET /cms 200 in 486ms
+ GET /login 200 in 139ms
+ POST /api/auth/sign-in/email 200 in 243ms
+ GET /dashboard 200 in 119ms
+ GET /leads/new 200 in 248ms
+ POST /api/auth/sign-in/email 200 in 170ms
+ GET /dashboard 200 in 112ms
+ GET /cms/posts/new 200 in 153ms
+ GET /leads/950f7df7-08d4-4738-b3fa-762b6dfcb4ad 200 in 125ms
+ POST /leads/new 303 in 184ms
+ GET /leads?view=table&segment=professional_office&sort=score&dir=desc 200 in 152ms
+ GET /cms/posts/75d68d10-e58a-4934-b01a-546e31da559a/edit?notice=Draft+created 200 in 161ms
+ POST /cms/posts/new 303 in 225ms
+ GET /login 200 in 135ms
+ GET /cms 200 in 479ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST /cms 303 in 29ms
+ GET /login 200 in 78ms
+ POST /api/auth/sign-in/email 200 in 192ms
+ GET /dashboard 200 in 109ms
+ GET /leads/new 200 in 198ms
+ POST /api/auth/sign-in/email 200 in 170ms
+ GET /dashboard 200 in 108ms
+ GET /cms/posts/new 200 in 136ms
+ GET /leads/42113722-61af-4323-978b-3e8dc6dab150 200 in 116ms
+ POST /leads/new 303 in 178ms
+ GET /leads/42113722-61af-4323-978b-3e8dc6dab150 200 in 187ms
+ GET /cms/posts/59e65e1b-d65c-4a80-9a74-41c1d6f5a968/edit?notice=Draft+created 200 in 138ms
+ POST /cms/posts/new 303 in 222ms
+ POST /leads/42113722-61af-4323-978b-3e8dc6dab150 200 in 218ms
+ GET /cms 200 in 854ms
+ GET /leads 200 in 111ms
+ POST /leads/42113722-61af-4323-978b-3e8dc6dab150 303 in 173ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/published-ad54c9"]}
+indexnow: response status=202
+ GET /login 200 in 106ms
+ GET /cms?notice=Post+published 200 in 285ms
+ POST /cms 303 in 408ms
+ GET /login 200 in 68ms
+ POST /api/auth/sign-in/email 200 in 184ms
+ GET /dashboard 200 in 140ms
+ POST /api/auth/sign-in/email 200 in 163ms
+ GET /dashboard 200 in 132ms
+ GET /leads/new 200 in 186ms
+ GET /cms/posts/new 200 in 147ms
+ GET /cms/posts/4bdc4e01-d542-4e8c-b6b7-35ca0a15655d/edit?notice=Draft+created 200 in 174ms
+ POST /cms/posts/new 303 in 218ms
+ GET /leads/311fc0b9-8326-4149-aa0e-84dcaf358895 200 in 629ms
+ POST /leads/new 303 in 749ms
+ GET /blog 200 in 343ms
+ GET /cms 200 in 1097ms
+ GET /llms.txt 200 in 29ms
+ GET /api/health 200 in 37ms
+ GET /leads/311fc0b9-8326-4149-aa0e-84dcaf358895 307 in 82ms
+ GET / 200 in 104ms
+ GET /login 200 in 64ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/markdown-c0bba4"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 299ms
+ POST /cms 303 in 349ms
+ POST /api/auth/sign-in/email 200 in 190ms
+ GET /dashboard 200 in 126ms
+ ○ Compiling /blog/[slug] ...
+ ✓ Compiled /blog/[slug] in 2.3s (2659 modules)
+[2m2026-11-23T20:05:17.471Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:05:17.472Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /blog/markdown-c0bba4 200 in 3266ms
+ GET /leads/new 200 in 527ms
+ GET /login 200 in 124ms
+ GET /leads/7b783493-d0f3-441e-a34d-ad9f32a17b92 200 in 213ms
+ POST /leads/new 303 in 301ms
+ GET /leads 200 in 227ms
+ POST /api/auth/sign-in/email 200 in 176ms
+ GET /dashboard 200 in 172ms
+[2m2026-11-23T20:05:21.223Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:05:21.224Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /leads 200 in 461ms
+ GET /leads 200 in 65ms
+ GET /login 200 in 66ms
+ GET /cms/posts/new 200 in 171ms
+ POST /api/auth/sign-in/email 200 in 177ms
+ GET /dashboard 200 in 143ms
+ GET /cms/posts/1342f552-503d-436a-8fe0-a654629c76cc/edit?notice=Draft+created 200 in 151ms
+ POST /cms/posts/new 303 in 218ms
+ GET /cms 200 in 654ms
+ GET /leads/new 200 in 140ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/jsonld-f25433"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 263ms
+ POST /cms 303 in 316ms
+ GET /blog/jsonld-f25433 200 in 167ms
+ GET /leads/ea1d88bc-7026-49b7-8895-c24dd8ef37f6 200 in 171ms
+ POST /leads/new 303 in 230ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST /leads/ea1d88bc-7026-49b7-8895-c24dd8ef37f6 303 in 45ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ GET /login 200 in 127ms
+ POST /leads/ea1d88bc-7026-49b7-8895-c24dd8ef37f6 200 in 247ms
+ GET /login 200 in 69ms
+ POST /api/auth/sign-in/email 200 in 183ms
+ GET /dashboard 200 in 110ms
+ POST /api/auth/sign-in/email 200 in 163ms
+ GET /dashboard 200 in 109ms
+ GET /cms/posts/new 200 in 293ms
+ GET /leads/new 200 in 161ms
+ GET /cms/posts/6a5f276d-fa0b-4c99-b359-a421c0f03cb3/edit?notice=Draft+created 200 in 136ms
+ POST /cms/posts/new 303 in 187ms
+ GET /blog/draft-only-54a0cc 404 in 219ms
+ GET /login 200 in 243ms
+ GET /leads/6f4028c9-1fac-4544-a638-8a9db93104fc 200 in 291ms
+ POST /leads/new 303 in 388ms
+ GET /leads 200 in 180ms
+ GET /leads/6f4028c9-1fac-4544-a638-8a9db93104fc?notice=scan+queued 200 in 90ms
+ POST /leads 303 in 213ms
+ POST /api/auth/sign-in/email 200 in 186ms
+ GET /dashboard 200 in 135ms
+ GET /cms/posts/new 200 in 159ms
+ GET /leads 200 in 168ms
+ GET /cms/posts/63ef832f-9bb4-4000-b853-7e3ef9c00b08/edit?notice=Draft+created 200 in 131ms
+ POST /cms/posts/new 303 in 200ms
+ GET /cms 200 in 634ms
+ GET /login 200 in 61ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/sitemap-8994b8"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 236ms
+ POST /cms 303 in 284ms
+ ○ Compiling /sitemap.xml ...
+ ✓ Compiled /sitemap.xml in 4.2s (2663 modules)
+[2m2026-11-23T20:05:37.763Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:05:37.763Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /sitemap.xml 200 in 4660ms
+ POST /api/auth/sign-in/email 200 in 4081ms
+ GET /login 200 in 329ms
+ GET /dashboard 200 in 156ms
+ GET /leads/new 200 in 264ms
+ POST /api/auth/sign-in/email 200 in 233ms
+ GET /dashboard 200 in 131ms
+ GET /cms/posts/new 200 in 230ms
+ GET /leads/a4e4286d-d560-4f0c-b2a0-851bbb6b2f9f 200 in 183ms
+ POST /leads/new 303 in 399ms
+ GET /leads 200 in 196ms
+[2m2026-11-23T20:05:43.063Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:05:43.063Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms/posts/d3a91e6e-2fa9-44af-9eef-047b745cf65b/edit?notice=Draft+created 200 in 638ms
+ POST /cms/posts/new 303 in 697ms
+ GET /leads/a4e4286d-d560-4f0c-b2a0-851bbb6b2f9f?notice=scan+queued 200 in 635ms
+ POST /leads 303 in 1284ms
+ GET /leads/a4e4286d-d560-4f0c-b2a0-851bbb6b2f9f?notice=scan+ran+recently%3B+wait+15+minutes 200 in 141ms
+ POST /leads/a4e4286d-d560-4f0c-b2a0-851bbb6b2f9f?notice=scan%20queued 303 in 227ms
+ GET /cms 200 in 948ms
+ GET /leads/a4e4286d-d560-4f0c-b2a0-851bbb6b2f9f?notice=scan+ran+recently%3B+wait+15+minutes 200 in 106ms
+ GET /leads/a4e4286d-d560-4f0c-b2a0-851bbb6b2f9f?notice=scan+ran+recently%3B+wait+15+minutes 200 in 74ms
+ GET / 200 in 189ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/llms-73d691"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 239ms
+ POST /cms 303 in 338ms
+ GET /llms.txt 200 in 30ms
+ GET /login 200 in 57ms
+ GET /api/auth/get-session 200 in 61ms
+ POST /api/auth/sign-in/email 200 in 142ms
+ GET /dashboard 200 in 117ms
+ POST / 200 in 54ms
+ GET /login 200 in 115ms
+ GET /cms/posts/new 200 in 141ms
+ POST /api/auth/sign-in/email 200 in 289ms
+ GET /cms/posts/0ac9c8e3-ae1f-467e-904f-1cb50e5113b1/edit?notice=Draft+created 200 in 224ms
+ POST /cms/posts/new 303 in 357ms
+ GET /dashboard 200 in 235ms
+ GET /cms 200 in 821ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/indexnow-one-f17116"]}
+indexnow: response status=202
+ GET /contact-requests 200 in 442ms
+ GET /cms?notice=Post+published 200 in 261ms
+ POST /cms 303 in 349ms
+ GET /login 200 in 87ms
+ GET /leads/7dce0675-5343-4fa6-821f-a688bd780d83 200 in 150ms
+ POST /contact-requests 303 in 219ms
+ POST /api/auth/sign-in/email 200 in 224ms
+ GET /login 200 in 129ms
+ GET /dashboard 200 in 220ms
+ GET /cms/posts/new 200 in 259ms
+ POST /api/auth/sign-in/email 200 in 184ms
+ GET /dashboard 200 in 104ms
+ GET /leads/new 200 in 300ms
+ GET /cms/posts/b3ff9d79-a3f0-43ad-8eb1-d641ad3c7231/edit?notice=Draft+created 200 in 189ms
+ POST /cms/posts/new 303 in 358ms
+ GET /cms 200 in 666ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/indexnow-two-ddf0a4"]}
+indexnow: response status=202
+ GET /leads/1662b0db-f969-48fb-97f4-86be6d940b14 200 in 166ms
+ POST /leads/new 303 in 251ms
+ GET /cms?notice=Post+published 200 in 465ms
+ POST /cms 303 in 526ms
+ GET /leads/1662b0db-f969-48fb-97f4-86be6d940b14 200 in 297ms
+ GET / 200 in 157ms
+ GET /api/auth/get-session 200 in 75ms
+ GET /leads/1662b0db-f969-48fb-97f4-86be6d940b14?notice=detail+queued 200 in 113ms
+ POST /leads/1662b0db-f969-48fb-97f4-86be6d940b14 303 in 298ms
+ GET /leads/1662b0db-f969-48fb-97f4-86be6d940b14?notice=detail+queued 200 in 95ms
+ GET /leads/1662b0db-f969-48fb-97f4-86be6d940b14?notice=detail+queued 200 in 81ms
+ POST / 200 in 28ms
+ GET /login 200 in 93ms
+ GET /leads/1662b0db-f969-48fb-97f4-86be6d940b14 200 in 257ms
+ POST /api/auth/sign-in/email 200 in 208ms
+ GET /dashboard 200 in 133ms
+ GET /login 200 in 92ms
+ GET /contact-requests 200 in 329ms
+ POST /api/auth/sign-in/email 200 in 239ms
+ GET /leads/c88d3c1f-a6c1-4fba-b35d-e8db2aaf5efc 200 in 195ms
+ POST /contact-requests 303 in 337ms
+ GET /dashboard 200 in 165ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST /leads/c88d3c1f-a6c1-4fba-b35d-e8db2aaf5efc 303 in 33ms
+ GET /leads/c88d3c1f-a6c1-4fba-b35d-e8db2aaf5efc 200 in 388ms
+ GET /documents/new 200 in 237ms
+ GET /leads/c88d3c1f-a6c1-4fba-b35d-e8db2aaf5efc?notice=scan+queued 200 in 148ms
+ POST /documents/new 200 in 126ms
+ POST /leads/c88d3c1f-a6c1-4fba-b35d-e8db2aaf5efc 303 in 252ms
+ GET /leads/c88d3c1f-a6c1-4fba-b35d-e8db2aaf5efc?notice=scan+queued 200 in 100ms
+ GET /leads/c88d3c1f-a6c1-4fba-b35d-e8db2aaf5efc?notice=scan+queued 200 in 203ms
+ GET /documents/new 200 in 136ms
+ POST /documents/new 200 in 31ms
+ GET /cms/posts/new 200 in 155ms
+ GET /api/documents/9f1b9a3c-684b-40f7-ad34-4b13af3d17e2/pdf 200 in 2700ms
+ GET /cms/posts/04021de3-6a97-44f9-b660-32ea8518de4b/edit?notice=Draft+created 200 in 230ms
+ POST /cms/posts/new 303 in 286ms
+ GET /login 200 in 117ms
+ GET /cms 200 in 699ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/walk-post-e74356"]}
+indexnow: response status=202
+ POST /api/auth/sign-in/email 200 in 216ms
+ GET /dashboard 200 in 150ms
+ GET /cms?notice=Post+published 200 in 447ms
+ POST /cms 303 in 519ms
+ GET /blog/walk-post-e74356 200 in 174ms
+ GET /leads/c88d3c1f-a6c1-4fba-b35d-e8db2aaf5efc 307 in 189ms
+ ○ Compiling /cms/site ...
+ ✓ Compiled /cms/site in 7.5s (2673 modules)
+[2m2026-11-23T20:06:16.424Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:06:16.424Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms/site 307 in 8302ms
+ GET /documents/new 200 in 7138ms
+ GET /login 200 in 85ms
+ POST /documents/new 200 in 136ms
+ POST /api/auth/sign-in/email 200 in 289ms
+ GET /dashboard 200 in 172ms
+ GET /cms/site 307 in 195ms
+ GET /?notice=CMS_FORBIDDEN 200 in 196ms
+ GET /login 200 in 88ms
+ POST /api/auth/sign-in/email 200 in 198ms
+ GET /api/documents/ea60c45f-0998-40f2-98e9-89d80a38f4e0/pdf 200 in 2929ms
+ GET /dashboard 200 in 119ms
+ GET /login 200 in 81ms
+ GET /cms/site 200 in 192ms
+ POST /api/auth/sign-in/email 200 in 220ms
+ GET /dashboard 200 in 150ms
+ GET /login 200 in 89ms
+ GET /cms/posts/new 200 in 250ms
+ POST /api/auth/sign-in/email 200 in 171ms
+ GET /dashboard 200 in 108ms
+ GET /cms/site 200 in 369ms
+ GET /cms/posts/ff78644f-bcd3-4d53-88c4-b7269a450aa7/edit?notice=Draft+created 200 in 341ms
+ POST /cms/posts/new 303 in 425ms
+ GET /cms 200 in 721ms
+ GET /login 200 in 69ms
+ POST /api/auth/sign-in/email 200 in 177ms
+ GET /dashboard 200 in 145ms
+[2m2026-11-23T20:06:26.397Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:06:26.397Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms/site?notice=Site+settings+saved 200 in 95ms
+ POST /cms/site 303 in 514ms
+ GET /cms/site?notice=Site+settings+saved 200 in 70ms
+ GET /cms/site?notice=Site+settings+saved 200 in 61ms
+ GET / 200 in 115ms
+ GET /login 200 in 73ms
+ GET /cms/posts/new 200 in 144ms
+ POST /api/auth/sign-in/email 200 in 247ms
+ GET /cms/posts/cc661587-abe8-4756-a142-6a70e3173331/edit?notice=Draft+created 200 in 195ms
+ POST /cms/posts/new 303 in 311ms
+ GET /dashboard 200 in 184ms
+ GET /cms 200 in 431ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST /cms 303 in 170ms
+ GET /cms/site 200 in 201ms
+ GET /login 200 in 69ms
+ POST /api/auth/sign-in/email 200 in 191ms
+ GET /dashboard 200 in 126ms
+ GET /cms/posts/new 200 in 284ms
+ GET /cms/site?notice=Site+settings+saved 200 in 248ms
+ POST /cms/site 303 in 340ms
+ GET /cms/site?notice=Site+settings+saved 200 in 73ms
+ GET /cms/site?notice=Site+settings+saved 200 in 54ms
+ GET /llms.txt 200 in 28ms
+ GET /login 200 in 69ms
+ GET /cms/posts/8a8ac3e5-992f-4cde-b47a-a68682a8cf60/edit?notice=Draft+created 200 in 143ms
+ POST /cms/posts/new 303 in 203ms
+ GET /cms 200 in 712ms
+ POST /api/auth/sign-in/email 200 in 211ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/published-4c0e44"]}
+indexnow: response status=202
+ GET /dashboard 200 in 146ms
+ GET /cms?notice=Post+published 200 in 348ms
+ POST /cms 303 in 497ms
+ GET /login 200 in 68ms
+ GET /cms/site 200 in 159ms
+ POST /api/auth/sign-in/email 200 in 194ms
+ POST /cms/site 200 in 48ms
+ GET /dashboard 200 in 141ms
+ GET /login 200 in 77ms
+ GET /cms/posts/new 200 in 168ms
+ POST /api/auth/sign-in/email 200 in 158ms
+ GET /dashboard 200 in 101ms
+ GET /cms/posts/190bea3d-bfea-415e-b88e-5bbb6948e404/edit?notice=Draft+created 200 in 186ms
+ POST /cms/posts/new 303 in 287ms
+ GET /cms/site 200 in 218ms
+ GET /cms 200 in 695ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/markdown-1beaf6"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 210ms
+ POST /cms 303 in 254ms
+ GET /blog/markdown-1beaf6 200 in 161ms
+ GET /cms/site?notice=Site+settings+saved 200 in 99ms
+ POST /cms/site 303 in 153ms
+ GET /cms/site?notice=Site+settings+saved 200 in 98ms
+ GET /login 200 in 233ms
+ GET /cms/site?notice=Site+settings+saved 200 in 235ms
+ GET / 200 in 249ms
+ GET /login 200 in 52ms
+ POST /api/auth/sign-in/email 200 in 176ms
+ POST /api/auth/sign-in/email 200 in 172ms
+ GET /dashboard 200 in 129ms
+ GET /dashboard 200 in 161ms
+ GET /cms/posts/new 200 in 305ms
+ GET /cms/site 200 in 294ms
+ GET /cms/posts/0b16477a-d8a9-48ed-bd8e-aea123ed228a/edit?notice=Draft+created 200 in 131ms
+ POST /cms/posts/new 303 in 187ms
+ GET /cms/site?notice=Site+settings+saved 200 in 132ms
+ POST /cms/site 303 in 225ms
+ GET /cms/site?notice=Site+settings+saved 200 in 110ms
+ GET /cms/site?notice=Site+settings+saved 200 in 74ms
+ GET /cms 200 in 1004ms
+ GET / 200 in 263ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/jsonld-49e40c"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 252ms
+ POST /cms 303 in 299ms
+ GET /blog/jsonld-49e40c 200 in 156ms
+ GET /login 200 in 92ms
+ GET /login 200 in 105ms
+ POST /api/auth/sign-in/email 200 in 180ms
+ GET /dashboard 200 in 124ms
+ POST /api/auth/sign-in/email 200 in 159ms
+ GET /dashboard 200 in 106ms
+ GET /cms/site 200 in 166ms
+ GET /cms/posts/new 200 in 162ms
+ GET /cms/posts/41c8ea5f-6cd2-4852-8f52-4d0b2ab41335/edit?notice=Draft+created 200 in 161ms
+ POST /cms/posts/new 303 in 225ms
+ GET /blog/draft-only-ce7f7b 404 in 170ms
+ GET /login 200 in 107ms
+ POST /cms/site 200 in 50ms
+ POST /cms/site 200 in 34ms
+ POST /api/auth/sign-in/email 200 in 200ms
+ GET / 200 in 173ms
+ GET /dashboard 200 in 148ms
+ GET /api/auth/get-session 200 in 33ms
+ GET /cms/posts/new 200 in 283ms
+ GET /login 200 in 136ms
+ POST /api/auth/sign-in/email 200 in 242ms
+ GET /cms/posts/c214fe8a-01b1-4653-9af4-1eb1cefefc8d/edit?notice=Draft+created 200 in 181ms
+ POST /cms/posts/new 303 in 308ms
+ GET /dashboard 200 in 165ms
+ GET /cms 200 in 698ms
+ GET / 200 in 133ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/sitemap-8a67d8"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 268ms
+ POST /cms 303 in 315ms
+ GET /sitemap.xml 200 in 40ms
+ GET /login 200 in 101ms
+ GET /api/auth/get-session 200 in 56ms
+ GET /login 200 in 68ms
+ POST /api/auth/sign-in/email 200 in 225ms
+ GET /dashboard 200 in 118ms
+ POST /api/auth/sign-in/email 200 in 151ms
+ GET /dashboard 200 in 136ms
+ GET /cms/posts/new 200 in 162ms
+ GET /cms/site 200 in 193ms
+ GET /cms/posts/db0e7c81-d39d-470e-a8fa-2e20556ab107/edit?notice=Draft+created 200 in 131ms
+ POST /cms/posts/new 303 in 213ms
+ GET /cms 200 in 645ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/llms-ddfa7d"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 250ms
+ POST /cms 303 in 297ms
+ GET /llms.txt 200 in 18ms
+ GET /login 200 in 60ms
+ GET /cms/site?notice=Site+settings+saved 200 in 88ms
+ POST /cms/site 303 in 141ms
+ GET /cms/site?notice=Site+settings+saved 200 in 71ms
+ GET /cms/site?notice=Site+settings+saved 200 in 210ms
+ POST /api/auth/sign-in/email 200 in 205ms
+ GET / 200 in 217ms
+ GET /dashboard 200 in 150ms
+ GET /login 200 in 83ms
+ GET /cms/posts/new 200 in 265ms
+ POST /api/auth/sign-in/email 200 in 187ms
+ GET /dashboard 200 in 91ms
+ GET /cms/posts/2b8a05a6-f36f-47a2-a607-57890850a276/edit?notice=Draft+created 200 in 169ms
+ POST /cms/posts/new 303 in 304ms
+ GET / 200 in 125ms
+ GET /cms/site 200 in 670ms
+ GET /cms 200 in 870ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/indexnow-one-b355e5"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 268ms
+ POST /cms 303 in 327ms
+ GET /login 200 in 58ms
+ GET /cms/site?notice=Site+settings+saved 200 in 95ms
+ POST /cms/site 303 in 149ms
+ POST /api/auth/sign-in/email 200 in 184ms
+ GET /dashboard 200 in 119ms
+ ○ Compiling /dev/components ...
+ ✓ Compiled /dev/components in 1489ms (2371 modules)
+ GET /dev/components 200 in 2005ms
+[2m2026-11-23T20:07:07.229Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:07:07.230Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms/posts/new 200 in 942ms
+ GET /cms/posts/49d7c177-0551-4d37-8749-b5eed93b75f4/edit?notice=Draft+created 200 in 158ms
+ POST /cms/posts/new 303 in 224ms
+ GET /cms 200 in 785ms
+ GET /dev/components 200 in 140ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/indexnow-two-4b6624"]}
+indexnow: response status=202
+ GET /dev/components 200 in 161ms
+ GET /cms?notice=Post+published 200 in 498ms
+ POST /cms 303 in 556ms
+ GET / 200 in 151ms
+ GET /dev/components 200 in 132ms
+ GET /api/auth/get-session 200 in 68ms
+ POST / 200 in 125ms
+ GET /login 200 in 80ms
+ POST /api/auth/sign-in/email 200 in 164ms
+ GET /dashboard 200 in 113ms
+ ○ Compiling /contact-requests ...
+ ✓ Compiled /contact-requests in 1201ms (2378 modules)
+[2m2026-11-23T20:07:17.240Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:07:17.240Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /contact-requests 200 in 2128ms
+ GET /leads/108adba6-da6e-4ddc-8929-326f36d66618 200 in 193ms
+ POST /contact-requests 303 in 273ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST /leads/108adba6-da6e-4ddc-8929-326f36d66618 303 in 30ms
+ GET /leads/108adba6-da6e-4ddc-8929-326f36d66618 200 in 189ms
+ GET /leads/108adba6-da6e-4ddc-8929-326f36d66618?notice=scan+queued 200 in 78ms
+ POST /leads/108adba6-da6e-4ddc-8929-326f36d66618 303 in 145ms
+ GET /leads/108adba6-da6e-4ddc-8929-326f36d66618?notice=scan+queued 200 in 109ms
+ GET /leads/108adba6-da6e-4ddc-8929-326f36d66618?notice=scan+queued 200 in 72ms
+ GET /cms/site 307 in 96ms
+ GET /login 200 in 76ms
+ POST /api/auth/sign-in/email 200 in 186ms
+ GET /dashboard 200 in 117ms
+ GET /cms/site 307 in 209ms
+ GET /?notice=CMS_FORBIDDEN 200 in 247ms
+ GET /login 200 in 53ms
+ POST /api/auth/sign-in/email 200 in 172ms
+ GET /dashboard 200 in 152ms
+ GET /cms/site 200 in 196ms
+ ○ Compiling /api/health ...
+ ✓ Compiled /api/health in 1271ms (2374 modules)
+ GET /api/health 200 in 2529ms
+ GET /login 200 in 1853ms
+[2m2026-11-23T20:07:28.938Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:07:28.938Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /api/auth/sign-in/email 200 in 948ms
+ GET /dashboard 200 in 631ms
+ GET /cms/site 200 in 169ms
+[2m2026-11-23T20:07:33.723Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:07:33.723Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms/site?notice=Site+settings+saved 200 in 84ms
+ POST /cms/site 303 in 470ms
+ GET /cms/site?notice=Site+settings+saved 200 in 50ms
+ GET /cms/site?notice=Site+settings+saved 200 in 49ms
+ GET / 200 in 126ms
+ GET /login 200 in 76ms
+ POST /api/auth/sign-in/email 200 in 209ms
+ GET /dashboard 200 in 105ms
+ GET /cms/site 200 in 148ms
+ GET /cms/site?notice=Site+settings+saved 200 in 73ms
+ POST /cms/site 303 in 119ms
+ GET /cms/site?notice=Site+settings+saved 200 in 55ms
+ GET /llms.txt 200 in 33ms
+ GET /cms/site?notice=Site+settings+saved 200 in 60ms
+ GET /login 200 in 58ms
+ POST /api/auth/sign-in/email 200 in 171ms
+ GET /dashboard 200 in 107ms
+ GET /cms/site 200 in 139ms
+ POST /cms/site 200 in 30ms
+ GET /login 200 in 74ms
+ POST /api/auth/sign-in/email 200 in 165ms
+ GET /dashboard 200 in 104ms
+ GET /cms/site 200 in 167ms
+ GET /cms/site?notice=Site+settings+saved 200 in 76ms
+ POST /cms/site 303 in 111ms
+ GET /cms/site?notice=Site+settings+saved 200 in 61ms
+ GET /cms/site?notice=Site+settings+saved 200 in 124ms
+ GET / 200 in 135ms
+ GET /login 200 in 74ms
+ POST /api/auth/sign-in/email 200 in 189ms
+ GET /dashboard 200 in 99ms
+ GET /cms/site 200 in 147ms
+ GET /cms/site?notice=Site+settings+saved 200 in 73ms
+ POST /cms/site 303 in 148ms
+ GET /cms/site?notice=Site+settings+saved 200 in 57ms
+ GET /cms/site?notice=Site+settings+saved 200 in 129ms
+ GET / 200 in 142ms
+ GET /login 200 in 49ms
+ POST /api/auth/sign-in/email 200 in 155ms
+ GET /dashboard 200 in 116ms
+ GET /cms/site 200 in 153ms
+ POST /cms/site 200 in 42ms
+ POST /cms/site 200 in 20ms
+ GET / 200 in 104ms
+ GET /login 200 in 84ms
+ POST /api/auth/sign-in/email 200 in 186ms
+ GET /dashboard 200 in 121ms
+ GET / 200 in 115ms
+ GET /api/auth/get-session 200 in 56ms
+ GET /login 200 in 64ms
+ POST /api/auth/sign-in/email 200 in 139ms
+ GET /dashboard 200 in 97ms
+ GET /cms/site 200 in 138ms
+ GET /cms/site?notice=Site+settings+saved 200 in 72ms
+ POST /cms/site 303 in 129ms
+ GET /cms/site?notice=Site+settings+saved 200 in 55ms
+ GET /cms/site?notice=Site+settings+saved 200 in 132ms
+ GET / 200 in 147ms
+ GET /login 200 in 67ms
+ POST /api/auth/sign-in/email 200 in 171ms
+ GET /dashboard 200 in 153ms
+ GET / 200 in 91ms
+ GET /cms/site 200 in 136ms
+ GET /cms/site?notice=Site+settings+saved 200 in 76ms
+ POST /cms/site 303 in 126ms
+ GET /cms/site?notice=Site+settings+saved 200 in 34ms
+ GET /dev/components 200 in 150ms
+ GET /dev/components 200 in 113ms
+ GET /dev/components 200 in 126ms
+ GET /dev/components 200 in 137ms
+ GET /api/health 200 in 10ms
+ GET / 200 in 83ms
+ GET / 200 in 106ms
+ GET /api/auth/get-session 200 in 64ms
+ GET / 200 in 110ms
+ ○ Compiling /blog ...
+ ✓ Compiled /blog in 5s (2365 modules)
+ GET /blog 200 in 5584ms
+ GET /llms.txt 200 in 27ms
+ GET / 200 in 150ms
+ GET /api/health 200 in 27ms
+ ○ Compiling /api/scans ...
+ ✓ Compiled /api/scans in 2.1s (2362 modules)
+[2m2026-11-23T20:08:18.022Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:08:18.023Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /api/scans 401 in 2431ms
+ GET /api/health 200 in 18ms
+ ○ Compiling /leads ...
+ ✓ Compiled /leads in 2.1s (2376 modules)
+[2m2026-11-23T20:08:20.833Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:08:20.833Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /leads 307 in 2793ms
+ ○ Compiling /leads/new ...
+ ✓ Compiled /leads/new in 1067ms (2373 modules)
+[2m2026-11-23T20:08:22.428Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:08:22.429Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /leads/new 307 in 1583ms
+ ○ Compiling /documents ...
+ ✓ Compiled /documents in 1171ms (2377 modules)
+[2m2026-11-23T20:08:23.989Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:08:23.989Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /documents 307 in 1548ms
+ GET /documents/new 307 in 99ms
+ GET /dashboard 307 in 88ms
+ ○ Compiling /contact-requests ...
+ ✓ Compiled /contact-requests in 1147ms (2384 modules)
+[2m2026-11-23T20:08:25.741Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:08:25.742Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /contact-requests 307 in 1513ms
+ GET /cms 307 in 106ms
+ ○ Compiling /cms/posts/new ...
+ ✓ Compiled /cms/posts/new in 1212ms (2387 modules)
+[2m2026-11-23T20:08:27.411Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:08:27.411Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ ⨯ Error: CMS_FORBIDDEN
+    at requireCmsEditor (src/lib/cms-auth.ts:44:54)
+    at async NewCmsPostPage (src/app/(app)/cms/posts/new/page.tsx:12:3)
+  42 | export async function requireCmsEditor(): Promise<CrmActor> {
+  43 |   const actor = await getCrmActor();
+> 44 |   if (!actor || !canCreateCmsPost(actor.role)) throw new Error("CMS_FORBIDDEN");
+     |                                                      ^
+  45 |   return actor;
+  46 | }
+  47 | {
+  digest: '2791235741'
+}
+ GET /cms/posts/new 307 in 1552ms
+ GET /login 200 in 74ms
+[2m2026-11-23T20:08:30.691Z[0m [33mWARN[0m [1m[Better Auth]:[0m Invalid password
+ POST /api/auth/sign-in/email 401 in 899ms
+ GET /login 200 in 78ms
+ POST /api/auth/sign-in/email 200 in 188ms
+ GET /dashboard 200 in 129ms
+ GET /login 200 in 59ms
+ POST /api/auth/sign-in/email 200 in 174ms
+ GET /dashboard 200 in 107ms
+ GET /login 200 in 110ms
+ GET / 200 in 149ms
+ GET /api/auth/get-session 200 in 52ms
+ GET / 200 in 91ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST / 200 in 191ms
+ GET / 200 in 132ms
+ GET /api/auth/get-session 200 in 54ms
+ POST / 200 in 34ms
+ GET /login 200 in 81ms
+ POST /api/auth/sign-in/email 200 in 177ms
+ GET /dashboard 200 in 111ms
+ GET /leads/new 200 in 160ms
+ GET /leads/e57cf0cc-93b6-43f5-8986-b010a65c7d15 200 in 153ms
+ POST /leads/new 303 in 204ms
+ GET /leads 200 in 144ms
+ GET /login 200 in 66ms
+ POST /api/auth/sign-in/email 200 in 202ms
+ GET /dashboard 200 in 115ms
+ GET /leads/new 200 in 146ms
+ GET /leads/1d95fa6d-8306-4ba0-b8d9-257989f5881e 200 in 120ms
+ POST /leads/new 303 in 161ms
+ GET /leads?view=table&segment=professional_office&sort=score&dir=desc 200 in 133ms
+ GET /login 200 in 56ms
+ POST /api/auth/sign-in/email 200 in 161ms
+ GET /dashboard 200 in 111ms
+ GET /leads/new 200 in 138ms
+ GET /leads/0ad4cfd7-ec48-4300-a9ae-cd43d4af8264 200 in 123ms
+ POST /leads/new 303 in 170ms
+ GET /leads/0ad4cfd7-ec48-4300-a9ae-cd43d4af8264 200 in 167ms
+ POST /leads/0ad4cfd7-ec48-4300-a9ae-cd43d4af8264 200 in 151ms
+ GET /leads 200 in 105ms
+ POST /leads/0ad4cfd7-ec48-4300-a9ae-cd43d4af8264 303 in 166ms
+ GET /login 200 in 74ms
+ POST /api/auth/sign-in/email 200 in 169ms
+ GET /dashboard 200 in 114ms
+ GET /leads/new 200 in 146ms
+ GET /leads/f8f455f4-c5fd-4de3-a0f8-f44b8e542285 200 in 135ms
+ POST /leads/new 303 in 192ms
+ GET /blog 200 in 246ms
+ GET /llms.txt 200 in 25ms
+ GET /api/health 200 in 26ms
+ GET /leads/f8f455f4-c5fd-4de3-a0f8-f44b8e542285 307 in 95ms
+ GET / 200 in 96ms
+ GET /login 200 in 74ms
+ POST /api/auth/sign-in/email 200 in 173ms
+ GET /dashboard 200 in 104ms
+ GET /leads/new 200 in 136ms
+ GET /leads/1b491a91-50c9-49e2-826f-a723e5c4cee7 200 in 122ms
+ POST /leads/new 303 in 178ms
+ GET /leads 200 in 142ms
+[2m2026-11-23T20:08:55.837Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:08:55.837Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /leads 200 in 409ms
+ GET /login 200 in 61ms
+ POST /api/auth/sign-in/email 200 in 185ms
+ GET /dashboard 200 in 118ms
+ GET /leads/new 200 in 164ms
+ GET /leads/fe0c2732-6056-420d-a049-949714dbcb84 200 in 128ms
+ POST /leads/new 303 in 188ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST /leads/fe0c2732-6056-420d-a049-949714dbcb84 303 in 29ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST /leads/fe0c2732-6056-420d-a049-949714dbcb84 200 in 166ms
+ GET /login 200 in 62ms
+ POST /api/auth/sign-in/email 200 in 176ms
+ GET /dashboard 200 in 110ms
+ GET /leads/new 200 in 183ms
+ GET /leads/f5696231-5c86-43c3-b2bc-33ee14aeae2b 200 in 151ms
+ POST /leads/new 303 in 197ms
+ GET /leads 200 in 147ms
+ GET /leads/f5696231-5c86-43c3-b2bc-33ee14aeae2b?notice=scan+queued 200 in 107ms
+ POST /leads 303 in 167ms
+ GET /leads 200 in 122ms
+ GET /login 200 in 55ms
+ POST /api/auth/sign-in/email 200 in 176ms
+ GET /dashboard 200 in 118ms
+ GET /leads/new 200 in 147ms
+ GET /leads/b179c68b-2800-4549-b86c-7ad282ca8bb3 200 in 159ms
+ POST /leads/new 303 in 210ms
+ GET /leads 200 in 147ms
+ GET /leads/b179c68b-2800-4549-b86c-7ad282ca8bb3?notice=scan+queued 200 in 99ms
+ POST /leads 303 in 150ms
+ GET /leads/b179c68b-2800-4549-b86c-7ad282ca8bb3?notice=scan+ran+recently%3B+wait+15+minutes 200 in 98ms
+ POST /leads/b179c68b-2800-4549-b86c-7ad282ca8bb3?notice=scan%20queued 303 in 182ms
+ GET /leads/b179c68b-2800-4549-b86c-7ad282ca8bb3?notice=scan+ran+recently%3B+wait+15+minutes 200 in 87ms
+ GET /leads/b179c68b-2800-4549-b86c-7ad282ca8bb3?notice=scan+ran+recently%3B+wait+15+minutes 200 in 57ms
+ GET / 200 in 145ms
+ GET /api/auth/get-session 200 in 49ms
+ POST / 200 in 31ms
+ GET /login 200 in 77ms
+ POST /api/auth/sign-in/email 200 in 174ms
+ GET /dashboard 200 in 109ms
+ GET /contact-requests 200 in 351ms
+ GET /leads/d0b71bb8-7e22-4ff0-a746-cb230fb0b090 200 in 137ms
+ POST /contact-requests 303 in 202ms
+ GET /login 200 in 100ms
+ POST /api/auth/sign-in/email 200 in 174ms
+ GET /dashboard 200 in 111ms
+ GET /leads/new 200 in 163ms
+ GET /leads/c6d308ee-64e0-41c5-9ead-4aa477c0a17b 200 in 168ms
+ POST /leads/new 303 in 217ms
+ GET /leads/c6d308ee-64e0-41c5-9ead-4aa477c0a17b 200 in 186ms
+ GET /leads/c6d308ee-64e0-41c5-9ead-4aa477c0a17b?notice=detail+queued 200 in 88ms
+ POST /leads/c6d308ee-64e0-41c5-9ead-4aa477c0a17b 303 in 136ms
+ GET /leads/c6d308ee-64e0-41c5-9ead-4aa477c0a17b?notice=detail+queued 200 in 81ms
+ GET /leads/c6d308ee-64e0-41c5-9ead-4aa477c0a17b?notice=detail+queued 200 in 105ms
+ GET /leads/c6d308ee-64e0-41c5-9ead-4aa477c0a17b 200 in 171ms
+ GET /login 200 in 62ms
+ POST /api/auth/sign-in/email 200 in 176ms
+ GET /dashboard 200 in 105ms
+ GET /documents/new 200 in 174ms
+ POST /documents/new 200 in 38ms
+ ○ Compiling /api/documents/[id]/pdf ...
+ ✓ Compiled /api/documents/[id]/pdf in 3.9s (2362 modules)
+ GET /api/documents/130c798d-a8f8-4560-ba4c-1800bf70b1d4/pdf 200 in 6309ms
+ GET /login 200 in 257ms
+[2m2026-11-23T20:09:28.892Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:09:28.893Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /api/auth/sign-in/email 200 in 466ms
+ GET /dashboard 200 in 135ms
+ GET /documents/new 200 in 167ms
+ POST /documents/new 200 in 123ms
+ GET /api/documents/5b46c16e-e8d5-4cf8-91de-324839a603ef/pdf 200 in 2220ms
+ GET /login 200 in 76ms
+ POST /api/auth/sign-in/email 200 in 194ms
+ GET /dashboard 200 in 115ms
+ GET /cms/posts/new 200 in 178ms
+ ○ Compiling /cms/posts/[id]/edit ...
+ ✓ Compiled /cms/posts/[id]/edit in 1242ms (2360 modules)
+[2m2026-11-23T20:09:36.928Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:09:36.929Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms/posts/fe963729-7d82-42c8-b354-670866b514bd/edit?notice=Draft+created 200 in 1902ms
+ POST /cms/posts/new 303 in 1949ms
+ GET /cms 200 in 822ms
+ GET /login 200 in 73ms
+ POST /api/auth/sign-in/email 200 in 202ms
+ GET /dashboard 200 in 132ms
+ GET /cms/posts/new 200 in 162ms
+ GET /cms/posts/5b762341-7227-42f5-ad11-4923a00fd487/edit?notice=Draft+created 200 in 148ms
+ POST /cms/posts/new 303 in 195ms
+ GET /cms 200 in 340ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST /cms 303 in 28ms
+ GET /login 200 in 78ms
+ POST /api/auth/sign-in/email 200 in 174ms
+ GET /dashboard 200 in 109ms
+ GET /cms/posts/new 200 in 160ms
+ GET /cms/posts/68d528c9-f9e5-45b5-a979-3baeecdc1efc/edit?notice=Draft+created 200 in 137ms
+ POST /cms/posts/new 303 in 187ms
+ GET /cms 200 in 668ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/published-2286df"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 249ms
+ POST /cms 303 in 296ms
+ GET /login 200 in 55ms
+ POST /api/auth/sign-in/email 200 in 201ms
+ GET /dashboard 200 in 105ms
+ GET /cms/posts/new 200 in 156ms
+ GET /cms/posts/9762ab26-3ff9-4595-8166-2cfe0a272607/edit?notice=Draft+created 200 in 138ms
+ POST /cms/posts/new 303 in 175ms
+ GET /cms 200 in 717ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/markdown-e235c2"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 297ms
+ POST /cms 303 in 352ms
+ ○ Compiling /blog/[slug] ...
+ ✓ Compiled /blog/[slug] in 2.6s (2363 modules)
+ GET / 200 in 463ms
+ GET /blog/markdown-e235c2 200 in 3156ms
+ GET /login 200 in 75ms
+[2m2026-11-23T20:09:55.288Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:09:55.288Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /api/auth/sign-in/email 200 in 358ms
+ GET /dashboard 200 in 125ms
+ GET /cms/posts/new 200 in 170ms
+ GET /cms/posts/bfeab5c7-2791-4e51-820f-c608dddfcdee/edit?notice=Draft+created 200 in 143ms
+ POST /cms/posts/new 303 in 186ms
+ GET /cms 200 in 690ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/jsonld-03311f"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 256ms
+ POST /cms 303 in 301ms
+ GET /blog/jsonld-03311f 200 in 152ms
+ GET /login 200 in 71ms
+ POST /api/auth/sign-in/email 200 in 169ms
+ GET /dashboard 200 in 113ms
+ GET /cms/posts/new 200 in 150ms
+ GET /cms/posts/c17c77c2-92d6-4f36-9b54-6caa5d4b211a/edit?notice=Draft+created 200 in 139ms
+ POST /cms/posts/new 303 in 197ms
+ GET /blog/draft-only-6033ef 404 in 199ms
+ GET /login 200 in 108ms
+ POST /api/auth/sign-in/email 200 in 179ms
+ GET /dashboard 200 in 114ms
+ GET /cms/posts/new 200 in 152ms
+ GET /cms/posts/869a6c59-1294-4e39-8a46-ef8d904ea452/edit?notice=Draft+created 200 in 131ms
+ POST /cms/posts/new 303 in 182ms
+ GET /cms 200 in 698ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/sitemap-9c16db"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 278ms
+ POST /cms 303 in 325ms
+ ○ Compiling /sitemap.xml ...
+ ✓ Compiled /sitemap.xml in 1146ms (2361 modules)
+ GET /sitemap.xml 200 in 1397ms
+ GET /login 200 in 262ms
+[2m2026-11-23T20:10:09.508Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:10:09.509Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /api/auth/sign-in/email 200 in 371ms
+ GET /dashboard 200 in 162ms
+ GET /cms/posts/new 200 in 202ms
+ GET /cms/posts/156d140a-6676-42ea-8158-6aa8343aa4ac/edit?notice=Draft+created 200 in 175ms
+ POST /cms/posts/new 303 in 227ms
+ GET /cms 200 in 782ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/llms-18877b"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 312ms
+ POST /cms 303 in 374ms
+ ○ Compiling /llms.txt ...
+ ✓ Compiled /llms.txt in 4.4s (1543 modules)
+ GET /llms.txt 200 in 4616ms
+ GET /login 200 in 303ms
+[2m2026-11-23T20:10:21.874Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:10:21.874Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /api/auth/sign-in/email 200 in 629ms
+ GET /dashboard 200 in 150ms
+ GET /cms/posts/new 200 in 243ms
+ GET /cms/posts/9ebc4e06-933c-40b9-b2a7-652036074ca2/edit?notice=Draft+created 200 in 167ms
+ POST /cms/posts/new 303 in 222ms
+ GET /cms 200 in 744ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/indexnow-one-c20b78"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 265ms
+ POST /cms 303 in 312ms
+ GET /login 200 in 77ms
+ POST /api/auth/sign-in/email 200 in 171ms
+ GET /dashboard 200 in 107ms
+ GET /cms/posts/new 200 in 176ms
+ GET /cms/posts/9f366239-d390-4d30-8943-c1678f7549fc/edit?notice=Draft+created 200 in 136ms
+ POST /cms/posts/new 303 in 178ms
+ GET /cms 200 in 761ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/indexnow-two-e9baa6"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 263ms
+ POST /cms 303 in 306ms
+ GET / 200 in 152ms
+ GET /api/auth/get-session 200 in 59ms
+ POST / 200 in 104ms
+ GET /login 200 in 60ms
+ POST /api/auth/sign-in/email 200 in 171ms
+ GET /dashboard 200 in 100ms
+ GET /contact-requests 200 in 286ms
+ GET /leads/d06134d3-52fe-4b7f-ba74-73c9954c87f9 200 in 160ms
+ POST /contact-requests 303 in 220ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST /leads/d06134d3-52fe-4b7f-ba74-73c9954c87f9 303 in 37ms
+ GET /leads/d06134d3-52fe-4b7f-ba74-73c9954c87f9 200 in 156ms
+ GET /leads/d06134d3-52fe-4b7f-ba74-73c9954c87f9?notice=scan+queued 200 in 122ms
+ POST /leads/d06134d3-52fe-4b7f-ba74-73c9954c87f9 303 in 184ms
+ GET /leads/d06134d3-52fe-4b7f-ba74-73c9954c87f9?notice=scan+queued 200 in 80ms
+ GET /leads/d06134d3-52fe-4b7f-ba74-73c9954c87f9?notice=scan+queued 200 in 56ms
+ GET /documents/new 200 in 123ms
+ POST /documents/new 200 in 29ms
+ GET /cms/posts/new 200 in 133ms
+ GET /cms/posts/3e690ca4-e76c-42a0-9991-90aa731a23f5/edit?notice=Draft+created 200 in 129ms
+ POST /cms/posts/new 303 in 163ms
+ GET /cms 200 in 703ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/walk-post-8bc1ff"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 250ms
+ POST /cms 303 in 303ms
+ GET /blog/walk-post-8bc1ff 200 in 148ms
+ GET /leads/d06134d3-52fe-4b7f-ba74-73c9954c87f9 307 in 168ms
+ ○ Compiling /cms/site ...
+ ✓ Compiled /cms/site in 7.2s (2351 modules)
+[2m2026-11-23T20:10:47.676Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:10:47.677Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms/site 307 in 8290ms
+ GET /login 200 in 92ms
+ POST /api/auth/sign-in/email 200 in 220ms
+ GET /dashboard 200 in 141ms
+ GET /cms/site 307 in 182ms
+ GET /?notice=CMS_FORBIDDEN 200 in 189ms
+ GET /login 200 in 69ms
+ POST /api/auth/sign-in/email 200 in 181ms
+ GET /dashboard 200 in 125ms
+ GET /cms/site 200 in 198ms
+ GET /login 200 in 66ms
+ POST /api/auth/sign-in/email 200 in 202ms
+ GET /dashboard 200 in 118ms
+ GET /cms/site 200 in 214ms
+[2m2026-11-23T20:10:55.975Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:10:55.976Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms/site?notice=Site+settings+saved 200 in 95ms
+ POST /cms/site 303 in 558ms
+ GET /cms/site?notice=Site+settings+saved 200 in 50ms
+ GET /cms/site?notice=Site+settings+saved 200 in 64ms
+ GET / 200 in 103ms
+ GET /login 200 in 80ms
+ POST /api/auth/sign-in/email 200 in 185ms
+ GET /dashboard 200 in 118ms
+ GET /cms/site 200 in 187ms
+ GET /cms/site?notice=Site+settings+saved 200 in 87ms
+ POST /cms/site 303 in 145ms
+ GET /llms.txt 200 in 92ms
+ GET /cms/site?notice=Site+settings+saved 200 in 113ms
+ GET /login 200 in 60ms
+ POST /api/auth/sign-in/email 200 in 208ms
+ GET /dashboard 200 in 114ms
+ GET /cms/site 200 in 191ms
+ POST /cms/site 200 in 27ms
+ GET /login 200 in 65ms
+ POST /api/auth/sign-in/email 200 in 215ms
+ GET /dashboard 200 in 117ms
+ GET /cms/site 200 in 169ms
+ GET /cms/site?notice=Site+settings+saved 200 in 80ms
+ POST /cms/site 303 in 137ms
+ GET /cms/site?notice=Site+settings+saved 200 in 117ms
+ GET / 200 in 189ms
+ GET /cms/site?notice=Site+settings+saved 200 in 87ms
+ GET /login 200 in 70ms
+ POST /api/auth/sign-in/email 200 in 182ms
+ GET /dashboard 200 in 127ms
+ GET /cms/site 200 in 167ms
+ GET /cms/site?notice=Site+settings+saved 200 in 81ms
+ POST /cms/site 303 in 136ms
+ GET /cms/site?notice=Site+settings+saved 200 in 42ms
+ GET /cms/site?notice=Site+settings+saved 200 in 70ms
+ GET / 200 in 146ms
+ GET /login 200 in 935ms
+ POST /api/auth/sign-in/email 200 in 198ms
+ GET /dashboard 200 in 107ms
+ GET /cms/site 200 in 181ms
+ POST /cms/site 200 in 40ms
+ POST /cms/site 200 in 26ms
+ GET / 200 in 111ms
+ GET /login 200 in 91ms
+ POST /api/auth/sign-in/email 200 in 195ms
+ GET /dashboard 200 in 113ms
+ GET / 200 in 134ms
+ GET /api/auth/get-session 200 in 59ms
+ GET /login 200 in 97ms
+ POST /api/auth/sign-in/email 200 in 145ms
+ GET /dashboard 200 in 120ms
+ GET /cms/site 200 in 167ms
+ GET /cms/site?notice=Site+settings+saved 200 in 70ms
+ POST /cms/site 303 in 111ms
+ GET /cms/site?notice=Site+settings+saved 200 in 47ms
+ GET /cms/site?notice=Site+settings+saved 200 in 57ms
+ GET / 200 in 84ms
+ GET /login 200 in 73ms
+ POST /api/auth/sign-in/email 200 in 172ms
+ GET /dashboard 200 in 108ms
+ GET / 200 in 92ms
+ GET /cms/site 200 in 146ms
+ GET /cms/site?notice=Site+settings+saved 200 in 99ms
+ POST /cms/site 303 in 146ms
+ GET /cms/site?notice=Site+settings+saved 200 in 7ms
+ ○ Compiling /dev/components ...
+ ✓ Compiled /dev/components in 2.8s (2352 modules)
+ GET /dev/components 200 in 3281ms
+ GET /dev/components 200 in 121ms
+ GET /dev/components 200 in 149ms
+ GET /dev/components 200 in 116ms
+ ✓ Compiled in 2.6s (2629 modules)
+ ○ Compiling /api/health ...
+ ✓ Compiled /api/health in 1777ms (1498 modules)
+ GET /api/health 200 in 1998ms
+ ○ Compiling / ...
+ ✓ Compiled / in 3.5s (1527 modules)
+ GET / 200 in 4754ms
+ GET / 200 in 117ms
+ ○ Compiling /api/auth/[...all] ...
+ ✓ Compiled /api/auth/[...all] in 633ms (1531 modules)
+[2m2026-11-23T20:13:16.937Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:13:16.937Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET / 200 in 1813ms
+ ○ Compiling /blog ...
+ ✓ Compiled /blog in 2s (1533 modules)
+ GET /blog 200 in 2432ms
+ ○ Compiling /llms.txt ...
+ ✓ Compiled /llms.txt in 3.5s (1535 modules)
+ GET /llms.txt 200 in 3614ms
+ GET / 200 in 198ms
+ GET /api/health 200 in 28ms
+ ○ Compiling /api/scans ...
+ ✓ Compiled /api/scans in 660ms (1520 modules)
+[2m2026-11-23T20:13:25.101Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:13:25.102Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /api/scans 401 in 1038ms
+ GET /api/health 200 in 16ms
+ ○ Compiling /leads ...
+ ✓ Compiled /leads in 5.9s (2340 modules)
+[2m2026-11-23T20:13:31.809Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:13:31.809Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /leads 307 in 6693ms
+ ○ Compiling /leads/new ...
+ ✓ Compiled /leads/new in 957ms (2344 modules)
+[2m2026-11-23T20:13:33.287Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:13:33.287Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /leads/new 307 in 1473ms
+ ○ Compiling /documents ...
+ ✓ Compiled /documents in 1304ms (2348 modules)
+[2m2026-11-23T20:13:35.617Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:13:35.617Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /documents 307 in 3879ms
+ GET /documents/new 307 in 142ms
+ GET /dashboard 307 in 106ms
+ ○ Compiling /contact-requests ...
+ ✓ Compiled /contact-requests in 3.9s (2355 modules)
+[2m2026-11-23T20:13:41.903Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:13:41.903Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /contact-requests 307 in 4274ms
+ GET /cms 307 in 102ms
+ ○ Compiling /cms/posts/new ...
+ ✓ Compiled /cms/posts/new in 2.4s (2358 modules)
+[2m2026-11-23T20:13:44.784Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:13:44.784Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ ⨯ Error: CMS_FORBIDDEN
+    at requireCmsEditor (src/lib/cms-auth.ts:44:54)
+    at async NewCmsPostPage (src/app/(app)/cms/posts/new/page.tsx:12:3)
+  42 | export async function requireCmsEditor(): Promise<CrmActor> {
+  43 |   const actor = await getCrmActor();
+> 44 |   if (!actor || !canCreateCmsPost(actor.role)) throw new Error("CMS_FORBIDDEN");
+     |                                                      ^
+  45 |   return actor;
+  46 | }
+  47 | {
+  digest: '2791235741'
+}
+ GET /cms/posts/new 307 in 2770ms
+ GET /login 200 in 84ms
+[2m2026-11-23T20:13:45.622Z[0m [33mWARN[0m [1m[Better Auth]:[0m Invalid password
+ POST /api/auth/sign-in/email 401 in 159ms
+ GET /login 200 in 79ms
+ POST /api/auth/sign-in/email 200 in 128ms
+ GET /dashboard 200 in 101ms
+ GET /login 200 in 58ms
+ POST /api/auth/sign-in/email 200 in 157ms
+ GET /dashboard 200 in 102ms
+ GET /login 200 in 83ms
+ GET / 200 in 149ms
+ GET /api/auth/get-session 200 in 54ms
+ GET / 200 in 93ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST / 200 in 181ms
+ GET / 200 in 116ms
+ GET /api/auth/get-session 200 in 50ms
+ POST / 200 in 33ms
+ GET /login 200 in 61ms
+ POST /api/auth/sign-in/email 200 in 144ms
+ GET /dashboard 200 in 99ms
+ GET /leads/new 200 in 195ms
+ GET /leads/2ac4ea24-5d9e-4c09-a957-3cf7e97da28e 200 in 181ms
+ POST /leads/new 303 in 237ms
+ GET /leads 200 in 148ms
+ GET /login 200 in 87ms
+ POST /api/auth/sign-in/email 200 in 168ms
+ GET /dashboard 200 in 134ms
+ GET /leads/new 200 in 150ms
+ GET /leads/971208f0-bebc-4844-9dca-aa3e288c7d01 200 in 116ms
+ POST /leads/new 303 in 184ms
+ GET /leads?view=table&segment=professional_office&sort=score&dir=desc 200 in 128ms
+ GET /login 200 in 53ms
+ POST /api/auth/sign-in/email 200 in 168ms
+ GET /dashboard 200 in 102ms
+ GET /leads/new 200 in 123ms
+ GET /leads/5f004a2e-432d-4595-99a5-b22f3f7e8829 200 in 114ms
+ POST /leads/new 303 in 159ms
+ GET /leads/5f004a2e-432d-4595-99a5-b22f3f7e8829 200 in 149ms
+ POST /leads/5f004a2e-432d-4595-99a5-b22f3f7e8829 200 in 123ms
+ GET /leads 200 in 75ms
+ POST /leads/5f004a2e-432d-4595-99a5-b22f3f7e8829 303 in 125ms
+ GET /login 200 in 83ms
+ POST /api/auth/sign-in/email 200 in 166ms
+ GET /dashboard 200 in 100ms
+ GET /leads/new 200 in 130ms
+ GET /leads/8fe31914-fdb0-4f66-b3fb-6bbb97027666 200 in 122ms
+ POST /leads/new 303 in 194ms
+ GET /blog 200 in 226ms
+ GET /llms.txt 200 in 22ms
+ GET /api/health 200 in 25ms
+ GET /leads/8fe31914-fdb0-4f66-b3fb-6bbb97027666 307 in 82ms
+ GET / 200 in 84ms
+ GET /login 200 in 55ms
+ POST /api/auth/sign-in/email 200 in 222ms
+ GET /dashboard 200 in 95ms
+ GET /leads/new 200 in 756ms
+ GET /leads/eea64c1e-852a-4604-af86-398c5dfe8c2b 200 in 118ms
+ POST /leads/new 303 in 161ms
+ GET /leads 200 in 127ms
+[2m2026-11-23T20:14:09.476Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:14:09.476Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /leads 200 in 367ms
+ GET /leads 200 in 50ms
+ GET /login 200 in 60ms
+ POST /api/auth/sign-in/email 200 in 163ms
+ GET /dashboard 200 in 110ms
+ GET /leads/new 200 in 134ms
+ GET /leads/737a1382-be25-42e6-bc17-ae3d4539f9bb 200 in 122ms
+ POST /leads/new 303 in 184ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST /leads/737a1382-be25-42e6-bc17-ae3d4539f9bb 303 in 28ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST /leads/737a1382-be25-42e6-bc17-ae3d4539f9bb 200 in 144ms
+ GET /login 200 in 58ms
+ POST /api/auth/sign-in/email 200 in 156ms
+ GET /dashboard 200 in 109ms
+ GET /leads/new 200 in 144ms
+ GET /leads/36e6aad5-24ee-4022-9a05-1f96e56457d8 200 in 127ms
+ POST /leads/new 303 in 173ms
+ GET /leads 200 in 133ms
+ GET /leads/36e6aad5-24ee-4022-9a05-1f96e56457d8?notice=scan+queued 200 in 81ms
+ POST /leads 303 in 133ms
+ GET /leads 200 in 118ms
+ GET /login 200 in 52ms
+ POST /api/auth/sign-in/email 200 in 158ms
+ GET /dashboard 200 in 114ms
+ GET /leads/new 200 in 135ms
+ GET /leads/3bdece4c-eb82-4fdb-aae0-f20ef2af2e4b 200 in 152ms
+ POST /leads/new 303 in 194ms
+ GET /leads 200 in 131ms
+ GET /leads/3bdece4c-eb82-4fdb-aae0-f20ef2af2e4b?notice=scan+queued 200 in 89ms
+ POST /leads 303 in 146ms
+ GET /leads/3bdece4c-eb82-4fdb-aae0-f20ef2af2e4b?notice=scan+ran+recently%3B+wait+15+minutes 200 in 94ms
+ POST /leads/3bdece4c-eb82-4fdb-aae0-f20ef2af2e4b?notice=scan%20queued 303 in 172ms
+ GET /leads/3bdece4c-eb82-4fdb-aae0-f20ef2af2e4b?notice=scan+ran+recently%3B+wait+15+minutes 200 in 75ms
+ GET /leads/3bdece4c-eb82-4fdb-aae0-f20ef2af2e4b?notice=scan+ran+recently%3B+wait+15+minutes 200 in 50ms
+ GET / 200 in 120ms
+ GET /api/auth/get-session 200 in 47ms
+ POST / 200 in 25ms
+ GET /login 200 in 80ms
+ POST /api/auth/sign-in/email 200 in 176ms
+ GET /dashboard 200 in 99ms
+ GET /contact-requests 200 in 283ms
+ GET /leads/4c8ac3b0-fa1c-4dba-9b38-6b0f5c8df53e 200 in 138ms
+ POST /contact-requests 303 in 186ms
+ GET /login 200 in 59ms
+ POST /api/auth/sign-in/email 200 in 167ms
+ GET /dashboard 200 in 110ms
+ GET /leads/new 200 in 148ms
+ GET /leads/eafac1fd-ffeb-47fd-b7d7-e4a3e57e3ac3 200 in 122ms
+ POST /leads/new 303 in 170ms
+ GET /leads/eafac1fd-ffeb-47fd-b7d7-e4a3e57e3ac3 200 in 146ms
+ GET /leads/eafac1fd-ffeb-47fd-b7d7-e4a3e57e3ac3?notice=detail+queued 200 in 78ms
+ POST /leads/eafac1fd-ffeb-47fd-b7d7-e4a3e57e3ac3 303 in 125ms
+ GET /leads/eafac1fd-ffeb-47fd-b7d7-e4a3e57e3ac3?notice=detail+queued 200 in 86ms
+ GET /leads/eafac1fd-ffeb-47fd-b7d7-e4a3e57e3ac3?notice=detail+queued 200 in 90ms
+ GET /leads/eafac1fd-ffeb-47fd-b7d7-e4a3e57e3ac3 200 in 174ms
+ GET /login 200 in 68ms
+ POST /api/auth/sign-in/email 200 in 175ms
+ GET /dashboard 200 in 106ms
+ GET /documents/new 200 in 836ms
+ POST /documents/new 200 in 30ms
+ ○ Compiling /api/documents/[id]/pdf ...
+ ✓ Compiled /api/documents/[id]/pdf in 2.6s (2362 modules)
+ GET /api/documents/dbf3bac9-9e05-4ad8-8134-f00393304a59/pdf 200 in 4796ms
+ GET /login 200 in 144ms
+[2m2026-11-23T20:14:40.771Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:14:40.772Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /api/auth/sign-in/email 200 in 257ms
+ GET /dashboard 200 in 115ms
+ GET /documents/new 200 in 128ms
+ POST /documents/new 200 in 91ms
+ GET /api/documents/357976a3-b4ce-4180-b78e-ed6991e09eae/pdf 200 in 1903ms
+ GET /login 200 in 51ms
+ POST /api/auth/sign-in/email 200 in 154ms
+ GET /dashboard 200 in 97ms
+ GET /cms/posts/new 200 in 179ms
+ ○ Compiling /cms/posts/[id]/edit ...
+ ✓ Compiled /cms/posts/[id]/edit in 1059ms (2360 modules)
+[2m2026-11-23T20:14:47.466Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:14:47.466Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms/posts/31cbe9f0-3ca2-4b57-a46e-0b7ad2e67ed7/edit?notice=Draft+created 200 in 1401ms
+ POST /cms/posts/new 303 in 1450ms
+ GET /cms 200 in 704ms
+ GET /login 200 in 71ms
+ POST /api/auth/sign-in/email 200 in 177ms
+ GET /dashboard 200 in 100ms
+ GET /cms/posts/new 200 in 131ms
+ GET /cms/posts/5ac00262-f0b1-4ed0-8217-76dc95cb8dd5/edit?notice=Draft+created 200 in 112ms
+ POST /cms/posts/new 303 in 144ms
+ GET /cms 200 in 328ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST /cms 303 in 43ms
+ GET /login 200 in 51ms
+ POST /api/auth/sign-in/email 200 in 149ms
+ GET /dashboard 200 in 91ms
+ GET /cms/posts/new 200 in 150ms
+ GET /cms/posts/600155f8-33dc-455f-8eab-49252c28ebc7/edit?notice=Draft+created 200 in 116ms
+ POST /cms/posts/new 303 in 152ms
+ GET /cms 200 in 628ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/published-3160c5"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 247ms
+ POST /cms 303 in 287ms
+ GET /login 200 in 71ms
+ POST /api/auth/sign-in/email 200 in 155ms
+ GET /dashboard 200 in 96ms
+ GET /cms/posts/new 200 in 143ms
+ GET /cms/posts/dda0ad50-8fe9-4148-a79b-0d050bea3313/edit?notice=Draft+created 200 in 119ms
+ POST /cms/posts/new 303 in 163ms
+ GET /cms 200 in 604ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/markdown-813f95"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 231ms
+ POST /cms 303 in 281ms
+ ○ Compiling /blog/[slug] ...
+ ✓ Compiled /blog/[slug] in 1118ms (2363 modules)
+ GET /blog/markdown-813f95 200 in 1407ms
+ GET /api/auth/get-session 200 in 13ms
+[2m2026-11-23T20:15:02.306Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:15:02.306Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /login 200 in 87ms
+ POST /api/auth/sign-in/email 200 in 123ms
+ GET /dashboard 200 in 110ms
+ GET /cms/posts/new 200 in 159ms
+ GET /cms/posts/4af7d9e5-56d5-4900-a4c9-30f90d98a3d9/edit?notice=Draft+created 200 in 145ms
+ POST /cms/posts/new 303 in 189ms
+ GET /cms 200 in 705ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/jsonld-fc496c"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 245ms
+ POST /cms 303 in 288ms
+ GET /blog/jsonld-fc496c 200 in 145ms
+ GET /login 200 in 66ms
+ POST /api/auth/sign-in/email 200 in 151ms
+ GET /dashboard 200 in 110ms
+ GET /cms/posts/new 200 in 137ms
+ GET /cms/posts/a05699f8-293a-41f2-903b-d6b21ba6680b/edit?notice=Draft+created 200 in 132ms
+ POST /cms/posts/new 303 in 179ms
+ GET /blog/draft-only-894a51 404 in 138ms
+ GET /login 200 in 72ms
+ POST /api/auth/sign-in/email 200 in 155ms
+ GET /dashboard 200 in 90ms
+ GET /cms/posts/new 200 in 130ms
+ GET /cms/posts/638eed0e-dbe7-4ee5-9db3-8142193b1c4e/edit?notice=Draft+created 200 in 114ms
+ POST /cms/posts/new 303 in 163ms
+ GET /cms 200 in 671ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/sitemap-de770b"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 255ms
+ POST /cms 303 in 305ms
+ ○ Compiling /sitemap.xml ...
+ ✓ Compiled /sitemap.xml in 1228ms (2361 modules)
+ GET /sitemap.xml 200 in 1457ms
+ GET /login 200 in 241ms
+[2m2026-11-23T20:15:15.103Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:15:15.103Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /api/auth/sign-in/email 200 in 264ms
+ GET /dashboard 200 in 123ms
+ GET /cms/posts/new 200 in 192ms
+ GET /cms/posts/7d5c99af-6e86-4ac0-92da-d2323efc59c4/edit?notice=Draft+created 200 in 167ms
+ POST /cms/posts/new 303 in 907ms
+ GET /cms 200 in 692ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/llms-f10ecf"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 270ms
+ POST /cms 303 in 316ms
+ ○ Compiling /llms.txt ...
+ ✓ Compiled /llms.txt in 1154ms (2363 modules)
+ GET /llms.txt 200 in 1302ms
+ GET /login 200 in 198ms
+[2m2026-11-23T20:15:21.751Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:15:21.751Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /api/auth/sign-in/email 200 in 308ms
+ GET /dashboard 200 in 135ms
+ GET /cms/posts/new 200 in 156ms
+ GET /cms/posts/1b89d0dd-1b18-4bc5-9324-7adb1ebf671b/edit?notice=Draft+created 200 in 136ms
+ POST /cms/posts/new 303 in 192ms
+ GET /cms 200 in 683ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/indexnow-one-3d519e"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 273ms
+ POST /cms 303 in 317ms
+ GET /login 200 in 64ms
+ POST /api/auth/sign-in/email 200 in 148ms
+ GET /dashboard 200 in 106ms
+ GET /cms/posts/new 200 in 129ms
+ GET /cms/posts/a2988c67-0ebf-428e-8f64-117a14d8ccad/edit?notice=Draft+created 200 in 138ms
+ POST /cms/posts/new 303 in 190ms
+ GET /cms 200 in 752ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/indexnow-two-67b1e5"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 290ms
+ POST /cms 303 in 325ms
+ GET / 200 in 151ms
+ GET /api/auth/get-session 200 in 52ms
+ POST / 200 in 83ms
+ GET /login 200 in 58ms
+ POST /api/auth/sign-in/email 200 in 156ms
+ GET /dashboard 200 in 96ms
+ GET /contact-requests 200 in 267ms
+ GET /leads/0785881f-0cfc-4876-9c8a-97b537335d94 200 in 149ms
+ POST /contact-requests 303 in 201ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST /leads/0785881f-0cfc-4876-9c8a-97b537335d94 303 in 44ms
+ GET /leads/0785881f-0cfc-4876-9c8a-97b537335d94 200 in 142ms
+ GET /leads/0785881f-0cfc-4876-9c8a-97b537335d94?notice=scan+queued 200 in 98ms
+ POST /leads/0785881f-0cfc-4876-9c8a-97b537335d94 303 in 162ms
+ GET /leads/0785881f-0cfc-4876-9c8a-97b537335d94?notice=scan+queued 200 in 113ms
+ GET /leads/0785881f-0cfc-4876-9c8a-97b537335d94?notice=scan+queued 200 in 59ms
+ GET /documents/new 200 in 129ms
+ POST /documents/new 200 in 28ms
+ GET /cms/posts/new 200 in 132ms
+ GET /cms/posts/603c1b5d-5e65-499d-96c8-fc2b0fda8002/edit?notice=Draft+created 200 in 115ms
+ POST /cms/posts/new 303 in 153ms
+ GET /cms 200 in 702ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/walk-post-f380b9"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 278ms
+ POST /cms 303 in 312ms
+ GET /blog/walk-post-f380b9 200 in 129ms
+ GET /leads/0785881f-0cfc-4876-9c8a-97b537335d94 307 in 121ms
+ ○ Compiling /cms/site ...
+ ✓ Compiled /cms/site in 4.9s (2357 modules)
+[2m2026-11-23T20:15:43.610Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:15:43.610Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms/site 307 in 5401ms
+ GET /login 200 in 73ms
+ POST /api/auth/sign-in/email 200 in 1284ms
+ GET /dashboard 200 in 189ms
+ GET /cms/site 307 in 156ms
+ GET /?notice=CMS_FORBIDDEN 200 in 155ms
+ GET /login 200 in 56ms
+ POST /api/auth/sign-in/email 200 in 171ms
+ GET /dashboard 200 in 102ms
+ GET /cms/site 200 in 147ms
+ GET /login 200 in 58ms
+ POST /api/auth/sign-in/email 200 in 157ms
+ GET /dashboard 200 in 106ms
+ GET /cms/site 200 in 154ms
+[2m2026-11-23T20:15:54.500Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-23T20:15:54.500Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms/site?notice=Site+settings+saved 200 in 78ms
+ POST /cms/site 303 in 467ms
+ GET /cms/site?notice=Site+settings+saved 200 in 48ms
+ GET /cms/site?notice=Site+settings+saved 200 in 37ms
+ GET / 200 in 78ms
+ GET /login 200 in 53ms
+ POST /api/auth/sign-in/email 200 in 168ms
+ GET /dashboard 200 in 97ms
+ GET /cms/site 200 in 139ms
+ GET /cms/site?notice=Site+settings+saved 200 in 67ms
+ POST /cms/site 303 in 127ms
+ GET /cms/site?notice=Site+settings+saved 200 in 44ms
+ GET /llms.txt 200 in 31ms
+ GET /cms/site?notice=Site+settings+saved 200 in 73ms
+ GET /login 200 in 59ms
+ POST /api/auth/sign-in/email 200 in 176ms
+ GET /dashboard 200 in 103ms
+ GET /cms/site 200 in 131ms
+ POST /cms/site 200 in 30ms
+ GET /login 200 in 59ms
+ POST /api/auth/sign-in/email 200 in 160ms
+ GET /dashboard 200 in 95ms
+ GET /cms/site 200 in 131ms
+ GET /cms/site?notice=Site+settings+saved 200 in 71ms
+ POST /cms/site 303 in 116ms
+ GET /cms/site?notice=Site+settings+saved 200 in 44ms
+ GET /cms/site?notice=Site+settings+saved 200 in 118ms
+ GET / 200 in 127ms
+ GET /login 200 in 61ms
+ POST /api/auth/sign-in/email 200 in 173ms
+ GET /dashboard 200 in 104ms
+ GET /cms/site 200 in 142ms
+ GET /cms/site?notice=Site+settings+saved 200 in 69ms
+ POST /cms/site 303 in 115ms
+ GET /cms/site?notice=Site+settings+saved 200 in 53ms
+ GET /cms/site?notice=Site+settings+saved 200 in 51ms
+ GET / 200 in 122ms
+ GET /login 200 in 66ms
+ POST /api/auth/sign-in/email 200 in 159ms
+ GET /dashboard 200 in 96ms
+ GET /cms/site 200 in 149ms
+ POST /cms/site 200 in 1570ms
+ POST /cms/site 200 in 33ms
+ GET / 200 in 119ms
+ GET /login 200 in 79ms
+ POST /api/auth/sign-in/email 200 in 149ms
+ GET /dashboard 200 in 99ms
+ GET / 200 in 120ms
+ GET /api/auth/get-session 200 in 43ms
+ GET /login 200 in 89ms
+ POST /api/auth/sign-in/email 200 in 121ms
+ GET /dashboard 200 in 93ms
+ GET /cms/site 200 in 128ms
+ GET /cms/site?notice=Site+settings+saved 200 in 73ms
+ POST /cms/site 303 in 119ms
+ GET /cms/site?notice=Site+settings+saved 200 in 47ms
+ GET /cms/site?notice=Site+settings+saved 200 in 56ms
+ GET / 200 in 81ms
+ GET /login 200 in 70ms
+ POST /api/auth/sign-in/email 200 in 148ms
+ GET /dashboard 200 in 92ms
+ GET / 200 in 86ms
+ GET /cms/site 200 in 141ms
+ GET /cms/site?notice=Site+settings+saved 200 in 65ms
+ POST /cms/site 303 in 118ms
+ GET /cms/site?notice=Site+settings+saved 200 in 44ms
+ ○ Compiling /dev/components ...
+ ✓ Compiled /dev/components in 4.9s (2352 modules)
+ GET /dev/components 200 in 5392ms
+ GET /dev/components 200 in 98ms
+ GET /dev/components 200 in 108ms
+ GET /dev/components 200 in 103ms

@@ -1,0 +1,203 @@
+.leads-page,
+.contact-requests-page,
+.lead-detail-page {
+  width: min(100% - 2rem, 1180px);
+  margin-inline: auto;
+  padding: 2rem 0 3rem;
+}
+
+.leads-page h1,
+.contact-requests-page h1,
+.lead-detail-page h1 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.ui-view-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.leads-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: flex-end;
+  margin-bottom: 1.25rem;
+}
+
+.leads-toolbar label {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.leads-toolbar select,
+.leads-toolbar input[type="checkbox"],
+.lead-form input,
+.lead-form select,
+.lead-form textarea,
+.lead-activity-form input,
+.lead-activity-form textarea {
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius) / 2);
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font: inherit;
+}
+
+.leads-kanban {
+  display: block;
+}
+
+.lead-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lead-card-actions form {
+  display: inline;
+}
+
+.lead-card-link {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+}
+
+.ui-kanban-card-wrap.lead-card {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  cursor: default;
+}
+
+.leads-column {
+  min-height: 180px;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.leads-column h2 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.lead-card {
+  padding: 0.75rem;
+  margin-bottom: 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius) / 2);
+  background: var(--color-bg);
+  cursor: grab;
+}
+
+.lead-card p {
+  margin: 0.25rem 0;
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
+}
+
+.leads-table,
+.contact-requests-table,
+.lead-activity-list {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.leads-table th,
+.leads-table td,
+.contact-requests-table th,
+.contact-requests-table td,
+.lead-activity-list th,
+.lead-activity-list td {
+  padding: 0.6rem;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.leads-timeout {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-accent);
+  border-radius: calc(var(--radius) / 2);
+}
+
+.lead-form {
+  display: grid;
+  gap: 1rem;
+  max-width: 640px;
+}
+
+.lead-form .field,
+.lead-activity-form .field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.lead-activity-form {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 640px;
+  margin-bottom: 1.5rem;
+}
+
+.lead-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.lead-actions form {
+  display: inline;
+}
+
+.lead-documents a {
+  color: var(--color-accent);
+}
+
+.lead-notice {
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--color-accent);
+  border-radius: calc(var(--radius) / 2);
+}
+
+.lead-section,
+.lead-overview,
+.lead-detail-brief-section {
+  margin-top: 1.5rem;
+}
+
+.lead-detail-list {
+  display: grid;
+  grid-template-columns: minmax(120px, 180px) 1fr;
+  gap: 0.5rem 1rem;
+  margin: 0;
+}
+
+.lead-detail-list dt {
+  font-weight: 600;
+}
+
+.lead-detail-list dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.lead-detail-brief {
+  padding: 1rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}

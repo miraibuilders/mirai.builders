@@ -1,0 +1,17 @@
+
+> mirai-lab@ lint /home/morpheus/Downloads/mirai-lab
+> pnpm -r --if-present lint
+
+Scope: 3 of 4 workspace projects
+packages/db lint$ eslint .
+packages/db lint: Done
+apps/web lint$ next lint
+apps/worker lint$ eslint .
+apps/web lint: `next lint` is deprecated and will be removed in Next.js 16.
+apps/web lint: For new projects, use create-next-app to choose your preferred linter.
+apps/web lint: For existing projects, migrate to the ESLint CLI:
+apps/web lint: npx @next/codemod@canary next-lint-to-eslint-cli .
+apps/web lint: ✔ No ESLint warnings or errors
+apps/web lint: Done
+apps/worker lint: Done
+LINT_EXIT=0

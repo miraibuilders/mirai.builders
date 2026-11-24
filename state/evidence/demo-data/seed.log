@@ -1,0 +1,20 @@
+
+> mirai-lab@ seed:demo /home/morpheus/Downloads/mirai-lab
+> pnpm --filter @mirai/web seed:demo
+
+
+> @mirai/web@0.0.0 seed:demo /home/morpheus/Downloads/mirai-lab/apps/web
+> tsx scripts/seed-demo-data.ts
+
+{
+  "leads": 14,
+  "activities": 21,
+  "scans": 14,
+  "contactRequests": 7,
+  "documents": 6,
+  "posts": 7,
+  "authors": 3,
+  "media": 4,
+  "dnc": 5
+}
+SEED_EXIT=0

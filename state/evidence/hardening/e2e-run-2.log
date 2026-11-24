@@ -1,0 +1,354 @@
+
+> @mirai/web@0.0.0 test:e2e:full /home/morpheus/Downloads/mirai-lab/apps/web
+> playwright test --config playwright.config.ts
+
+
+Running 37 tests using 1 worker
+
+[1/37] tests/full-system.spec.ts:78:1 › 1 public site / renders with expected copy and no legacy tokens
+[2/37] tests/full-system.spec.ts:96:1 › 2 public metadata is consistent across /, /blog and /llms.txt
+[3/37] tests/full-system.spec.ts:117:1 › 3 landing JSON-LD is valid Organization data with no placeholders
+[4/37] tests/full-system.spec.ts:143:1 › 4 health endpoint reports connected database
+[5/37] tests/full-system.spec.ts:149:1 › 5 dev IndexNow key file is served
+[6/37] tests/full-system.spec.ts:155:1 › 6 unauthenticated API routes return 401
+  1) tests/full-system.spec.ts:155:1 › 6 unauthenticated API routes return 401 ─────────────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 404
+
+      154 |
+      155 | test("6 unauthenticated API routes return 401", async ({ request }) => {
+    > 156 |   expect((await request.get("/api/leads")).status()).toBe(401);
+          |                                                      ^
+      157 |   expect((await request.post("/api/scans", { data: {} })).status()).toBe(401);
+      158 |   expect((await request.get("/api/cms/posts")).status()).toBe(401);
+      159 | });
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:156:54
+
+    Error Context: test-results/full-system-6-unauthenticated-API-routes-return-401/error-context.md
+
+    Error Context: test-results/full-system-6-unauthenticated-API-routes-return-401/error-context.md
+
+
+[7/37] tests/full-system.spec.ts:161:1 › 7 unauthenticated protected pages redirect to /login?next=
+[8/37] tests/full-system.spec.ts:179:1 › 8 wrong password shows the failure message and stays on /login
+[9/37] tests/full-system.spec.ts:188:1 › 9 valid login reaches dashboard with session cookies
+[10/37] tests/full-system.spec.ts:196:1 › 10 already logged-in GET /login still shows the form
+[11/37] tests/full-system.spec.ts:204:1 › 11 client-side validation blocks empty contact submit
+[12/37] tests/full-system.spec.ts:216:1 › 12 direct server action with empty FormData returns error and inserts nothing
+[13/37] tests/full-system.spec.ts:224:1 › 13 valid contact form submit inserts exact fields
+[14/37] tests/full-system.spec.ts:238:1 › 14 CRM board shows all six stages and scored leads
+[15/37] tests/full-system.spec.ts:249:1 › 15 lead list filter and score sort work
+[16/37] tests/full-system.spec.ts:267:1 › 16 lead detail shows fields, activity form and delete
+  2) tests/full-system.spec.ts:267:1 › 16 lead detail shows fields, activity form and delete ───────
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('body')
+    Expected substring: "e2e-1795362191715 detail"
+    Received string:    "New leadCompanyWebsiteSegmentforeign_owned_smbprofessional_officeauto_shopinbound_tourismcliniclocal_businessmanufacturerotherReachabilityreferralmika_networkcold_listSize proxyNext stepNext step datePreferred templatebrandedmonoNoteCreate leadBack to leads"
+    Timeout: 30000ms
+
+    Call log:
+      - Expect "toContainText" locator('body') with timeout 30000ms
+      - waiting for locator('body')
+        63 × locator resolved to <body class="__className_dc45e9">…</body>
+           - unexpected value "New leadCompanyWebsiteSegmentforeign_owned_smbprofessional_officeauto_shopinbound_tourismcliniclocal_businessmanufacturerotherReachabilityreferralmika_networkcold_listSize proxyNext stepNext step datePreferred templatebrandedmonoNoteCreate leadBack to leads"
+
+
+      269 |   const id = await createLeadViaUi(page, `${RUN} detail`);
+      270 |   await page.goto(`/leads/${id}`);
+    > 271 |   await expect(page.locator("body")).toContainText(`${RUN} detail`);
+          |                                      ^
+      272 |   await expect(page.locator("body")).toContainText("professional_office");
+      273 |   await expect(page.locator("body")).toContainText("referral");
+      274 |   await expect(page.locator("body")).toContainText("5");
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:271:38
+
+    Error Context: test-results/full-system-16-lead-detail-b87e2-ds-activity-form-and-delete/error-context.md
+
+    Error Context: test-results/full-system-16-lead-detail-b87e2-ds-activity-form-and-delete/error-context.md
+
+
+[17/37] tests/full-system.spec.ts:287:1 › 17 detail brief is not exposed on public or unauthenticated routes
+tests/full-system.spec.ts:287:1 › 17 detail brief is not exposed on public or unauthenticated routes
+ERROR:  invalid input syntax for type uuid: "new"
+LINE 1: ...ef_md='e2e-1795362255652-SECRET-BRIEF-MARKER' WHERE id='new'
+                                                                  ^
+
+  3) tests/full-system.spec.ts:287:1 › 17 detail brief is not exposed on public or unauthenticated routes 
+
+    Error: Command failed: psql -h 127.0.0.1 -p 5433 -U postgres -d mirai_lab -At -c UPDATE leads SET detail_brief_md='e2e-1795362255652-SECRET-BRIEF-MARKER' WHERE id='new'
+    ERROR:  invalid input syntax for type uuid: "new"
+    LINE 1: ...ef_md='e2e-1795362255652-SECRET-BRIEF-MARKER' WHERE id='new'
+                                                                      ^
+
+
+       at fixtures/helpers.ts:28
+
+      26 |
+      27 | export function psql(query: string): string {
+    > 28 |   return execFileSync(
+         |          ^
+      29 |     "psql",
+      30 |     ["-h", "127.0.0.1", "-p", "5433", "-U", "postgres", "-d", "mirai_lab", "-At", "-c", query],
+      31 |     { env: { ...process.env, PGPASSWORD: "postgres" }, encoding: "utf8" },
+        at psql (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:28:10)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:291:3
+
+    Error Context: test-results/full-system-17-detail-brie-82b9d-c-or-unauthenticated-routes/error-context.md
+
+    Error Context: test-results/full-system-17-detail-brie-82b9d-c-or-unauthenticated-routes/error-context.md
+
+
+[18/37] tests/full-system.spec.ts:302:1 › 18 drag-and-drop stage change persists with direct-action retry
+  4) tests/full-system.spec.ts:302:1 › 18 drag-and-drop stage change persists with direct-action retry 
+
+    Test timeout of 120000ms exceeded.
+
+    Error: page.reload: Target page, context or browser has been closed
+
+      312 |       dropped = true;
+      313 |     } catch {
+    > 314 |       await page.reload();
+          |                  ^
+      315 |     }
+      316 |   }
+      317 |   if (!dropped) {
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:314:18
+
+    Error Context: test-results/full-system-18-drag-and-dr-275ad-ts-with-direct-action-retry/error-context.md
+
+    Error Context: test-results/full-system-18-drag-and-dr-275ad-ts-with-direct-action-retry/error-context.md
+
+
+[19/37] tests/full-system.spec.ts:326:1 › 19 CRM create/update/activity direct actions persist
+tests/full-system.spec.ts:326:1 › 19 CRM create/update/activity direct actions persist
+ERROR:  column "note" does not exist
+LINE 1: ...ny, segment, reachability, size_proxy, next_step, note FROM ...
+                                                             ^
+
+  5) tests/full-system.spec.ts:326:1 › 19 CRM create/update/activity direct actions persist ────────
+
+    Error: Command failed: psql -h 127.0.0.1 -p 5433 -U postgres -d mirai_lab -At -c SELECT company, segment, reachability, size_proxy, next_step, note FROM leads WHERE id='new'
+    ERROR:  column "note" does not exist
+    LINE 1: ...ny, segment, reachability, size_proxy, next_step, note FROM ...
+                                                                 ^
+
+
+       at fixtures/helpers.ts:28
+
+      26 |
+      27 | export function psql(query: string): string {
+    > 28 |   return execFileSync(
+         |          ^
+      29 |     "psql",
+      30 |     ["-h", "127.0.0.1", "-p", "5433", "-U", "postgres", "-d", "mirai_lab", "-At", "-c", query],
+      31 |     { env: { ...process.env, PGPASSWORD: "postgres" }, encoding: "utf8" },
+        at psql (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:28:10)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:329:15
+
+    Error Context: test-results/full-system-19-CRM-create--d0589-vity-direct-actions-persist/error-context.md
+
+    Error Context: test-results/full-system-19-CRM-create--d0589-vity-direct-actions-persist/error-context.md
+
+
+[20/37] tests/full-system.spec.ts:372:1 › 20 manual scan returns deterministic score 80 and tier
+  6) tests/full-system.spec.ts:372:1 › 20 manual scan returns deterministic score 80 and tier ──────
+
+    Test timeout of 120000ms exceeded.
+
+    Error: locator.click: Test timeout of 120000ms exceeded.
+    Call log:
+      - waiting for locator('[data-lead-id="new"]').getByRole('button', { name: 'Trigger scan' })
+
+
+      377 |     .locator(`[data-lead-id="${id}"]`)
+      378 |     .getByRole("button", { name: "Trigger scan" })
+    > 379 |     .click();
+          |      ^
+      380 |   await page.waitForURL(new RegExp(`/leads/${id}\\?notice=scan%20queued$`));
+      381 |   waitForScan(id);
+      382 |   await page.goto("/leads");
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:379:6
+
+    Error Context: test-results/full-system-20-manual-scan-e2d57-rministic-score-80-and-tier/error-context.md
+
+    Error Context: test-results/full-system-20-manual-scan-e2d57-rministic-score-80-and-tier/error-context.md
+
+
+[21/37] tests/full-system.spec.ts:392:1 › 21 second manual scan inside cooldown shows explicit notice
+  7) tests/full-system.spec.ts:392:1 › 21 second manual scan inside cooldown shows explicit notice ─
+
+    Test timeout of 120000ms exceeded.
+
+    Error: locator.click: Test timeout of 120000ms exceeded.
+    Call log:
+      - waiting for locator('[data-lead-id="new"]').getByRole('button', { name: 'Trigger scan' })
+
+
+      397 |     .locator(`[data-lead-id="${id}"]`)
+      398 |     .getByRole("button", { name: "Trigger scan" })
+    > 399 |     .click();
+          |      ^
+      400 |   await page.waitForURL(new RegExp(`/leads/${id}\\?notice=scan%20queued$`));
+      401 |   waitForScan(id);
+      402 |   await page.getByRole("button", { name: "Trigger scan" }).click();
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:399:6
+
+    Error Context: test-results/full-system-21-second-manu-742cf-ldown-shows-explicit-notice/error-context.md
+
+    Error Context: test-results/full-system-21-second-manu-742cf-ldown-shows-explicit-notice/error-context.md
+
+
+[22/37] tests/full-system.spec.ts:406:1 › 22 promote contact request creates lead and activity
+[23/37] tests/full-system.spec.ts:423:1 › 23 detail scan stores and displays internal brief
+  8) tests/full-system.spec.ts:423:1 › 23 detail scan stores and displays internal brief ───────────
+
+    Test timeout of 120000ms exceeded.
+
+    Error: locator.click: Test timeout of 120000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Analyse in detail' })
+
+
+      425 |   const id = await createLeadViaUi(page, `${RUN} detail-scan`);
+      426 |   await page.goto(`/leads/${id}`);
+    > 427 |   await page.getByRole("button", { name: "Analyse in detail" }).click();
+          |                                                                 ^
+      428 |   await page.waitForURL(new RegExp(`/leads/${id}\\?notice=detail%20queued$`));
+      429 |   waitForDetailBrief(id);
+      430 |   const brief = psql(`SELECT detail_brief_md FROM leads WHERE id='${id}'`);
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:427:65
+
+    Error Context: test-results/full-system-23-detail-scan-50177-and-displays-internal-brief/error-context.md
+
+    Error Context: test-results/full-system-23-detail-scan-50177-and-displays-internal-brief/error-context.md
+
+
+[24/37] tests/full-system.spec.ts:438:1 › 24 document PDF has real PDF type and expected text
+[25/37] tests/full-system.spec.ts:449:1 › 25 Japanese text and registration number survive PDF rendering
+tests/full-system.spec.ts:449:1 › 25 Japanese text and registration number survive PDF rendering
+ERROR:  invalid input syntax for type uuid: "pdf"
+LINE 1: SELECT registration_number FROM documents WHERE id='pdf'
+                                                           ^
+
+  9) tests/full-system.spec.ts:449:1 › 25 Japanese text and registration number survive PDF rendering 
+
+    Error: Command failed: psql -h 127.0.0.1 -p 5433 -U postgres -d mirai_lab -At -c SELECT registration_number FROM documents WHERE id='pdf'
+    ERROR:  invalid input syntax for type uuid: "pdf"
+    LINE 1: SELECT registration_number FROM documents WHERE id='pdf'
+                                                               ^
+
+
+       at fixtures/helpers.ts:28
+
+      26 |
+      27 | export function psql(query: string): string {
+    > 28 |   return execFileSync(
+         |          ^
+      29 |     "psql",
+      30 |     ["-h", "127.0.0.1", "-p", "5433", "-U", "postgres", "-d", "mirai_lab", "-At", "-c", query],
+      31 |     { env: { ...process.env, PGPASSWORD: "postgres" }, encoding: "utf8" },
+        at psql (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:28:10)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:458:10
+
+    Error Context: test-results/full-system-25-Japanese-te-066c5-umber-survive-PDF-rendering/error-context.md
+
+    Error Context: test-results/full-system-25-Japanese-te-066c5-umber-survive-PDF-rendering/error-context.md
+
+
+[26/37] tests/full-system.spec.ts:461:1 › 26 branded and mono PDFs do not overflow at 375px
+  10) tests/full-system.spec.ts:461:1 › 26 branded and mono PDFs do not overflow at 375px ──────────
+
+    Error: page.goto: Download is starting
+    Call log:
+      - navigating to "file:///home/morpheus/Downloads/mirai-lab/apps/web/test-results/.playwright-artifacts-9/ca6bf2c3-bc04-4d01-80f3-8e6571235d97", waiting until "load"
+
+
+      475 |     ["mono", mono.pdfPath],
+      476 |   ] as const) {
+    > 477 |     await viewer.goto(`file://${pdfPath}`);
+          |                  ^
+      478 |     const dimensions = await viewer.evaluate(() => ({
+      479 |       scrollWidth: document.documentElement.scrollWidth,
+      480 |       clientWidth: document.documentElement.clientWidth,
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:477:18
+
+    Error Context: test-results/full-system-26-branded-and-de2c3-Fs-do-not-overflow-at-375px/error-context.md
+
+    Error Context: test-results/full-system-26-branded-and-de2c3-Fs-do-not-overflow-at-375px/error-context.md
+
+
+[27/37] tests/full-system.spec.ts:489:1 › 27 CMS list shows admin posts
+[28/37] tests/full-system.spec.ts:498:1 › 28 editor cannot publish: UI hidden and direct action blocked
+[29/37] tests/full-system.spec.ts:513:1 › 29 admin publish creates a published post with exact body source
+[30/37] tests/full-system.spec.ts:536:1 › 30 published Markdown renders allowed elements only
+  11) tests/full-system.spec.ts:536:1 › 30 published Markdown renders allowed elements only ────────
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected substring: "<li>list item</li>"
+    Received string:    "<!DOCTYPE html><html lang=\"ja\" class=\"__variable_dc45e9\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"stylesheet\" href=\"/_next/static/css/app/layout.css?v=1795362789151\" data-precedence=\"next_static/css/app/layout.css\"><link rel=\"preload\" as=\"script\" fetchpriority=\"low\" href=\"/_next/static/chunks/webpack.js?v=1795362789151\"><script src=\"/_next/static/chunks/main-app.js?v=1795362789151\" async=\"\"></script><script src=\"/_next/static/chunks/app-pages-internals.js\" async=\"\"></script><script src=\"/_next/static/chunks/app/(marketing)/blog/%5Bslug%5D/page.js\" async=\"\"></script><meta name=\"next-size-adjust\" content=\"\"><title>e2e-1795362770692 markdown</title><meta name=\"description\" content=\"[MIKA: JP コピー待ち — missing post summary]\"><script src=\"/_next/static/chunks/polyfills.js\" nomodule=\"\"></script><link rel=\"preload\" href=\"/_next/static/media/fea9bcfa8bc9e724-s.p.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"><style>@font-face{font-family:'__nextjs-Geist';font-style:normal;font-weight:400 600;font-display:swap;src:url(/__nextjs_font/geist-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'__nextjs-Geist Mono';font-style:normal;font-weight:400 600;font-display:swap;src:url(/__nextjs_font/geist-mono-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'__nextjs-Geist';font-style:normal;font-weight:400 600;font-display:swap;src:url(/__nextjs_font/geist-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'__nextjs-Geist Mono';font-style:normal;font-weight:400 600;font-display:swap;src:url(/__nextjs_font/geist-mono-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}</style></head><body class=\"__className_dc45e9\"><div hidden=\"\"><!--$--><!--/$--></div><main><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"headline\":\"e2e-1795362770692 markdown\",\"description\":\"MIRAI Lab\",\"datePublished\":\"2026-11-22T15:53:06.200Z\",\"dateModified\":\"2026-11-22T15:53:06.200Z\",\"url\":\"http://localhost:3000/blog/markdown-a5f733\",\"mainEntityOfPage\":\"http://localhost:3000/blog/markdown-a5f733\",\"author\":{\"@type\":\"Person\",\"name\":\"Dev Admin\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"MIRAI Lab\"}}</script><article class=\"section\"><div class=\"container\"><p class=\"case-meta\"><a href=\"/blog\">[MIKA: JP コピー待ち — back to blog link]</a></p><h1>e2e-1795362770692 markdown</h1><p class=\"case-meta\">Dev Admin<!-- --> —<!-- --> <!-- -->2026-11-22</p><div class=\"blog-body\"><h2>Heading</h2><p><strong>bold</strong></p><p><em>italic</em></p><p><a href=\"https://example.com\">link</a></p><p>- list item</p><p>&lt;script&gt;alert(1)&lt;/script&gt;</p></div></div></article></main><!--$--><!--/$--><script src=\"/_next/static/chunks/webpack.js?v=1795362789151\" id=\"_R_\" async=\"\"></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,\"6:I[\\\"(app-pages-browser)/../../node_modules/.pnpm/next@15.5.29_@playwright+test@1.65.1_@types+node@22.20.5_react-dom@19.3.1_react@19.3.1__react@19.3.1/node_modules/next/dist/next-devtools/userspace/app/segment-explorer-node.js\\\",[\\\"app-pages-internals\\\",\\\"static/chunks/app-pages-internals.js\\\"],\\\"SegmentViewNode\\\"]\\n8:\\\"$Sreact.fragment\\\"\\n17:I[\\\"(app-pages-browser)/../../node_modules/.pnpm/next@15.5.29_@playwright+test@1.65.1_@types+node@22.20.5_react-dom@19.3.1_react@19.3.1__react@19.3.1/node_modules/next/dist/client/components/layout-router.js\\\",[\\\"app-pages-internals\\\",\\\"static/chunks/app-pages-internals.js\\\"],\\\"\\\"]\\n19:I[\\\"(app-pages-browser)/../../node_modules/.pnpm/next@15.5.29_@playwright+test@1.65.1_@types+node@22.20.5_react-dom@19.3.1_react@19.3.1__react@19.3.1/node_modules/next/dist/client/components/render-from-template-context.js\\\",[\\\"app-pages-internals\\\",\\\"static/chunks/app-pages-internals.js\\\"],\\\"\\\"]\\n4c:I[\\\"(app-pages-browser)/../../node_modules/.pnpm/next@15.5.29_@playwright+test@1.65.1_@types+node@22.20.5_react-dom@19.3.1_react@19.3.1__react@19.3.1/node_modules/next/dist/lib/framework/boundary-components.js\\\",[\\\"app-pages-internals\\\",\\\"static/chunks/app-pages-internals.js\\\"],\\\"OutletBoundary\\\"]\\n53:I[\\\"(app-pages-browser)/../../node_modules/.pnpm/next@15.5.29_@playwright+test@1.65.1_@types+node@22.20.5_react-dom@19.3.1_react@19.3.1__react@19.3.1/node_modules/next/dist/client/components/metadata/async-metadata.js\\\",[\\\"app-pages-internals\\\",\\\"static/chunks/app-pages-internals.js\\\"],\\\"AsyncMetadataOutlet\\\"]\\n5b:I[\\\"(app-pages-browser)/../../node_modules/.pnpm/next@15.5.29_@playwright+test@1.65.1_@types+node@22.20.5_react-dom@19.3.1_react@19.3.1__react@19.3.1/node_modules/next/dist/lib/framework/boundary-components.js\\\",[\\\"app-pages-internals\\\",\\\"static/chunks/app-pages-internals.js\\\"],\\\"ViewportBoundary\\\"]\\n62:I[\\\"(app-pages-browser)/../../node_modules/.pnpm/next@15.5.29_@playwright+test@1.65.1_@types+node@22.20.5_react-dom@19.3.1_react@19.3.1__react@19.3.1/node_modules/next/dist/lib/framework/boundary-components.js\\\",[\\\"app-pages-internals\\\",\\\"static/chunk\"])</script><script>self.__next_f.push([1,\"s/app-pages-internals.js\\\"],\\\"MetadataBoundary\\\"]\\n67:\\\"$Sreact.suspense\\\"\\n6b:I[\\\"(app-pages-browser)/../../node_modules/.pnpm/next@15.5.29_@playwright+test@1.65.1_@types+node@22.20.5_react-dom@19.3.1_react@19.3.1__react@19.3.1/node_modules/next/dist/client/components/builtin/global-error.js\\\",[\\\"app-pages-internals\\\",\\\"static/chunks/app-pages-internals.js\\\"],\\\"\\\"]\\n:HL[\\\"/_next/static/media/fea9bcfa8bc9e724-s.p.woff2\\\",\\\"font\\\",{\\\"crossOrigin\\\":\\\"\\\",\\\"type\\\":\\\"font/woff2\\\"}]\\n:HL[\\\"/_next/static/css/app/layout.css?v=1795362789151\\\",\\\"style\\\"]\\n:N1795362789183.7524\\n3:\\\"$EObject.defineProperty(()=\\u003e{ctx.componentMod.preloadFont(href,type,ctx.renderOpts.crossOrigin,ctx.nonce)},\\\\\\\"name\\\\\\\",{value:\\\\\\\"\\\\\\\"})\\\"\\n4:\\\"$EObject.defineProperty(()=\\u003e{ctx.componentMod.preloadStyle(fullHref,ctx.renderOpts.crossOrigin,ctx.nonce)},\\\\\\\"name\\\\\\\",{value:\\\\\\\"\\\\\\\"})\\\"\\n2:{\\\"name\\\":\\\"Preloads\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"stack\\\":[],\\\"props\\\":{\\\"preloadCallbacks\\\":[\\\"$3\\\",\\\"$4\\\"]}}\\n5:[]\\n7:[]\\n9:[[\\\"Array.map\\\",\\\"\\\",0,0,0,0,false]]\\nc:I[\\\"(app-pages-browser)/../../node_modules/.pnpm/next@15.5.29_@playwright+test@1.65.1_@types+node@22.20.5_react-dom@19.3.1_react@19.3.1__react@19.3.1/node_modules/next/dist/client/components/layout-router.js\\\",[\\\"app-pages-internals\\\",\\\"static/chunks/app-pages-internals.js\\\"],\\\"\\\"]\\nf:I[\\\"(app-pages-browser)/../../node_modules/.pnpm/next@15.5.29_@playwright+test@1.65.1_@types+node@22.20.5_react-dom@19.3.1_react@19.3.1__react@19.3.1/node_modules/next/dist/client/components/render-from-template-context.js\\\",[\\\"app-pages-internals\\\",\\\"static/chunks/app-pages-internals.js\\\"],\\\"\\\"]\\n10:{}\\n11:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\ne:{\\\"children\\\":[\\\"$\\\",\\\"$Lf\\\",null,\\\"$10\\\",null,\\\"$11\\\",1]}\\n12:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\nd:{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$8\\\",null,\\\"$e\\\",null,\\\"$12\\\",0],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$Y\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\",\\\"segmentViewBoundaries\\\":\\\"$Y\\\"}\\n13:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\nb:{\\\"name\\\":\\\"RootLayout\\\",\\\"key\\\":null,\\\"env\\\":\\\"\"])</script><script>self.__next_f.push([1,\"Server\\\",\\\"stack\\\":[],\\\"props\\\":{\\\"children\\\":[\\\"$\\\",\\\"$Lc\\\",null,\\\"$d\\\",null,\\\"$13\\\",1],\\\"params\\\":\\\"$Y\\\"}}\\n14:[[\\\"RootLayout\\\",\\\"webpack-internal:///(rsc)/./src/app/layout.tsx\\\",22,87,21,1,false]]\\n15:[[\\\"RootLayout\\\",\\\"webpack-internal:///(rsc)/./src/app/layout.tsx\\\",25,94,21,1,false]]\\n16:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n18:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n1a:[]\\n1c:{\\\"name\\\":\\\"NotFound\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"stack\\\":[],\\\"props\\\":{}}\\n1d:{\\\"name\\\":\\\"HTTPAccessErrorFallback\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"owner\\\":\\\"$1c\\\",\\\"stack\\\":[],\\\"props\\\":{\\\"status\\\":404,\\\"message\\\":\\\"This page could not be found.\\\"}}\\n1e:[]\\n1f:[]\\n20:[]\\n21:[]\\n22:[]\\n23:[]\\n24:[]\\n25:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n26:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n27:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n28:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n2d:{}\\n2e:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n2c:{\\\"children\\\":[\\\"$\\\",\\\"$L19\\\",null,\\\"$2d\\\",null,\\\"$2e\\\",1]}\\n2f:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n2b:{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$8\\\",null,\\\"$2c\\\",null,\\\"$2f\\\",0],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$Y\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\",\\\"segmentViewBoundaries\\\":\\\"$Y\\\"}\\n30:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n2a:{\\\"name\\\":\\\"MarketingLayout\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"stack\\\":[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]],\\\"props\\\":{\\\"children\\\":[\\\"$\\\",\\\"$L17\\\",null,\\\"$2b\\\",null,\\\"$30\\\",1],\\\"params\\\":\\\"$Y\\\"}}\\n31:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n32:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n33:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n35:{\\\"name\\\":\\\"NotFound\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"stack\\\":[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]],\\\"props\\\":{}}\\n36:{\\\"name\\\":\\\"HTTPAccessErrorFallback\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"owner\\\":\\\"$35\\\",\\\"stack\\\":[],\\\"props\\\":{\\\"status\\\":404,\\\"message\\\":\\\"This page could not be found.\\\"}}\\n37:[]\\n38:[]\\n39:[]\\n3a:[]\\n3b:[]\\n3c:[]\\n3d:[]\\n3e:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Functio\"])</script><script>self.__next_f.push([1,\"n.all\\\",\\\"\\\",0,0,0,0,true]]\\n3f:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n40:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n41:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n42:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n43:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n44:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n45:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n46:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n48:{\\\"name\\\":\\\"BlogPostPage\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"stack\\\":[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]],\\\"props\\\":{\\\"params\\\":\\\"$@49\\\",\\\"searchParams\\\":\\\"$@4a\\\"}}\\n4b:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n4f:\\\"$EObject.defineProperty(async function getViewportReady() {\\\\n        await viewport();\\\\n        return undefined;\\\\n    },\\\\\\\"name\\\\\\\",{value:\\\\\\\"getViewportReady\\\\\\\"})\\\"\\n4e:{\\\"name\\\":\\\"__next_outlet_boundary__\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"stack\\\":[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]],\\\"props\\\":{\\\"ready\\\":\\\"$4f\\\"}}\\n51:{\\\"name\\\":\\\"StreamingMetadataOutletImpl\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"stack\\\":[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]],\\\"props\\\":{}}\\n52:[]\\n55:[]\\n57:{\\\"name\\\":\\\"NonIndex\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"stack\\\":[],\\\"props\\\":{\\\"pagePath\\\":\\\"/bl\"])</script><script>self.__next_f.push([1,\"og/[slug]\\\",\\\"statusCode\\\":200,\\\"isPossibleServerAction\\\":false}}\\n59:{\\\"name\\\":\\\"ViewportTree\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"stack\\\":[],\\\"props\\\":{}}\\n5a:[]\\n5d:{\\\"name\\\":\\\"__next_viewport_boundary__\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"owner\\\":\\\"$59\\\",\\\"stack\\\":[],\\\"props\\\":{}}\\n5e:[]\\n60:{\\\"name\\\":\\\"MetadataTree\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"stack\\\":[],\\\"props\\\":{}}\\n61:[]\\n64:{\\\"name\\\":\\\"__next_metadata_boundary__\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"owner\\\":\\\"$60\\\",\\\"stack\\\":[],\\\"props\\\":{}}\\n65:[]\\n66:[]\\n69:{\\\"name\\\":\\\"MetadataResolver\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"owner\\\":\\\"$64\\\",\\\"stack\\\":[],\\\"props\\\":{}}\\n6c:[]\\n49:{\\\"slug\\\":\\\"markdown-a5f733\\\"}\\n4a:\\n6d:[]\\n6e:[]\\n1:D\\\"$2\\\"\\n1:null\\na:D\\\"$b\\\"\\n1b:D\\\"$1c\\\"\\n1b:D\\\"$1d\\\"\\n\"])</script><script>self.__next_f.push([1,\"1b:[[\\\"$\\\",\\\"title\\\",null,{\\\"children\\\":\\\"404: This page could not be found.\\\"},\\\"$1d\\\",\\\"$1e\\\",1],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":{\\\"fontFamily\\\":\\\"system-ui,\\\\\\\"Segoe UI\\\\\\\",Roboto,Helvetica,Arial,sans-serif,\\\\\\\"Apple Color Emoji\\\\\\\",\\\\\\\"Segoe UI Emoji\\\\\\\"\\\",\\\"height\\\":\\\"100vh\\\",\\\"textAlign\\\":\\\"center\\\",\\\"display\\\":\\\"flex\\\",\\\"flexDirection\\\":\\\"column\\\",\\\"alignItems\\\":\\\"center\\\",\\\"justifyContent\\\":\\\"center\\\"},\\\"children\\\":[\\\"$\\\",\\\"div\\\",null,{\\\"children\\\":[[\\\"$\\\",\\\"style\\\",null,{\\\"dangerouslySetInnerHTML\\\":{\\\"__html\\\":\\\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\\\"}},\\\"$1d\\\",\\\"$21\\\",1],[\\\"$\\\",\\\"h1\\\",null,{\\\"className\\\":\\\"next-error-h1\\\",\\\"style\\\":{\\\"display\\\":\\\"inline-block\\\",\\\"margin\\\":\\\"0 20px 0 0\\\",\\\"padding\\\":\\\"0 23px 0 0\\\",\\\"fontSize\\\":24,\\\"fontWeight\\\":500,\\\"verticalAlign\\\":\\\"top\\\",\\\"lineHeight\\\":\\\"49px\\\"},\\\"children\\\":404},\\\"$1d\\\",\\\"$22\\\",1],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":{\\\"display\\\":\\\"inline-block\\\"},\\\"children\\\":[\\\"$\\\",\\\"h2\\\",null,{\\\"style\\\":{\\\"fontSize\\\":14,\\\"fontWeight\\\":400,\\\"lineHeight\\\":\\\"49px\\\",\\\"margin\\\":0},\\\"children\\\":\\\"This page could not be found.\\\"},\\\"$1d\\\",\\\"$24\\\",1]},\\\"$1d\\\",\\\"$23\\\",1]]},\\\"$1d\\\",\\\"$20\\\",1]},\\\"$1d\\\",\\\"$1f\\\",1]]\\n\"])</script><script>self.__next_f.push([1,\"a:[\\\"$\\\",\\\"html\\\",null,{\\\"lang\\\":\\\"ja\\\",\\\"className\\\":\\\"__variable_dc45e9\\\",\\\"children\\\":[\\\"$\\\",\\\"body\\\",null,{\\\"className\\\":\\\"__className_dc45e9\\\",\\\"children\\\":[\\\"$\\\",\\\"$L17\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L19\\\",null,{},null,\\\"$18\\\",1],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":[\\\"$\\\",\\\"$L6\\\",\\\"c-not-found\\\",{\\\"type\\\":\\\"not-found\\\",\\\"pagePath\\\":\\\"__next_builtin__not-found.js\\\",\\\"children\\\":[\\\"$1b\\\",[]]},null,\\\"$1a\\\",0],\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\",\\\"segmentViewBoundaries\\\":[[\\\"$\\\",\\\"$L6\\\",null,{\\\"type\\\":\\\"boundary:not-found\\\",\\\"pagePath\\\":\\\"__next_builtin__not-found.js@boundary\\\"},null,\\\"$25\\\",1],\\\"$undefined\\\",\\\"$undefined\\\",[\\\"$\\\",\\\"$L6\\\",null,{\\\"type\\\":\\\"boundary:global-error\\\",\\\"pagePath\\\":\\\"__next_builtin__global-error.js\\\"},null,\\\"$26\\\",1]]},null,\\\"$16\\\",1]},\\\"$b\\\",\\\"$15\\\",1]},\\\"$b\\\",\\\"$14\\\",1]\\n\"])</script><script>self.__next_f.push([1,\"29:D\\\"$2a\\\"\\n34:D\\\"$35\\\"\\n34:D\\\"$36\\\"\\n\"])</script><script>self.__next_f.push([1,\"34:[[\\\"$\\\",\\\"title\\\",null,{\\\"children\\\":\\\"404: This page could not be found.\\\"},\\\"$36\\\",\\\"$37\\\",1],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":\\\"$1b:1:props:style\\\",\\\"children\\\":[\\\"$\\\",\\\"div\\\",null,{\\\"children\\\":[[\\\"$\\\",\\\"style\\\",null,{\\\"dangerouslySetInnerHTML\\\":{\\\"__html\\\":\\\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\\\"}},\\\"$36\\\",\\\"$3a\\\",1],[\\\"$\\\",\\\"h1\\\",null,{\\\"className\\\":\\\"next-error-h1\\\",\\\"style\\\":\\\"$1b:1:props:children:props:children:1:props:style\\\",\\\"children\\\":404},\\\"$36\\\",\\\"$3b\\\",1],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":\\\"$1b:1:props:children:props:children:2:props:style\\\",\\\"children\\\":[\\\"$\\\",\\\"h2\\\",null,{\\\"style\\\":\\\"$1b:1:props:children:props:children:2:props:children:props:style\\\",\\\"children\\\":\\\"This page could not be found.\\\"},\\\"$36\\\",\\\"$3d\\\",1]},\\\"$36\\\",\\\"$3c\\\",1]]},\\\"$36\\\",\\\"$39\\\",1]},\\\"$36\\\",\\\"$38\\\",1]]\\n\"])</script><script>self.__next_f.push([1,\"29:[\\\"$\\\",\\\"$L17\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L19\\\",null,{},null,\\\"$32\\\",1],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":[\\\"$\\\",\\\"$L6\\\",\\\"c-not-found\\\",{\\\"type\\\":\\\"not-found\\\",\\\"pagePath\\\":\\\"__next_builtin__not-found.js\\\",\\\"children\\\":[\\\"$34\\\",[]]},null,\\\"$33\\\",0],\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\",\\\"segmentViewBoundaries\\\":[[\\\"$\\\",\\\"$L6\\\",null,{\\\"type\\\":\\\"boundary:not-found\\\",\\\"pagePath\\\":\\\"__next_builtin__not-found.js@boundary\\\"},null,\\\"$3e\\\",1],\\\"$undefined\\\",\\\"$undefined\\\",\\\"$undefined\\\"]},null,\\\"$31\\\",1]\\n47:D\\\"$48\\\"\\n4d:D\\\"$4e\\\"\\n50:D\\\"$51\\\"\\n50:[\\\"$\\\",\\\"$L53\\\",null,{\\\"promise\\\":\\\"$@54\\\"},\\\"$51\\\",\\\"$52\\\",1]\\n56:D\\\"$57\\\"\\n56:null\\n58:D\\\"$59\\\"\\n5c:D\\\"$5d\\\"\\n58:[[\\\"$\\\",\\\"$L5b\\\",null,{\\\"children\\\":\\\"$L5c\\\"},\\\"$59\\\",\\\"$5a\\\",1],[\\\"$\\\",\\\"meta\\\",null,{\\\"name\\\":\\\"next-size-adjust\\\",\\\"content\\\":\\\"\\\"},\\\"$59\\\",\\\"$5e\\\",1]]\\n5f:D\\\"$60\\\"\\n63:D\\\"$64\\\"\\n68:D\\\"$69\\\"\\n63:[\\\"$\\\",\\\"div\\\",null,{\\\"hidden\\\":true,\\\"children\\\":[\\\"$\\\",\\\"$67\\\",null,{\\\"fallback\\\":null,\\\"children\\\":\\\"$L68\\\"},\\\"$64\\\",\\\"$66\\\",1]},\\\"$64\\\",\\\"$65\\\",1]\\n5f:[\\\"$\\\",\\\"$L62\\\",null,{\\\"children\\\":\\\"$63\\\"},\\\"$60\\\",\\\"$61\\\",1]\\n6a:[]\\n\"])</script><script>self.__next_f.push([1,\"0:{\\\"P\\\":\\\"$1\\\",\\\"b\\\":\\\"development\\\",\\\"p\\\":\\\"\\\",\\\"c\\\":[\\\"\\\",\\\"blog\\\",\\\"markdown-a5f733\\\"],\\\"i\\\":false,\\\"f\\\":[[[\\\"\\\",{\\\"children\\\":[\\\"(marketing)\\\",{\\\"children\\\":[\\\"blog\\\",{\\\"children\\\":[[\\\"slug\\\",\\\"markdown-a5f733\\\",\\\"d\\\"],{\\\"children\\\":[\\\"__PAGE__\\\",{}]}]}]}]},\\\"$undefined\\\",\\\"$undefined\\\",true],[\\\"\\\",[\\\"$\\\",\\\"$L6\\\",\\\"layout\\\",{\\\"type\\\":\\\"layout\\\",\\\"pagePath\\\":\\\"layout.tsx\\\",\\\"children\\\":[\\\"$\\\",\\\"$8\\\",\\\"c\\\",{\\\"children\\\":[[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/app/layout.css?v=1795362789151\\\",\\\"precedence\\\":\\\"next_static/css/app/layout.css\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"$undefined\\\"},null,\\\"$9\\\",0]],\\\"$a\\\"]},null,\\\"$7\\\",1]},null,\\\"$5\\\",0],{\\\"children\\\":[\\\"(marketing)\\\",[\\\"$\\\",\\\"$L6\\\",\\\"layout\\\",{\\\"type\\\":\\\"layout\\\",\\\"pagePath\\\":\\\"(marketing)/layout.tsx\\\",\\\"children\\\":[\\\"$\\\",\\\"$8\\\",\\\"c\\\",{\\\"children\\\":[null,\\\"$29\\\"]},null,\\\"$28\\\",1]},null,\\\"$27\\\",0],{\\\"children\\\":[\\\"blog\\\",[\\\"$\\\",\\\"$8\\\",\\\"c\\\",{\\\"children\\\":[null,[\\\"$\\\",\\\"$L17\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L19\\\",null,{},null,\\\"$41\\\",1],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$undefined\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\",\\\"segmentViewBoundaries\\\":[\\\"$undefined\\\",\\\"$undefined\\\",\\\"$undefined\\\",\\\"$undefined\\\"]},null,\\\"$40\\\",1]]},null,\\\"$3f\\\",0],{\\\"children\\\":[[\\\"slug\\\",\\\"markdown-a5f733\\\",\\\"d\\\"],[\\\"$\\\",\\\"$8\\\",\\\"c\\\",{\\\"children\\\":[null,[\\\"$\\\",\\\"$L17\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L19\\\",null,{},null,\\\"$44\\\",1],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$undefined\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\",\\\"segmentViewBoundaries\\\":[\\\"$undefined\\\",\\\"$undefined\\\",\\\"$undefined\\\",\\\"$undefined\\\"]},null,\\\"$43\\\",1]]},null,\\\"$42\\\",0],{\\\"children\\\":[\\\"__PAGE__\\\",[\\\"$\\\",\\\"$8\\\",\\\"c\\\",{\\\"children\\\":[[\\\"$\\\",\\\"$L6\\\",\\\"c-page\\\",{\\\"type\\\":\\\"page\\\",\\\"pagePath\\\":\\\"(marketing)/blog/[slug]/page.tsx\\\",\\\"children\\\":\\\"$L47\\\"},null,\\\"$46\\\",1],null,[\\\"$\\\",\\\"$L4c\\\",null,{\\\"children\\\":[\\\"$L4d\\\",\\\"$50\\\"]},null,\\\"$4b\\\",1]]},null,\\\"$45\\\",0],{},null,false]},null,false]},null,false]},null,false]},null,false],[\\\"$\\\",\\\"$8\\\",\\\"h\\\",{\\\"children\\\":[\\\"$56\\\",\\\"$58\\\",\\\"$5f\\\"]},null,\\\"$55\\\",0],false]],\\\"m\\\":\\\"$W6a\\\",\\\"G\\\":[\\\"$6b\\\",[\\\"$\\\",\\\"$L6\\\",\\\"ge-svn\\\",{\\\"type\\\":\\\"global-error\\\",\\\"pagePath\\\":\\\"__next_builtin__global-error.js\\\",\\\"children\\\":[]},null,\\\"$6c\\\",0]],\\\"s\\\":false,\\\"S\\\":false}\\n\"])</script><script>self.__next_f.push([1,\"5c:[[\\\"$\\\",\\\"meta\\\",\\\"0\\\",{\\\"charSet\\\":\\\"utf-8\\\"},\\\"$4e\\\",\\\"$6d\\\",0],[\\\"$\\\",\\\"meta\\\",\\\"1\\\",{\\\"name\\\":\\\"viewport\\\",\\\"content\\\":\\\"width=device-width, initial-scale=1\\\"},\\\"$4e\\\",\\\"$6e\\\",0]]\\n4d:null\\n\"])</script><script>self.__next_f.push([1,\"86:I[\\\"(app-pages-browser)/../../node_modules/.pnpm/next@15.5.29_@playwright+test@1.65.1_@types+node@22.20.5_react-dom@19.3.1_react@19.3.1__react@19.3.1/node_modules/next/dist/client/app-dir/link.js\\\",[\\\"app/(marketing)/blog/[slug]/page\\\",\\\"static/chunks/app/(marketing)/blog/%5Bslug%5D/page.js\\\"],\\\"\\\"]\\n6f:{\\\"name\\\":\\\"NewCmsPostPage\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"stack\\\":[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]],\\\"props\\\":{\\\"params\\\":\\\"$@70\\\",\\\"searchParams\\\":\\\"$@71\\\"}}\\n72:J{\\\"name\\\":\\\"\\\",\\\"start\\\":-16984.90440999996,\\\"end\\\":98.38063600007445,\\\"env\\\":\\\"Server\\\",\\\"owner\\\":\\\"$6f\\\",\\\"value\\\":\\\"$@73\\\"}\\n74:[[\\\"getPublishedPostBySlug\\\",\\\"webpack-internal:///(rsc)/./src/lib/cms.ts\\\",81,536,80,1,false],[\\\"BlogPostPage\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",43,88,41,1,false]]\\n70:{}\\n71:{}\\n73:\\\"$undefined\\\"\\n78:{}\\n79:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n77:{\\\"children\\\":[\\\"$\\\",\\\"$L19\\\",null,\\\"$78\\\",null,\\\"$79\\\",1]}\\n7a:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n76:{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$8\\\",null,\\\"$77\\\",null,\\\"$7a\\\",0],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$Y\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\",\\\"segmentViewBoundaries\\\":\\\"$Y\\\"}\\n7b:[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]]\\n75:{\\\"name\\\":\\\"AppLayout\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"stack\\\":[[\\\"Function.all\\\",\\\"\\\",0,0,0,0,true]],\\\"props\\\":{\\\"children\\\":[\\\"$\\\",\\\"$L17\\\",null,\\\"$76\\\",null,\\\"$7b\\\",1],\\\"params\\\":\\\"$Y\\\"}}\\n7c:J{\\\"name\\\":\\\"\\\",\\\"start\\\":-37526.030721999705,\\\"end\\\":101.60335800005123,\\\"env\\\":\\\"Server\\\",\\\"owner\\\":\\\"$75\\\",\\\"value\\\":\\\"$@7d\\\"}\\n7e:[[\\\"getPublishedPostBySlug\\\",\\\"webpack-internal:///(rsc)/./src/lib/cms.ts\\\",81,536,80,1,false],[\\\"Module.generateMetadata\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",32,88,30,1,false]]\\n7d:\\\"$undefined\\\"\\n7f:[[\\\"getPublishedPostBySlug\\\",\\\"webpack-in\"])</script><script>self.__next_f.push([1,\"ternal:///(rsc)/./src/lib/cms.ts\\\",81,536,80,1,false],[\\\"Module.generateMetadata\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",32,88,30,1,false]]\\n80:[[\\\"BlogPostPage\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",47,87,41,1,false]]\\n81:[[\\\"BlogPostPage\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",49,88,41,1,false]]\\n82:[[\\\"BlogPostPage\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",69,88,41,1,false]]\\n83:[[\\\"BlogPostPage\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",71,102,41,1,false]]\\n84:[[\\\"BlogPostPage\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",74,100,41,1,false]]\\n85:[[\\\"BlogPostPage\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",76,114,41,1,false]]\\n87:[[\\\"BlogPostPage\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",89,100,41,1,false]]\\n88:[[\\\"BlogPostPage\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",96,100,41,1,false]]\\n89:[[\\\"BlogPostPage\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",109,100,41,1,false]]\\n8a:[[\\\"eval\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",61,124,56,27,false],[\\\"Array.forEach\\\",\\\"\\\",0,0,0,0,false],[\\\"eval\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",56,19,51,20,false],[\\\"Array.forEach\\\",\\\"\\\",0,0,0,0,false],[\\\"renderMarkdown\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",51,12,48,1,false],[\\\"BlogPostPage\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",111,100,41,1,false]]\\n8b:[[\\\"eval\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",78,96,51,20,false],[\\\"Array.forEach\\\",\\\"\\\",0,0,0,0,false],[\\\"renderMarkdown\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",51,12,48,1,false],[\\\"BlogPostPage\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",111,100,41,1,false]]\\n8c:[[\\\"eval\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",13,95,10,67,false],[\\\"Array.map\\\",\\\"\\\",0,0,0,0,false],[\\\"renderInline\\\",\\\"webpack-inter\"])</script><script>self.__next_f.push([1,\"nal:///(rsc)/./src/lib/markdown.tsx\\\",10,63,9,1,false],[\\\"eval\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",79,23,51,20,false],[\\\"Array.forEach\\\",\\\"\\\",0,0,0,0,false],[\\\"renderMarkdown\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",51,12,48,1,false],[\\\"BlogPostPage\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",111,100,41,1,false]]\\n8d:[[\\\"eval\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",78,96,51,20,false],[\\\"Array.forEach\\\",\\\"\\\",0,0,0,0,false],[\\\"renderMarkdown\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",51,12,48,1,false],[\\\"BlogPostPage\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",111,100,41,1,false]]\\n8e:[[\\\"eval\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",22,95,10,67,false],[\\\"Array.map\\\",\\\"\\\",0,0,0,0,false],[\\\"renderInline\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",10,63,9,1,false],[\\\"eval\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",79,23,51,20,false],[\\\"Array.forEach\\\",\\\"\\\",0,0,0,0,false],[\\\"renderMarkdown\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",51,12,48,1,false],[\\\"BlogPostPage\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",111,100,41,1,false]]\\n8f:[[\\\"eval\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",78,96,51,20,false],[\\\"Array.forEach\\\",\\\"\\\",0,0,0,0,false],[\\\"renderMarkdown\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",51,12,48,1,false],[\\\"BlogPostPage\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",111,100,41,1,false]]\\n90:[[\\\"eval\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",34,99,10,67,false],[\\\"Array.map\\\",\\\"\\\",0,0,0,0,false],[\\\"renderInline\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",10,63,9,1,false],[\\\"eval\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",79,23,51,20,false],[\\\"Array.forEach\\\",\\\"\\\",0,0,0,0,false],[\\\"renderMarkdown\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",51,12,48,1,false],[\\\"BlogPostPage\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",111,100,41,1,false]]\\n91:[[\\\"eval\\\",\\\"webpack-internal:///(rsc)/./src/lib/mar\"])</script><script>self.__next_f.push([1,\"kdown.tsx\\\",78,96,51,20,false],[\\\"Array.forEach\\\",\\\"\\\",0,0,0,0,false],[\\\"renderMarkdown\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",51,12,48,1,false],[\\\"BlogPostPage\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",111,100,41,1,false]]\\n92:[[\\\"eval\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",78,96,51,20,false],[\\\"Array.forEach\\\",\\\"\\\",0,0,0,0,false],[\\\"renderMarkdown\\\",\\\"webpack-internal:///(rsc)/./src/lib/markdown.tsx\\\",51,12,48,1,false],[\\\"BlogPostPage\\\",\\\"webpack-internal:///(rsc)/./src/app/(marketing)/blog/[slug]/page.tsx\\\",111,100,41,1,false]]\\n93:[]\\n94:[]\\n47:D{\\\"awaited\\\":\\\"$72\\\",\\\"env\\\":\\\"Server\\\",\\\"owner\\\":\\\"$48\\\",\\\"stack\\\":\\\"$74\\\"}\\n54:D{\\\"awaited\\\":\\\"$7c\\\",\\\"env\\\":\\\"Server\\\",\\\"owner\\\":\\\"$51\\\",\\\"stack\\\":\\\"$7e\\\"}\\n68:D{\\\"awaited\\\":\\\"$7c\\\",\\\"env\\\":\\\"Server\\\",\\\"owner\\\":\\\"$51\\\",\\\"stack\\\":\\\"$7f\\\"}\\n\"])</script><script>self.__next_f.push([1,\"47:[\\\"$\\\",\\\"main\\\",null,{\\\"children\\\":[[\\\"$\\\",\\\"script\\\",null,{\\\"type\\\":\\\"application/ld+json\\\",\\\"dangerouslySetInnerHTML\\\":{\\\"__html\\\":\\\"{\\\\\\\"@context\\\\\\\":\\\\\\\"https://schema.org\\\\\\\",\\\\\\\"@type\\\\\\\":\\\\\\\"BlogPosting\\\\\\\",\\\\\\\"headline\\\\\\\":\\\\\\\"e2e-1795362770692 markdown\\\\\\\",\\\\\\\"description\\\\\\\":\\\\\\\"MIRAI Lab\\\\\\\",\\\\\\\"datePublished\\\\\\\":\\\\\\\"2026-11-22T15:53:06.200Z\\\\\\\",\\\\\\\"dateModified\\\\\\\":\\\\\\\"2026-11-22T15:53:06.200Z\\\\\\\",\\\\\\\"url\\\\\\\":\\\\\\\"http://localhost:3000/blog/markdown-a5f733\\\\\\\",\\\\\\\"mainEntityOfPage\\\\\\\":\\\\\\\"http://localhost:3000/blog/markdown-a5f733\\\\\\\",\\\\\\\"author\\\\\\\":{\\\\\\\"@type\\\\\\\":\\\\\\\"Person\\\\\\\",\\\\\\\"name\\\\\\\":\\\\\\\"Dev Admin\\\\\\\"},\\\\\\\"publisher\\\\\\\":{\\\\\\\"@type\\\\\\\":\\\\\\\"Organization\\\\\\\",\\\\\\\"name\\\\\\\":\\\\\\\"MIRAI Lab\\\\\\\"}}\\\"}},\\\"$48\\\",\\\"$81\\\",1],null,[\\\"$\\\",\\\"article\\\",null,{\\\"className\\\":\\\"section\\\",\\\"children\\\":[\\\"$\\\",\\\"div\\\",null,{\\\"className\\\":\\\"container\\\",\\\"children\\\":[[\\\"$\\\",\\\"p\\\",null,{\\\"className\\\":\\\"case-meta\\\",\\\"children\\\":[\\\"$\\\",\\\"$L86\\\",null,{\\\"href\\\":\\\"/blog\\\",\\\"children\\\":\\\"[MIKA: JP コピー待ち — back to blog link]\\\"},\\\"$48\\\",\\\"$85\\\",1]},\\\"$48\\\",\\\"$84\\\",1],[\\\"$\\\",\\\"h1\\\",null,{\\\"children\\\":\\\"e2e-1795362770692 markdown\\\"},\\\"$48\\\",\\\"$87\\\",1],[\\\"$\\\",\\\"p\\\",null,{\\\"className\\\":\\\"case-meta\\\",\\\"children\\\":[\\\"Dev Admin\\\",\\\" —\\\",\\\" \\\",\\\"2026-11-22\\\"]},\\\"$48\\\",\\\"$88\\\",1],[\\\"$\\\",\\\"div\\\",null,{\\\"className\\\":\\\"blog-body\\\",\\\"children\\\":[[\\\"$\\\",\\\"h2\\\",\\\"h-0-0\\\",{\\\"children\\\":[\\\"Heading\\\"]},\\\"$48\\\",\\\"$8a\\\",0],[\\\"$\\\",\\\"p\\\",\\\"p-1\\\",{\\\"children\\\":[[\\\"$\\\",\\\"strong\\\",\\\"p-1-0\\\",{\\\"children\\\":\\\"bold\\\"},\\\"$48\\\",\\\"$8c\\\",0]]},\\\"$48\\\",\\\"$8b\\\",0],[\\\"$\\\",\\\"p\\\",\\\"p-2\\\",{\\\"children\\\":[[\\\"$\\\",\\\"em\\\",\\\"p-2-0\\\",{\\\"children\\\":\\\"italic\\\"},\\\"$48\\\",\\\"$8e\\\",0]]},\\\"$48\\\",\\\"$8d\\\",0],[\\\"$\\\",\\\"p\\\",\\\"p-3\\\",{\\\"children\\\":[[\\\"$\\\",\\\"a\\\",\\\"p-3-0\\\",{\\\"href\\\":\\\"https://example.com\\\",\\\"children\\\":\\\"link\\\"},\\\"$48\\\",\\\"$90\\\",0]]},\\\"$48\\\",\\\"$8f\\\",0],[\\\"$\\\",\\\"p\\\",\\\"p-4\\\",{\\\"children\\\":[\\\"- list item\\\"]},\\\"$48\\\",\\\"$91\\\",0],[\\\"$\\\",\\\"p\\\",\\\"p-5\\\",{\\\"children\\\":[\\\"\\u003cscript\\u003ealert(1)\\u003c/script\\u003e\\\"]},\\\"$48\\\",\\\"$92\\\",0]]},\\\"$48\\\",\\\"$89\\\",1]]},\\\"$48\\\",\\\"$83\\\",1]},\\\"$48\\\",\\\"$82\\\",1]]},\\\"$48\\\",\\\"$80\\\",1]\\n\"])</script><script>self.__next_f.push([1,\"54:{\\\"metadata\\\":[[\\\"$\\\",\\\"title\\\",\\\"0\\\",{\\\"children\\\":\\\"e2e-1795362770692 markdown\\\"},\\\"$51\\\",\\\"$93\\\",0],[\\\"$\\\",\\\"meta\\\",\\\"1\\\",{\\\"name\\\":\\\"description\\\",\\\"content\\\":\\\"[MIKA: JP コピー待ち — missing post summary]\\\"},\\\"$51\\\",\\\"$94\\\",0]],\\\"error\\\":null,\\\"digest\\\":\\\"$undefined\\\"}\\n68:\\\"$54:metadata\\\"\\n\"])</script><script data-nextjs-dev-overlay=\"true\" style=\"display: block; position: absolute;\"><nextjs-portal style=\"--nextjs-dev-tools-scale: 1;\"></nextjs-portal></script><next-route-announcer style=\"position: absolute;\"></next-route-announcer></body></html>"
+
+      549 |   await expect(page.locator('a[href="https://example.com"]')).toContainText("link");
+      550 |   const html = await page.content();
+    > 551 |   expect(html).toContain("<li>list item</li>");
+          |                ^
+      552 |   expect(html).toContain("&lt;script&gt;alert(1)&lt;/script&gt;");
+      553 |   expect(html).not.toContain("<script>alert(1)</script>");
+      554 | });
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:551:16
+
+    Error Context: test-results/full-system-30-published-M-0e9e3-nders-allowed-elements-only/error-context.md
+
+    Error Context: test-results/full-system-30-published-M-0e9e3-nders-allowed-elements-only/error-context.md
+
+
+[31/37] tests/full-system.spec.ts:556:1 › 31 published post emits exactly one BlogPosting JSON-LD block
+[32/37] tests/full-system.spec.ts:572:1 › 32 draft post slug returns 404
+[33/37] tests/full-system.spec.ts:579:1 › 33 sitemap includes published slug
+[34/37] tests/full-system.spec.ts:589:1 › 34 llms.txt includes published slug and localized description
+[35/37] tests/full-system.spec.ts:601:1 › 35 IndexNow enabled: draft save sends zero pings, publish sends one
+[36/37] tests/full-system.spec.ts:617:1 › 36 IndexNow enabled: publishing a second post sends a second ping
+[37/37] tests/full-system.spec.ts:629:1 › 38 full walk: contact, promote, scan, document, publish, public read
+  12) tests/full-system.spec.ts:629:1 › 38 full walk: contact, promote, scan, document, publish, public read 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 303
+    Received: 500
+
+      658 |     cookie,
+      659 |   );
+    > 660 |   expect(updated.status).toBe(303);
+          |                          ^
+      661 |
+      662 |   await page.goto(`/leads/${leadId}`);
+      663 |   await page.getByRole("button", { name: "Trigger scan" }).click();
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:660:26
+
+    Error Context: test-results/full-system-38-full-walk-c-780fd-ocument-publish-public-read/error-context.md
+
+    Error Context: test-results/full-system-38-full-walk-c-780fd-ocument-publish-public-read/error-context.md
+
+
+  12 failed
+    tests/full-system.spec.ts:155:1 › 6 unauthenticated API routes return 401 ──────────────────────
+    tests/full-system.spec.ts:267:1 › 16 lead detail shows fields, activity form and delete ────────
+    tests/full-system.spec.ts:287:1 › 17 detail brief is not exposed on public or unauthenticated routes 
+    tests/full-system.spec.ts:302:1 › 18 drag-and-drop stage change persists with direct-action retry 
+    tests/full-system.spec.ts:326:1 › 19 CRM create/update/activity direct actions persist ─────────
+    tests/full-system.spec.ts:372:1 › 20 manual scan returns deterministic score 80 and tier ───────
+    tests/full-system.spec.ts:392:1 › 21 second manual scan inside cooldown shows explicit notice ──
+    tests/full-system.spec.ts:423:1 › 23 detail scan stores and displays internal brief ────────────
+    tests/full-system.spec.ts:449:1 › 25 Japanese text and registration number survive PDF rendering 
+    tests/full-system.spec.ts:461:1 › 26 branded and mono PDFs do not overflow at 375px ────────────
+    tests/full-system.spec.ts:536:1 › 30 published Markdown renders allowed elements only ──────────
+    tests/full-system.spec.ts:629:1 › 38 full walk: contact, promote, scan, document, publish, public read 
+  25 passed (10.9m)
+/home/morpheus/Downloads/mirai-lab/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @mirai/web@0.0.0 test:e2e:full: `playwright test --config playwright.config.ts`
+Exit status 1

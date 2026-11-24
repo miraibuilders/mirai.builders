@@ -1,0 +1,66 @@
+
+> mirai-lab@ build /home/morpheus/Downloads/mirai-lab
+> pnpm -r --if-present build
+
+Scope: 3 of 4 workspace projects
+packages/db build$ tsc -p tsconfig.json
+packages/db build: Done
+apps/web build$ next build
+apps/worker build$ tsc -p tsconfig.json
+apps/web build:    ▲ Next.js 15.5.29
+apps/web build:    - Experiments (use with caution):
+apps/web build:      · serverActions
+apps/web build:    Creating an optimized production build ...
+apps/worker build: Done
+apps/web build:  ✓ Compiled successfully in 6.4s
+apps/web build:    Linting and checking validity of types ...
+apps/web build:    Collecting page data ...
+apps/web build:    Generating static pages (0/8) ...
+apps/web build:    Generating static pages (2/8) 
+apps/web build:    Generating static pages (4/8) 
+apps/web build:    Generating static pages (6/8) 
+apps/web build:  ✓ Generating static pages (8/8)
+apps/web build:    Finalizing page optimization ...
+apps/web build:    Collecting build traces ...
+apps/web build: Route (app)                                 Size  First Load JS  Revalidate  Expire
+apps/web build: ┌ ○ /                                     2.8 kB         110 kB          1h      1y
+apps/web build: ├ ○ /_not-found                            998 B         103 kB
+apps/web build: ├ ƒ /api/auth/[...all]                     145 B         103 kB
+apps/web build: ├ ƒ /api/documents/[id]/pdf                145 B         103 kB
+apps/web build: ├ ƒ /api/health                            145 B         103 kB
+apps/web build: ├ ƒ /api/scans                             145 B         103 kB
+apps/web build: ├ ƒ /blog                                  168 B         106 kB
+apps/web build: ├ ƒ /blog/[slug]                           168 B         106 kB
+apps/web build: ├ ƒ /cms                                  2.3 kB         123 kB
+apps/web build: ├ ƒ /cms/authors                           229 B         121 kB
+apps/web build: ├ ƒ /cms/media                             229 B         121 kB
+apps/web build: ├ ƒ /cms/posts/[id]/edit                 1.98 kB         122 kB
+apps/web build: ├ ƒ /cms/posts/new                       1.98 kB         122 kB
+apps/web build: ├ ƒ /cms/site                            3.86 kB         124 kB
+apps/web build: ├ ƒ /contact-requests                    2.28 kB         123 kB
+apps/web build: ├ ƒ /dashboard                             229 B         121 kB
+apps/web build: ├ ○ /dev/components                      4.18 kB         124 kB
+apps/web build: ├ ○ /dev/data-table                      2.61 kB         123 kB
+apps/web build: ├ ○ /dev/kanban                          2.21 kB         122 kB
+apps/web build: ├ ƒ /documents                           1.92 kB         122 kB
+apps/web build: ├ ƒ /documents/new                       2.82 kB         123 kB
+apps/web build: ├ ƒ /leads                                3.5 kB         124 kB
+apps/web build: ├ ƒ /leads/[id]                            237 B         121 kB
+apps/web build: ├ ƒ /leads/[id]/edit                       138 B         123 kB
+apps/web build: ├ ƒ /leads/new                             138 B         123 kB
+apps/web build: ├ ƒ /leads/review                          222 B         121 kB
+apps/web build: ├ ƒ /leads/sources                         222 B         121 kB
+apps/web build: ├ ƒ /llms.txt                              145 B         103 kB
+apps/web build: ├ ƒ /login                               2.24 kB         105 kB
+apps/web build: ├ ○ /robots.txt                            145 B         103 kB
+apps/web build: ├ ƒ /settings/dnc                          229 B         121 kB
+apps/web build: └ ƒ /sitemap.xml                           145 B         103 kB
+apps/web build: + First Load JS shared by all             102 kB
+apps/web build:   ├ chunks/2465-4ba6861a77ddfe65.js      46.2 kB
+apps/web build:   ├ chunks/ea242689-28813ded7216d1fe.js  54.2 kB
+apps/web build:   └ other shared chunks (total)          1.98 kB
+apps/web build: ƒ Middleware                             34.2 kB
+apps/web build: ○  (Static)   prerendered as static content
+apps/web build: ƒ  (Dynamic)  server-rendered on demand
+apps/web build: Done
+BUILD_EXIT=0

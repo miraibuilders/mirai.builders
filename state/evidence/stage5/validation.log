@@ -1,0 +1,545 @@
+$ pnpm install
+Scope: all 4 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+Done in 975ms using pnpm v10.11.0
+
+[install_exit=0]
+
+$ pnpm build
+
+> mirai-lab@ build /home/morpheus/Downloads/mirai-lab
+> pnpm -r --if-present build
+
+Scope: 3 of 4 workspace projects
+packages/db build$ tsc -p tsconfig.json
+packages/db build: Done
+apps/web build$ next build
+apps/worker build$ tsc -p tsconfig.json
+apps/web build:    ▲ Next.js 15.5.29
+apps/web build:    Creating an optimized production build ...
+apps/worker build: Done
+apps/web build:  ✓ Compiled successfully in 6.1s
+apps/web build:    Linting and checking validity of types ...
+apps/web build:    Collecting page data ...
+apps/web build:    Generating static pages (0/7) ...
+apps/web build:    Generating static pages (1/7) 
+apps/web build:    Generating static pages (3/7) 
+apps/web build:    Generating static pages (5/7) 
+apps/web build:  ✓ Generating static pages (7/7)
+apps/web build:    Finalizing page optimization ...
+apps/web build:    Collecting build traces ...
+apps/web build: Route (app)                                 Size  First Load JS  Revalidate  Expire
+apps/web build: ┌ ○ /                                    6.33 kB         109 kB          1h      1y
+apps/web build: ├ ○ /_not-found                            992 B         103 kB
+apps/web build: ├ ƒ /api/auth/[...all]                     155 B         103 kB
+apps/web build: ├ ƒ /api/documents/[id]/pdf                155 B         103 kB
+apps/web build: ├ ƒ /api/health                            155 B         103 kB
+apps/web build: ├ ƒ /api/scans                             155 B         103 kB
+apps/web build: ├ ƒ /cms                                   164 B         106 kB
+apps/web build: ├ ƒ /cms/authors                           155 B         103 kB
+apps/web build: ├ ƒ /cms/media                             155 B         103 kB
+apps/web build: ├ ƒ /cms/posts/[id]/edit                   155 B         103 kB
+apps/web build: ├ ƒ /cms/posts/new                         155 B         103 kB
+apps/web build: ├ ƒ /contact-requests                      179 B         106 kB
+apps/web build: ├ ƒ /dashboard                             164 B         106 kB
+apps/web build: ├ ƒ /documents                             169 B         103 kB
+apps/web build: ├ ƒ /documents/new                       1.63 kB         104 kB
+apps/web build: ├ ƒ /leads                               2.06 kB         108 kB
+apps/web build: ├ ƒ /leads/[id]                            182 B         106 kB
+apps/web build: ├ ƒ /leads/[id]/edit                       182 B         106 kB
+apps/web build: ├ ƒ /leads/new                             182 B         106 kB
+apps/web build: ├ ƒ /llms.txt                              155 B         103 kB
+apps/web build: ├ ƒ /login                                 680 B         103 kB
+apps/web build: ├ ○ /robots.txt                            155 B         103 kB
+apps/web build: └ ○ /sitemap.xml                           155 B         103 kB
+apps/web build: + First Load JS shared by all             102 kB
+apps/web build:   ├ chunks/901-4bb38870caa2eef7.js       46.2 kB
+apps/web build:   ├ chunks/e7e3044d-ffe374be2430ae06.js  54.2 kB
+apps/web build:   └ other shared chunks (total)          1.97 kB
+apps/web build: ƒ Middleware                               34 kB
+apps/web build: ○  (Static)   prerendered as static content
+apps/web build: ƒ  (Dynamic)  server-rendered on demand
+apps/web build: Done
+
+[build_exit=0]
+
+$ pnpm lint
+
+> mirai-lab@ lint /home/morpheus/Downloads/mirai-lab
+> pnpm -r --if-present lint
+
+Scope: 3 of 4 workspace projects
+packages/db lint$ eslint .
+packages/db lint: Done
+apps/web lint$ next lint
+apps/worker lint$ eslint .
+apps/web lint: `next lint` is deprecated and will be removed in Next.js 16.
+apps/web lint: For new projects, use create-next-app to choose your preferred linter.
+apps/web lint: For existing projects, migrate to the ESLint CLI:
+apps/web lint: npx @next/codemod@canary next-lint-to-eslint-cli .
+apps/worker lint: Done
+apps/web lint: ✔ No ESLint warnings or errors
+apps/web lint: Done
+
+[lint_exit=0]
+
+$ pnpm typecheck
+
+> mirai-lab@ typecheck /home/morpheus/Downloads/mirai-lab
+> pnpm -r --if-present typecheck
+
+Scope: 3 of 4 workspace projects
+packages/db typecheck$ tsc -p tsconfig.json --noEmit
+packages/db typecheck: Done
+apps/web typecheck$ tsc -p tsconfig.json --noEmit
+apps/worker typecheck$ tsc -p tsconfig.json --noEmit
+apps/worker typecheck: Done
+apps/web typecheck: Done
+
+[typecheck_exit=0]
+
+$ pnpm test
+
+> mirai-lab@ test /home/morpheus/Downloads/mirai-lab
+> pnpm -r --if-present test
+
+Scope: 3 of 4 workspace projects
+packages/db test$ node --test dist/src/scan-policy.test.js
+packages/db test: TAP version 13
+packages/db test: # Subtest: normalizes domains for per-domain cooldown
+packages/db test: ok 1 - normalizes domains for per-domain cooldown
+packages/db test:   ---
+packages/db test:   duration_ms: 1.278765
+packages/db test:   ...
+packages/db test: # Subtest: interval env falls back to 24 hours
+packages/db test: ok 2 - interval env falls back to 24 hours
+packages/db test:   ---
+packages/db test:   duration_ms: 0.232828
+packages/db test:   ...
+packages/db test: # Subtest: manual cooldown reports whole minutes remaining
+packages/db test: ok 3 - manual cooldown reports whole minutes remaining
+packages/db test:   ---
+packages/db test:   duration_ms: 0.280819
+packages/db test:   ...
+packages/db test: 1..3
+packages/db test: # tests 3
+packages/db test: # suites 0
+packages/db test: # pass 3
+packages/db test: # fail 0
+packages/db test: # cancelled 0
+packages/db test: # skipped 0
+packages/db test: # todo 0
+packages/db test: # duration_ms 58.036082
+packages/db test: Done
+apps/web test$ node --import tsx --test src/lib/documents/documents.test.ts src/lib/crm-auth.test.ts src/lib/lead-view.test.ts src/lib/scans.test.ts src/lib/cms-auth.test.ts
+apps/worker test$ node --import tsx --test dist/scoring/score.test.js dist/scanner/privacy.test.js dist/scheduler.test.js dist/detail-brief.test.js
+apps/worker test: TAP version 13
+apps/web test: TAP version 13
+apps/worker test: # Subtest: detail allowlist includes favicon and humans plus existing probes
+apps/worker test: ok 1 - detail allowlist includes favicon and humans plus existing probes
+apps/worker test:   ---
+apps/worker test:   duration_ms: 1.735615
+apps/worker test:   ...
+apps/worker test: # Subtest: detail brief has findings, implications and exactly three talking points
+apps/worker test: ok 2 - detail brief has findings, implications and exactly three talking points
+apps/worker test:   ---
+apps/worker test:   duration_ms: 1.659391
+apps/worker test:   ...
+apps/worker test: # Subtest: scanner output and every database write contain no personal data from fixture HTML
+apps/worker test: ok 3 - scanner output and every database write contain no personal data from fixture HTML
+apps/worker test:   ---
+apps/worker test:   duration_ms: 21.182854
+apps/worker test:   ...
+apps/worker test: # Subtest: detail pass stores only sanitized metadata and an internal brief
+apps/worker test: ok 4 - detail pass stores only sanitized metadata and an internal brief
+apps/worker test:   ---
+apps/worker test:   duration_ms: 3.912178
+apps/worker test:   ...
+apps/worker test: # Subtest: scheduler chooses only stale leads with website urls
+apps/worker test: ok 5 - scheduler chooses only stale leads with website urls
+apps/worker test:   ---
+apps/worker test:   duration_ms: 2.350381
+apps/worker test:   ...
+apps/worker test: # Subtest: scheduler skips active leads and domains in recent cooldown
+apps/worker test: ok 6 - scheduler skips active leads and domains in recent cooldown
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.411595
+apps/worker test:   ...
+apps/worker test: # Subtest: weights live in one config object with the required maxima
+apps/worker test: ok 7 - weights live in one config object with the required maxima
+apps/worker test:   ---
+apps/worker test:   duration_ms: 2.172637
+apps/worker test:   ...
+apps/worker test: # Subtest: scores a clean target lead as B at 60
+apps/worker test: ok 8 - scores a clean target lead as B at 60
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.785077
+apps/worker test:   ...
+apps/worker test: # Subtest: scores all technical decay signals and caps at 40
+apps/worker test: ok 9 - scores all technical decay signals and caps at 40
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.434868
+apps/worker test:   ...
+apps/worker test: # Subtest: applies adjacent, non-target, reachability, presence, and size rules
+apps/worker test: ok 10 - applies adjacent, non-target, reachability, presence, and size rules
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.394963
+apps/worker test:   ...
+apps/worker test: # Subtest: applies B and C threshold boundaries
+apps/worker test: ok 11 - applies B and C threshold boundaries
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.377269
+apps/worker test:   ...
+apps/worker test: 1..11
+apps/worker test: # tests 11
+apps/worker test: # suites 0
+apps/worker test: # pass 11
+apps/worker test: # fail 0
+apps/worker test: # cancelled 0
+apps/worker test: # skipped 0
+apps/worker test: # todo 0
+apps/worker test: # duration_ms 954.780543
+apps/worker test: Done
+apps/web test: # Subtest: admin has full CMS post and author control
+apps/web test: ok 1 - admin has full CMS post and author control
+apps/web test:   ---
+apps/web test:   duration_ms: 1.675842
+apps/web test:   ...
+apps/web test: # Subtest: editor creates and edits own drafts but cannot publish or delete
+apps/web test: ok 2 - editor creates and edits own drafts but cannot publish or delete
+apps/web test:   ---
+apps/web test:   duration_ms: 0.317648
+apps/web test:   ...
+apps/web test: # Subtest: viewer reads only and user role has no CMS access
+apps/web test: ok 3 - viewer reads only and user role has no CMS access
+apps/web test:   ---
+apps/web test:   duration_ms: 0.19157
+apps/web test:   ...
+apps/web test: # Subtest: scan API authorization allows only admin and editor roles
+apps/web test: ok 4 - scan API authorization allows only admin and editor roles
+apps/web test:   ---
+apps/web test:   duration_ms: 1.032482
+apps/web test:   ...
+apps/web test: # Subtest: renders a non-empty branded invoice PDF
+apps/web test: ok 5 - renders a non-empty branded invoice PDF
+apps/web test:   ---
+apps/web test:   duration_ms: 2576.890782
+apps/web test:   ...
+apps/web test: # Subtest: renders a non-empty mono invoice PDF
+apps/web test: ok 6 - renders a non-empty mono invoice PDF
+apps/web test:   ---
+apps/web test:   duration_ms: 1991.412642
+apps/web test:   ...
+apps/web test: # Subtest: renders quote through the shared pipeline
+apps/web test: ok 7 - renders quote through the shared pipeline
+apps/web test:   ---
+apps/web test:   duration_ms: 1977.63711
+apps/web test:   ...
+apps/web test: # Subtest: renders nda through the shared pipeline
+apps/web test: ok 8 - renders nda through the shared pipeline
+apps/web test:   ---
+apps/web test:   duration_ms: 1939.72485
+apps/web test:   ...
+apps/web test: # Subtest: renders acceptance through the shared pipeline
+apps/web test: ok 9 - renders acceptance through the shared pipeline
+apps/web test:   ---
+apps/web test:   duration_ms: 1931.23385
+apps/web test:   ...
+apps/web test: # Subtest: tier thresholds and pain severity helpers
+apps/web test: ok 10 - tier thresholds and pain severity helpers
+apps/web test:   ---
+apps/web test:   duration_ms: 1.537312
+apps/web test:   ...
+apps/web test: # Subtest: filters segment, overdue, and pain severity
+apps/web test: ok 11 - filters segment, overdue, and pain severity
+apps/web test:   ---
+apps/web test:   duration_ms: 14.686785
+apps/web test:   ...
+apps/web test: # Subtest: sorts lead rows
+apps/web test: ok 12 - sorts lead rows
+apps/web test:   ---
+apps/web test:   duration_ms: 0.541508
+apps/web test:   ...
+apps/web test: # Subtest: scan kind accepts only scan and detail
+apps/web test: ok 13 - scan kind accepts only scan and detail
+apps/web test:   ---
+apps/web test:   duration_ms: 1.8822
+apps/web test:   ...
+apps/web test: # Subtest: manual cooldown message is explicit
+apps/web test: ok 14 - manual cooldown message is explicit
+apps/web test:   ---
+apps/web test:   duration_ms: 0.492887
+apps/web test:   ...
+apps/web test: 1..14
+apps/web test: # tests 14
+apps/web test: # suites 0
+apps/web test: # pass 14
+apps/web test: # fail 0
+apps/web test: # cancelled 0
+apps/web test: # skipped 0
+apps/web test: # todo 0
+apps/web test: # duration_ms 10866.69681
+apps/web test: Done
+
+[test_exit=0]
+
+$ pnpm --filter @mirai/web test:e2e:stage5
+
+> @mirai/web@0.0.0 test:e2e:stage5 /home/morpheus/Downloads/mirai-lab/apps/web
+> tsx scripts/stage5-e2e.ts
+
+
+=== Standard port preflight ===
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "select current_database(), current_setting('server_version') as version;"
+ current_database |            version             
+------------------+--------------------------------
+ mirai_lab        | 15.10 (Debian 15.10-0+deb12u1)
+(1 row)
+
+[Next health on :3000] $ curl -i -X GET 'http://localhost:3000/api/health'
+HTTP/1.1 200 OK
+content-type: application/json
+[BODY_EXCERPT] {"status":"ok","database":"connected"}
+$ fixture server /home/morpheus/Downloads/mirai-lab/state/fixtures/stage5/stage5-fixture.html -> http://127.0.0.1:45145/stage5-fixture.html
+[FIXTURE_SERVER] GET http://127.0.0.1:45145/stage5-fixture.html -> 200
+
+=== Global (app) auth guard ===
+
+[unauthenticated /leads] $ curl -i -X GET 'http://localhost:3000/leads'
+HTTP/1.1 307 Temporary Redirect
+content-type: text/html; charset=utf-8
+location: /login?next=%2Fleads
+[BODY_EXCERPT] <!DOCTYPE html><html id="__next_error__"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="script" fetchPriority="low" href="/_n
+[LEADS_UNAUTH] HTTP/1.1 307 location=/login?next=%2Fleads
+
+=== Cron lead setup before worker start ===
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "INSERT INTO leads (company, website_url, segment, reachability, size_proxy) VALUES ('Stage5 Cron Lead 1795355907948', 'http://127.0.0.1:45145/stage5-fixture.html', 'professional_office', 'referral', 3) RETURNING id;"
+                  id                  
+--------------------------------------
+ 15063732-f047-41ef-b9e7-f5caa6330fbf
+(1 row)
+
+INSERT 0 1
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "DELETE FROM scans WHERE status IN ('queued', 'running');"
+DELETE 0
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "UPDATE leads SET latest_scan_at = now() + interval '1 hour' WHERE id <> '15063732-f047-41ef-b9e7-f5caa6330fbf';"
+UPDATE 9
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "UPDATE scans SET created_at = now() - interval '1 hour' WHERE created_at > now() - interval '1 hour';"
+UPDATE 1
+
+=== Start worker with SCAN_CRON_TEST=1 (test-only) ===
+$ SCAN_CRON_TEST=1 SCAN_INTERVAL_HOURS=0.01 SCAN_POLL_MS=200 /tmp/opencode/bin/pnpm --filter worker dev >> /home/morpheus/Downloads/mirai-lab/state/evidence/stage5/worker.log
+[WORKER_LOG_T1] worker: cron fired at 2026-11-22T13:58:29.063Z source=test-startup
+[WORKER_LOG_ENQUEUE] worker: cron enqueued scan=09bf451e-e3ad-4920-acfc-974f05987169 lead=15063732-f047-41ef-b9e7-f5caa6330fbf domain=127.0.0.1 created_at=2026-11-22T13:58:29.063Z
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT id, lead_id, kind, status, to_char(created_at AT TIME ZONE 'UTC', 'YYYY-MM-DD\"T\"HH24:MI:SS.MS\"Z\"') AS created_at_iso FROM scans WHERE id = '09bf451e-e3ad-4920-acfc-974f05987169';"
+                  id                  |               lead_id                | kind | status |      created_at_iso      
+--------------------------------------+--------------------------------------+------+--------+--------------------------
+ 09bf451e-e3ad-4920-acfc-974f05987169 | 15063732-f047-41ef-b9e7-f5caa6330fbf | scan | done   | 2026-11-22T13:58:29.063Z
+(1 row)
+[SCAN_ROW_CREATED_T1]                   id                  |               lead_id                | kind | status |      created_at_iso       --------------------------------------+--------------------------------------+------+--------+--------------------------  09bf451e-e3ad-4920-acfc-974f05987169 | 15063732-f047-41ef-b9e7-f5caa6330fbf | scan | done   | 2026-11-22T13:58:29.063Z (1 row)
+
+=== Worker processing and lead update ===
+[WORKER_LOG_T2] worker: processing job=09bf451e-e3ad-4920-acfc-974f05987169 kind=scan queued_at=2026-11-22T13:58:29.063Z at=2026-11-22T13:58:29.080Z
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT id, score, latest_scan_status, to_char(latest_scan_at AT TIME ZONE 'UTC', 'YYYY-MM-DD\"T\"HH24:MI:SS.MS\"Z\"') AS latest_scan_at_iso FROM leads WHERE id = '15063732-f047-41ef-b9e7-f5caa6330fbf';"
+                  id                  | score | latest_scan_status |    latest_scan_at_iso    
+--------------------------------------+-------+--------------------+--------------------------
+ 15063732-f047-41ef-b9e7-f5caa6330fbf |    78 | done               | 2026-11-22T13:58:29.080Z
+(1 row)
+[LEAD_ROW_UPDATED_T2]                   id                  | score | latest_scan_status |    latest_scan_at_iso     --------------------------------------+-------+--------------------+--------------------------  15063732-f047-41ef-b9e7-f5caa6330fbf |    78 | done               | 2026-11-22T13:58:29.080Z (1 row)
+
+=== Manual re-run cooldown guard ===
+
+[stage5-admin] $ curl -i -X POST 'http://localhost:3000/api/auth/sign-up/email'
+HTTP/1.1 200 OK
+content-type: application/json
+set-cookie: better-auth.session_token=CZyBk79ht6WjjN6cG8An3H3LK4h3BEoQ.2JhmoLXgDe%2B2ylD4qfBIVELk1xKALvnns%2BCTg95xX6o%3D; Max-Age=604800; Path=/; HttpOnly; SameSite=Lax
+[BODY_EXCERPT] {"token":"CZyBk79ht6WjjN6cG8An3H3LK4h3BEoQ","user":{"name":"stage5-admin","email":"stage5-admin-1795355907948@example.jp","emailVerified":false,"image":null,"createdAt":"2026-11-22T13:58:29.414Z","upd
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "UPDATE users SET role = 'admin' WHERE email = 'stage5-admin-1795355907948@example.jp';"
+UPDATE 1
+
+[admin login page] $ curl -i -X GET 'http://localhost:3000/login?next=%2Fcms'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/6738184ec3964f1e.css" data-precedence="next"/><l
+
+[admin sign-in from login UI] $ curl -i -X POST 'http://localhost:3000/api/auth/sign-in/email'
+HTTP/1.1 200 OK
+content-type: application/json
+location: /cms
+set-cookie: better-auth.session_token=nNEuWr0F6qMemyZWrsxYo7qL2qyOZO4z.5cfxnuqx6VJL%2FoCHJwdfuqO15pwX9Ma86g%2FaN8g3hh0%3D; Max-Age=604800; Path=/; HttpOnly; SameSite=Lax
+[BODY_EXCERPT] {"redirect":true,"token":"nNEuWr0F6qMemyZWrsxYo7qL2qyOZO4z","url":"/cms","user":{"name":"stage5-admin","email":"stage5-admin-1795355907948@example.jp","emailVerified":false,"image":null,"createdAt":"2
+
+[manual re-run after completed scan] $ curl -i -X POST 'http://localhost:3000/leads/15063732-f047-41ef-b9e7-f5caa6330fbf' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 303 See Other
+location: /leads/15063732-f047-41ef-b9e7-f5caa6330fbf?notice=scan%20ran%20recently%3B%20wait%2015%20minutes
+[BODY_EXCERPT] 
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT 'scan_count=' || count(*)::text AS result FROM scans WHERE lead_id = '15063732-f047-41ef-b9e7-f5caa6330fbf';"
+    result    
+--------------
+ scan_count=1
+(1 row)
+[MANUAL_COOLDOWN_MESSAGE] /leads/15063732-f047-41ef-b9e7-f5caa6330fbf?notice=scan ran recently; wait 15 minutes
+
+=== Detail job and internal brief ===
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "INSERT INTO leads (company, website_url, segment, reachability, size_proxy) VALUES ('Stage5 Detail Lead 1795355907948', 'http://127.0.0.1:45145/stage5-fixture.html', 'professional_office', 'referral', 3) RETURNING id;"
+                  id                  
+--------------------------------------
+ c79f16a5-cda8-4cc6-a5db-4050470ac085
+(1 row)
+
+INSERT 0 1
+
+[analyse in detail] $ curl -i -X POST 'http://localhost:3000/leads/c79f16a5-cda8-4cc6-a5db-4050470ac085' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 303 See Other
+location: /leads/c79f16a5-cda8-4cc6-a5db-4050470ac085?notice=detail%20queued
+[BODY_EXCERPT] 
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT id, lead_id, kind, status FROM scans WHERE lead_id = 'c79f16a5-cda8-4cc6-a5db-4050470ac085' ORDER BY created_at DESC LIMIT 1;"
+                  id                  |               lead_id                |  kind  | status 
+--------------------------------------+--------------------------------------+--------+--------
+ e72de261-0106-462b-bd3c-62af67b191a9 | c79f16a5-cda8-4cc6-a5db-4050470ac085 | detail | queued
+(1 row)
+[DETAIL_WORKER_LOG] worker: processing job=e72de261-0106-462b-bd3c-62af67b191a9 kind=detail queued_at=2026-11-22T13:58:29.682Z at=2026-11-22T13:58:29.784Z
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT CASE WHEN detail_brief_md IS NULL THEN 'pending' ELSE 'ready' END AS brief_state FROM leads WHERE id = 'c79f16a5-cda8-4cc6-a5db-4050470ac085';"
+ brief_state 
+-------------
+ ready
+(1 row)
+
+[lead detail page with brief] $ curl -i -X GET 'http://localhost:3000/leads/c79f16a5-cda8-4cc6-a5db-4050470ac085' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/6738184ec3964f1e.css" data-precedence="next"/><link rel="stylesheet" href="/_next/static/css/f8e77
+[BRIEF_FIRST_10_LINES_IN_UI]
+# Internal detail brief
+Generated: 2026-11-22T13:58:29.833Z
+Target: http://[REDACTED]:45145/stage5-fixture.html
+
+## What the scanner found
+- Root HTTP status: 200
+- Server: not disclosed
+- CMS fingerprint: WordPress 5.8
+- PHP fingerprint: not disclosed
+- TLS: not valid or not available
+
+[public landing without session] $ curl -i -X GET 'http://localhost:3000/'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><!--shjEKLaA6t_tJgZX1Xe91--><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/fea9bcfa8bc9e724-s.p.woff2" as="font" crossorigin="" type="font/woff2"/
+
+[lead detail without session] $ curl -i -X GET 'http://localhost:3000/leads/c79f16a5-cda8-4cc6-a5db-4050470ac085'
+HTTP/1.1 307 Temporary Redirect
+content-type: text/html; charset=utf-8
+location: /login?next=%2Fleads%2Fc79f16a5-cda8-4cc6-a5db-4050470ac085
+[BODY_EXCERPT] <!DOCTYPE html><html id="__next_error__"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-2be240603428b57a.js"/><script src="/_next/static/chunks/e7e3044d-ffe374be2
+[BRIEF_VISIBILITY] internal brief absent from public landing and unauthenticated lead request
+
+=== CMS role verification through /login UI ===
+
+[unauthenticated /cms] $ curl -i -X GET 'http://localhost:3000/cms'
+HTTP/1.1 307 Temporary Redirect
+content-type: text/html; charset=utf-8
+location: /login?next=%2Fcms
+[BODY_EXCERPT] <!DOCTYPE html><html id="__next_error__"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="script" fetchPriority="low" href="/_n
+[CMS_UNAUTH] redirect to login confirmed
+
+[stage5-editor] $ curl -i -X POST 'http://localhost:3000/api/auth/sign-up/email'
+HTTP/1.1 200 OK
+content-type: application/json
+set-cookie: better-auth.session_token=G4YN6USYA6j9In0AI3BJtqKg6G1KDfv0.vRp1LIQfsRDkrXUasz4746WdaCdo%2FucaE2gaRFq3OaE%3D; Max-Age=604800; Path=/; HttpOnly; SameSite=Lax
+[BODY_EXCERPT] {"token":"G4YN6USYA6j9In0AI3BJtqKg6G1KDfv0","user":{"name":"stage5-editor","email":"stage5-editor-1795355907948@example.jp","emailVerified":false,"image":null,"createdAt":"2026-11-22T13:58:30.242Z","u
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "UPDATE users SET role = 'editor' WHERE email = 'stage5-editor-1795355907948@example.jp';"
+UPDATE 1
+
+[editor login page] $ curl -i -X GET 'http://localhost:3000/login?next=%2Fcms'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/6738184ec3964f1e.css" data-precedence="next"/><l
+
+[editor sign-in from login UI] $ curl -i -X POST 'http://localhost:3000/api/auth/sign-in/email'
+HTTP/1.1 200 OK
+content-type: application/json
+location: /cms
+set-cookie: better-auth.session_token=S0HNHkGFwGXv7GlRtEbxIp2DxIrNmagW.MzoJhqAlokryWRSIchmoAYwt8ojwSF2R1z%2BBxSjRY3k%3D; Max-Age=604800; Path=/; HttpOnly; SameSite=Lax
+[BODY_EXCERPT] {"redirect":true,"token":"S0HNHkGFwGXv7GlRtEbxIp2DxIrNmagW","url":"/cms","user":{"name":"stage5-editor","email":"stage5-editor-1795355907948@example.jp","emailVerified":false,"image":null,"createdAt":
+
+[editor creates draft post] $ curl -i -X POST 'http://localhost:3000/cms/posts/new' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 303 See Other
+location: /cms/posts/6132e4ae-528b-4124-b983-1a708e76c1d6/edit?notice=%5BCMS_DRAFT_CREATED%5D
+[BODY_EXCERPT] 
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT id, title, slug, status, published_at FROM posts WHERE slug = 'stage5-editor-draft-1795355907948';"
+                  id                  |        title        |               slug                | status | published_at 
+--------------------------------------+---------------------+-----------------------------------+--------+--------------
+ 6132e4ae-528b-4124-b983-1a708e76c1d6 | Stage5 Editor Draft | stage5-editor-draft-1795355907948 | draft  | 
+(1 row)
+
+[editor attempts publish] $ curl -i -X POST 'http://localhost:3000/cms' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 303 See Other
+location: /cms?notice=%5BCMS_FORBIDDEN%5D
+[BODY_EXCERPT] 
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT id, slug, status, published_at FROM posts WHERE id = '6132e4ae-528b-4124-b983-1a708e76c1d6';"
+                  id                  |               slug                | status | published_at 
+--------------------------------------+-----------------------------------+--------+--------------
+ 6132e4ae-528b-4124-b983-1a708e76c1d6 | stage5-editor-draft-1795355907948 | draft  | 
+(1 row)
+[EDITOR_PUBLISH_HTTP] HTTP/1.1 303 See Other
+[EDITOR_PUBLISH_LOCATION] /cms?notice=%5BCMS_FORBIDDEN%5D
+[EDITOR_DB_ROW]                   id                  |               slug                | status | published_at  --------------------------------------+-----------------------------------+--------+--------------  6132e4ae-528b-4124-b983-1a708e76c1d6 | stage5-editor-draft-1795355907948 | draft  |  (1 row)
+
+[admin login page] $ curl -i -X GET 'http://localhost:3000/login?next=%2Fcms'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/6738184ec3964f1e.css" data-precedence="next"/><l
+
+[admin sign-in from login UI] $ curl -i -X POST 'http://localhost:3000/api/auth/sign-in/email'
+HTTP/1.1 200 OK
+content-type: application/json
+location: /cms
+set-cookie: better-auth.session_token=LLC37cK0QtuteWWGgPPDYyEl9UBPEsqr.dH1F4rdQZkgoTQNSutu4LIu4BuCqlKlVzX8F7tcbNU8%3D; Max-Age=604800; Path=/; HttpOnly; SameSite=Lax
+[BODY_EXCERPT] {"redirect":true,"token":"LLC37cK0QtuteWWGgPPDYyEl9UBPEsqr","url":"/cms","user":{"name":"stage5-admin","email":"stage5-admin-1795355907948@example.jp","emailVerified":false,"image":null,"createdAt":"2
+
+[admin creates post] $ curl -i -X POST 'http://localhost:3000/cms/posts/new' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 303 See Other
+location: /cms/posts/e1f033a9-4788-4012-af85-f7c27e326493/edit?notice=%5BCMS_DRAFT_CREATED%5D
+[BODY_EXCERPT] 
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT id, title, slug, status, published_at FROM posts WHERE slug = 'stage5-admin-published-1795355907948';"
+                  id                  |         title          |                 slug                 | status | published_at 
+--------------------------------------+------------------------+--------------------------------------+--------+--------------
+ e1f033a9-4788-4012-af85-f7c27e326493 | Stage5 Admin Published | stage5-admin-published-1795355907948 | draft  | 
+(1 row)
+
+[admin publishes post] $ curl -i -X POST 'http://localhost:3000/cms' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 303 See Other
+location: /cms?notice=%5BCMS_POST_PUBLISHED%5D
+[BODY_EXCERPT] 
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT id, slug, status, published_at FROM posts WHERE id IN ('6132e4ae-528b-4124-b983-1a708e76c1d6', 'e1f033a9-4788-4012-af85-f7c27e326493') ORDER BY slug;"
+                  id                  |                 slug                 |  status   |        published_at        
+--------------------------------------+--------------------------------------+-----------+----------------------------
+ e1f033a9-4788-4012-af85-f7c27e326493 | stage5-admin-published-1795355907948 | published | 2026-11-22 14:58:30.697+01
+ 6132e4ae-528b-4124-b983-1a708e76c1d6 | stage5-editor-draft-1795355907948    | draft     | 
+(2 rows)
+[ADMIN_PUBLISH_HTTP] HTTP/1.1 303 See Other
+[CMS_FINAL_DB_ROWS]                   id                  |                 slug                 |  status   |        published_at         --------------------------------------+--------------------------------------+-----------+----------------------------  e1f033a9-4788-4012-af85-f7c27e326493 | stage5-admin-published-1795355907948 | published | 2026-11-22 14:58:30.697+01  6132e4ae-528b-4124-b983-1a708e76c1d6 | stage5-editor-draft-1795355907948    | draft     |  (2 rows)
+
+=== Real setInterval cron tick ===
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "UPDATE scans SET created_at = now() - interval '1 hour', updated_at = now() - interval '1 hour' WHERE created_at > now() - interval '1 hour';"
+UPDATE 2
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "UPDATE leads SET latest_scan_at = now() + interval '1 hour' WHERE id <> '15063732-f047-41ef-b9e7-f5caa6330fbf';"
+UPDATE 10
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "UPDATE leads SET latest_scan_at = now() - interval '1 hour' WHERE id = '15063732-f047-41ef-b9e7-f5caa6330fbf';"
+UPDATE 1
+$ SCAN_CRON_TEST=0 SCAN_INTERVAL_HOURS=0.001 SCAN_POLL_MS=200 /tmp/opencode/bin/pnpm --filter worker dev >> /home/morpheus/Downloads/mirai-lab/state/evidence/stage5/worker.log
+[INTERVAL_LOG_T3] worker: cron fired at 2026-11-22T13:58:36.285Z source=interval
+[INTERVAL_LOG_ENQUEUE] worker: cron enqueued scan=1cff69b9-80c3-4834-9594-ce4954d95c0a lead=15063732-f047-41ef-b9e7-f5caa6330fbf domain=127.0.0.1 created_at=2026-11-22T13:58:36.285Z
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT id, lead_id, kind, status, to_char(created_at AT TIME ZONE 'UTC', 'YYYY-MM-DD\"T\"HH24:MI:SS.MS\"Z\"') AS created_at_iso FROM scans WHERE id = '1cff69b9-80c3-4834-9594-ce4954d95c0a';"
+                  id                  |               lead_id                | kind | status |      created_at_iso      
+--------------------------------------+--------------------------------------+------+--------+--------------------------
+ 1cff69b9-80c3-4834-9594-ce4954d95c0a | 15063732-f047-41ef-b9e7-f5caa6330fbf | scan | done   | 2026-11-22T13:58:36.285Z
+(1 row)
+[INTERVAL_SCAN_ROW]                   id                  |               lead_id                | kind | status |      created_at_iso       --------------------------------------+--------------------------------------+------+--------+--------------------------  1cff69b9-80c3-4834-9594-ce4954d95c0a | 15063732-f047-41ef-b9e7-f5caa6330fbf | scan | done   | 2026-11-22T13:58:36.285Z (1 row)
+[INTERVAL_WORKER_LOG] worker: processing job=1cff69b9-80c3-4834-9594-ce4954d95c0a kind=scan queued_at=2026-11-22T13:58:36.285Z at=2026-11-22T13:58:36.319Z
+
+[E2E_OK] cronLead=15063732-f047-41ef-b9e7-f5caa6330fbf cronScan=09bf451e-e3ad-4920-acfc-974f05987169 T1=2026-11-22T13:58:29.063Z T2=2026-11-22T13:58:29.080Z intervalScan=1cff69b9-80c3-4834-9594-ce4954d95c0a T3=2026-11-22T13:58:36.285Z detailLead=c79f16a5-cda8-4cc6-a5db-4050470ac085 editorPost=6132e4ae-528b-4124-b983-1a708e76c1d6 adminPost=e1f033a9-4788-4012-af85-f7c27e326493
+
+[e2e_exit=0]

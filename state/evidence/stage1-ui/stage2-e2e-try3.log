@@ -1,0 +1,8 @@
+
+Running 4 tests using 1 worker
+
+[1/4] tests/stage2-primitives.spec.ts:3:1 › demo table sorts, filters, paginates, selects and bulk-actions 100 rows
+[2/4] tests/stage2-primitives.spec.ts:31:1 › demo table shows loading, error, empty and virtualised states
+[3/4] tests/stage2-primitives.spec.ts:52:1 › demo kanban drags with optimistic update and persists the move
+[4/4] tests/stage2-primitives.spec.ts:69:1 › demo kanban moves by keyboard and rolls back on failure
+  4 passed (7.5s)

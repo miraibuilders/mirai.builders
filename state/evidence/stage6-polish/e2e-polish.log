@@ -1,0 +1,44 @@
+
+> @mirai/web@0.0.0 test:e2e:polish /home/morpheus/Downloads/mirai-lab/apps/web
+> playwright test --config playwright.config.ts tests/stage6-polish.spec.ts
+
+
+Running 4 tests using 1 worker
+
+[1/4] tests/stage6-polish.spec.ts:16:1 › premium table surfaces preserve data selectors
+[2/4] tests/stage6-polish.spec.ts:34:1 › lead activity table adopts the shared table treatment
+  1) tests/stage6-polish.spec.ts:34:1 › lead activity table adopts the shared table treatment ──────
+
+    Test timeout of 120000ms exceeded.
+
+    Error: page.waitForURL: Test timeout of 120000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "load"
+      navigated to "http://localhost:3000/leads/new"
+      navigated to "http://localhost:3000/leads/new"
+    ============================================================
+
+       at fixtures/helpers.ts:165
+
+      163 |   await page.locator('textarea[name="note"]').fill(company);
+      164 |   await page.locator('button[type="submit"]').click();
+    > 165 |   await page.waitForURL(/\/leads\/[0-9a-f]{8}-[0-9a-f-]{27}$/);
+          |              ^
+      166 |   return new URL(page.url()).pathname.split("/").pop() ?? "";
+      167 | }
+      168 |
+        at createLeadViaUi (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:165:14)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/stage6-polish.spec.ts:37:18
+
+    Error Context: test-results/stage6-polish-lead-activit-401e3--the-shared-table-treatment/error-context.md
+
+
+[3/4] tests/stage6-polish.spec.ts:44:1 › command palette and submit buttons have tactile microinteractions
+[4/4] tests/stage6-polish.spec.ts:68:1 › dialogs and toasts use elevated message surfaces
+  1 failed
+    tests/stage6-polish.spec.ts:34:1 › lead activity table adopts the shared table treatment ───────
+  3 passed (3.1m)
+/home/morpheus/Downloads/mirai-lab/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @mirai/web@0.0.0 test:e2e:polish: `playwright test --config playwright.config.ts tests/stage6-polish.spec.ts`
+Exit status 1
+E2E_POLISH_EXIT=1

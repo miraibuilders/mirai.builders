@@ -1,0 +1,10 @@
+BEFORE_DB_PHONE=<no row>
+BEFORE_HTML_SNIPPET=o-copy">[MIKA: JP コピー待ち — hero subheadline]</p><div class="hero-actions"><a class="button" href="#contact">[MIKA: JP コピー待ち — contact call to action]</a><a class="hero-phone" href="tel:03-0000-0000">03-0000-0000</a></div><div class="hero-check"><strong>[MIKA: JP コピー待ち — External Check offer name]<!-- --> — <!-- -->￥29,800</strong><p>[MIKA: JP コピー待ち — External Check offer des
+ADMIN_LOGIN=PASS
+CHANGED_SAVE_URL=http://localhost:3000/cms/site?notice=Site%20settings%20saved
+CHANGED_DB_PHONE=03-1111-2222
+CHANGED_HTML_SNIPPET=o-copy">[MIKA: JP コピー待ち — hero subheadline]</p><div class="hero-actions"><a class="button" href="#contact">[MIKA: JP コピー待ち — contact call to action]</a><a class="hero-phone" href="tel:03-1111-2222">03-1111-2222</a></div><div class="hero-check"><strong>External Check<!-- --> — <!-- -->￥29,800</strong><p>[MIKA: JP コピー待ち — External Check offer description]</p></div></div><div 
+RESTORED_SAVE_URL=http://localhost:3000/cms/site?notice=Site%20settings%20saved
+RESTORED_DB_PHONE=03-0000-0000
+RESTORED_HTML_SNIPPET=o-copy">[MIKA: JP コピー待ち — hero subheadline]</p><div class="hero-actions"><a class="button" href="#contact">[MIKA: JP コピー待ち — contact call to action]</a><a class="hero-phone" href="tel:03-0000-0000">03-0000-0000</a></div><div class="hero-check"><strong>External Check<!-- --> — <!-- -->￥29,800</strong><p>[MIKA: JP コピー待ち — External Check offer description]</p></div></div><div 
+FINAL_DB_PHONE=<no row>

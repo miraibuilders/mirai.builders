@@ -1,0 +1,251 @@
+
+=== Standard port preflight ===
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "select current_database(), current_setting('server_version') as version;"
+ current_database |            version             
+------------------+--------------------------------
+ mirai_lab        | 15.10 (Debian 15.10-0+deb12u1)
+(1 row)
+
+[Next health on :3000] $ curl -i -X GET 'http://localhost:3000/api/health'
+HTTP/1.1 200 OK
+content-type: application/json
+[BODY_EXCERPT] {"status":"ok","database":"connected"}
+$ fixture server /home/morpheus/Downloads/mirai-lab/state/fixtures/stage5/stage5-fixture.html -> http://127.0.0.1:45145/stage5-fixture.html
+[FIXTURE_SERVER] GET http://127.0.0.1:45145/stage5-fixture.html -> 200
+
+=== Global (app) auth guard ===
+
+[unauthenticated /leads] $ curl -i -X GET 'http://localhost:3000/leads'
+HTTP/1.1 307 Temporary Redirect
+content-type: text/html; charset=utf-8
+location: /login?next=%2Fleads
+[BODY_EXCERPT] <!DOCTYPE html><html id="__next_error__"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="script" fetchPriority="low" href="/_n
+[LEADS_UNAUTH] HTTP/1.1 307 location=/login?next=%2Fleads
+
+=== Cron lead setup before worker start ===
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "INSERT INTO leads (company, website_url, segment, reachability, size_proxy) VALUES ('Stage5 Cron Lead 1795355907948', 'http://127.0.0.1:45145/stage5-fixture.html', 'professional_office', 'referral', 3) RETURNING id;"
+                  id                  
+--------------------------------------
+ 15063732-f047-41ef-b9e7-f5caa6330fbf
+(1 row)
+
+INSERT 0 1
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "DELETE FROM scans WHERE status IN ('queued', 'running');"
+DELETE 0
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "UPDATE leads SET latest_scan_at = now() + interval '1 hour' WHERE id <> '15063732-f047-41ef-b9e7-f5caa6330fbf';"
+UPDATE 9
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "UPDATE scans SET created_at = now() - interval '1 hour' WHERE created_at > now() - interval '1 hour';"
+UPDATE 1
+
+=== Start worker with SCAN_CRON_TEST=1 (test-only) ===
+$ SCAN_CRON_TEST=1 SCAN_INTERVAL_HOURS=0.01 SCAN_POLL_MS=200 /tmp/opencode/bin/pnpm --filter worker dev >> /home/morpheus/Downloads/mirai-lab/state/evidence/stage5/worker.log
+[WORKER_LOG_T1] worker: cron fired at 2026-11-22T13:58:29.063Z source=test-startup
+[WORKER_LOG_ENQUEUE] worker: cron enqueued scan=09bf451e-e3ad-4920-acfc-974f05987169 lead=15063732-f047-41ef-b9e7-f5caa6330fbf domain=127.0.0.1 created_at=2026-11-22T13:58:29.063Z
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT id, lead_id, kind, status, to_char(created_at AT TIME ZONE 'UTC', 'YYYY-MM-DD\"T\"HH24:MI:SS.MS\"Z\"') AS created_at_iso FROM scans WHERE id = '09bf451e-e3ad-4920-acfc-974f05987169';"
+                  id                  |               lead_id                | kind | status |      created_at_iso      
+--------------------------------------+--------------------------------------+------+--------+--------------------------
+ 09bf451e-e3ad-4920-acfc-974f05987169 | 15063732-f047-41ef-b9e7-f5caa6330fbf | scan | done   | 2026-11-22T13:58:29.063Z
+(1 row)
+[SCAN_ROW_CREATED_T1]                   id                  |               lead_id                | kind | status |      created_at_iso       --------------------------------------+--------------------------------------+------+--------+--------------------------  09bf451e-e3ad-4920-acfc-974f05987169 | 15063732-f047-41ef-b9e7-f5caa6330fbf | scan | done   | 2026-11-22T13:58:29.063Z (1 row)
+
+=== Worker processing and lead update ===
+[WORKER_LOG_T2] worker: processing job=09bf451e-e3ad-4920-acfc-974f05987169 kind=scan queued_at=2026-11-22T13:58:29.063Z at=2026-11-22T13:58:29.080Z
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT id, score, latest_scan_status, to_char(latest_scan_at AT TIME ZONE 'UTC', 'YYYY-MM-DD\"T\"HH24:MI:SS.MS\"Z\"') AS latest_scan_at_iso FROM leads WHERE id = '15063732-f047-41ef-b9e7-f5caa6330fbf';"
+                  id                  | score | latest_scan_status |    latest_scan_at_iso    
+--------------------------------------+-------+--------------------+--------------------------
+ 15063732-f047-41ef-b9e7-f5caa6330fbf |    78 | done               | 2026-11-22T13:58:29.080Z
+(1 row)
+[LEAD_ROW_UPDATED_T2]                   id                  | score | latest_scan_status |    latest_scan_at_iso     --------------------------------------+-------+--------------------+--------------------------  15063732-f047-41ef-b9e7-f5caa6330fbf |    78 | done               | 2026-11-22T13:58:29.080Z (1 row)
+
+=== Manual re-run cooldown guard ===
+
+[stage5-admin] $ curl -i -X POST 'http://localhost:3000/api/auth/sign-up/email'
+HTTP/1.1 200 OK
+content-type: application/json
+set-cookie: better-auth.session_token=CZyBk79ht6WjjN6cG8An3H3LK4h3BEoQ.2JhmoLXgDe%2B2ylD4qfBIVELk1xKALvnns%2BCTg95xX6o%3D; Max-Age=604800; Path=/; HttpOnly; SameSite=Lax
+[BODY_EXCERPT] {"token":"CZyBk79ht6WjjN6cG8An3H3LK4h3BEoQ","user":{"name":"stage5-admin","email":"stage5-admin-1795355907948@example.jp","emailVerified":false,"image":null,"createdAt":"2026-11-22T13:58:29.414Z","upd
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "UPDATE users SET role = 'admin' WHERE email = 'stage5-admin-1795355907948@example.jp';"
+UPDATE 1
+
+[admin login page] $ curl -i -X GET 'http://localhost:3000/login?next=%2Fcms'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/6738184ec3964f1e.css" data-precedence="next"/><l
+
+[admin sign-in from login UI] $ curl -i -X POST 'http://localhost:3000/api/auth/sign-in/email'
+HTTP/1.1 200 OK
+content-type: application/json
+location: /cms
+set-cookie: better-auth.session_token=nNEuWr0F6qMemyZWrsxYo7qL2qyOZO4z.5cfxnuqx6VJL%2FoCHJwdfuqO15pwX9Ma86g%2FaN8g3hh0%3D; Max-Age=604800; Path=/; HttpOnly; SameSite=Lax
+[BODY_EXCERPT] {"redirect":true,"token":"nNEuWr0F6qMemyZWrsxYo7qL2qyOZO4z","url":"/cms","user":{"name":"stage5-admin","email":"stage5-admin-1795355907948@example.jp","emailVerified":false,"image":null,"createdAt":"2
+
+[manual re-run after completed scan] $ curl -i -X POST 'http://localhost:3000/leads/15063732-f047-41ef-b9e7-f5caa6330fbf' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 303 See Other
+location: /leads/15063732-f047-41ef-b9e7-f5caa6330fbf?notice=scan%20ran%20recently%3B%20wait%2015%20minutes
+[BODY_EXCERPT] 
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT 'scan_count=' || count(*)::text AS result FROM scans WHERE lead_id = '15063732-f047-41ef-b9e7-f5caa6330fbf';"
+    result    
+--------------
+ scan_count=1
+(1 row)
+[MANUAL_COOLDOWN_MESSAGE] /leads/15063732-f047-41ef-b9e7-f5caa6330fbf?notice=scan ran recently; wait 15 minutes
+
+=== Detail job and internal brief ===
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "INSERT INTO leads (company, website_url, segment, reachability, size_proxy) VALUES ('Stage5 Detail Lead 1795355907948', 'http://127.0.0.1:45145/stage5-fixture.html', 'professional_office', 'referral', 3) RETURNING id;"
+                  id                  
+--------------------------------------
+ c79f16a5-cda8-4cc6-a5db-4050470ac085
+(1 row)
+
+INSERT 0 1
+
+[analyse in detail] $ curl -i -X POST 'http://localhost:3000/leads/c79f16a5-cda8-4cc6-a5db-4050470ac085' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 303 See Other
+location: /leads/c79f16a5-cda8-4cc6-a5db-4050470ac085?notice=detail%20queued
+[BODY_EXCERPT] 
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT id, lead_id, kind, status FROM scans WHERE lead_id = 'c79f16a5-cda8-4cc6-a5db-4050470ac085' ORDER BY created_at DESC LIMIT 1;"
+                  id                  |               lead_id                |  kind  | status 
+--------------------------------------+--------------------------------------+--------+--------
+ e72de261-0106-462b-bd3c-62af67b191a9 | c79f16a5-cda8-4cc6-a5db-4050470ac085 | detail | queued
+(1 row)
+[DETAIL_WORKER_LOG] worker: processing job=e72de261-0106-462b-bd3c-62af67b191a9 kind=detail queued_at=2026-11-22T13:58:29.682Z at=2026-11-22T13:58:29.784Z
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT CASE WHEN detail_brief_md IS NULL THEN 'pending' ELSE 'ready' END AS brief_state FROM leads WHERE id = 'c79f16a5-cda8-4cc6-a5db-4050470ac085';"
+ brief_state 
+-------------
+ ready
+(1 row)
+
+[lead detail page with brief] $ curl -i -X GET 'http://localhost:3000/leads/c79f16a5-cda8-4cc6-a5db-4050470ac085' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/6738184ec3964f1e.css" data-precedence="next"/><link rel="stylesheet" href="/_next/static/css/f8e77
+[BRIEF_FIRST_10_LINES_IN_UI]
+# Internal detail brief
+Generated: 2026-11-22T13:58:29.833Z
+Target: http://[REDACTED]:45145/stage5-fixture.html
+
+## What the scanner found
+- Root HTTP status: 200
+- Server: not disclosed
+- CMS fingerprint: WordPress 5.8
+- PHP fingerprint: not disclosed
+- TLS: not valid or not available
+
+[public landing without session] $ curl -i -X GET 'http://localhost:3000/'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><!--shjEKLaA6t_tJgZX1Xe91--><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/fea9bcfa8bc9e724-s.p.woff2" as="font" crossorigin="" type="font/woff2"/
+
+[lead detail without session] $ curl -i -X GET 'http://localhost:3000/leads/c79f16a5-cda8-4cc6-a5db-4050470ac085'
+HTTP/1.1 307 Temporary Redirect
+content-type: text/html; charset=utf-8
+location: /login?next=%2Fleads%2Fc79f16a5-cda8-4cc6-a5db-4050470ac085
+[BODY_EXCERPT] <!DOCTYPE html><html id="__next_error__"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-2be240603428b57a.js"/><script src="/_next/static/chunks/e7e3044d-ffe374be2
+[BRIEF_VISIBILITY] internal brief absent from public landing and unauthenticated lead request
+
+=== CMS role verification through /login UI ===
+
+[unauthenticated /cms] $ curl -i -X GET 'http://localhost:3000/cms'
+HTTP/1.1 307 Temporary Redirect
+content-type: text/html; charset=utf-8
+location: /login?next=%2Fcms
+[BODY_EXCERPT] <!DOCTYPE html><html id="__next_error__"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="script" fetchPriority="low" href="/_n
+[CMS_UNAUTH] redirect to login confirmed
+
+[stage5-editor] $ curl -i -X POST 'http://localhost:3000/api/auth/sign-up/email'
+HTTP/1.1 200 OK
+content-type: application/json
+set-cookie: better-auth.session_token=G4YN6USYA6j9In0AI3BJtqKg6G1KDfv0.vRp1LIQfsRDkrXUasz4746WdaCdo%2FucaE2gaRFq3OaE%3D; Max-Age=604800; Path=/; HttpOnly; SameSite=Lax
+[BODY_EXCERPT] {"token":"G4YN6USYA6j9In0AI3BJtqKg6G1KDfv0","user":{"name":"stage5-editor","email":"stage5-editor-1795355907948@example.jp","emailVerified":false,"image":null,"createdAt":"2026-11-22T13:58:30.242Z","u
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "UPDATE users SET role = 'editor' WHERE email = 'stage5-editor-1795355907948@example.jp';"
+UPDATE 1
+
+[editor login page] $ curl -i -X GET 'http://localhost:3000/login?next=%2Fcms'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/6738184ec3964f1e.css" data-precedence="next"/><l
+
+[editor sign-in from login UI] $ curl -i -X POST 'http://localhost:3000/api/auth/sign-in/email'
+HTTP/1.1 200 OK
+content-type: application/json
+location: /cms
+set-cookie: better-auth.session_token=S0HNHkGFwGXv7GlRtEbxIp2DxIrNmagW.MzoJhqAlokryWRSIchmoAYwt8ojwSF2R1z%2BBxSjRY3k%3D; Max-Age=604800; Path=/; HttpOnly; SameSite=Lax
+[BODY_EXCERPT] {"redirect":true,"token":"S0HNHkGFwGXv7GlRtEbxIp2DxIrNmagW","url":"/cms","user":{"name":"stage5-editor","email":"stage5-editor-1795355907948@example.jp","emailVerified":false,"image":null,"createdAt":
+
+[editor creates draft post] $ curl -i -X POST 'http://localhost:3000/cms/posts/new' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 303 See Other
+location: /cms/posts/6132e4ae-528b-4124-b983-1a708e76c1d6/edit?notice=%5BCMS_DRAFT_CREATED%5D
+[BODY_EXCERPT] 
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT id, title, slug, status, published_at FROM posts WHERE slug = 'stage5-editor-draft-1795355907948';"
+                  id                  |        title        |               slug                | status | published_at 
+--------------------------------------+---------------------+-----------------------------------+--------+--------------
+ 6132e4ae-528b-4124-b983-1a708e76c1d6 | Stage5 Editor Draft | stage5-editor-draft-1795355907948 | draft  | 
+(1 row)
+
+[editor attempts publish] $ curl -i -X POST 'http://localhost:3000/cms' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 303 See Other
+location: /cms?notice=%5BCMS_FORBIDDEN%5D
+[BODY_EXCERPT] 
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT id, slug, status, published_at FROM posts WHERE id = '6132e4ae-528b-4124-b983-1a708e76c1d6';"
+                  id                  |               slug                | status | published_at 
+--------------------------------------+-----------------------------------+--------+--------------
+ 6132e4ae-528b-4124-b983-1a708e76c1d6 | stage5-editor-draft-1795355907948 | draft  | 
+(1 row)
+[EDITOR_PUBLISH_HTTP] HTTP/1.1 303 See Other
+[EDITOR_PUBLISH_LOCATION] /cms?notice=%5BCMS_FORBIDDEN%5D
+[EDITOR_DB_ROW]                   id                  |               slug                | status | published_at  --------------------------------------+-----------------------------------+--------+--------------  6132e4ae-528b-4124-b983-1a708e76c1d6 | stage5-editor-draft-1795355907948 | draft  |  (1 row)
+
+[admin login page] $ curl -i -X GET 'http://localhost:3000/login?next=%2Fcms'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/6738184ec3964f1e.css" data-precedence="next"/><l
+
+[admin sign-in from login UI] $ curl -i -X POST 'http://localhost:3000/api/auth/sign-in/email'
+HTTP/1.1 200 OK
+content-type: application/json
+location: /cms
+set-cookie: better-auth.session_token=LLC37cK0QtuteWWGgPPDYyEl9UBPEsqr.dH1F4rdQZkgoTQNSutu4LIu4BuCqlKlVzX8F7tcbNU8%3D; Max-Age=604800; Path=/; HttpOnly; SameSite=Lax
+[BODY_EXCERPT] {"redirect":true,"token":"LLC37cK0QtuteWWGgPPDYyEl9UBPEsqr","url":"/cms","user":{"name":"stage5-admin","email":"stage5-admin-1795355907948@example.jp","emailVerified":false,"image":null,"createdAt":"2
+
+[admin creates post] $ curl -i -X POST 'http://localhost:3000/cms/posts/new' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 303 See Other
+location: /cms/posts/e1f033a9-4788-4012-af85-f7c27e326493/edit?notice=%5BCMS_DRAFT_CREATED%5D
+[BODY_EXCERPT] 
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT id, title, slug, status, published_at FROM posts WHERE slug = 'stage5-admin-published-1795355907948';"
+                  id                  |         title          |                 slug                 | status | published_at 
+--------------------------------------+------------------------+--------------------------------------+--------+--------------
+ e1f033a9-4788-4012-af85-f7c27e326493 | Stage5 Admin Published | stage5-admin-published-1795355907948 | draft  | 
+(1 row)
+
+[admin publishes post] $ curl -i -X POST 'http://localhost:3000/cms' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 303 See Other
+location: /cms?notice=%5BCMS_POST_PUBLISHED%5D
+[BODY_EXCERPT] 
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT id, slug, status, published_at FROM posts WHERE id IN ('6132e4ae-528b-4124-b983-1a708e76c1d6', 'e1f033a9-4788-4012-af85-f7c27e326493') ORDER BY slug;"
+                  id                  |                 slug                 |  status   |        published_at        
+--------------------------------------+--------------------------------------+-----------+----------------------------
+ e1f033a9-4788-4012-af85-f7c27e326493 | stage5-admin-published-1795355907948 | published | 2026-11-22 14:58:30.697+01
+ 6132e4ae-528b-4124-b983-1a708e76c1d6 | stage5-editor-draft-1795355907948    | draft     | 
+(2 rows)
+[ADMIN_PUBLISH_HTTP] HTTP/1.1 303 See Other
+[CMS_FINAL_DB_ROWS]                   id                  |                 slug                 |  status   |        published_at         --------------------------------------+--------------------------------------+-----------+----------------------------  e1f033a9-4788-4012-af85-f7c27e326493 | stage5-admin-published-1795355907948 | published | 2026-11-22 14:58:30.697+01  6132e4ae-528b-4124-b983-1a708e76c1d6 | stage5-editor-draft-1795355907948    | draft     |  (2 rows)
+
+=== Real setInterval cron tick ===
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "UPDATE scans SET created_at = now() - interval '1 hour', updated_at = now() - interval '1 hour' WHERE created_at > now() - interval '1 hour';"
+UPDATE 2
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "UPDATE leads SET latest_scan_at = now() + interval '1 hour' WHERE id <> '15063732-f047-41ef-b9e7-f5caa6330fbf';"
+UPDATE 10
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "UPDATE leads SET latest_scan_at = now() - interval '1 hour' WHERE id = '15063732-f047-41ef-b9e7-f5caa6330fbf';"
+UPDATE 1
+$ SCAN_CRON_TEST=0 SCAN_INTERVAL_HOURS=0.001 SCAN_POLL_MS=200 /tmp/opencode/bin/pnpm --filter worker dev >> /home/morpheus/Downloads/mirai-lab/state/evidence/stage5/worker.log
+[INTERVAL_LOG_T3] worker: cron fired at 2026-11-22T13:58:36.285Z source=interval
+[INTERVAL_LOG_ENQUEUE] worker: cron enqueued scan=1cff69b9-80c3-4834-9594-ce4954d95c0a lead=15063732-f047-41ef-b9e7-f5caa6330fbf domain=127.0.0.1 created_at=2026-11-22T13:58:36.285Z
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT id, lead_id, kind, status, to_char(created_at AT TIME ZONE 'UTC', 'YYYY-MM-DD\"T\"HH24:MI:SS.MS\"Z\"') AS created_at_iso FROM scans WHERE id = '1cff69b9-80c3-4834-9594-ce4954d95c0a';"
+                  id                  |               lead_id                | kind | status |      created_at_iso      
+--------------------------------------+--------------------------------------+------+--------+--------------------------
+ 1cff69b9-80c3-4834-9594-ce4954d95c0a | 15063732-f047-41ef-b9e7-f5caa6330fbf | scan | done   | 2026-11-22T13:58:36.285Z
+(1 row)
+[INTERVAL_SCAN_ROW]                   id                  |               lead_id                | kind | status |      created_at_iso       --------------------------------------+--------------------------------------+------+--------+--------------------------  1cff69b9-80c3-4834-9594-ce4954d95c0a | 15063732-f047-41ef-b9e7-f5caa6330fbf | scan | done   | 2026-11-22T13:58:36.285Z (1 row)
+[INTERVAL_WORKER_LOG] worker: processing job=1cff69b9-80c3-4834-9594-ce4954d95c0a kind=scan queued_at=2026-11-22T13:58:36.285Z at=2026-11-22T13:58:36.319Z
+
+[E2E_OK] cronLead=15063732-f047-41ef-b9e7-f5caa6330fbf cronScan=09bf451e-e3ad-4920-acfc-974f05987169 T1=2026-11-22T13:58:29.063Z T2=2026-11-22T13:58:29.080Z intervalScan=1cff69b9-80c3-4834-9594-ce4954d95c0a T3=2026-11-22T13:58:36.285Z detailLead=c79f16a5-cda8-4cc6-a5db-4050470ac085 editorPost=6132e4ae-528b-4124-b983-1a708e76c1d6 adminPost=e1f033a9-4788-4012-af85-f7c27e326493

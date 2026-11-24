@@ -1,0 +1,10 @@
+
+Running 5 tests using 1 worker
+
+[1/5] tests/stage5-screens.spec.ts:16:1 › internal screens use the shared shell header and one main landmark
+[2/5] tests/stage5-screens.spec.ts:26:1 › lead list uses DataTable controls and preserves legacy selectors
+[3/5] tests/stage5-screens.spec.ts:40:1 › lead board uses KanbanBoard and keeps stage/card selectors
+[4/5] tests/stage5-screens.spec.ts:55:1 › CMS, documents and contact requests expose DataTable controls
+[5/5] tests/stage5-screens.spec.ts:71:1 › admin review and sources screens show real operational data regions
+  5 passed (52.2s)
+E2E_TARGETED_EXIT=0

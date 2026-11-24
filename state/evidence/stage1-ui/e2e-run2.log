@@ -1,0 +1,79 @@
+
+> @mirai/web@0.0.0 test:e2e:full /home/morpheus/Downloads/mirai-lab/apps/web
+> playwright test --config playwright.config.ts
+
+
+Running 53 tests using 1 worker
+
+[1/53] tests/full-system.spec.ts:127:1 › 1 public site / renders with expected copy and no legacy tokens
+[2/53] tests/full-system.spec.ts:145:1 › 2 public metadata is consistent across /, /blog and /llms.txt
+[3/53] tests/full-system.spec.ts:166:1 › 3 landing JSON-LD is valid Organization data with no placeholders
+[4/53] tests/full-system.spec.ts:192:1 › 4 health endpoint reports connected database
+[5/53] tests/full-system.spec.ts:198:1 › 5 dev IndexNow key file is served
+[6/53] tests/full-system.spec.ts:204:1 › 6 unauthenticated POST /api/scans returns 401; GET /api/health returns 200
+[7/53] tests/full-system.spec.ts:211:1 › 7 unauthenticated protected pages redirect to /login?next=
+[8/53] tests/full-system.spec.ts:229:1 › 8 wrong password shows the failure message and stays on /login
+[9/53] tests/full-system.spec.ts:238:1 › 9 valid login reaches dashboard with session cookies
+[10/53] tests/full-system.spec.ts:246:1 › 10 already logged-in GET /login still shows the form
+[11/53] tests/full-system.spec.ts:254:1 › 11 client-side validation blocks empty contact submit
+[12/53] tests/full-system.spec.ts:266:1 › 12 direct server action with empty FormData returns error and inserts nothing
+[13/53] tests/full-system.spec.ts:274:1 › 13 valid contact form submit inserts exact fields
+[14/53] tests/full-system.spec.ts:288:1 › 14 CRM board shows all six stages and scored leads
+[15/53] tests/full-system.spec.ts:300:1 › 15 lead list filter and score sort work
+[16/53] tests/full-system.spec.ts:319:1 › 16 lead detail shows fields, activity form and delete
+[17/53] tests/full-system.spec.ts:339:1 › 17 detail brief is not exposed on public or unauthenticated routes
+[18/53] tests/full-system.spec.ts:354:1 › 18 drag-and-drop stage change persists with direct-action retry
+tests/full-system.spec.ts:354:1 › 18 drag-and-drop stage change persists with direct-action retry
+
+
+
+
+[19/53] tests/full-system.spec.ts:386:1 › 19 CRM create/update/activity direct actions persist
+[20/53] tests/full-system.spec.ts:430:1 › 20 manual scan returns deterministic score 80 and tier
+tests/full-system.spec.ts:430:1 › 20 manual scan returns deterministic score 80 and tier
+
+
+[21/53] tests/full-system.spec.ts:450:1 › 21 second manual scan inside cooldown shows explicit notice
+tests/full-system.spec.ts:450:1 › 21 second manual scan inside cooldown shows explicit notice
+
+
+[22/53] tests/full-system.spec.ts:464:1 › 22 promote contact request creates lead and activity
+[23/53] tests/full-system.spec.ts:481:1 › 23 detail scan stores and displays internal brief
+tests/full-system.spec.ts:481:1 › 23 detail scan stores and displays internal brief
+
+
+[24/53] tests/full-system.spec.ts:497:1 › 24 document PDF has real PDF type and expected text
+[25/53] tests/full-system.spec.ts:508:1 › 25 Japanese text and registration number survive PDF rendering
+[26/53] tests/full-system.spec.ts:520:1 › 26 branded and mono PDFs do not overflow at 375px
+[27/53] tests/full-system.spec.ts:549:1 › 27 CMS list shows admin posts
+[28/53] tests/full-system.spec.ts:558:1 › 28 editor cannot publish: UI hidden and direct action blocked
+[29/53] tests/full-system.spec.ts:573:1 › 29 admin publish creates a published post with exact body source
+[30/53] tests/full-system.spec.ts:596:1 › 30 published Markdown renders allowed elements only
+[31/53] tests/full-system.spec.ts:616:1 › 31 published post emits exactly one BlogPosting JSON-LD block
+[32/53] tests/full-system.spec.ts:632:1 › 32 draft post slug returns 404
+[33/53] tests/full-system.spec.ts:639:1 › 33 sitemap includes published slug
+[34/53] tests/full-system.spec.ts:649:1 › 34 llms.txt includes published slug and localized description
+[35/53] tests/full-system.spec.ts:661:1 › 35 IndexNow enabled: draft save sends zero pings, publish sends one
+[36/53] tests/full-system.spec.ts:677:1 › 36 IndexNow enabled: publishing a second post sends a second ping
+[37/53] tests/full-system.spec.ts:689:1 › 38 full walk: contact, promote, scan, document, publish, public read
+tests/full-system.spec.ts:689:1 › 38 full walk: contact, promote, scan, document, publish, public read
+
+
+[38/53] tests/full-system.spec.ts:748:1 › T1 /cms/site unauthenticated redirects to /login?next=%2Fcms%2Fsite
+[39/53] tests/full-system.spec.ts:754:1 › T2 /cms/site editor is forbidden
+[40/53] tests/full-system.spec.ts:760:1 › T3 /cms/site admin sees the form with ja and en tabs
+[41/53] tests/full-system.spec.ts:769:1 › T4 admin phone and ja hero headline changes appear on /
+[42/53] tests/full-system.spec.ts:778:1 › T5 the saved phone appears in /llms.txt
+[43/53] tests/full-system.spec.ts:786:1 › T6 clearing required phone is rejected and leaves the DB row unchanged
+[44/53] tests/full-system.spec.ts:796:1 › T7 XSS headline is rendered as escaped text on /
+[45/53] tests/full-system.spec.ts:805:1 › T8 hero image upload stores 200x200 dimensions and renders them via next/image
+[46/53] tests/full-system.spec.ts:821:1 › T9/T9b oversized and malformed image uploads are rejected
+[47/53] tests/full-system.spec.ts:844:1 › T10 marketing header links to /login or /dashboard by session
+[48/53] tests/full-system.spec.ts:852:1 › T11 case studies saved as draft stay off the public page
+[49/53] tests/full-system.spec.ts:867:1 › T12 fresh install with no settings row renders site.ts defaults
+[50/53] tests/stage1-primitives.spec.ts:3:1 › modal closes on Escape and returns focus to its trigger
+[51/53] tests/stage1-primitives.spec.ts:19:1 › toast uses role status for success and role alert for error
+[52/53] tests/stage1-primitives.spec.ts:35:1 › component review page renders every primitive section
+[53/53] tests/stage1-primitives.spec.ts:44:1 › focus outline is visible on focused controls
+  1 skipped
+  52 passed (3.4m)

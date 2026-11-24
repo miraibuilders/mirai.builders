@@ -1,0 +1,12 @@
+
+> mirai-lab@ typecheck /home/morpheus/Downloads/mirai-lab
+> pnpm -r --if-present typecheck
+
+Scope: 3 of 4 workspace projects
+packages/db typecheck$ tsc -p tsconfig.json --noEmit
+packages/db typecheck: Done
+apps/web typecheck$ tsc -p tsconfig.json --noEmit
+apps/worker typecheck$ tsc -p tsconfig.json --noEmit
+apps/worker typecheck: Done
+apps/web typecheck: Done
+TYPECHECK_EXIT=0

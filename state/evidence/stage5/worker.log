@@ -1,0 +1,14 @@
+
+> worker@0.0.0 dev /home/morpheus/Downloads/mirai-lab/apps/worker
+> tsx src/index.ts
+
+worker: started
+worker: cron fired at 2026-11-22T13:58:36.285Z source=interval
+worker: cron enqueued scan=1cff69b9-80c3-4834-9594-ce4954d95c0a lead=15063732-f047-41ef-b9e7-f5caa6330fbf domain=127.0.0.1 created_at=2026-11-22T13:58:36.285Z
+worker: cron tick complete enqueued=1 skipped_duplicates=0 skipped_cooldown=0
+worker: processing job=1cff69b9-80c3-4834-9594-ce4954d95c0a kind=scan queued_at=2026-11-22T13:58:36.285Z at=2026-11-22T13:58:36.319Z
+worker: completed scan=1cff69b9-80c3-4834-9594-ce4954d95c0a at=2026-11-22T13:58:36.319Z
+/home/morpheus/Downloads/mirai-lab/apps/worker:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  worker@0.0.0 dev: `tsx src/index.ts`
+Command failed with signal "SIGTERM"
+worker: stopped

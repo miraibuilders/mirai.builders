@@ -1,0 +1,689 @@
+
+> mirai-lab@ dev /home/morpheus/Downloads/mirai-lab
+> pnpm --filter @mirai/web dev
+
+
+> @mirai/web@0.0.0 dev /home/morpheus/Downloads/mirai-lab/apps/web
+> next dev
+
+   ▲ Next.js 15.5.29
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.36:3000
+   - Experiments (use with caution):
+     · serverActions
+
+ ✓ Starting...
+ ✓ Ready in 2.2s
+ ✓ Compiled /middleware in 247ms (115 modules)
+ ○ Compiling / ...
+ ✓ Compiled / in 2.6s (948 modules)
+ GET / 200 in 3749ms
+ ○ Compiling /api/health ...
+ ✓ Compiled /api/health in 1457ms (982 modules)
+ GET /api/health 200 in 1656ms
+ GET / 200 in 388ms
+ GET / 200 in 189ms
+ ○ Compiling /api/auth/[...all] ...
+ ✓ Compiled /api/auth/[...all] in 2.3s (1720 modules)
+ GET / 200 in 3262ms
+[2m2026-11-24T04:07:42.997Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:07:42.997Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ ○ Compiling /blog ...
+ ✓ Compiled /blog in 1224ms (1728 modules)
+ GET /blog 200 in 1833ms
+ ✓ Compiled /llms.txt in 442ms (1730 modules)
+ GET /llms.txt 200 in 552ms
+ GET / 200 in 371ms
+ GET /api/health 200 in 212ms
+ ○ Compiling /api/scans ...
+ ✓ Compiled /api/scans in 1554ms (1734 modules)
+[2m2026-11-24T04:07:48.325Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:07:48.326Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /api/scans 401 in 1875ms
+ GET /api/health 200 in 23ms
+ ○ Compiling /leads ...
+ ✓ Compiled /leads in 3.2s (2665 modules)
+[2m2026-11-24T04:07:52.380Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:07:52.380Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /leads 307 in 4687ms
+ ○ Compiling /leads/new ...
+ ✓ Compiled /leads/new in 2.8s (2684 modules)
+[2m2026-11-24T04:07:56.723Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:07:56.724Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /leads/new 307 in 3590ms
+ ○ Compiling /documents ...
+ ✓ Compiled /documents in 1076ms (2695 modules)
+[2m2026-11-24T04:07:58.463Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:07:58.464Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /documents 307 in 1727ms
+ ○ Compiling /documents/new ...
+ ✓ Compiled /documents/new in 1347ms (2707 modules)
+[2m2026-11-24T04:08:00.296Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:08:00.296Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /documents/new 307 in 1814ms
+ ○ Compiling /dashboard ...
+ ✓ Compiled /dashboard in 1048ms (2709 modules)
+[2m2026-11-24T04:08:01.739Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:08:01.740Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /dashboard 307 in 1423ms
+ ○ Compiling /contact-requests ...
+ ✓ Compiled /contact-requests in 1018ms (2724 modules)
+[2m2026-11-24T04:08:03.128Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:08:03.128Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /contact-requests 307 in 1374ms
+ ○ Compiling /cms ...
+ ✓ Compiled /cms in 1378ms (2749 modules)
+[2m2026-11-24T04:08:04.905Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:08:04.906Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms 307 in 1772ms
+ ○ Compiling /cms/posts/new ...
+ ✓ Compiled /cms/posts/new in 1244ms (2761 modules)
+[2m2026-11-24T04:08:06.526Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:08:06.526Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ ⨯ Error: CMS_FORBIDDEN
+    at requireCmsEditor (src/lib/cms-auth.ts:44:54)
+    at async NewCmsPostPage (src/app/(app)/cms/posts/new/page.tsx:13:3)
+  42 | export async function requireCmsEditor(): Promise<CrmActor> {
+  43 |   const actor = await getCrmActor();
+> 44 |   if (!actor || !canCreateCmsPost(actor.role)) throw new Error("CMS_FORBIDDEN");
+     |                                                      ^
+  45 |   return actor;
+  46 | }
+  47 | {
+  digest: '22836821'
+}
+ GET /cms/posts/new 307 in 1620ms
+ ○ Compiling /login ...
+ ✓ Compiled /login in 1544ms (2771 modules)
+ GET /login 200 in 1854ms
+[2m2026-11-24T04:08:10.115Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:08:10.115Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+[2m2026-11-24T04:08:10.291Z[0m [33mWARN[0m [1m[Better Auth]:[0m Invalid password
+ POST /api/auth/sign-in/email 401 in 646ms
+ GET /login 200 in 71ms
+ POST /api/auth/sign-in/email 200 in 280ms
+ GET /dashboard 200 in 242ms
+ GET /login 200 in 67ms
+ POST /api/auth/sign-in/email 200 in 191ms
+ GET /dashboard 200 in 211ms
+ GET /login 200 in 94ms
+ GET / 200 in 265ms
+ GET /api/auth/get-session 200 in 58ms
+ GET / 200 in 201ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST / 200 in 290ms
+ GET / 200 in 205ms
+ GET /api/auth/get-session 200 in 65ms
+ POST / 200 in 38ms
+ GET /login 200 in 63ms
+ POST /api/auth/sign-in/email 200 in 159ms
+ GET /dashboard 200 in 182ms
+ GET /leads/new 200 in 280ms
+ ○ Compiling /leads/[id] ...
+ ✓ Compiled /leads/[id] in 2.3s (2779 modules)
+[2m2026-11-24T04:08:24.835Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:08:24.836Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /leads/5b144aa4-8aa6-4702-b3ca-5838b00cfa3a 200 in 3764ms
+ POST /leads/new 303 in 3822ms
+ GET /leads 200 in 424ms
+ GET /login 200 in 87ms
+ POST /api/auth/sign-in/email 200 in 171ms
+ GET /dashboard 200 in 199ms
+ GET /leads/new 200 in 238ms
+ GET /leads/ab4f958e-3ce9-4e2f-bbe3-68d3ed48b34c 200 in 150ms
+ POST /leads/new 303 in 220ms
+ GET /leads?view=table&segment=professional_office&sort=score&dir=desc 200 in 274ms
+ GET /login 200 in 59ms
+ POST /api/auth/sign-in/email 200 in 177ms
+ GET /dashboard 200 in 185ms
+ GET /leads/new 200 in 268ms
+ GET /leads/4b1b3f78-73c3-4038-ac39-d67ec5507f51 200 in 182ms
+ POST /leads/new 303 in 237ms
+ GET /leads/4b1b3f78-73c3-4038-ac39-d67ec5507f51 200 in 321ms
+ POST /leads/4b1b3f78-73c3-4038-ac39-d67ec5507f51 200 in 169ms
+ GET /leads 200 in 125ms
+ POST /leads/4b1b3f78-73c3-4038-ac39-d67ec5507f51 303 in 187ms
+ GET /login 200 in 74ms
+ POST /api/auth/sign-in/email 200 in 167ms
+ GET /dashboard 200 in 200ms
+ GET /leads/new 200 in 266ms
+ GET /leads/0b0067fe-f0cd-4e4d-bfa7-687465257ecc 200 in 173ms
+ POST /leads/new 303 in 227ms
+ GET /blog 200 in 181ms
+ GET /llms.txt 200 in 30ms
+ GET /api/health 200 in 29ms
+ GET /leads/0b0067fe-f0cd-4e4d-bfa7-687465257ecc 307 in 109ms
+ GET / 200 in 160ms
+ GET /login 200 in 70ms
+ POST /api/auth/sign-in/email 200 in 163ms
+ GET /dashboard 200 in 222ms
+ GET /leads/new 200 in 274ms
+ GET /leads/f802ee0c-27f1-4009-b086-bb34d20e71f8 200 in 162ms
+ POST /leads/new 303 in 219ms
+ GET /leads 200 in 318ms
+[2m2026-11-24T04:08:41.715Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:08:41.715Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /leads 200 in 476ms
+ GET /leads 200 in 85ms
+ GET /login 200 in 68ms
+ POST /api/auth/sign-in/email 200 in 158ms
+ GET /dashboard 200 in 191ms
+ GET /leads/new 200 in 261ms
+ GET /leads/00c8ad20-2ef8-4e2d-bd0e-a96fc036ff39 200 in 138ms
+ POST /leads/new 303 in 195ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST /leads/00c8ad20-2ef8-4e2d-bd0e-a96fc036ff39 303 in 43ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST /leads/00c8ad20-2ef8-4e2d-bd0e-a96fc036ff39 200 in 251ms
+ GET /login 200 in 69ms
+ POST /api/auth/sign-in/email 200 in 157ms
+ GET /dashboard 200 in 187ms
+ GET /leads/new 200 in 226ms
+ GET /leads/5ada2de5-95f2-4ee2-9b47-5865374241b8 200 in 148ms
+ POST /leads/new 303 in 196ms
+ GET /leads 200 in 304ms
+ GET /leads/5ada2de5-95f2-4ee2-9b47-5865374241b8?notice=scan+queued 200 in 161ms
+ POST /leads 303 in 219ms
+ GET /leads 200 in 351ms
+ GET /login 200 in 66ms
+ POST /api/auth/sign-in/email 200 in 139ms
+ GET /dashboard 200 in 186ms
+ GET /leads/new 200 in 216ms
+ GET /leads/b0d7c676-e654-4674-b2f8-e01dd96ab7a8 200 in 154ms
+ POST /leads/new 303 in 208ms
+ GET /leads 200 in 340ms
+ GET /leads/b0d7c676-e654-4674-b2f8-e01dd96ab7a8?notice=scan+queued 200 in 228ms
+ POST /leads 303 in 353ms
+ GET /leads/b0d7c676-e654-4674-b2f8-e01dd96ab7a8?notice=scan+ran+recently%3B+wait+15+minutes 200 in 167ms
+ POST /leads/b0d7c676-e654-4674-b2f8-e01dd96ab7a8?notice=scan%20queued 303 in 249ms
+ GET /leads/b0d7c676-e654-4674-b2f8-e01dd96ab7a8?notice=scan+ran+recently%3B+wait+15+minutes 200 in 89ms
+ GET /leads/b0d7c676-e654-4674-b2f8-e01dd96ab7a8?notice=scan+ran+recently%3B+wait+15+minutes 200 in 76ms
+ GET / 200 in 171ms
+ GET /api/auth/get-session 200 in 70ms
+ POST / 200 in 32ms
+ GET /login 200 in 69ms
+ POST /api/auth/sign-in/email 200 in 170ms
+ GET /dashboard 200 in 251ms
+ GET /contact-requests 200 in 298ms
+ GET /leads/31aba14f-b51e-483b-a59d-45266920ff81 200 in 176ms
+ POST /contact-requests 303 in 246ms
+ GET /login 200 in 76ms
+ POST /api/auth/sign-in/email 200 in 232ms
+ GET /dashboard 200 in 251ms
+ GET /leads/new 200 in 235ms
+ GET /leads/7b6d822e-e953-45fc-aef0-2bd35df54cbb 200 in 154ms
+ POST /leads/new 303 in 217ms
+ GET /leads/7b6d822e-e953-45fc-aef0-2bd35df54cbb 200 in 281ms
+ GET /leads/7b6d822e-e953-45fc-aef0-2bd35df54cbb?notice=detail+queued 200 in 145ms
+ POST /leads/7b6d822e-e953-45fc-aef0-2bd35df54cbb 303 in 194ms
+ GET /leads/7b6d822e-e953-45fc-aef0-2bd35df54cbb?notice=detail+queued 200 in 114ms
+ GET /leads/7b6d822e-e953-45fc-aef0-2bd35df54cbb?notice=detail+queued 200 in 65ms
+ GET /leads/7b6d822e-e953-45fc-aef0-2bd35df54cbb 200 in 307ms
+ GET /login 200 in 79ms
+ POST /api/auth/sign-in/email 200 in 155ms
+ GET /dashboard 200 in 205ms
+ GET /documents/new 200 in 243ms
+ POST /documents/new 200 in 44ms
+ ○ Compiling /api/documents/[id]/pdf ...
+ ✓ Compiled /api/documents/[id]/pdf in 1478ms (2748 modules)
+ GET /api/documents/0aaa82f3-4732-4c61-80bb-7eda239900ce/pdf 200 in 4180ms
+ GET /login 200 in 219ms
+[2m2026-11-24T04:09:15.373Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:09:15.373Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /api/auth/sign-in/email 200 in 283ms
+ GET /dashboard 200 in 251ms
+ GET /documents/new 200 in 245ms
+ POST /documents/new 200 in 80ms
+ GET /api/documents/7f239f3e-b8be-4859-b3f8-f2411d670b96/pdf 200 in 1987ms
+ GET /login 200 in 60ms
+ POST /api/auth/sign-in/email 200 in 156ms
+ GET /dashboard 200 in 172ms
+ ○ Compiling /cms/posts/new ...
+ ✓ Compiled /cms/posts/new in 890ms (2436 modules)
+[2m2026-11-24T04:09:21.872Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:09:21.873Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms/posts/new 200 in 1421ms
+ ○ Compiling /cms/posts/[id]/edit ...
+ ✓ Compiled /cms/posts/[id]/edit in 1624ms (2765 modules)
+[2m2026-11-24T04:09:25.893Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:09:25.893Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms/posts/f035ed64-5082-4ea5-96ef-fab140aaec18/edit?notice=Draft+created 200 in 3715ms
+ POST /cms/posts/new 303 in 3793ms
+ ○ Compiling /cms ...
+ ✓ Compiled /cms in 1754ms (2452 modules)
+[2m2026-11-24T04:09:28.609Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:09:28.609Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms 200 in 2356ms
+ GET /login 200 in 67ms
+ POST /api/auth/sign-in/email 200 in 186ms
+ GET /dashboard 200 in 201ms
+ GET /cms/posts/new 200 in 259ms
+ GET /cms/posts/893f964d-23f3-4f84-b7f2-039c79d1f63c/edit?notice=Draft+created 200 in 176ms
+ POST /cms/posts/new 303 in 222ms
+ GET /cms 200 in 306ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+[2m2026-11-24T04:09:32.983Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:09:32.983Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /cms 303 in 399ms
+ GET /login 200 in 72ms
+ POST /api/auth/sign-in/email 200 in 160ms
+ GET /dashboard 200 in 189ms
+ GET /cms/posts/new 200 in 258ms
+ GET /cms/posts/d84181dc-5463-466d-a09d-7690de8aa1c7/edit?notice=Draft+created 200 in 161ms
+ POST /cms/posts/new 303 in 206ms
+ GET /cms 200 in 326ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/published-9aca4a"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 133ms
+ POST /cms 303 in 190ms
+ GET /login 200 in 74ms
+ POST /api/auth/sign-in/email 200 in 167ms
+ GET /dashboard 200 in 192ms
+ GET /cms/posts/new 200 in 252ms
+ GET /cms/posts/2883bacb-ac74-4b4e-a00b-1bc2693cbd41/edit?notice=Draft+created 200 in 152ms
+ POST /cms/posts/new 303 in 195ms
+ GET /cms 200 in 267ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/markdown-bb9876"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 116ms
+ POST /cms 303 in 174ms
+ ○ Compiling /blog/[slug] ...
+ ✓ Compiled /blog/[slug] in 2.4s (2765 modules)
+ GET /blog/markdown-bb9876 200 in 3554ms
+ GET /login 200 in 72ms
+[2m2026-11-24T04:09:45.202Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:09:45.203Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /api/auth/sign-in/email 200 in 294ms
+ GET /dashboard 200 in 275ms
+ GET /cms/posts/new 200 in 269ms
+ GET /cms/posts/ad00f215-f129-432f-aa6f-f366de3e7690/edit?notice=Draft+created 200 in 283ms
+ POST /cms/posts/new 303 in 393ms
+ GET /cms 200 in 392ms
+[2m2026-11-24T04:09:48.771Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:09:48.771Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/jsonld-409b2c"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 117ms
+ POST /cms 303 in 580ms
+ GET /blog/jsonld-409b2c 200 in 213ms
+ GET /login 200 in 55ms
+ POST /api/auth/sign-in/email 200 in 165ms
+ GET /dashboard 200 in 185ms
+ GET /cms/posts/new 200 in 254ms
+ GET /cms/posts/ef04a181-209d-4384-adf3-7481ca80bac1/edit?notice=Draft+created 200 in 173ms
+ POST /cms/posts/new 303 in 229ms
+ GET /blog/draft-only-2ac785 404 in 178ms
+ GET /login 200 in 91ms
+ POST /api/auth/sign-in/email 200 in 196ms
+ GET /dashboard 200 in 249ms
+ GET /cms/posts/new 200 in 268ms
+ GET /cms/posts/35eafe0f-5502-4f20-aac3-dfb6fb22a52f/edit?notice=Draft+created 200 in 186ms
+ POST /cms/posts/new 303 in 252ms
+ GET /cms 200 in 389ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/sitemap-94801f"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 132ms
+ POST /cms 303 in 208ms
+ ○ Compiling /sitemap.xml ...
+ ✓ Compiled /sitemap.xml in 2.1s (2770 modules)
+ GET /sitemap.xml 200 in 2312ms
+ GET /login 200 in 336ms
+[2m2026-11-24T04:10:01.585Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:10:01.585Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /api/auth/sign-in/email 200 in 552ms
+ GET /dashboard 200 in 290ms
+ GET /cms/posts/new 200 in 426ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 3.1s (2753 modules)
+ GET /sw.js 404 in 4585ms
+[2m2026-11-24T04:10:07.632Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:10:07.632Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms/posts/a79c8cc9-183b-4f21-a507-2573f427ec78/edit?notice=Draft+created 200 in 182ms
+ POST /cms/posts/new 303 in 3528ms
+ GET /cms 200 in 356ms
+[2m2026-11-24T04:10:09.205Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:10:09.205Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/llms-328471"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 96ms
+ POST /cms 303 in 487ms
+ ○ Compiling /llms.txt ...
+ ✓ Compiled /llms.txt in 2.3s (2417 modules)
+ GET /llms.txt 200 in 2473ms
+ GET /login 200 in 203ms
+[2m2026-11-24T04:10:12.943Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:10:12.943Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /api/auth/sign-in/email 200 in 366ms
+ GET /dashboard 200 in 260ms
+ GET /cms/posts/new 200 in 297ms
+ GET /cms/posts/70a577ba-b856-4df6-b87d-3220e2ecc503/edit?notice=Draft+created 200 in 172ms
+ POST /cms/posts/new 303 in 232ms
+ GET /cms 200 in 402ms
+[2m2026-11-24T04:10:16.521Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:10:16.521Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/indexnow-one-eef87e"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 113ms
+ POST /cms 303 in 494ms
+ GET /login 200 in 61ms
+ POST /api/auth/sign-in/email 200 in 171ms
+ GET /dashboard 200 in 209ms
+ GET /cms/posts/new 200 in 265ms
+ GET /cms/posts/5944c433-1364-4cec-be98-5f59967eb02d/edit?notice=Draft+created 200 in 162ms
+ POST /cms/posts/new 303 in 206ms
+ GET /cms 200 in 304ms
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/indexnow-two-d0bbfa"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 126ms
+ POST /cms 303 in 187ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1407ms (2429 modules)
+ GET / 200 in 1775ms
+[2m2026-11-24T04:10:24.717Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:10:24.717Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /api/auth/get-session 200 in 507ms
+ POST / 200 in 106ms
+ GET /login 200 in 124ms
+ POST /api/auth/sign-in/email 200 in 135ms
+ GET /dashboard 200 in 281ms
+ ○ Compiling /contact-requests ...
+ ✓ Compiled /contact-requests in 3.1s (2439 modules)
+[2m2026-11-24T04:10:30.156Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:10:30.157Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /contact-requests 200 in 3827ms
+[2m2026-11-24T04:10:31.298Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:10:31.298Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ ○ Compiling /leads/[id] ...
+ ✓ Compiled /leads/[id] in 1091ms (2446 modules)
+[2m2026-11-24T04:10:32.845Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:10:32.845Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /leads/f28a405a-fc15-4569-8f76-f608f5f9f139 200 in 1606ms
+ POST /contact-requests 303 in 2054ms
+ ⚠ Missing `origin` header from a forwarded Server Actions request.
+ POST /leads/f28a405a-fc15-4569-8f76-f608f5f9f139 303 in 49ms
+ GET /leads/f28a405a-fc15-4569-8f76-f608f5f9f139 200 in 372ms
+ GET /leads/f28a405a-fc15-4569-8f76-f608f5f9f139?notice=scan+queued 200 in 164ms
+ POST /leads/f28a405a-fc15-4569-8f76-f608f5f9f139 303 in 242ms
+ GET /leads/f28a405a-fc15-4569-8f76-f608f5f9f139?notice=scan+queued 200 in 101ms
+ GET /leads/f28a405a-fc15-4569-8f76-f608f5f9f139?notice=scan+queued 200 in 259ms
+ GET /documents/new 200 in 325ms
+ POST /documents/new 200 in 61ms
+ GET /cms/posts/new 200 in 247ms
+ GET /cms/posts/ca583921-0711-40b7-95d8-3f1bd88ca27f/edit?notice=Draft+created 200 in 218ms
+ POST /cms/posts/new 303 in 280ms
+ GET /cms 200 in 365ms
+[2m2026-11-24T04:10:38.257Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:10:38.257Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+indexnow: request {"host":"localhost:3000","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://localhost:3000/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://localhost:3000/blog/walk-post-01ec60"]}
+indexnow: response status=202
+ GET /cms?notice=Post+published 200 in 107ms
+ POST /cms 303 in 399ms
+ GET /blog/walk-post-01ec60 200 in 190ms
+ GET /leads/f28a405a-fc15-4569-8f76-f608f5f9f139 307 in 155ms
+ ○ Compiling /cms/site ...
+ ✓ Compiled /cms/site in 3.4s (2786 modules)
+[2m2026-11-24T04:10:42.820Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:10:42.820Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms/site 307 in 5688ms
+ GET /login 200 in 131ms
+ POST /api/auth/sign-in/email 200 in 184ms
+ GET /dashboard 200 in 234ms
+ GET /cms/site 200 in 253ms
+ GET /?notice=CMS_FORBIDDEN 200 in 196ms
+ GET /login 200 in 63ms
+ POST /api/auth/sign-in/email 200 in 219ms
+ GET /dashboard 200 in 216ms
+ GET /cms/site 200 in 264ms
+ GET /login 200 in 67ms
+ POST /api/auth/sign-in/email 200 in 211ms
+ GET /dashboard 200 in 196ms
+ GET /cms/site 200 in 283ms
+[2m2026-11-24T04:10:53.143Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:10:53.144Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms/site?notice=Site+settings+saved 200 in 119ms
+ POST /cms/site 303 in 355ms
+ GET /cms/site?notice=Site+settings+saved 200 in 72ms
+ GET /cms/site?notice=Site+settings+saved 200 in 57ms
+ GET / 200 in 154ms
+ GET /login 200 in 71ms
+ POST /api/auth/sign-in/email 200 in 213ms
+ GET /dashboard 200 in 211ms
+ GET /cms/site 200 in 294ms
+ GET /cms/site?notice=Site+settings+saved 200 in 118ms
+ POST /cms/site 303 in 168ms
+ GET /llms.txt 200 in 29ms
+ GET /login 200 in 79ms
+ POST /api/auth/sign-in/email 200 in 172ms
+ GET /dashboard 200 in 200ms
+ GET /cms/site 200 in 299ms
+ POST /cms/site 200 in 30ms
+ GET /login 200 in 64ms
+ POST /api/auth/sign-in/email 200 in 181ms
+ GET /dashboard 200 in 225ms
+ GET /cms/site 200 in 297ms
+ GET /cms/site?notice=Site+settings+saved 200 in 122ms
+ POST /cms/site 303 in 164ms
+ GET / 200 in 321ms
+ GET /cms/site?notice=Site+settings+saved 200 in 354ms
+ GET /login 200 in 563ms
+ POST /api/auth/sign-in/email 200 in 177ms
+ GET /dashboard 200 in 196ms
+ GET /cms/site 200 in 280ms
+ GET /cms/site?notice=Site+settings+saved 200 in 129ms
+ POST /cms/site 303 in 177ms
+ GET /cms/site?notice=Site+settings+saved 200 in 85ms
+ GET /cms/site?notice=Site+settings+saved 200 in 215ms
+ GET / 200 in 224ms
+ GET /login 200 in 63ms
+ POST /api/auth/sign-in/email 200 in 162ms
+ GET /dashboard 200 in 205ms
+ GET /cms/site 200 in 393ms
+ POST /cms/site 200 in 37ms
+ POST /cms/site 200 in 19ms
+ GET / 200 in 168ms
+ GET /login 200 in 75ms
+ POST /api/auth/sign-in/email 200 in 167ms
+ GET /dashboard 200 in 176ms
+ GET / 200 in 236ms
+ GET /api/auth/get-session 200 in 54ms
+ GET /login 200 in 62ms
+ POST /api/auth/sign-in/email 200 in 137ms
+ GET /dashboard 200 in 185ms
+ GET /cms/site 200 in 218ms
+ GET /cms/site?notice=Site+settings+saved 200 in 101ms
+ POST /cms/site 303 in 172ms
+ GET /cms/site?notice=Site+settings+saved 200 in 83ms
+ GET /cms/site?notice=Site+settings+saved 200 in 213ms
+ GET / 200 in 221ms
+ GET /login 200 in 72ms
+ POST /api/auth/sign-in/email 200 in 167ms
+ GET /dashboard 200 in 188ms
+ GET / 200 in 190ms
+ GET /cms/site 200 in 234ms
+ GET /cms/site?notice=Site+settings+saved 200 in 113ms
+ POST /cms/site 303 in 163ms
+ GET /cms/site?notice=Site+settings+saved 200 in 12ms
+ ○ Compiling /dev/components ...
+ ✓ Compiled /dev/components in 4.5s (2772 modules)
+ GET /dev/components 200 in 5056ms
+ GET /dev/components 200 in 133ms
+ GET /dev/components 200 in 132ms
+ GET /dev/components 200 in 145ms
+ ○ Compiling /dev/data-table ...
+ ✓ Compiled /dev/data-table in 2.2s (2769 modules)
+ GET /dev/data-table 200 in 2533ms
+ GET /dev/data-table 200 in 131ms
+ ○ Compiling /dev/kanban ...
+ ✓ Compiled /dev/kanban in 2.1s (2776 modules)
+ GET /dev/kanban 200 in 2281ms
+ GET /dev/kanban 200 in 111ms
+ GET /dev/kanban 200 in 89ms
+ GET /dev/kanban 200 in 97ms
+ GET /dev/kanban 200 in 108ms
+ GET /login 200 in 74ms
+[2m2026-11-24T04:11:46.153Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:11:46.153Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /api/auth/sign-in/email 200 in 460ms
+ GET /dashboard 200 in 309ms
+ GET /login 200 in 67ms
+ POST /api/auth/sign-in/email 200 in 172ms
+ GET /dashboard 200 in 203ms
+ GET /login 200 in 79ms
+ POST /api/auth/sign-in/email 200 in 182ms
+ GET /dashboard 200 in 213ms
+ ○ Compiling /settings/dnc ...
+ ✓ Compiled /settings/dnc in 3.7s (2766 modules)
+[2m2026-11-24T04:11:54.734Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:11:54.735Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /settings/dnc 200 in 4129ms
+ GET /login 200 in 588ms
+ POST /api/auth/sign-in/email 200 in 234ms
+ GET /dashboard 200 in 300ms
+ ○ Compiling /leads ...
+ ✓ Compiled /leads in 4s (2438 modules)
+[2m2026-11-24T04:12:03.719Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:12:03.719Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /leads 200 in 4470ms
+ GET /login 200 in 180ms
+ POST /api/auth/sign-in/email 200 in 209ms
+ GET /dashboard 200 in 266ms
+ GET /leads/new 200 in 261ms
+ GET /cms/posts/new 200 in 275ms
+ GET /login 200 in 55ms
+ POST /api/auth/sign-in/email 200 in 165ms
+ GET /dashboard 200 in 191ms
+ GET /documents/new 200 in 270ms
+ POST /documents/new 200 in 97ms
+ GET /login 200 in 78ms
+ POST /api/auth/sign-in/email 200 in 160ms
+ GET /dashboard 200 in 200ms
+ GET /cms/site 200 in 284ms
+[2m2026-11-24T04:12:12.653Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:12:12.653Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /cms/site 200 in 295ms
+ GET /login 200 in 63ms
+ POST /api/auth/sign-in/email 200 in 156ms
+ GET /dashboard 200 in 186ms
+ GET /settings/dnc 200 in 279ms
+ GET /settings/dnc?notice=DNC+entry+saved 200 in 110ms
+ POST /settings/dnc 303 in 164ms
+ GET /settings/dnc?notice=DNC+entry+saved 200 in 63ms
+ GET /settings/dnc?notice=DNC+entry+saved 200 in 53ms
+ GET /settings/dnc?notice=DNC+entry+removed 200 in 105ms
+ POST /settings/dnc?notice=DNC%20entry%20saved 303 in 149ms
+ GET /login 200 in 56ms
+ POST /api/auth/sign-in/email 200 in 166ms
+ GET /dashboard 200 in 184ms
+ GET /dashboard 200 in 237ms
+ GET /leads 200 in 260ms
+ GET /leads?view=table 200 in 281ms
+ ○ Compiling /contact-requests ...
+ ✓ Compiled /contact-requests in 3s (2448 modules)
+[2m2026-11-24T04:12:24.809Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:12:24.810Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /leads?view=table 200 in 2502ms
+ GET /contact-requests 200 in 5049ms
+ ○ Compiling /documents ...
+ ✓ Compiled /documents in 2.8s (2454 modules)
+[2m2026-11-24T04:12:28.714Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:12:28.715Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /documents 200 in 3357ms
+ GET /cms 200 in 927ms
+ ○ Compiling /leads/review ...
+ ✓ Compiled /leads/review in 5.3s (2796 modules)
+[2m2026-11-24T04:12:38.923Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:12:38.924Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /leads/review 200 in 6685ms
+ ○ Compiling /leads/sources ...
+ ✓ Compiled /leads/sources in 2.8s (2798 modules)
+[2m2026-11-24T04:12:43.586Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:12:43.587Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /leads/sources 200 in 4244ms
+ GET /settings/dnc 200 in 245ms
+ GET /login 200 in 72ms
+ POST /api/auth/sign-in/email 200 in 192ms
+ GET /dashboard 200 in 220ms
+ GET /leads/new 200 in 262ms
+ ○ Compiling /leads/[id] ...
+ ✓ Compiled /leads/[id] in 4.1s (2421 modules)
+[2m2026-11-24T04:12:52.191Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:12:52.192Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /leads/13901444-f949-46a4-bbb2-71e50d06837b 200 in 4626ms
+ POST /leads/new 303 in 4690ms
+ GET /leads?view=table 200 in 2676ms
+ GET /login 200 in 67ms
+ POST /api/auth/sign-in/email 200 in 196ms
+ GET /dashboard 200 in 259ms
+ GET /leads/new 200 in 309ms
+ GET /leads/c7206236-1eac-45a2-937e-fc6018f9534d 200 in 180ms
+ POST /leads/new 303 in 245ms
+ GET /leads 200 in 345ms
+ GET /login 200 in 75ms
+ POST /api/auth/sign-in/email 200 in 188ms
+ GET /dashboard 200 in 206ms
+ GET /cms 200 in 338ms
+ GET /documents 200 in 234ms
+ GET /contact-requests 200 in 219ms
+ GET /login 200 in 58ms
+ POST /api/auth/sign-in/email 200 in 178ms
+ GET /dashboard 200 in 186ms
+ GET /leads/review 200 in 279ms
+ GET /leads/sources 200 in 274ms
+ GET /login 200 in 56ms
+ POST /api/auth/sign-in/email 200 in 176ms
+ GET /dashboard 200 in 230ms
+ GET /leads?view=table 200 in 278ms
+ GET /contact-requests 200 in 199ms
+ GET /documents 200 in 174ms
+ GET /cms 200 in 676ms
+ GET /leads/review 200 in 219ms
+ GET /leads/sources 200 in 231ms
+ ○ Compiling /cms/authors ...
+ ✓ Compiled /cms/authors in 4.1s (2761 modules)
+[2m2026-11-24T04:13:18.004Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:13:18.004Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms/authors 200 in 7127ms
+ ○ Compiling /cms/media ...
+ ✓ Compiled /cms/media in 3.7s (2763 modules)
+[2m2026-11-24T04:13:24.909Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:13:24.910Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+Cannot specify a encType or method for a form that specifies a function as the action. React provides those automatically. They will get overridden.
+ GET /cms/media 200 in 4500ms
+ GET /settings/dnc 200 in 234ms
+ GET /login 200 in 75ms
+ POST /api/auth/sign-in/email 200 in 215ms
+ GET /dashboard 200 in 207ms
+ GET /leads/new 200 in 262ms
+ GET /leads/1b1f012c-8cb1-4d60-be98-796c8a8ce19d 200 in 208ms
+ POST /leads/new 303 in 271ms
+ GET /leads/1b1f012c-8cb1-4d60-be98-796c8a8ce19d 200 in 298ms
+ GET /login 200 in 83ms
+ POST /api/auth/sign-in/email 200 in 168ms
+ GET /dashboard 200 in 198ms
+ GET /settings/dnc 200 in 237ms
+ ○ Compiling /dev/components ...
+ ✓ Compiled /dev/components in 1396ms (2418 modules)
+ GET /dev/components 200 in 1664ms
+ ✓ Compiled in 1261ms (338 modules)
+ ○ Compiling /api/health ...
+ ✓ Compiled /api/health in 3.4s (2432 modules)
+ GET /api/health 200 in 3642ms
+ GET /login 200 in 318ms
+[2m2026-11-24T04:14:07.715Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:14:07.715Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ POST /api/auth/sign-in/email 200 in 318ms
+ GET /dashboard 200 in 278ms
+ ○ Compiling / ...
+ ✓ Compiled / in 5.9s (2464 modules)
+ GET / 200 in 6450ms
+ ○ Compiling /cms/site ...
+ ✓ Compiled /cms/site in 1543ms (2475 modules)
+[2m2026-11-24T04:14:17.225Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:14:17.225Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms/site 200 in 2194ms
+[2m2026-11-24T04:14:19.296Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+[2m2026-11-24T04:14:19.296Z[0m [33mWARN[0m [1m[Better Auth]:[0m [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+ GET /cms/site?notice=Site+settings+saved 200 in 127ms
+ POST /cms/site 303 in 528ms
+ GET /cms/site?notice=Site+settings+saved 200 in 57ms
+ GET /cms/site?notice=Site+settings+saved 200 in 50ms

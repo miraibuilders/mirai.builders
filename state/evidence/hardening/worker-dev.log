@@ -1,0 +1,378 @@
+
+> worker@0.0.0 dev /home/morpheus/Downloads/mirai-lab/apps/worker
+> tsx src/index.ts
+
+worker: started
+worker: processing job=862f88f5-3cd7-4015-a41d-347094d3d3bc kind=scan queued_at=2026-11-22T16:47:24.004Z at=2026-11-22T16:47:24.550Z
+worker: completed scan=862f88f5-3cd7-4015-a41d-347094d3d3bc at=2026-11-22T16:47:24.550Z
+worker: processing job=8faf835a-c118-43f1-a8a8-45a80ad80b29 kind=scan queued_at=2026-11-22T16:47:28.990Z at=2026-11-22T16:47:29.637Z
+worker: completed scan=8faf835a-c118-43f1-a8a8-45a80ad80b29 at=2026-11-22T16:47:29.637Z
+worker: processing job=98d7bfd4-edfc-4eb0-b275-e9ad3dff9e33 kind=detail queued_at=2026-11-22T16:47:38.718Z at=2026-11-22T16:47:38.722Z
+worker: completed detail=98d7bfd4-edfc-4eb0-b275-e9ad3dff9e33 at=2026-11-22T16:47:38.722Z
+worker: processing job=1ddd4300-937e-450f-be2c-9d4c52c80066 kind=scan queued_at=2026-11-22T16:48:54.671Z at=2026-11-22T16:48:54.966Z
+worker: completed scan=1ddd4300-937e-450f-be2c-9d4c52c80066 at=2026-11-22T16:48:54.966Z
+worker: processing job=517bc2d5-30a0-46aa-b29b-219b285452bc kind=scan queued_at=2026-11-22T16:51:03.334Z at=2026-11-22T16:51:04.302Z
+worker: completed scan=517bc2d5-30a0-46aa-b29b-219b285452bc at=2026-11-22T16:51:04.302Z
+worker: processing job=fae0d7d5-dedd-4727-830b-5f042242864d kind=scan queued_at=2026-11-22T16:51:08.999Z at=2026-11-22T16:51:09.376Z
+worker: completed scan=fae0d7d5-dedd-4727-830b-5f042242864d at=2026-11-22T16:51:09.376Z
+worker: processing job=1bf47067-701e-43b8-9293-41d17417773c kind=detail queued_at=2026-11-22T16:51:19.440Z at=2026-11-22T16:51:19.445Z
+worker: completed detail=1bf47067-701e-43b8-9293-41d17417773c at=2026-11-22T16:51:19.445Z
+worker: processing job=f1c49ace-5c9d-4219-b793-b298bf948838 kind=scan queued_at=2026-11-22T16:52:34.570Z at=2026-11-22T16:52:34.674Z
+worker: completed scan=f1c49ace-5c9d-4219-b793-b298bf948838 at=2026-11-22T16:52:34.674Z
+worker: processing job=a3c258cb-55ab-4462-bcb7-588b39aa71a4 kind=scan queued_at=2026-11-22T16:54:11.189Z at=2026-11-22T16:54:11.912Z
+worker: completed scan=a3c258cb-55ab-4462-bcb7-588b39aa71a4 at=2026-11-22T16:54:11.912Z
+worker: processing job=bf08724e-f87f-4f34-8ee4-1141025bb903 kind=scan queued_at=2026-11-22T16:54:16.164Z at=2026-11-22T16:54:16.976Z
+worker: completed scan=bf08724e-f87f-4f34-8ee4-1141025bb903 at=2026-11-22T16:54:16.976Z
+worker: processing job=484caf2c-692e-4b64-986f-10bf36c3d059 kind=detail queued_at=2026-11-22T16:54:25.448Z at=2026-11-22T16:54:26.038Z
+worker: completed detail=484caf2c-692e-4b64-986f-10bf36c3d059 at=2026-11-22T16:54:26.038Z
+worker: processing job=b6268e7b-f43f-4c72-9db7-8e2acc4016bb kind=scan queued_at=2026-11-22T16:55:39.560Z at=2026-11-22T16:55:40.242Z
+worker: completed scan=b6268e7b-f43f-4c72-9db7-8e2acc4016bb at=2026-11-22T16:55:40.242Z
+/home/morpheus/Downloads/mirai-lab/apps/worker:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  worker@0.0.0 dev: `tsx src/index.ts`
+Command failed with signal "SIGTERM"
+worker: stopped
+
+> worker@0.0.0 dev /home/morpheus/Downloads/mirai-lab/apps/worker
+> tsx src/index.ts
+
+worker: startup failed DATABASE_URL is not set
+/home/morpheus/Downloads/mirai-lab/apps/worker:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  worker@0.0.0 dev: `tsx src/index.ts`
+Exit status 1
+
+> worker@0.0.0 dev /home/morpheus/Downloads/mirai-lab/apps/worker
+> tsx src/index.ts
+
+worker: started
+worker: processing job=6d1f5422-988d-42a5-8220-a7581c7f695f kind=scan queued_at=2026-11-22T23:56:31.299Z at=2026-11-22T23:56:31.436Z
+worker: completed scan=6d1f5422-988d-42a5-8220-a7581c7f695f at=2026-11-22T23:56:31.436Z
+worker: processing job=bdb903ec-7dc7-42f4-adcd-e11ad339929f kind=scan queued_at=2026-11-22T23:56:36.305Z at=2026-11-22T23:56:36.538Z
+worker: completed scan=bdb903ec-7dc7-42f4-adcd-e11ad339929f at=2026-11-22T23:56:36.538Z
+worker: processing job=982b07f1-23a8-423d-b40d-f2cb58e54da8 kind=detail queued_at=2026-11-22T23:56:45.330Z at=2026-11-22T23:56:45.634Z
+worker: completed detail=982b07f1-23a8-423d-b40d-f2cb58e54da8 at=2026-11-22T23:56:45.634Z
+worker: processing job=1e961077-4bc6-463a-8024-243ab68855d4 kind=scan queued_at=2026-11-22T23:57:42.781Z at=2026-11-22T23:57:42.822Z
+worker: completed scan=1e961077-4bc6-463a-8024-243ab68855d4 at=2026-11-22T23:57:42.822Z
+worker: processing job=a52e05ea-b9c6-4621-8c95-c7176454e8b8 kind=scan queued_at=2026-11-22T23:58:33.793Z at=2026-11-22T23:58:33.981Z
+worker: completed scan=a52e05ea-b9c6-4621-8c95-c7176454e8b8 at=2026-11-22T23:58:33.981Z
+worker: processing job=33dd4caf-b67a-402b-a1dd-f04ed3fe2663 kind=scan queued_at=2026-11-22T23:58:38.669Z at=2026-11-22T23:58:39.090Z
+worker: completed scan=33dd4caf-b67a-402b-a1dd-f04ed3fe2663 at=2026-11-22T23:58:39.090Z
+worker: processing job=cb75280b-bf38-4779-bad5-90a70f8eb4b7 kind=detail queued_at=2026-11-22T23:58:47.468Z at=2026-11-22T23:58:48.203Z
+worker: completed detail=cb75280b-bf38-4779-bad5-90a70f8eb4b7 at=2026-11-22T23:58:48.203Z
+worker: processing job=040913dc-f12a-4aa9-8b8a-311abe857d49 kind=scan queued_at=2026-11-22T23:59:34.437Z at=2026-11-22T23:59:35.385Z
+worker: completed scan=040913dc-f12a-4aa9-8b8a-311abe857d49 at=2026-11-22T23:59:35.385Z
+worker: processing job=2f9a8851-1896-4053-9ce5-136b15bd0f3b kind=scan queued_at=2026-11-23T00:28:30.719Z at=2026-11-23T00:28:31.142Z
+worker: failed job=2f9a8851-1896-4053-9ce5-136b15bd0f3b at=2026-11-23T00:28:31.146Z Failed to parse URL from [WEBSITE_URL_PLACEHOLDER]
+worker: processing job=4d879452-611e-4b92-9817-0746337d52c0 kind=detail queued_at=2026-11-23T00:28:35.542Z at=2026-11-23T00:28:36.165Z
+worker: failed job=4d879452-611e-4b92-9817-0746337d52c0 at=2026-11-23T00:28:36.169Z Failed to parse URL from [WEBSITE_URL_PLACEHOLDER]
+worker: processing job=9161b767-eb50-4333-b77b-12676b535f45 kind=scan queued_at=2026-11-23T00:35:08.734Z at=2026-11-23T00:35:08.924Z
+worker: failed job=9161b767-eb50-4333-b77b-12676b535f45 at=2026-11-23T00:35:08.928Z Failed to parse URL from [WEBSITE_URL_PLACEHOLDER]
+worker: processing job=aaddb2ea-810b-403a-8d91-30f1c2fbf496 kind=scan queued_at=2026-11-23T00:53:16.521Z at=2026-11-23T00:53:17.401Z
+worker: failed job=aaddb2ea-810b-403a-8d91-30f1c2fbf496 at=2026-11-23T00:53:17.405Z Failed to parse URL from [WEBSITE_URL_PLACEHOLDER]
+worker: processing job=153fbf7f-5b56-430e-8b19-470e0396c741 kind=scan queued_at=2026-11-23T01:27:16.427Z at=2026-11-23T01:27:16.509Z
+worker: completed scan=153fbf7f-5b56-430e-8b19-470e0396c741 at=2026-11-23T01:27:16.509Z
+worker: processing job=0c357af3-2d63-4985-92a0-84595ed7e7dd kind=scan queued_at=2026-11-23T01:27:20.762Z at=2026-11-23T01:27:21.579Z
+worker: completed scan=0c357af3-2d63-4985-92a0-84595ed7e7dd at=2026-11-23T01:27:21.579Z
+worker: processing job=33dc9702-25de-446a-b1e6-a0e331378373 kind=detail queued_at=2026-11-23T01:27:30.662Z at=2026-11-23T01:27:31.654Z
+worker: completed detail=33dc9702-25de-446a-b1e6-a0e331378373 at=2026-11-23T01:27:31.654Z
+worker: processing job=b23b37a5-a3a3-4737-a74d-9c7f7aa8e217 kind=scan queued_at=2026-11-23T01:28:41.282Z at=2026-11-23T01:28:41.860Z
+worker: completed scan=b23b37a5-a3a3-4737-a74d-9c7f7aa8e217 at=2026-11-23T01:28:41.860Z
+worker: processing job=ad950b2d-d98b-40ce-babf-69d052fb1d44 kind=scan queued_at=2026-11-23T01:35:13.263Z at=2026-11-23T01:35:13.586Z
+worker: completed scan=ad950b2d-d98b-40ce-babf-69d052fb1d44 at=2026-11-23T01:35:13.586Z
+worker: processing job=92fe5756-db51-479e-a75d-78157829978c kind=scan queued_at=2026-11-23T01:35:18.246Z at=2026-11-23T01:35:18.658Z
+worker: completed scan=92fe5756-db51-479e-a75d-78157829978c at=2026-11-23T01:35:18.658Z
+worker: processing job=c8fc5307-3f40-4b39-833e-c57f28fe7dd8 kind=detail queued_at=2026-11-23T01:35:27.343Z at=2026-11-23T01:35:27.726Z
+worker: completed detail=c8fc5307-3f40-4b39-833e-c57f28fe7dd8 at=2026-11-23T01:35:27.726Z
+worker: processing job=a1de4f00-48eb-4c98-a11a-b87516735282 kind=scan queued_at=2026-11-23T01:36:28.494Z at=2026-11-23T01:36:28.895Z
+worker: completed scan=a1de4f00-48eb-4c98-a11a-b87516735282 at=2026-11-23T01:36:28.895Z
+worker: processing job=799d2445-395c-4a9e-b29d-4eace5743e0f kind=scan queued_at=2026-11-23T01:38:03.341Z at=2026-11-23T01:38:04.112Z
+worker: completed scan=799d2445-395c-4a9e-b29d-4eace5743e0f at=2026-11-23T01:38:04.112Z
+worker: processing job=08c872ae-1ea9-4b8a-a5e3-acf0dfc361d5 kind=scan queued_at=2026-11-23T01:38:08.143Z at=2026-11-23T01:38:08.170Z
+worker: completed scan=08c872ae-1ea9-4b8a-a5e3-acf0dfc361d5 at=2026-11-23T01:38:08.170Z
+worker: processing job=87caf38a-fb52-4633-99c0-85fdcaefe447 kind=detail queued_at=2026-11-23T01:38:16.215Z at=2026-11-23T01:38:16.232Z
+worker: completed detail=87caf38a-fb52-4633-99c0-85fdcaefe447 at=2026-11-23T01:38:16.232Z
+worker: processing job=b518cf09-4b12-4e79-ba3c-77c3abeff348 kind=scan queued_at=2026-11-23T01:39:13.683Z at=2026-11-23T01:39:14.395Z
+worker: completed scan=b518cf09-4b12-4e79-ba3c-77c3abeff348 at=2026-11-23T01:39:14.395Z
+node:events:502
+      throw er; // Unhandled 'error' event
+      ^
+
+error: terminating connection due to administrator command
+    at parseErrorMessage (/home/morpheus/Downloads/mirai-lab/node_modules/.pnpm/pg-protocol@1.16.1/node_modules/pg-protocol/src/parser.ts:395:9)
+    at Parser.handlePacket (/home/morpheus/Downloads/mirai-lab/node_modules/.pnpm/pg-protocol@1.16.1/node_modules/pg-protocol/src/parser.ts:212:19)
+    at Parser.parse (/home/morpheus/Downloads/mirai-lab/node_modules/.pnpm/pg-protocol@1.16.1/node_modules/pg-protocol/src/parser.ts:105:30)
+    at Socket.<anonymous> (/home/morpheus/Downloads/mirai-lab/node_modules/.pnpm/pg-protocol@1.16.1/node_modules/pg-protocol/src/index.ts:7:48)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+Emitted 'error' event on BoundPool instance at:
+    at Client.idleListener (/home/morpheus/Downloads/mirai-lab/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js:62:10)
+    at Client.emit (node:events:524:28)
+    at Client._handleErrorEvent (/home/morpheus/Downloads/mirai-lab/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/client.js:422:10)
+    at Client._handleErrorMessage (/home/morpheus/Downloads/mirai-lab/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/client.js:433:12)
+    at Connection.emit (node:events:524:28)
+    at /home/morpheus/Downloads/mirai-lab/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/connection.js:143:12
+    at Parser.parse (/home/morpheus/Downloads/mirai-lab/node_modules/.pnpm/pg-protocol@1.16.1/node_modules/pg-protocol/src/parser.ts:106:9)
+    at Socket.<anonymous> (/home/morpheus/Downloads/mirai-lab/node_modules/.pnpm/pg-protocol@1.16.1/node_modules/pg-protocol/src/index.ts:7:48)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12) {
+  length: 116,
+  severity: 'FATAL',
+  code: '57P01',
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'postgres.c',
+  line: '3246',
+  routine: 'ProcessInterrupts',
+  client: Client {
+    _events: [Object: null prototype] { error: [Function (anonymous)] },
+    _eventsCount: 1,
+    _maxListeners: undefined,
+    connectionParameters: ConnectionParameters {
+      user: 'postgres',
+      database: 'mirai_lab',
+      port: 5433,
+      host: '127.0.0.1',
+      binary: false,
+      options: undefined,
+      ssl: false,
+      sslnegotiation: undefined,
+      client_encoding: '',
+      replication: undefined,
+      isDomainSocket: false,
+      application_name: undefined,
+      fallback_application_name: undefined,
+      statement_timeout: false,
+      lock_timeout: false,
+      idle_in_transaction_session_timeout: false,
+      query_timeout: false,
+      connect_timeout: 0
+    },
+    user: 'postgres',
+    database: 'mirai_lab',
+    port: 5433,
+    host: '127.0.0.1',
+    replication: undefined,
+    _Promise: [Function: Promise],
+    _types: TypeOverrides {
+      _types: {
+        getTypeParser: [Function: getTypeParser],
+        setTypeParser: [Function: setTypeParser],
+        arrayParser: { create: [Function: create] },
+        builtins: {
+          BOOL: 16,
+          BYTEA: 17,
+          CHAR: 18,
+          INT8: 20,
+          INT2: 21,
+          INT4: 23,
+          REGPROC: 24,
+          TEXT: 25,
+          OID: 26,
+          TID: 27,
+          XID: 28,
+          CID: 29,
+          JSON: 114,
+          XML: 142,
+          PG_NODE_TREE: 194,
+          SMGR: 210,
+          PATH: 602,
+          POLYGON: 604,
+          CIDR: 650,
+          FLOAT4: 700,
+          FLOAT8: 701,
+          ABSTIME: 702,
+          RELTIME: 703,
+          TINTERVAL: 704,
+          CIRCLE: 718,
+          MACADDR8: 774,
+          MONEY: 790,
+          MACADDR: 829,
+          INET: 869,
+          ACLITEM: 1033,
+          BPCHAR: 1042,
+          VARCHAR: 1043,
+          DATE: 1082,
+          TIME: 1083,
+          TIMESTAMP: 1114,
+          TIMESTAMPTZ: 1184,
+          INTERVAL: 1186,
+          TIMETZ: 1266,
+          BIT: 1560,
+          VARBIT: 1562,
+          NUMERIC: 1700,
+          REFCURSOR: 1790,
+          REGPROCEDURE: 2202,
+          REGOPER: 2203,
+          REGOPERATOR: 2204,
+          REGCLASS: 2205,
+          REGTYPE: 2206,
+          UUID: 2950,
+          TXID_SNAPSHOT: 2970,
+          PG_LSN: 3220,
+          PG_NDISTINCT: 3361,
+          PG_DEPENDENCIES: 3402,
+          TSVECTOR: 3614,
+          TSQUERY: 3615,
+          GTSVECTOR: 3642,
+          REGCONFIG: 3734,
+          REGDICTIONARY: 3769,
+          JSONB: 3802,
+          REGNAMESPACE: 4089,
+          REGROLE: 4096
+        }
+      },
+      text: {},
+      binary: {}
+    },
+    _ending: true,
+    _ended: false,
+    _connecting: false,
+    _connected: true,
+    _connectionError: false,
+    _queryable: false,
+    _activeQuery: null,
+    _txStatus: 'I',
+    enableChannelBinding: false,
+    scramMaxIterations: 100000,
+    connection: Connection {
+      _events: [Object: null prototype] {
+        newListener: [Function (anonymous)],
+        connect: [Function (anonymous)],
+        sslconnect: [Function (anonymous)],
+        authenticationCleartextPassword: [Function: bound _handleAuthCleartextPassword],
+        authenticationMD5Password: [Function: bound _handleAuthMD5Password],
+        authenticationSASL: [Function: bound _handleAuthSASL],
+        authenticationSASLContinue: [Function: bound _handleAuthSASLContinue] AsyncFunction,
+        authenticationSASLFinal: [Function: bound _handleAuthSASLFinal],
+        backendKeyData: [Function: bound _handleBackendKeyData],
+        error: [Function: bound _handleErrorEvent],
+        errorMessage: [Function: bound _handleErrorMessage],
+        readyForQuery: [Function: bound _handleReadyForQuery],
+        notice: [Function: bound _handleNotice],
+        rowDescription: [Function: bound _handleRowDescription],
+        dataRow: [Function: bound _handleDataRow],
+        portalSuspended: [Function: bound _handlePortalSuspended],
+        emptyQuery: [Function: bound _handleEmptyQuery],
+        commandComplete: [Function: bound _handleCommandComplete],
+        parseComplete: [Function: bound _handleParseComplete],
+        copyInResponse: [Function: bound _handleCopyInResponse],
+        copyData: [Function: bound _handleCopyData],
+        notification: [Function: bound _handleNotification],
+        end: [
+          [Function: bound onceWrapper] {
+            listener: [Function (anonymous)]
+          },
+          [Function: bound onceWrapper] {
+            listener: [Function (anonymous)]
+          }
+        ]
+      },
+      _eventsCount: 23,
+      _maxListeners: undefined,
+      stream: Socket {
+        connecting: false,
+        _hadError: false,
+        _parent: null,
+        _host: null,
+        _closeAfterHandlingError: false,
+        _events: {
+          close: [Function (anonymous)],
+          error: [Function: reportStreamError],
+          prefinish: undefined,
+          finish: undefined,
+          drain: undefined,
+          data: [Function (anonymous)],
+          end: [ [Function: onReadableStreamEnd], [Function (anonymous)] ],
+          readable: undefined,
+          connect: undefined
+        },
+        _readableState: ReadableState {
+          highWaterMark: 16384,
+          buffer: [],
+          bufferIndex: 0,
+          length: 0,
+          pipes: [],
+          awaitDrainWriters: null,
+          [Symbol(kState)]: 194519348
+        },
+        _writableState: WritableState {
+          highWaterMark: 16384,
+          length: 0,
+          corked: 0,
+          onwrite: [Function: bound onwrite],
+          writelen: 0,
+          bufferedIndex: 0,
+          pendingcb: 0,
+          [Symbol(kState)]: 17563956,
+          [Symbol(kBufferedValue)]: null,
+          [Symbol(kWriteCbValue)]: null
+        },
+        allowHalfOpen: false,
+        _maxListeners: undefined,
+        _eventsCount: 4,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: null,
+        _server: null,
+        [Symbol(async_id_symbol)]: 1213,
+        [Symbol(kHandle)]: null,
+        [Symbol(lastWriteQueueSize)]: 0,
+        [Symbol(timeout)]: null,
+        [Symbol(kBuffer)]: null,
+        [Symbol(kBufferCb)]: null,
+        [Symbol(kBufferGen)]: null,
+        [Symbol(shapeMode)]: true,
+        [Symbol(kCapture)]: false,
+        [Symbol(kSetNoDelay)]: true,
+        [Symbol(kSetKeepAlive)]: false,
+        [Symbol(kSetKeepAliveInitialDelay)]: 0,
+        [Symbol(kBytesRead)]: 2021887,
+        [Symbol(kBytesWritten)]: 3167141
+      },
+      _keepAlive: false,
+      _keepAliveInitialDelayMillis: 0,
+      parsedStatements: {},
+      submittedNamedStatements: {},
+      ssl: false,
+      sslNegotiation: 'postgres',
+      _ending: false,
+      _emitMessage: false,
+      _connecting: true,
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false
+    },
+    _queryQueue: [],
+    _sentQueryQueue: [],
+    pipeline: false,
+    binary: false,
+    processID: 227344,
+    secretKey: -602644008,
+    ssl: false,
+    sslNegotiation: 'postgres',
+    _connectionTimeoutMillis: 0,
+    _connectionCallback: null,
+    release: [Function (anonymous)],
+    readyForQuery: true,
+    hasExecuted: true,
+    _poolUseCount: 7434,
+    [Symbol(shapeMode)]: false,
+    [Symbol(kCapture)]: false
+  }
+}
+
+Node.js v20.20.2
+/home/morpheus/Downloads/mirai-lab/apps/worker:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  worker@0.0.0 dev: `tsx src/index.ts`
+Command failed with signal "SIGTERM"

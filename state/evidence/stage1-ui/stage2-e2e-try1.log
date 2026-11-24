@@ -1,0 +1,65 @@
+
+Running 4 tests using 1 worker
+
+[1/4] tests/stage2-primitives.spec.ts:3:1 › demo table sorts, filters, paginates, selects and bulk-actions 100 rows
+  1) tests/stage2-primitives.spec.ts:3:1 › demo table sorts, filters, paginates, selects and bulk-actions 100 rows 
+
+    Error: locator.click: Error: strict mode violation: getByRole('button', { name: 'Next' }) resolved to 3 elements:
+        1) <button type="button" class="ui-table-sort">…</button> aka getByRole('button', { name: 'Next step' })
+        2) <button type="button" class="ui-button ui-button--secondary ui-button--sm">Next</button> aka getByRole('button', { name: 'Next', exact: true })
+        3) <button id="next-logo" aria-haspopup="menu" data-next-mark="true" aria-expanded="false" data-next-mark-loading="false" aria-label="Open Next.js Dev Tools" data-nextjs-dev-tools-button="true" aria-controls="nextjs-dev-tools-menu">…</button> aka getByRole('button', { name: 'Open Next.js Dev Tools' })
+
+    Call log:
+      - waiting for getByRole('button', { name: 'Next' })
+
+
+      19 |   await page.getByLabel("Segment", { exact: true }).selectOption("");
+      20 |
+    > 21 |   await page.getByRole("button", { name: "Next" }).click();
+         |                                                    ^
+      22 |   await expect(page.getByText("26–50 of 100")).toBeVisible();
+      23 |
+      24 |   await page.getByLabel("Select all rows on this page").check();
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/stage2-primitives.spec.ts:21:52
+
+    Error Context: test-results/stage2-primitives-demo-tab-e9f22-s-and-bulk-actions-100-rows/error-context.md
+
+
+[2/4] tests/stage2-primitives.spec.ts:31:1 › demo table shows loading, error, empty and virtualised states
+[3/4] tests/stage2-primitives.spec.ts:52:1 › demo kanban drags with optimistic update and persists the move
+  2) tests/stage2-primitives.spec.ts:52:1 › demo kanban drags with optimistic update and persists the move 
+
+    Error: expect(locator).not.toContainText(expected) failed
+
+    Locator: locator('section[aria-label^="New,"]')
+    Expected substring: not "Company 1"
+    Received string: "New3Company 4Tier BScore 55Enter to moveCompany 7Tier AScore 70Enter to moveCompany 10Tier BScore 85Enter to move"
+    Timeout: 30000ms
+
+    Call log:
+      - Expect "not toContainText" locator('section[aria-label^="New,"]') with timeout 30000ms
+      - waiting for locator('section[aria-label^="New,"]')
+        64 × locator resolved to <section class="ui-kanban-column" aria-label="New, 3 cards">…</section>
+           - unexpected value "New3Company 4Tier BScore 55Enter to moveCompany 7Tier AScore 70Enter to moveCompany 10Tier BScore 85Enter to move"
+
+
+      59 |   await page.getByRole("button", { name: /Company 1, score/ }).dragTo(contactedColumn);
+      60 |   await expect(contactedColumn).toContainText("Company 1");
+    > 61 |   await expect(newColumn).not.toContainText("Company 1");
+         |                               ^
+      62 |   await expect(page.getByText("Move log: card-1: new → contacted")).toBeVisible();
+      63 |
+      64 |   await page.reload();
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/stage2-primitives.spec.ts:61:31
+
+    Error Context: test-results/stage2-primitives-demo-kan-42e20-pdate-and-persists-the-move/error-context.md
+
+
+[4/4] tests/stage2-primitives.spec.ts:68:1 › demo kanban moves by keyboard and rolls back on failure
+  2 failed
+    tests/stage2-primitives.spec.ts:3:1 › demo table sorts, filters, paginates, selects and bulk-actions 100 rows 
+    tests/stage2-primitives.spec.ts:52:1 › demo kanban drags with optimistic update and persists the move 
+  2 passed (40.0s)
+undefined
+/home/morpheus/Downloads/mirai-lab/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: playwright test --config playwright.config.ts tests/stage2-primitives.spec.ts

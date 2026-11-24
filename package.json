@@ -1,0 +1,23 @@
+{
+  "name": "mirai-lab",
+  "private": true,
+  "packageManager": "pnpm@10.11.0",
+  "engines": {
+    "node": "20.x"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @mirai/web dev",
+    "build": "pnpm -r --if-present build",
+    "lint": "pnpm -r --if-present lint",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test",
+    "seed:demo": "pnpm --filter @mirai/web seed:demo",
+    "db:generate": "pnpm --filter @mirai/db db:generate",
+    "db:migrate": "pnpm --filter @mirai/db db:migrate"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}

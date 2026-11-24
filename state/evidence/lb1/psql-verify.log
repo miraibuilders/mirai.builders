@@ -1,0 +1,137 @@
+=== \dx pg_trgm ===
+                                  List of installed extensions
+  Name   | Version | Schema |                            Description                            
+---------+---------+--------+-------------------------------------------------------------------
+ pg_trgm | 1.6     | public | text similarity measurement and index searching based on trigrams
+(1 row)
+
+
+=== \d leads ===
+                                          Table "public.leads"
+        Column        |           Type           | Collation | Nullable |            Default             
+----------------------+--------------------------+-----------+----------+--------------------------------
+ id                   | uuid                     |           | not null | gen_random_uuid()
+ company              | text                     |           | not null | 
+ website_url          | text                     |           | not null | 
+ segment              | lead_segment             |           | not null | 
+ score                | integer                  |           | not null | 0
+ stage                | lead_stage               |           | not null | 'new'::lead_stage
+ pain_flags           | text[]                   |           | not null | '{}'::text[]
+ last_contact         | timestamp with time zone |           |          | 
+ next_step            | text                     |           |          | 
+ next_step_date       | date                     |           |          | 
+ preferred_template   | lead_template            |           |          | 'branded'::lead_template
+ created_at           | timestamp with time zone |           | not null | now()
+ updated_at           | timestamp with time zone |           | not null | now()
+ reachability         | lead_reachability        |           | not null | 'cold_list'::lead_reachability
+ size_proxy           | integer                  |           | not null | 0
+ latest_scan_at       | timestamp with time zone |           |          | 
+ latest_scan_status   | scan_status              |           |          | 
+ detail_brief_md      | text                     |           |          | 
+ corporate_number     | text                     |           |          | 
+ website_status       | lead_website_status      |           | not null | 'unknown'::lead_website_status
+ source_confidence    | double precision         |           | not null | 0
+ last_verified_at     | timestamp with time zone |           |          | 
+ review_state         | lead_review_state        |           | not null | 'auto'::lead_review_state
+ origin               | lead_origin              |           | not null | 'manual_csv'::lead_origin
+ dnc_blocked          | boolean                  |           | not null | false
+ legacy_system_stated | boolean                  |           | not null | false
+ pain_stated          | boolean                  |           | not null | false
+ contact_state        | lead_contact_state       |           | not null | 'cold'::lead_contact_state
+Indexes:
+    "leads_pkey" PRIMARY KEY, btree (id)
+    "leads_corporate_number_unique" UNIQUE CONSTRAINT, btree (corporate_number)
+Check constraints:
+    "leads_corporate_number_format_check" CHECK (corporate_number IS NULL OR corporate_number ~ '^[0-9]{13}$'::text)
+    "leads_source_confidence_range_check" CHECK (source_confidence >= 0::double precision AND source_confidence <= 1::double precision)
+Referenced by:
+    TABLE "contact_requests" CONSTRAINT "contact_requests_lead_id_leads_id_fk" FOREIGN KEY (lead_id) REFERENCES leads(id) ON DELETE SET NULL
+    TABLE "documents" CONSTRAINT "documents_lead_id_leads_id_fk" FOREIGN KEY (lead_id) REFERENCES leads(id) ON DELETE SET NULL
+    TABLE "lead_activities" CONSTRAINT "lead_activities_lead_id_leads_id_fk" FOREIGN KEY (lead_id) REFERENCES leads(id) ON DELETE CASCADE
+    TABLE "lead_feedback" CONSTRAINT "lead_feedback_lead_id_leads_id_fk" FOREIGN KEY (lead_id) REFERENCES leads(id) ON DELETE CASCADE
+    TABLE "lead_fields" CONSTRAINT "lead_fields_lead_id_leads_id_fk" FOREIGN KEY (lead_id) REFERENCES leads(id) ON DELETE CASCADE
+    TABLE "lead_identities" CONSTRAINT "lead_identities_lead_id_leads_id_fk" FOREIGN KEY (lead_id) REFERENCES leads(id) ON DELETE CASCADE
+    TABLE "merge_candidates" CONSTRAINT "merge_candidates_a_lead_leads_id_fk" FOREIGN KEY (a_lead) REFERENCES leads(id) ON DELETE CASCADE
+    TABLE "merge_candidates" CONSTRAINT "merge_candidates_b_lead_leads_id_fk" FOREIGN KEY (b_lead) REFERENCES leads(id) ON DELETE CASCADE
+    TABLE "merge_log" CONSTRAINT "merge_log_lead_id_leads_id_fk" FOREIGN KEY (lead_id) REFERENCES leads(id) ON DELETE CASCADE
+    TABLE "review_tasks" CONSTRAINT "review_tasks_lead_id_leads_id_fk" FOREIGN KEY (lead_id) REFERENCES leads(id) ON DELETE CASCADE
+    TABLE "scans" CONSTRAINT "scans_lead_id_leads_id_fk" FOREIGN KEY (lead_id) REFERENCES leads(id) ON DELETE CASCADE
+    TABLE "score_snapshots" CONSTRAINT "score_snapshots_lead_id_leads_id_fk" FOREIGN KEY (lead_id) REFERENCES leads(id) ON DELETE CASCADE
+
+
+=== \d source_records ===
+                              Table "public.source_records"
+      Column       |           Type           | Collation | Nullable |      Default      
+-------------------+--------------------------+-----------+----------+-------------------
+ id                | uuid                     |           | not null | gen_random_uuid()
+ source            | source_name              |           | not null | 
+ source_key        | text                     |           | not null | 
+ payload           | jsonb                    |           | not null | 
+ source_url        | text                     |           | not null | 
+ fetched_at        | timestamp with time zone |           | not null | 
+ licence           | text                     |           | not null | 
+ terms_snapshot_id | uuid                     |           | not null | 
+ ingest_run_id     | uuid                     |           | not null | 
+ created_at        | timestamp with time zone |           | not null | now()
+Indexes:
+    "source_records_pkey" PRIMARY KEY, btree (id)
+    "source_records_lookup_idx" btree (source, source_key, fetched_at)
+Check constraints:
+    "source_records_licence_check" CHECK (length(licence) > 0)
+    "source_records_source_key_check" CHECK (length(source_key) > 0)
+    "source_records_source_url_check" CHECK (length(source_url) > 0)
+Foreign-key constraints:
+    "source_records_ingest_run_id_ingest_runs_id_fk" FOREIGN KEY (ingest_run_id) REFERENCES ingest_runs(id) ON DELETE RESTRICT
+    "source_records_terms_snapshot_id_terms_snapshots_id_fk" FOREIGN KEY (terms_snapshot_id) REFERENCES terms_snapshots(id) ON DELETE RESTRICT
+Referenced by:
+    TABLE "lead_fields" CONSTRAINT "lead_fields_source_record_id_source_records_id_fk" FOREIGN KEY (source_record_id) REFERENCES source_records(id) ON DELETE SET NULL
+
+
+=== \d source_state ===
+                                  Table "public.source_state"
+      Column       |           Type           | Collation | Nullable |         Default          
+-------------------+--------------------------+-----------+----------+--------------------------
+ source            | source_name              |           | not null | 
+ enabled           | boolean                  |           | not null | false
+ terms_snapshot_id | uuid                     |           |          | 
+ circuit           | source_circuit           |           | not null | 'closed'::source_circuit
+ cooldown_until    | timestamp with time zone |           |          | 
+ backoff_level     | integer                  |           | not null | 0
+ last_cursor       | text                     |           |          | 
+ last_success_at   | timestamp with time zone |           |          | 
+Indexes:
+    "source_state_pkey" PRIMARY KEY, btree (source)
+Check constraints:
+    "source_state_terms_snapshot_check" CHECK (enabled = false OR terms_snapshot_id IS NOT NULL)
+Foreign-key constraints:
+    "source_state_terms_snapshot_id_terms_snapshots_id_fk" FOREIGN KEY (terms_snapshot_id) REFERENCES terms_snapshots(id) ON DELETE RESTRICT
+
+
+=== \d do_not_contact ===
+                     Table "public.do_not_contact"
+   Column   |           Type           | Collation | Nullable | Default 
+------------+--------------------------+-----------+----------+---------
+ kind       | dnc_kind                 |           | not null | 
+ value_norm | text                     |           | not null | 
+ reason     | text                     |           | not null | 
+ origin     | text                     |           | not null | 
+ added_by   | text                     |           |          | 
+ added_at   | timestamp with time zone |           | not null | now()
+Indexes:
+    "do_not_contact_kind_value_norm_pk" PRIMARY KEY, btree (kind, value_norm)
+Check constraints:
+    "do_not_contact_origin_check" CHECK (origin = ANY (ARRAY['request'::text, 'bounce'::text, 'manual'::text, 'bad_lead'::text]))
+    "do_not_contact_reason_check" CHECK (length(reason) > 0)
+Foreign-key constraints:
+    "do_not_contact_added_by_users_id_fk" FOREIGN KEY (added_by) REFERENCES users(id) ON DELETE SET NULL
+
+
+=== \d erasure_tombstones ===
+                   Table "public.erasure_tombstones"
+   Column   |           Type           | Collation | Nullable | Default 
+------------+--------------------------+-----------+----------+---------
+ digest     | text                     |           | not null | 
+ created_at | timestamp with time zone |           | not null | now()
+Indexes:
+    "erasure_tombstones_pkey" PRIMARY KEY, btree (digest)
+

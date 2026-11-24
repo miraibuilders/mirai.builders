@@ -1,0 +1,42 @@
+{
+  "name": "@mirai/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test src/lib/documents/documents.test.ts src/lib/crm-auth.test.ts src/lib/lead-view.test.ts src/lib/scans.test.ts src/lib/cms-auth.test.ts src/lib/indexnow.test.ts src/lib/markdown.test.ts src/lib/settings.test.ts src/lib/dnc.test.ts src/ui/tokens.test.ts",
+    "test:e2e": "tsx scripts/stage3-e2e.ts",
+    "test:e2e:full": "playwright test --config playwright.config.ts",
+    "test:e2e:report": "playwright test --config playwright.config.ts --reporter=line",
+    "test:e2e:stage5": "tsx scripts/stage5-e2e.ts",
+    "test:e2e:stage6": "tsx scripts/stage6-e2e.ts",
+    "test:e2e:polish": "playwright test --config playwright.config.ts tests/stage6-polish.spec.ts",
+    "seed:dev": "tsx scripts/seed-dev-users.ts",
+    "seed:demo": "tsx scripts/seed-demo-data.ts"
+  },
+  "dependencies": {
+    "@mirai/db": "workspace:*",
+    "better-auth": "^1.2.0",
+    "drizzle-orm": "^0.45.0",
+    "next": "^15.2.0",
+    "pg": "^8.13.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.0.0",
+    "@playwright/test": "1.65.1",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^15.2.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.7.0"
+  }
+}

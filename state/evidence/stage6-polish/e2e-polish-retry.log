@@ -1,0 +1,6 @@
+
+Running 1 test using 1 worker
+
+[1/1] tests/stage6-polish.spec.ts:34:1 › lead activity table adopts the shared table treatment
+  1 passed (17.9s)
+E2E_POLISH_RETRY_EXIT=0

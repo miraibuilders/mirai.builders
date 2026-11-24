@@ -1,0 +1,846 @@
+
+> @mirai/web@0.0.0 test:e2e:full /home/morpheus/Downloads/mirai-lab/apps/web
+> playwright test --config playwright.config.ts
+
+
+Running 37 tests using 1 worker
+
+[1/37] tests/full-system.spec.ts:78:1 › 1 public site / renders with expected copy and no legacy tokens
+tests/full-system.spec.ts:78:1 › 1 public site / renders with expected copy and no legacy tokens
+ERROR:  column "target_url" does not exist
+LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                ^
+
+  1) tests/full-system.spec.ts:78:1 › 1 public site / renders with expected copy and no legacy tokens 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('footer')
+    Expected substring: "[MIKA: JP コピー待ち — copyright line]"
+    Received string:    "© 2026 MIRAI Lab"
+    Timeout: 30000ms
+
+    Call log:
+      - Expect "toContainText" locator('footer') with timeout 30000ms
+      - waiting for locator('footer')
+        64 × locator resolved to <footer class="site-footer">…</footer>
+           - unexpected value "© 2026 MIRAI Lab"
+
+
+      83 |   await expect(page.locator("#pricing")).toContainText("¥29,800");
+      84 |   await expect(page.locator("#case-studies")).toContainText("自動車販売店");
+    > 85 |   await expect(page.locator("footer")).toContainText(t(siteContent.footer.copyright, "ja"));
+         |                                        ^
+      86 |
+      87 |   const html = await page.content();
+      88 |   for (const token of ["[CASE_STUDY", "[PRICE_PLAN", "[ORG_", "[SERVICE_", "[LABEL_", "[FORM_", "[PLACEHOLDER]"]) {
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:85:40
+
+    Error: Command failed: psql -h 127.0.0.1 -p 5433 -U postgres -d mirai_lab -At -c DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:4020/' AND lead_id IN (SELECT id FROM leads WHERE company LIKE 'e2e-1795360269138%')
+    ERROR:  column "target_url" does not exist
+    LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                    ^
+
+
+       at fixtures/helpers.ts:28
+
+      26 |
+      27 | export function psql(query: string): string {
+    > 28 |   return execFileSync(
+         |          ^
+      29 |     "psql",
+      30 |     ["-h", "127.0.0.1", "-p", "5433", "-U", "postgres", "-d", "mirai_lab", "-At", "-c", query],
+      31 |     { env: { ...process.env, PGPASSWORD: "postgres" }, encoding: "utf8" },
+        at psql (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:28:10)
+        at cleanup (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:38:3)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:28:3
+
+    Error Context: test-results/full-system-1-public-site--943e6-d-copy-and-no-legacy-tokens/error-context.md
+
+    Error Context: test-results/full-system-1-public-site--943e6-d-copy-and-no-legacy-tokens/error-context.md
+
+
+[2/37] tests/full-system.spec.ts:96:1 › 2 public metadata is consistent across /, /blog and /llms.txt
+[3/37] tests/full-system.spec.ts:117:1 › 3 landing JSON-LD is valid Organization data with no placeholders
+tests/full-system.spec.ts:117:1 › 3 landing JSON-LD is valid Organization data with no placeholders
+ERROR:  column "target_url" does not exist
+LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                ^
+
+  2) tests/full-system.spec.ts:117:1 › 3 landing JSON-LD is valid Organization data with no placeholders 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "http://localhost:3000/"
+    Received: undefined
+
+      132 |   expect(ld["@type"]).toBe("Organization");
+      133 |   expect(ld.name).toBe("MIRAI Lab");
+    > 134 |   expect(ld.url).toBe(`${BASE_URL}/`);
+          |                  ^
+      135 |   expect(ld.telephone).toBe(siteContent.contact.phone);
+      136 |   expect(ld.email).toBe(t(siteContent.contact.email, "ja"));
+      137 |   expect(ld.sameAs).toEqual(["https://x.com/mirailab_jp"]);
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:134:18
+
+    Error: Command failed: psql -h 127.0.0.1 -p 5433 -U postgres -d mirai_lab -At -c DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:4020/' AND lead_id IN (SELECT id FROM leads WHERE company LIKE 'e2e-1795360308309%')
+    ERROR:  column "target_url" does not exist
+    LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                    ^
+
+
+       at fixtures/helpers.ts:28
+
+      26 |
+      27 | export function psql(query: string): string {
+    > 28 |   return execFileSync(
+         |          ^
+      29 |     "psql",
+      30 |     ["-h", "127.0.0.1", "-p", "5433", "-U", "postgres", "-d", "mirai_lab", "-At", "-c", query],
+      31 |     { env: { ...process.env, PGPASSWORD: "postgres" }, encoding: "utf8" },
+        at psql (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:28:10)
+        at cleanup (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:38:3)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:28:3
+
+    Error Context: test-results/full-system-3-landing-JSON-b49d2-n-data-with-no-placeholders/error-context.md
+
+    Error Context: test-results/full-system-3-landing-JSON-b49d2-n-data-with-no-placeholders/error-context.md
+
+
+[4/37] tests/full-system.spec.ts:143:1 › 4 health endpoint reports connected database
+[5/37] tests/full-system.spec.ts:149:1 › 5 dev IndexNow key file is served
+[6/37] tests/full-system.spec.ts:155:1 › 6 unauthenticated API routes return 401
+tests/full-system.spec.ts:155:1 › 6 unauthenticated API routes return 401
+ERROR:  column "target_url" does not exist
+LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                ^
+
+  3) tests/full-system.spec.ts:155:1 › 6 unauthenticated API routes return 401 ─────────────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 404
+
+      154 |
+      155 | test("6 unauthenticated API routes return 401", async ({ request }) => {
+    > 156 |   expect((await request.get("/api/leads")).status()).toBe(401);
+          |                                                      ^
+      157 |   expect((await request.post("/api/scans", { data: {} })).status()).toBe(401);
+      158 |   expect((await request.get("/api/cms/posts")).status()).toBe(401);
+      159 | });
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:156:54
+
+    Error: Command failed: psql -h 127.0.0.1 -p 5433 -U postgres -d mirai_lab -At -c DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:4020/' AND lead_id IN (SELECT id FROM leads WHERE company LIKE 'e2e-1795360312608%')
+    ERROR:  column "target_url" does not exist
+    LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                    ^
+
+
+       at fixtures/helpers.ts:28
+
+      26 |
+      27 | export function psql(query: string): string {
+    > 28 |   return execFileSync(
+         |          ^
+      29 |     "psql",
+      30 |     ["-h", "127.0.0.1", "-p", "5433", "-U", "postgres", "-d", "mirai_lab", "-At", "-c", query],
+      31 |     { env: { ...process.env, PGPASSWORD: "postgres" }, encoding: "utf8" },
+        at psql (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:28:10)
+        at cleanup (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:38:3)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:28:3
+
+    Error Context: test-results/full-system-6-unauthenticated-API-routes-return-401/error-context.md
+
+    Error Context: test-results/full-system-6-unauthenticated-API-routes-return-401/error-context.md
+
+
+[7/37] tests/full-system.spec.ts:161:1 › 7 unauthenticated protected pages redirect to /login?next=
+[8/37] tests/full-system.spec.ts:179:1 › 8 wrong password shows the failure message and stays on /login
+[9/37] tests/full-system.spec.ts:188:1 › 9 valid login reaches dashboard with session cookies
+[10/37] tests/full-system.spec.ts:196:1 › 10 already logged-in GET /login still shows the form
+[11/37] tests/full-system.spec.ts:204:1 › 11 client-side validation blocks empty contact submit
+[12/37] tests/full-system.spec.ts:216:1 › 12 direct server action with empty FormData returns error and inserts nothing
+[13/37] tests/full-system.spec.ts:224:1 › 13 valid contact form submit inserts exact fields
+[14/37] tests/full-system.spec.ts:238:1 › 14 CRM board shows all six stages and scored leads
+[15/37] tests/full-system.spec.ts:249:1 › 15 lead list filter and score sort work
+[16/37] tests/full-system.spec.ts:267:1 › 16 lead detail shows fields, activity form and delete
+tests/full-system.spec.ts:267:1 › 16 lead detail shows fields, activity form and delete
+ERROR:  column "target_url" does not exist
+LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                ^
+
+  4) tests/full-system.spec.ts:267:1 › 16 lead detail shows fields, activity form and delete ───────
+
+    Test timeout of 120000ms exceeded.
+
+    Error: locator.fill: Test timeout of 120000ms exceeded.
+    Call log:
+      - waiting for locator('input[name="company"]')
+
+
+       at fixtures/helpers.ts:154
+
+      152 | export async function createLeadViaUi(page: Page, company: string, websiteUrl = SCANNER_URL): Promise<string> {
+      153 |   await page.goto("/leads/new");
+    > 154 |   await page.locator('input[name="company"]').fill(company);
+          |                                               ^
+      155 |   await page.locator('input[name="websiteUrl"]').fill(websiteUrl);
+      156 |   await page.locator('select[name="segment"]').selectOption("professional_office");
+      157 |   await page.locator('select[name="reachability"]').selectOption("referral");
+        at createLeadViaUi (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:154:47)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:268:14
+
+    Error: Command failed: psql -h 127.0.0.1 -p 5433 -U postgres -d mirai_lab -At -c DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:4020/' AND lead_id IN (SELECT id FROM leads WHERE company LIKE 'e2e-1795360314032%')
+    ERROR:  column "target_url" does not exist
+    LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                    ^
+
+
+       at fixtures/helpers.ts:28
+
+      26 |
+      27 | export function psql(query: string): string {
+    > 28 |   return execFileSync(
+         |          ^
+      29 |     "psql",
+      30 |     ["-h", "127.0.0.1", "-p", "5433", "-U", "postgres", "-d", "mirai_lab", "-At", "-c", query],
+      31 |     { env: { ...process.env, PGPASSWORD: "postgres" }, encoding: "utf8" },
+        at psql (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:28:10)
+        at cleanup (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:38:3)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:28:3
+
+    Error Context: test-results/full-system-16-lead-detail-b87e2-ds-activity-form-and-delete/error-context.md
+
+    Error Context: test-results/full-system-16-lead-detail-b87e2-ds-activity-form-and-delete/error-context.md
+
+
+[17/37] tests/full-system.spec.ts:286:1 › 17 detail brief is not exposed on public or unauthenticated routes
+tests/full-system.spec.ts:286:1 › 17 detail brief is not exposed on public or unauthenticated routes
+ERROR:  column "target_url" does not exist
+LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                ^
+
+  5) tests/full-system.spec.ts:286:1 › 17 detail brief is not exposed on public or unauthenticated routes 
+
+    Test timeout of 120000ms exceeded.
+
+    Error: locator.fill: Test timeout of 120000ms exceeded.
+    Call log:
+      - waiting for locator('input[name="company"]')
+
+
+       at fixtures/helpers.ts:154
+
+      152 | export async function createLeadViaUi(page: Page, company: string, websiteUrl = SCANNER_URL): Promise<string> {
+      153 |   await page.goto("/leads/new");
+    > 154 |   await page.locator('input[name="company"]').fill(company);
+          |                                               ^
+      155 |   await page.locator('input[name="websiteUrl"]').fill(websiteUrl);
+      156 |   await page.locator('select[name="segment"]').selectOption("professional_office");
+      157 |   await page.locator('select[name="reachability"]').selectOption("referral");
+        at createLeadViaUi (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:154:47)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:287:14
+
+    Error: Command failed: psql -h 127.0.0.1 -p 5433 -U postgres -d mirai_lab -At -c DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:4020/' AND lead_id IN (SELECT id FROM leads WHERE company LIKE 'e2e-1795360468761%')
+    ERROR:  column "target_url" does not exist
+    LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                    ^
+
+
+       at fixtures/helpers.ts:28
+
+      26 |
+      27 | export function psql(query: string): string {
+    > 28 |   return execFileSync(
+         |          ^
+      29 |     "psql",
+      30 |     ["-h", "127.0.0.1", "-p", "5433", "-U", "postgres", "-d", "mirai_lab", "-At", "-c", query],
+      31 |     { env: { ...process.env, PGPASSWORD: "postgres" }, encoding: "utf8" },
+        at psql (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:28:10)
+        at cleanup (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:38:3)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:28:3
+
+    Error Context: test-results/full-system-17-detail-brie-82b9d-c-or-unauthenticated-routes/error-context.md
+
+    Error Context: test-results/full-system-17-detail-brie-82b9d-c-or-unauthenticated-routes/error-context.md
+
+
+[18/37] tests/full-system.spec.ts:300:1 › 18 drag-and-drop stage change persists with direct-action retry
+tests/full-system.spec.ts:300:1 › 18 drag-and-drop stage change persists with direct-action retry
+ERROR:  column "target_url" does not exist
+LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                ^
+
+  6) tests/full-system.spec.ts:300:1 › 18 drag-and-drop stage change persists with direct-action retry 
+
+    Test timeout of 120000ms exceeded.
+
+    Error: locator.fill: Test timeout of 120000ms exceeded.
+    Call log:
+      - waiting for locator('input[name="company"]')
+
+
+       at fixtures/helpers.ts:154
+
+      152 | export async function createLeadViaUi(page: Page, company: string, websiteUrl = SCANNER_URL): Promise<string> {
+      153 |   await page.goto("/leads/new");
+    > 154 |   await page.locator('input[name="company"]').fill(company);
+          |                                               ^
+      155 |   await page.locator('input[name="websiteUrl"]').fill(websiteUrl);
+      156 |   await page.locator('select[name="segment"]').selectOption("professional_office");
+      157 |   await page.locator('select[name="reachability"]').selectOption("referral");
+        at createLeadViaUi (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:154:47)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:301:14
+
+    Error: Command failed: psql -h 127.0.0.1 -p 5433 -U postgres -d mirai_lab -At -c DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:4020/' AND lead_id IN (SELECT id FROM leads WHERE company LIKE 'e2e-1795360589646%')
+    ERROR:  column "target_url" does not exist
+    LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                    ^
+
+
+       at fixtures/helpers.ts:28
+
+      26 |
+      27 | export function psql(query: string): string {
+    > 28 |   return execFileSync(
+         |          ^
+      29 |     "psql",
+      30 |     ["-h", "127.0.0.1", "-p", "5433", "-U", "postgres", "-d", "mirai_lab", "-At", "-c", query],
+      31 |     { env: { ...process.env, PGPASSWORD: "postgres" }, encoding: "utf8" },
+        at psql (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:28:10)
+        at cleanup (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:38:3)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:28:3
+
+    Error Context: test-results/full-system-18-drag-and-dr-275ad-ts-with-direct-action-retry/error-context.md
+
+    Error Context: test-results/full-system-18-drag-and-dr-275ad-ts-with-direct-action-retry/error-context.md
+
+
+[19/37] tests/full-system.spec.ts:323:1 › 19 CRM create/update/activity direct actions persist
+tests/full-system.spec.ts:323:1 › 19 CRM create/update/activity direct actions persist
+ERROR:  column "target_url" does not exist
+LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                ^
+
+  7) tests/full-system.spec.ts:323:1 › 19 CRM create/update/activity direct actions persist ────────
+
+    Test timeout of 120000ms exceeded.
+
+    Error: locator.fill: Test timeout of 120000ms exceeded.
+    Call log:
+      - waiting for locator('input[name="company"]')
+
+
+       at fixtures/helpers.ts:154
+
+      152 | export async function createLeadViaUi(page: Page, company: string, websiteUrl = SCANNER_URL): Promise<string> {
+      153 |   await page.goto("/leads/new");
+    > 154 |   await page.locator('input[name="company"]').fill(company);
+          |                                               ^
+      155 |   await page.locator('input[name="websiteUrl"]').fill(websiteUrl);
+      156 |   await page.locator('select[name="segment"]').selectOption("professional_office");
+      157 |   await page.locator('select[name="reachability"]').selectOption("referral");
+        at createLeadViaUi (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:154:47)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:324:14
+
+    Error: Command failed: psql -h 127.0.0.1 -p 5433 -U postgres -d mirai_lab -At -c DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:4020/' AND lead_id IN (SELECT id FROM leads WHERE company LIKE 'e2e-1795360710479%')
+    ERROR:  column "target_url" does not exist
+    LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                    ^
+
+
+       at fixtures/helpers.ts:28
+
+      26 |
+      27 | export function psql(query: string): string {
+    > 28 |   return execFileSync(
+         |          ^
+      29 |     "psql",
+      30 |     ["-h", "127.0.0.1", "-p", "5433", "-U", "postgres", "-d", "mirai_lab", "-At", "-c", query],
+      31 |     { env: { ...process.env, PGPASSWORD: "postgres" }, encoding: "utf8" },
+        at psql (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:28:10)
+        at cleanup (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:38:3)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:28:3
+
+    Error Context: test-results/full-system-19-CRM-create--d0589-vity-direct-actions-persist/error-context.md
+
+    Error Context: test-results/full-system-19-CRM-create--d0589-vity-direct-actions-persist/error-context.md
+
+
+[20/37] tests/full-system.spec.ts:366:1 › 20 manual scan returns deterministic score 80 and tier
+tests/full-system.spec.ts:366:1 › 20 manual scan returns deterministic score 80 and tier
+ERROR:  column "target_url" does not exist
+LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                ^
+
+  8) tests/full-system.spec.ts:366:1 › 20 manual scan returns deterministic score 80 and tier ──────
+
+    Test timeout of 120000ms exceeded.
+
+    Error: locator.fill: Test timeout of 120000ms exceeded.
+    Call log:
+      - waiting for locator('input[name="company"]')
+
+
+       at fixtures/helpers.ts:154
+
+      152 | export async function createLeadViaUi(page: Page, company: string, websiteUrl = SCANNER_URL): Promise<string> {
+      153 |   await page.goto("/leads/new");
+    > 154 |   await page.locator('input[name="company"]').fill(company);
+          |                                               ^
+      155 |   await page.locator('input[name="websiteUrl"]').fill(websiteUrl);
+      156 |   await page.locator('select[name="segment"]').selectOption("professional_office");
+      157 |   await page.locator('select[name="reachability"]').selectOption("referral");
+        at createLeadViaUi (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:154:47)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:367:14
+
+    Error: Command failed: psql -h 127.0.0.1 -p 5433 -U postgres -d mirai_lab -At -c DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:4020/' AND lead_id IN (SELECT id FROM leads WHERE company LIKE 'e2e-1795360831331%')
+    ERROR:  column "target_url" does not exist
+    LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                    ^
+
+
+       at fixtures/helpers.ts:28
+
+      26 |
+      27 | export function psql(query: string): string {
+    > 28 |   return execFileSync(
+         |          ^
+      29 |     "psql",
+      30 |     ["-h", "127.0.0.1", "-p", "5433", "-U", "postgres", "-d", "mirai_lab", "-At", "-c", query],
+      31 |     { env: { ...process.env, PGPASSWORD: "postgres" }, encoding: "utf8" },
+        at psql (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:28:10)
+        at cleanup (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:38:3)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:28:3
+
+    Error Context: test-results/full-system-20-manual-scan-e2d57-rministic-score-80-and-tier/error-context.md
+
+    Error Context: test-results/full-system-20-manual-scan-e2d57-rministic-score-80-and-tier/error-context.md
+
+
+[21/37] tests/full-system.spec.ts:385:1 › 21 second manual scan inside cooldown shows explicit notice
+tests/full-system.spec.ts:385:1 › 21 second manual scan inside cooldown shows explicit notice
+ERROR:  column "target_url" does not exist
+LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                ^
+
+  9) tests/full-system.spec.ts:385:1 › 21 second manual scan inside cooldown shows explicit notice ─
+
+    Test timeout of 120000ms exceeded.
+
+    Error: locator.fill: Test timeout of 120000ms exceeded.
+    Call log:
+      - waiting for locator('input[name="company"]')
+
+
+       at fixtures/helpers.ts:154
+
+      152 | export async function createLeadViaUi(page: Page, company: string, websiteUrl = SCANNER_URL): Promise<string> {
+      153 |   await page.goto("/leads/new");
+    > 154 |   await page.locator('input[name="company"]').fill(company);
+          |                                               ^
+      155 |   await page.locator('input[name="websiteUrl"]').fill(websiteUrl);
+      156 |   await page.locator('select[name="segment"]').selectOption("professional_office");
+      157 |   await page.locator('select[name="reachability"]').selectOption("referral");
+        at createLeadViaUi (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:154:47)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:386:14
+
+    Error: Command failed: psql -h 127.0.0.1 -p 5433 -U postgres -d mirai_lab -At -c DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:4020/' AND lead_id IN (SELECT id FROM leads WHERE company LIKE 'e2e-1795360952207%')
+    ERROR:  column "target_url" does not exist
+    LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                    ^
+
+
+       at fixtures/helpers.ts:28
+
+      26 |
+      27 | export function psql(query: string): string {
+    > 28 |   return execFileSync(
+         |          ^
+      29 |     "psql",
+      30 |     ["-h", "127.0.0.1", "-p", "5433", "-U", "postgres", "-d", "mirai_lab", "-At", "-c", query],
+      31 |     { env: { ...process.env, PGPASSWORD: "postgres" }, encoding: "utf8" },
+        at psql (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:28:10)
+        at cleanup (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:38:3)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:28:3
+
+    Error Context: test-results/full-system-21-second-manu-742cf-ldown-shows-explicit-notice/error-context.md
+
+    Error Context: test-results/full-system-21-second-manu-742cf-ldown-shows-explicit-notice/error-context.md
+
+
+[22/37] tests/full-system.spec.ts:398:1 › 22 promote contact request creates lead and activity
+[23/37] tests/full-system.spec.ts:415:1 › 23 detail scan stores and displays internal brief
+tests/full-system.spec.ts:415:1 › 23 detail scan stores and displays internal brief
+ERROR:  column "target_url" does not exist
+LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                ^
+
+  10) tests/full-system.spec.ts:415:1 › 23 detail scan stores and displays internal brief ──────────
+
+    Test timeout of 120000ms exceeded.
+
+    Error: locator.fill: Test timeout of 120000ms exceeded.
+    Call log:
+      - waiting for locator('input[name="company"]')
+
+
+       at fixtures/helpers.ts:154
+
+      152 | export async function createLeadViaUi(page: Page, company: string, websiteUrl = SCANNER_URL): Promise<string> {
+      153 |   await page.goto("/leads/new");
+    > 154 |   await page.locator('input[name="company"]').fill(company);
+          |                                               ^
+      155 |   await page.locator('input[name="websiteUrl"]').fill(websiteUrl);
+      156 |   await page.locator('select[name="segment"]').selectOption("professional_office");
+      157 |   await page.locator('select[name="reachability"]').selectOption("referral");
+        at createLeadViaUi (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:154:47)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:416:14
+
+    Error: Command failed: psql -h 127.0.0.1 -p 5433 -U postgres -d mirai_lab -At -c DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:4020/' AND lead_id IN (SELECT id FROM leads WHERE company LIKE 'e2e-1795361073111%')
+    ERROR:  column "target_url" does not exist
+    LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                    ^
+
+
+       at fixtures/helpers.ts:28
+
+      26 |
+      27 | export function psql(query: string): string {
+    > 28 |   return execFileSync(
+         |          ^
+      29 |     "psql",
+      30 |     ["-h", "127.0.0.1", "-p", "5433", "-U", "postgres", "-d", "mirai_lab", "-At", "-c", query],
+      31 |     { env: { ...process.env, PGPASSWORD: "postgres" }, encoding: "utf8" },
+        at psql (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:28:10)
+        at cleanup (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:38:3)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:28:3
+
+    Error Context: test-results/full-system-23-detail-scan-50177-and-displays-internal-brief/error-context.md
+
+    Error Context: test-results/full-system-23-detail-scan-50177-and-displays-internal-brief/error-context.md
+
+
+[24/37] tests/full-system.spec.ts:429:1 › 24 document PDF has real PDF type and expected text
+tests/full-system.spec.ts:429:1 › 24 document PDF has real PDF type and expected text
+ERROR:  column "target_url" does not exist
+LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                ^
+
+  11) tests/full-system.spec.ts:429:1 › 24 document PDF has real PDF type and expected text ────────
+
+    Test timeout of 120000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 120000ms exceeded.
+    Call log:
+      - waiting for locator('select[name="type"]')
+
+
+      45 | ): Promise<{ id: string; pdfPath: string }> {
+      46 |   await page.goto("/documents/new");
+    > 47 |   await page.locator('select[name="type"]').selectOption("invoice");
+         |                                             ^
+      48 |   await page.locator('select[name="templateVariant"]').selectOption(options.variant ?? "branded");
+      49 |   await page.locator('input[name="partnerName"]').fill(options.partnerName);
+      50 |   await page.locator('input[name="issueDate"]').fill("2026-01-15");
+        at createInvoice (/home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:47:45)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:430:23
+
+    Error: Command failed: psql -h 127.0.0.1 -p 5433 -U postgres -d mirai_lab -At -c DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:4020/' AND lead_id IN (SELECT id FROM leads WHERE company LIKE 'e2e-1795361202894%')
+    ERROR:  column "target_url" does not exist
+    LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                    ^
+
+
+       at fixtures/helpers.ts:28
+
+      26 |
+      27 | export function psql(query: string): string {
+    > 28 |   return execFileSync(
+         |          ^
+      29 |     "psql",
+      30 |     ["-h", "127.0.0.1", "-p", "5433", "-U", "postgres", "-d", "mirai_lab", "-At", "-c", query],
+      31 |     { env: { ...process.env, PGPASSWORD: "postgres" }, encoding: "utf8" },
+        at psql (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:28:10)
+        at cleanup (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:38:3)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:28:3
+
+    Error Context: test-results/full-system-24-document-PD-f8f3e--PDF-type-and-expected-text/error-context.md
+
+    Error Context: test-results/full-system-24-document-PD-f8f3e--PDF-type-and-expected-text/error-context.md
+
+
+[25/37] tests/full-system.spec.ts:439:1 › 25 Japanese text and registration number survive PDF rendering
+tests/full-system.spec.ts:439:1 › 25 Japanese text and registration number survive PDF rendering
+ERROR:  column "target_url" does not exist
+LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                ^
+
+  12) tests/full-system.spec.ts:439:1 › 25 Japanese text and registration number survive PDF rendering 
+
+    Test timeout of 120000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 120000ms exceeded.
+    Call log:
+      - waiting for locator('select[name="type"]')
+
+
+      45 | ): Promise<{ id: string; pdfPath: string }> {
+      46 |   await page.goto("/documents/new");
+    > 47 |   await page.locator('select[name="type"]').selectOption("invoice");
+         |                                             ^
+      48 |   await page.locator('select[name="templateVariant"]').selectOption(options.variant ?? "branded");
+      49 |   await page.locator('input[name="partnerName"]').fill(options.partnerName);
+      50 |   await page.locator('input[name="issueDate"]').fill("2026-01-15");
+        at createInvoice (/home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:47:45)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:440:27
+
+    Error: Command failed: psql -h 127.0.0.1 -p 5433 -U postgres -d mirai_lab -At -c DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:4020/' AND lead_id IN (SELECT id FROM leads WHERE company LIKE 'e2e-1795361323737%')
+    ERROR:  column "target_url" does not exist
+    LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                    ^
+
+
+       at fixtures/helpers.ts:28
+
+      26 |
+      27 | export function psql(query: string): string {
+    > 28 |   return execFileSync(
+         |          ^
+      29 |     "psql",
+      30 |     ["-h", "127.0.0.1", "-p", "5433", "-U", "postgres", "-d", "mirai_lab", "-At", "-c", query],
+      31 |     { env: { ...process.env, PGPASSWORD: "postgres" }, encoding: "utf8" },
+        at psql (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:28:10)
+        at cleanup (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:38:3)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:28:3
+
+    Error Context: test-results/full-system-25-Japanese-te-066c5-umber-survive-PDF-rendering/error-context.md
+
+    Error Context: test-results/full-system-25-Japanese-te-066c5-umber-survive-PDF-rendering/error-context.md
+
+
+[26/37] tests/full-system.spec.ts:450:1 › 26 branded and mono PDFs do not overflow at 375px
+tests/full-system.spec.ts:450:1 › 26 branded and mono PDFs do not overflow at 375px
+ERROR:  column "target_url" does not exist
+LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                ^
+
+  13) tests/full-system.spec.ts:450:1 › 26 branded and mono PDFs do not overflow at 375px ──────────
+
+    Test timeout of 120000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 120000ms exceeded.
+    Call log:
+      - waiting for locator('select[name="type"]')
+
+
+      45 | ): Promise<{ id: string; pdfPath: string }> {
+      46 |   await page.goto("/documents/new");
+    > 47 |   await page.locator('select[name="type"]').selectOption("invoice");
+         |                                             ^
+      48 |   await page.locator('select[name="templateVariant"]').selectOption(options.variant ?? "branded");
+      49 |   await page.locator('input[name="partnerName"]').fill(options.partnerName);
+      50 |   await page.locator('input[name="issueDate"]').fill("2026-01-15");
+        at createInvoice (/home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:47:45)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:451:19
+
+    Error: Command failed: psql -h 127.0.0.1 -p 5433 -U postgres -d mirai_lab -At -c DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:4020/' AND lead_id IN (SELECT id FROM leads WHERE company LIKE 'e2e-1795361444580%')
+    ERROR:  column "target_url" does not exist
+    LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                    ^
+
+
+       at fixtures/helpers.ts:28
+
+      26 |
+      27 | export function psql(query: string): string {
+    > 28 |   return execFileSync(
+         |          ^
+      29 |     "psql",
+      30 |     ["-h", "127.0.0.1", "-p", "5433", "-U", "postgres", "-d", "mirai_lab", "-At", "-c", query],
+      31 |     { env: { ...process.env, PGPASSWORD: "postgres" }, encoding: "utf8" },
+        at psql (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:28:10)
+        at cleanup (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:38:3)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:28:3
+
+    Error Context: test-results/full-system-26-branded-and-de2c3-Fs-do-not-overflow-at-375px/error-context.md
+
+    Error Context: test-results/full-system-26-branded-and-de2c3-Fs-do-not-overflow-at-375px/error-context.md
+
+
+[27/37] tests/full-system.spec.ts:477:1 › 27 CMS list shows admin posts
+[28/37] tests/full-system.spec.ts:486:1 › 28 editor cannot publish: UI hidden and direct action blocked
+tests/full-system.spec.ts:486:1 › 28 editor cannot publish: UI hidden and direct action blocked
+ERROR:  column "target_url" does not exist
+LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                ^
+
+  14) tests/full-system.spec.ts:486:1 › 28 editor cannot publish: UI hidden and direct action blocked 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 303
+    Received: 500
+
+      494 |   const cookie = await cookieHeader(page);
+      495 |   const response = await callServerAction(request, "publishPost", { postId: id }, cookie);
+    > 496 |   expect(response.status).toBe(303);
+          |                           ^
+      497 |   expect(response.headers["location"]).toContain("notice=Forbidden");
+      498 |   expect(psql(`SELECT status FROM posts WHERE id='${id}'`)).toBe("draft");
+      499 | });
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:496:27
+
+    Error: Command failed: psql -h 127.0.0.1 -p 5433 -U postgres -d mirai_lab -At -c DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:4020/' AND lead_id IN (SELECT id FROM leads WHERE company LIKE 'e2e-1795361565433%')
+    ERROR:  column "target_url" does not exist
+    LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                    ^
+
+
+       at fixtures/helpers.ts:28
+
+      26 |
+      27 | export function psql(query: string): string {
+    > 28 |   return execFileSync(
+         |          ^
+      29 |     "psql",
+      30 |     ["-h", "127.0.0.1", "-p", "5433", "-U", "postgres", "-d", "mirai_lab", "-At", "-c", query],
+      31 |     { env: { ...process.env, PGPASSWORD: "postgres" }, encoding: "utf8" },
+        at psql (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:28:10)
+        at cleanup (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:38:3)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:28:3
+
+    Error Context: test-results/full-system-28-editor-cann-fb9a7-n-and-direct-action-blocked/error-context.md
+
+    Error Context: test-results/full-system-28-editor-cann-fb9a7-n-and-direct-action-blocked/error-context.md
+
+
+[29/37] tests/full-system.spec.ts:501:1 › 29 admin publish creates a published post with exact body source
+tests/full-system.spec.ts:501:1 › 29 admin publish creates a published post with exact body source
+ERROR:  invalid input syntax for type uuid: "edit"
+LINE 1: SELECT status, body_md FROM posts WHERE id='edit'
+                                                   ^
+
+ERROR:  column "target_url" does not exist
+LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                ^
+
+  15) tests/full-system.spec.ts:501:1 › 29 admin publish creates a published post with exact body source 
+
+    Error: Command failed: psql -h 127.0.0.1 -p 5433 -U postgres -d mirai_lab -At -c SELECT status, body_md FROM posts WHERE id='edit'
+    ERROR:  invalid input syntax for type uuid: "edit"
+    LINE 1: SELECT status, body_md FROM posts WHERE id='edit'
+                                                       ^
+
+
+       at fixtures/helpers.ts:28
+
+      26 |
+      27 | export function psql(query: string): string {
+    > 28 |   return execFileSync(
+         |          ^
+      29 |     "psql",
+      30 |     ["-h", "127.0.0.1", "-p", "5433", "-U", "postgres", "-d", "mirai_lab", "-At", "-c", query],
+      31 |     { env: { ...process.env, PGPASSWORD: "postgres" }, encoding: "utf8" },
+        at psql (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:28:10)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:519:15
+
+    Error: Command failed: psql -h 127.0.0.1 -p 5433 -U postgres -d mirai_lab -At -c DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:4020/' AND lead_id IN (SELECT id FROM leads WHERE company LIKE 'e2e-1795361586018%')
+    ERROR:  column "target_url" does not exist
+    LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                    ^
+
+
+       at fixtures/helpers.ts:28
+
+      26 |
+      27 | export function psql(query: string): string {
+    > 28 |   return execFileSync(
+         |          ^
+      29 |     "psql",
+      30 |     ["-h", "127.0.0.1", "-p", "5433", "-U", "postgres", "-d", "mirai_lab", "-At", "-c", query],
+      31 |     { env: { ...process.env, PGPASSWORD: "postgres" }, encoding: "utf8" },
+        at psql (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:28:10)
+        at cleanup (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:38:3)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:28:3
+
+    Error Context: test-results/full-system-29-admin-publi-5b542-post-with-exact-body-source/error-context.md
+
+    Error Context: test-results/full-system-29-admin-publi-5b542-post-with-exact-body-source/error-context.md
+
+
+[30/37] tests/full-system.spec.ts:524:1 › 30 published Markdown renders allowed elements only
+[31/37] tests/full-system.spec.ts:544:1 › 31 published post emits exactly one BlogPosting JSON-LD block
+[32/37] tests/full-system.spec.ts:560:1 › 32 draft post slug returns 404
+[33/37] tests/full-system.spec.ts:567:1 › 33 sitemap includes published slug
+[34/37] tests/full-system.spec.ts:577:1 › 34 llms.txt includes published slug and localized description
+[35/37] tests/full-system.spec.ts:589:1 › 35 IndexNow enabled: draft save sends zero pings, publish sends one
+[36/37] tests/full-system.spec.ts:605:1 › 36 IndexNow enabled: publishing a second post sends a second ping
+[37/37] tests/full-system.spec.ts:617:1 › 38 full walk: contact, promote, scan, document, publish, public read
+tests/full-system.spec.ts:617:1 › 38 full walk: contact, promote, scan, document, publish, public read
+ERROR:  column "target_url" does not exist
+LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                ^
+
+  16) tests/full-system.spec.ts:617:1 › 38 full walk: contact, promote, scan, document, publish, public read 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "80"
+    Received: "0"
+
+      632 |   await page.waitForURL(new RegExp(`/leads/${leadId}\\?notice=scan%20queued$`));
+      633 |   waitForScan(leadId);
+    > 634 |   expect(psql(`SELECT score FROM leads WHERE id='${leadId}'`)).toBe(String(EXPECTED_SCORE));
+          |                                                                ^
+      635 |
+      636 |   await page.goto("/documents/new");
+      637 |   await page.locator('select[name="type"]').selectOption("quote");
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:634:64
+
+    Error: Command failed: psql -h 127.0.0.1 -p 5433 -U postgres -d mirai_lab -At -c DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:4020/' AND lead_id IN (SELECT id FROM leads WHERE company LIKE 'e2e-1795361590465%')
+    ERROR:  column "target_url" does not exist
+    LINE 1: DELETE FROM scans WHERE target_url LIKE 'http://127.0.0.1:40...
+                                    ^
+
+
+       at fixtures/helpers.ts:28
+
+      26 |
+      27 | export function psql(query: string): string {
+    > 28 |   return execFileSync(
+         |          ^
+      29 |     "psql",
+      30 |     ["-h", "127.0.0.1", "-p", "5433", "-U", "postgres", "-d", "mirai_lab", "-At", "-c", query],
+      31 |     { env: { ...process.env, PGPASSWORD: "postgres" }, encoding: "utf8" },
+        at psql (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:28:10)
+        at cleanup (/home/morpheus/Downloads/mirai-lab/apps/web/tests/fixtures/helpers.ts:38:3)
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/full-system.spec.ts:28:3
+
+    Error Context: test-results/full-system-38-full-walk-c-780fd-ocument-publish-public-read/error-context.md
+
+    Error Context: test-results/full-system-38-full-walk-c-780fd-ocument-publish-public-read/error-context.md
+
+
+  16 failed
+    tests/full-system.spec.ts:78:1 › 1 public site / renders with expected copy and no legacy tokens 
+    tests/full-system.spec.ts:117:1 › 3 landing JSON-LD is valid Organization data with no placeholders 
+    tests/full-system.spec.ts:155:1 › 6 unauthenticated API routes return 401 ──────────────────────
+    tests/full-system.spec.ts:267:1 › 16 lead detail shows fields, activity form and delete ────────
+    tests/full-system.spec.ts:286:1 › 17 detail brief is not exposed on public or unauthenticated routes 
+    tests/full-system.spec.ts:300:1 › 18 drag-and-drop stage change persists with direct-action retry 
+    tests/full-system.spec.ts:323:1 › 19 CRM create/update/activity direct actions persist ─────────
+    tests/full-system.spec.ts:366:1 › 20 manual scan returns deterministic score 80 and tier ───────
+    tests/full-system.spec.ts:385:1 › 21 second manual scan inside cooldown shows explicit notice ──
+    tests/full-system.spec.ts:415:1 › 23 detail scan stores and displays internal brief ────────────
+    tests/full-system.spec.ts:429:1 › 24 document PDF has real PDF type and expected text ──────────
+    tests/full-system.spec.ts:439:1 › 25 Japanese text and registration number survive PDF rendering 
+    tests/full-system.spec.ts:450:1 › 26 branded and mono PDFs do not overflow at 375px ────────────
+    tests/full-system.spec.ts:486:1 › 28 editor cannot publish: UI hidden and direct action blocked 
+    tests/full-system.spec.ts:501:1 › 29 admin publish creates a published post with exact body source 
+    tests/full-system.spec.ts:617:1 › 38 full walk: contact, promote, scan, document, publish, public read 
+  21 passed (22.7m)
+/home/morpheus/Downloads/mirai-lab/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @mirai/web@0.0.0 test:e2e:full: `playwright test --config playwright.config.ts`
+Exit status 1

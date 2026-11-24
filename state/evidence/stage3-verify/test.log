@@ -1,0 +1,362 @@
+
+> mirai-lab@ test /home/morpheus/Downloads/mirai-lab
+> pnpm -r --if-present test
+
+Scope: 3 of 4 workspace projects
+packages/db test$ node --test dist/src/scan-policy.test.js
+packages/db test: TAP version 13
+packages/db test: # Subtest: normalizes domains for per-domain cooldown
+packages/db test: ok 1 - normalizes domains for per-domain cooldown
+packages/db test:   ---
+packages/db test:   duration_ms: 1.325182
+packages/db test:   ...
+packages/db test: # Subtest: interval env falls back to 24 hours
+packages/db test: ok 2 - interval env falls back to 24 hours
+packages/db test:   ---
+packages/db test:   duration_ms: 0.213502
+packages/db test:   ...
+packages/db test: # Subtest: manual cooldown reports whole minutes remaining
+packages/db test: ok 3 - manual cooldown reports whole minutes remaining
+packages/db test:   ---
+packages/db test:   duration_ms: 0.234531
+packages/db test:   ...
+packages/db test: 1..3
+packages/db test: # tests 3
+packages/db test: # suites 0
+packages/db test: # pass 3
+packages/db test: # fail 0
+packages/db test: # cancelled 0
+packages/db test: # skipped 0
+packages/db test: # todo 0
+packages/db test: # duration_ms 66.000994
+packages/db test: Done
+apps/web test$ node --import tsx --test src/lib/documents/documents.test.ts src/lib/crm-auth.test.ts src/lib/lead-view.test.ts src/lib/scans.test.ts src/lib/cms-auth.test.ts src/lib/indexnow.test.ts src/lib/markdown.test.ts src/lib/settings.test.ts src/lib/dnc.test.ts src/ui/tokens.test.ts
+apps/worker test$ node --import tsx --test dist/scoring/score.test.js dist/scanner/privacy.test.js dist/scheduler.test.js dist/detail-brief.test.js dist/leadbot/normalize.test.js dist/leadbot/dnc.test.js dist/leadbot/erasure.test.js dist/leadbot/audit.test.js dist/leadbot/sources/registry.test.js dist/leadbot/db-constraints.test.js
+apps/web test: TAP version 13
+apps/worker test: TAP version 13
+apps/worker test: # Subtest: detail allowlist includes favicon and humans plus existing probes
+apps/worker test: ok 1 - detail allowlist includes favicon and humans plus existing probes
+apps/worker test:   ---
+apps/worker test:   duration_ms: 1.589649
+apps/worker test:   ...
+apps/worker test: # Subtest: detail brief has findings, implications and exactly three talking points
+apps/worker test: ok 2 - detail brief has findings, implications and exactly three talking points
+apps/worker test:   ---
+apps/worker test:   duration_ms: 1.339399
+apps/worker test:   ...
+apps/worker test: # Subtest: audit detail is allowlisted and redacted
+apps/worker test: ok 3 - audit detail is allowlisted and redacted
+apps/worker test:   ---
+apps/worker test:   duration_ms: 3.156536
+apps/worker test:   ...
+apps/worker test: # Subtest: audit insert uses the sanitised detail
+apps/worker test: ok 4 - audit insert uses the sanitised detail
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.53209
+apps/worker test:   ...
+apps/worker test: # Subtest: source_records insert without provenance fails a DB constraint
+apps/worker test: ok 5 - source_records insert without provenance fails a DB constraint
+apps/worker test:   ---
+apps/worker test:   duration_ms: 75.034641
+apps/worker test:   ...
+apps/worker test: # Subtest: lead_fields insert without provenance fails a DB constraint
+apps/worker test: ok 6 - lead_fields insert without provenance fails a DB constraint
+apps/worker test:   ---
+apps/worker test:   duration_ms: 25.958261
+apps/worker test:   ...
+apps/worker test: # Subtest: source cannot be enabled without a terms snapshot at DB level
+apps/worker test: ok 7 - source cannot be enabled without a terms snapshot at DB level
+apps/worker test:   ---
+apps/worker test:   duration_ms: 7.495905
+apps/worker test:   ...
+apps/worker test: # Subtest: do_not_contact unique key is enforced
+apps/worker test: ok 8 - do_not_contact unique key is enforced
+apps/worker test:   ---
+apps/worker test:   duration_ms: 5.00459
+apps/worker test:   ...
+apps/worker test: # Subtest: erasure_tombstones has no plaintext columns
+apps/worker test: ok 9 - erasure_tombstones has no plaintext columns
+apps/worker test:   ---
+apps/worker test:   duration_ms: 14.967744
+apps/worker test:   ...
+apps/web test: # Subtest: admin has full CMS post and author control
+apps/web test: ok 1 - admin has full CMS post and author control
+apps/web test:   ---
+apps/web test:   duration_ms: 1.037911
+apps/web test:   ...
+apps/web test: # Subtest: editor creates and edits own drafts but cannot publish or delete
+apps/web test: ok 2 - editor creates and edits own drafts but cannot publish or delete
+apps/web test:   ---
+apps/web test:   duration_ms: 0.188775
+apps/web test:   ...
+apps/web test: # Subtest: viewer reads only and user role has no CMS access
+apps/web test: ok 3 - viewer reads only and user role has no CMS access
+apps/web test:   ---
+apps/web test:   duration_ms: 0.189226
+apps/web test:   ...
+apps/web test: # Subtest: scan API authorization allows only admin and editor roles
+apps/web test: ok 4 - scan API authorization allows only admin and editor roles
+apps/web test:   ---
+apps/web test:   duration_ms: 0.939106
+apps/web test:   ...
+apps/web test: # Subtest: DNC kinds accept only the database enum values
+apps/web test: ok 5 - DNC kinds accept only the database enum values
+apps/web test:   ---
+apps/web test:   duration_ms: 1.536429
+apps/web test:   ...
+apps/web test: # Subtest: DNC values normalize to the same keys used by the scanner
+apps/web test: ok 6 - DNC values normalize to the same keys used by the scanner
+apps/web test:   ---
+apps/web test:   duration_ms: 0.926361
+apps/web test:   ...
+apps/web test: # Subtest: DNC values reject unsupported formats
+apps/web test: ok 7 - DNC values reject unsupported formats
+apps/web test:   ---
+apps/web test:   duration_ms: 0.380866
+apps/web test:   ...
+apps/web test: # Subtest: renders a non-empty branded invoice PDF
+apps/web test: ok 8 - renders a non-empty branded invoice PDF
+apps/web test:   ---
+apps/web test:   duration_ms: 3126.832134
+apps/web test:   ...
+apps/web test: # Subtest: renders a non-empty mono invoice PDF
+apps/web test: ok 9 - renders a non-empty mono invoice PDF
+apps/web test:   ---
+apps/web test:   duration_ms: 2070.909051
+apps/web test:   ...
+apps/web test: # Subtest: renders quote through the shared pipeline
+apps/web test: ok 10 - renders quote through the shared pipeline
+apps/web test:   ---
+apps/web test:   duration_ms: 1999.959671
+apps/web test:   ...
+apps/web test: # Subtest: renders nda through the shared pipeline
+apps/web test: ok 11 - renders nda through the shared pipeline
+apps/web test:   ---
+apps/web test:   duration_ms: 1961.778609
+apps/web test:   ...
+apps/worker test: # Subtest: normalise DNC values by key kind
+apps/worker test: ok 10 - normalise DNC values by key kind
+apps/worker test:   ---
+apps/worker test:   duration_ms: 6.895315
+apps/worker test:   ...
+apps/worker test: # Subtest: DNC lookup returns blocked for a known key
+apps/worker test: ok 11 - DNC lookup returns blocked for a known key
+apps/worker test:   ---
+apps/worker test:   duration_ms: 1.947251
+apps/worker test:   ...
+apps/worker test: # Subtest: any-key DNC check stops at the first block
+apps/worker test: ok 12 - any-key DNC check stops at the first block
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.564441
+apps/worker test:   ...
+apps/worker test: # Subtest: DNC insert stores the normalised key
+apps/worker test: ok 13 - DNC insert stores the normalised key
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.584789
+apps/worker test:   ...
+apps/worker test: # Subtest: tombstone digest is deterministic and contains no plaintext
+apps/worker test: ok 14 - tombstone digest is deterministic and contains no plaintext
+apps/worker test:   ---
+apps/worker test:   duration_ms: 2.496113
+apps/worker test:   ...
+apps/worker test: # Subtest: tombstone write stores the digest only
+apps/worker test: ok 15 - tombstone write stores the digest only
+apps/worker test:   ---
+apps/worker test:   duration_ms: 1.507856
+apps/worker test:   ...
+apps/worker test: # Subtest: tombstone lookup matches only the same key
+apps/worker test: ok 16 - tombstone lookup matches only the same key
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.750822
+apps/worker test:   ...
+apps/worker test: # Subtest: corporate number normalisation and check digit
+apps/worker test: ok 17 - corporate number normalisation and check digit
+apps/worker test:   ---
+apps/worker test:   duration_ms: 2.088717
+apps/worker test:   ...
+apps/worker test: # Subtest: phone normalisation and key eligibility
+apps/worker test: ok 18 - phone normalisation and key eligibility
+apps/worker test:   ---
+apps/worker test:   duration_ms: 6.189048
+apps/worker test:   ...
+apps/worker test: # Subtest: domain normalisation and platform exclusion
+apps/worker test: ok 19 - domain normalisation and platform exclusion
+apps/worker test:   ---
+apps/worker test:   duration_ms: 1.296919
+apps/worker test:   ...
+apps/worker test: # Subtest: name and address keys are normalised
+apps/worker test: ok 20 - name and address keys are normalised
+apps/worker test:   ---
+apps/worker test:   duration_ms: 1.041008
+apps/worker test:   ...
+apps/worker test: # Subtest: html adapters are rejected by the registry
+apps/worker test: ok 21 - html adapters are rejected by the registry
+apps/worker test:   ---
+apps/worker test:   duration_ms: 2.420621
+apps/worker test:   ...
+apps/worker test: # Subtest: valid published-file and api adapters register
+apps/worker test: ok 22 - valid published-file and api adapters register
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.473941
+apps/worker test:   ...
+apps/worker test: # Subtest: a source cannot be enabled without an existing terms snapshot
+apps/worker test: ok 23 - a source cannot be enabled without an existing terms snapshot
+apps/worker test:   ---
+apps/worker test:   duration_ms: 1.857302
+apps/worker test:   ...
+apps/worker test: # Subtest: a source with a terms snapshot can be enabled
+apps/worker test: ok 24 - a source with a terms snapshot can be enabled
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.726677
+apps/worker test:   ...
+apps/worker test: # Subtest: scanner output and every database write contain no personal data from fixture HTML
+apps/worker test: ok 25 - scanner output and every database write contain no personal data from fixture HTML
+apps/worker test:   ---
+apps/worker test:   duration_ms: 92.343818
+apps/worker test:   ...
+apps/worker test: # Subtest: detail pass stores only sanitized metadata and an internal brief
+apps/worker test: ok 26 - detail pass stores only sanitized metadata and an internal brief
+apps/worker test:   ---
+apps/worker test:   duration_ms: 3.625537
+apps/worker test:   ...
+apps/worker test: # Subtest: scheduler chooses only stale leads with website urls
+apps/worker test: ok 27 - scheduler chooses only stale leads with website urls
+apps/worker test:   ---
+apps/worker test:   duration_ms: 3.212902
+apps/worker test:   ...
+apps/worker test: # Subtest: scheduler skips active leads and domains in recent cooldown
+apps/worker test: ok 28 - scheduler skips active leads and domains in recent cooldown
+apps/worker test:   ---
+apps/worker test:   duration_ms: 1.032461
+apps/worker test:   ...
+apps/worker test: # Subtest: weights live in one config object with the required maxima
+apps/worker test: ok 29 - weights live in one config object with the required maxima
+apps/worker test:   ---
+apps/worker test:   duration_ms: 8.545368
+apps/worker test:   ...
+apps/worker test: # Subtest: scores a clean target lead as B at 60
+apps/worker test: ok 30 - scores a clean target lead as B at 60
+apps/worker test:   ---
+apps/worker test:   duration_ms: 1.141236
+apps/worker test:   ...
+apps/worker test: # Subtest: scores all technical decay signals and caps at 40
+apps/worker test: ok 31 - scores all technical decay signals and caps at 40
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.700857
+apps/worker test:   ...
+apps/worker test: # Subtest: applies adjacent, non-target, reachability, presence, and size rules
+apps/worker test: ok 32 - applies adjacent, non-target, reachability, presence, and size rules
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.475795
+apps/worker test:   ...
+apps/worker test: # Subtest: applies B and C threshold boundaries
+apps/worker test: ok 33 - applies B and C threshold boundaries
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.514507
+apps/worker test:   ...
+apps/worker test: 1..33
+apps/worker test: # tests 33
+apps/worker test: # suites 0
+apps/worker test: # pass 33
+apps/worker test: # fail 0
+apps/worker test: # cancelled 0
+apps/worker test: # skipped 0
+apps/worker test: # todo 0
+apps/worker test: # duration_ms 11709.105896
+apps/worker test: Done
+apps/web test: # Subtest: renders acceptance through the shared pipeline
+apps/web test: ok 12 - renders acceptance through the shared pipeline
+apps/web test:   ---
+apps/web test:   duration_ms: 2060.164938
+apps/web test:   ...
+apps/web test: # Subtest: indexnow disabled path skips fetch and logs indexnow: disabled
+apps/web test: ok 13 - indexnow disabled path skips fetch and logs indexnow: disabled
+apps/web test:   ---
+apps/web test:   duration_ms: 15.472824
+apps/web test:   ...
+apps/web test: # Subtest: tier thresholds and pain severity helpers
+apps/web test: ok 14 - tier thresholds and pain severity helpers
+apps/web test:   ---
+apps/web test:   duration_ms: 1.64871
+apps/web test:   ...
+apps/web test: # Subtest: filters segment, overdue, and pain severity
+apps/web test: ok 15 - filters segment, overdue, and pain severity
+apps/web test:   ---
+apps/web test:   duration_ms: 43.941876
+apps/web test:   ...
+apps/web test: # Subtest: sorts lead rows
+apps/web test: ok 16 - sorts lead rows
+apps/web test:   ---
+apps/web test:   duration_ms: 0.550445
+apps/web test:   ...
+apps/web test: # Subtest: unordered list lines render as ul li elements
+apps/web test: ok 17 - unordered list lines render as ul li elements
+apps/web test:   ---
+apps/web test:   duration_ms: 15.258581
+apps/web test:   ...
+apps/web test: # Subtest: ordered list lines render as ol li elements
+apps/web test: ok 18 - ordered list lines render as ol li elements
+apps/web test:   ---
+apps/web test:   duration_ms: 1.187112
+apps/web test:   ...
+apps/web test: # Subtest: list items preserve inline strong and link elements
+apps/web test: ok 19 - list items preserve inline strong and link elements
+apps/web test:   ---
+apps/web test:   duration_ms: 1.751964
+apps/web test:   ...
+apps/web test: # Subtest: scan kind accepts only scan and detail
+apps/web test: ok 20 - scan kind accepts only scan and detail
+apps/web test:   ---
+apps/web test:   duration_ms: 1.862392
+apps/web test:   ...
+apps/web test: # Subtest: manual cooldown message is explicit
+apps/web test: ok 21 - manual cooldown message is explicit
+apps/web test:   ---
+apps/web test:   duration_ms: 0.32991
+apps/web test:   ...
+apps/web test: # Subtest: mergeSiteContent(null, [], []) returns siteContent unchanged
+apps/web test: ok 22 - mergeSiteContent(null, [], []) returns siteContent unchanged
+apps/web test:   ---
+apps/web test:   duration_ms: 2.2387
+apps/web test:   ...
+apps/web test: # Subtest: mergeSiteContent with a partial settings row falls back per-field
+apps/web test: ok 23 - mergeSiteContent with a partial settings row falls back per-field
+apps/web test:   ---
+apps/web test:   duration_ms: 1.284876
+apps/web test:   ...
+apps/web test: # Subtest: mergeSiteContent with empty tiers falls back to siteContent.pricing
+apps/web test: ok 24 - mergeSiteContent with empty tiers falls back to siteContent.pricing
+apps/web test:   ---
+apps/web test:   duration_ms: 0.442522
+apps/web test:   ...
+apps/web test: # Subtest: mergeSiteContent with a published case study replaces the default list
+apps/web test: ok 25 - mergeSiteContent with a published case study replaces the default list
+apps/web test:   ---
+apps/web test:   duration_ms: 0.514387
+apps/web test:   ...
+apps/web test: # Subtest: spacing uses the 4 8 12 16 24 32 48 64 scale
+apps/web test: ok 26 - spacing uses the 4 8 12 16 24 32 48 64 scale
+apps/web test:   ---
+apps/web test:   duration_ms: 5.077377
+apps/web test:   ...
+apps/web test: # Subtest: typography scale and heading/body line heights are fixed
+apps/web test: ok 27 - typography scale and heading/body line heights are fixed
+apps/web test:   ---
+apps/web test:   duration_ms: 0.507405
+apps/web test:   ...
+apps/web test: # Subtest: motion, z-index, radius and shadow tokens match the consistency system
+apps/web test: ok 28 - motion, z-index, radius and shadow tokens match the consistency system
+apps/web test:   ---
+apps/web test:   duration_ms: 0.373312
+apps/web test:   ...
+apps/web test: 1..28
+apps/web test: # tests 28
+apps/web test: # suites 0
+apps/web test: # pass 28
+apps/web test: # fail 0
+apps/web test: # cancelled 0
+apps/web test: # skipped 0
+apps/web test: # todo 0
+apps/web test: # duration_ms 12264.774691
+apps/web test: Done
+TEST_EXIT=0

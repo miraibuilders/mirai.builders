@@ -1,0 +1,30 @@
+       t       | n  
+---------------+----
+ leads         | 14
+ activities    | 21
+ scans         | 14
+ contacts      |  7
+ documents     |  6
+ posts         |  7
+ authors       |  3
+ media         |  4
+ dnc           |  5
+ site_settings |  1
+(10 rows)
+
+          t           | n 
+----------------------+---
+ test_like_leads      | 0
+ test_like_posts      | 0
+ test_like_contacts   | 0
+ test_like_documents  | 0
+ test_like_activities | 0
+(5 rows)
+
+ id |    phone     |      email_ja      |      email_en      |         address_ja         |            address_en            
+----+--------------+--------------------+--------------------+----------------------------+----------------------------------
+  1 | 03-5555-0188 | contact@example.jp | contact@example.jp | 東京都中央区日本橋1-2-3 4F | 1-2-3 Nihonbashi, Chuo-ku, Tokyo
+(1 row)
+
+HEALTH: {"status":"ok","database":"connected"}
+DB_FINAL_CHECK_EXIT=0

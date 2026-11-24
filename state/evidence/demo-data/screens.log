@@ -1,0 +1,14 @@
+OK dashboard /dashboard
+OK leads-table /leads?view=table
+OK leads-board /leads
+OK lead-detail /leads/a465a4d2-eed8-4c3c-82da-ce4fb2736d94
+OK lead-review /leads/review
+OK lead-sources /leads/sources
+OK contact-requests /contact-requests
+OK documents /documents
+OK cms-posts /cms
+OK cms-authors /cms/authors
+OK cms-media /cms/media
+OK cms-site /cms/site
+OK dnc /settings/dnc
+SCREEN_VERIFY_EXIT=0

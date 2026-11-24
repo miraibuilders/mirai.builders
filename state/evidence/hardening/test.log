@@ -1,0 +1,186 @@
+
+> mirai-lab@ test /home/morpheus/Downloads/mirai-lab
+> pnpm -r --if-present test
+
+Scope: 3 of 4 workspace projects
+packages/db test$ node --test dist/src/scan-policy.test.js
+packages/db test: TAP version 13
+packages/db test: # Subtest: normalizes domains for per-domain cooldown
+packages/db test: ok 1 - normalizes domains for per-domain cooldown
+packages/db test:   ---
+packages/db test:   duration_ms: 2.471266
+packages/db test:   ...
+packages/db test: # Subtest: interval env falls back to 24 hours
+packages/db test: ok 2 - interval env falls back to 24 hours
+packages/db test:   ---
+packages/db test:   duration_ms: 0.39358
+packages/db test:   ...
+packages/db test: # Subtest: manual cooldown reports whole minutes remaining
+packages/db test: ok 3 - manual cooldown reports whole minutes remaining
+packages/db test:   ---
+packages/db test:   duration_ms: 0.396215
+packages/db test:   ...
+packages/db test: 1..3
+packages/db test: # tests 3
+packages/db test: # suites 0
+packages/db test: # pass 3
+packages/db test: # fail 0
+packages/db test: # cancelled 0
+packages/db test: # skipped 0
+packages/db test: # todo 0
+packages/db test: # duration_ms 97.63659
+packages/db test: Done
+apps/web test$ node --import tsx --test src/lib/documents/documents.test.ts src/lib/crm-auth.test.ts src/lib/lead-view.test.ts src/lib/scans.test.ts src/lib/cms-auth.test.ts src/lib/indexnow.test.ts
+apps/worker test$ node --import tsx --test dist/scoring/score.test.js dist/scanner/privacy.test.js dist/scheduler.test.js dist/detail-brief.test.js
+apps/worker test: TAP version 13
+apps/web test: TAP version 13
+apps/worker test: # Subtest: detail allowlist includes favicon and humans plus existing probes
+apps/worker test: ok 1 - detail allowlist includes favicon and humans plus existing probes
+apps/worker test:   ---
+apps/worker test:   duration_ms: 2.092405
+apps/worker test:   ...
+apps/worker test: # Subtest: detail brief has findings, implications and exactly three talking points
+apps/worker test: ok 2 - detail brief has findings, implications and exactly three talking points
+apps/worker test:   ---
+apps/worker test:   duration_ms: 1.470225
+apps/worker test:   ...
+apps/worker test: # Subtest: scanner output and every database write contain no personal data from fixture HTML
+apps/worker test: ok 3 - scanner output and every database write contain no personal data from fixture HTML
+apps/worker test:   ---
+apps/worker test:   duration_ms: 14.794638
+apps/worker test:   ...
+apps/worker test: # Subtest: detail pass stores only sanitized metadata and an internal brief
+apps/worker test: ok 4 - detail pass stores only sanitized metadata and an internal brief
+apps/worker test:   ---
+apps/worker test:   duration_ms: 6.077518
+apps/worker test:   ...
+apps/worker test: # Subtest: scheduler chooses only stale leads with website urls
+apps/worker test: ok 5 - scheduler chooses only stale leads with website urls
+apps/worker test:   ---
+apps/worker test:   duration_ms: 3.059933
+apps/worker test:   ...
+apps/worker test: # Subtest: scheduler skips active leads and domains in recent cooldown
+apps/worker test: ok 6 - scheduler skips active leads and domains in recent cooldown
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.498778
+apps/worker test:   ...
+apps/worker test: # Subtest: weights live in one config object with the required maxima
+apps/worker test: ok 7 - weights live in one config object with the required maxima
+apps/worker test:   ---
+apps/worker test:   duration_ms: 2.271261
+apps/worker test:   ...
+apps/worker test: # Subtest: scores a clean target lead as B at 60
+apps/worker test: ok 8 - scores a clean target lead as B at 60
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.71268
+apps/worker test:   ...
+apps/worker test: # Subtest: scores all technical decay signals and caps at 40
+apps/worker test: ok 9 - scores all technical decay signals and caps at 40
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.390424
+apps/worker test:   ...
+apps/worker test: # Subtest: applies adjacent, non-target, reachability, presence, and size rules
+apps/worker test: ok 10 - applies adjacent, non-target, reachability, presence, and size rules
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.398509
+apps/worker test:   ...
+apps/worker test: # Subtest: applies B and C threshold boundaries
+apps/worker test: ok 11 - applies B and C threshold boundaries
+apps/worker test:   ---
+apps/worker test:   duration_ms: 0.387499
+apps/worker test:   ...
+apps/worker test: 1..11
+apps/worker test: # tests 11
+apps/worker test: # suites 0
+apps/worker test: # pass 11
+apps/worker test: # fail 0
+apps/worker test: # cancelled 0
+apps/worker test: # skipped 0
+apps/worker test: # todo 0
+apps/worker test: # duration_ms 1372.342829
+apps/worker test: Done
+apps/web test: # Subtest: admin has full CMS post and author control
+apps/web test: ok 1 - admin has full CMS post and author control
+apps/web test:   ---
+apps/web test:   duration_ms: 1.489511
+apps/web test:   ...
+apps/web test: # Subtest: editor creates and edits own drafts but cannot publish or delete
+apps/web test: ok 2 - editor creates and edits own drafts but cannot publish or delete
+apps/web test:   ---
+apps/web test:   duration_ms: 0.323539
+apps/web test:   ...
+apps/web test: # Subtest: viewer reads only and user role has no CMS access
+apps/web test: ok 3 - viewer reads only and user role has no CMS access
+apps/web test:   ---
+apps/web test:   duration_ms: 0.195718
+apps/web test:   ...
+apps/web test: # Subtest: scan API authorization allows only admin and editor roles
+apps/web test: ok 4 - scan API authorization allows only admin and editor roles
+apps/web test:   ---
+apps/web test:   duration_ms: 1.60616
+apps/web test:   ...
+apps/web test: # Subtest: renders a non-empty branded invoice PDF
+apps/web test: ok 5 - renders a non-empty branded invoice PDF
+apps/web test:   ---
+apps/web test:   duration_ms: 4668.484503
+apps/web test:   ...
+apps/web test: # Subtest: renders a non-empty mono invoice PDF
+apps/web test: ok 6 - renders a non-empty mono invoice PDF
+apps/web test:   ---
+apps/web test:   duration_ms: 2744.645022
+apps/web test:   ...
+apps/web test: # Subtest: renders quote through the shared pipeline
+apps/web test: ok 7 - renders quote through the shared pipeline
+apps/web test:   ---
+apps/web test:   duration_ms: 1995.665437
+apps/web test:   ...
+apps/web test: # Subtest: renders nda through the shared pipeline
+apps/web test: ok 8 - renders nda through the shared pipeline
+apps/web test:   ---
+apps/web test:   duration_ms: 1974.369334
+apps/web test:   ...
+apps/web test: # Subtest: renders acceptance through the shared pipeline
+apps/web test: ok 9 - renders acceptance through the shared pipeline
+apps/web test:   ---
+apps/web test:   duration_ms: 1931.861975
+apps/web test:   ...
+apps/web test: # Subtest: indexnow disabled path skips fetch and logs indexnow: disabled
+apps/web test: ok 10 - indexnow disabled path skips fetch and logs indexnow: disabled
+apps/web test:   ---
+apps/web test:   duration_ms: 2.15389
+apps/web test:   ...
+apps/web test: # Subtest: tier thresholds and pain severity helpers
+apps/web test: ok 11 - tier thresholds and pain severity helpers
+apps/web test:   ---
+apps/web test:   duration_ms: 2.207811
+apps/web test:   ...
+apps/web test: # Subtest: filters segment, overdue, and pain severity
+apps/web test: ok 12 - filters segment, overdue, and pain severity
+apps/web test:   ---
+apps/web test:   duration_ms: 10.468554
+apps/web test:   ...
+apps/web test: # Subtest: sorts lead rows
+apps/web test: ok 13 - sorts lead rows
+apps/web test:   ---
+apps/web test:   duration_ms: 0.61162
+apps/web test:   ...
+apps/web test: # Subtest: scan kind accepts only scan and detail
+apps/web test: ok 14 - scan kind accepts only scan and detail
+apps/web test:   ---
+apps/web test:   duration_ms: 1.623052
+apps/web test:   ...
+apps/web test: # Subtest: manual cooldown message is explicit
+apps/web test: ok 15 - manual cooldown message is explicit
+apps/web test:   ---
+apps/web test:   duration_ms: 0.358915
+apps/web test:   ...
+apps/web test: 1..15
+apps/web test: # tests 15
+apps/web test: # suites 0
+apps/web test: # pass 15
+apps/web test: # fail 0
+apps/web test: # cancelled 0
+apps/web test: # skipped 0
+apps/web test: # todo 0
+apps/web test: # duration_ms 14043.860215
+apps/web test: Done

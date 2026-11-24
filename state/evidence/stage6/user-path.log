@@ -1,0 +1,95 @@
+
+=== E2E port preflight ===
+:3110 free
+:4010 free
+
+=== Start throwaway IndexNow stub ===
+$ stub HTTP server listening on 127.0.0.1:4010/indexnow -> 202
+
+=== Start throwaway Next dev on E2E-only :3110 ===
+$ INDEXNOW_ENABLED=true INDEXNOW_ENDPOINT=http://127.0.0.1:4010/indexnow /tmp/opencode/bin/pnpm --filter @mirai/web exec next dev -p 3110 >> /home/morpheus/Downloads/mirai-lab/state/evidence/stage6/next-dev.log
+[E2E_NEXT_PORT_NOTE] :3110 is E2E-only, not part of the standard port contract.
+[E2E_NEXT_READY] /api/health 200 and server-reference-manifest.json present
+
+=== Verification file and key file ===
+
+[key file] $ curl -i -X GET 'http://127.0.0.1:3110/dev-indexnow-key-9f3a1c7b.txt'
+HTTP/1.1 200 OK
+content-type: text/plain; charset=UTF-8
+[BODY_EXCERPT] dev-indexnow-key-9f3a1c7b
+[E2E_KEY_FILE] 200 and body equals INDEXNOW_KEY
+
+[robots.txt] $ curl -i -X GET 'http://127.0.0.1:3110/robots.txt'
+HTTP/1.1 200 OK
+content-type: text/plain
+[BODY_EXCERPT] User-Agent: * Allow: / User-Agent: GPTBot Allow: / User-Agent: ClaudeBot Allow: / User-Agent: PerplexityBot Allow: / Sitemap: http://127.0.0.1:3110/sitemap.xml 
+[E2E_ROBOTS] /robots.txt still returns the robots file (no catch-all .txt route)
+
+=== Admin test user ===
+
+[sign-up admin] $ curl -i -X POST 'http://127.0.0.1:3110/api/auth/sign-up/email'
+HTTP/1.1 200 OK
+content-type: application/json
+set-cookie: better-auth.session_token=rnEPhytYbgYxRHupHT3x2r33mV48PKOG.aWq36zSimG21Y%2FY2lSq9bJU3a%2FdmR1sR%2FdPwUEWAxTs%3D; Max-Age=604800; Path=/; HttpOnly; SameSite=Lax
+[BODY_EXCERPT] {"token":"rnEPhytYbgYxRHupHT3x2r33mV48PKOG","user":{"name":"Stage6 Admin","email":"stage6-admin-1795357221307@example.jp","emailVerified":false,"image
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "UPDATE users SET role = 'admin' WHERE email = 'stage6-admin-1795357221307@example.jp';"
+UPDATE 1
+
+[sign-in admin] $ curl -i -X POST 'http://127.0.0.1:3110/api/auth/sign-in/email'
+HTTP/1.1 200 OK
+content-type: application/json
+location: /cms
+set-cookie: better-auth.session_token=6TN5qBaCUMNH97jGQWITtQ6FdlZnYCL7.YGgi4%2BlDJzqEKqTzRrIvGn2svz6EdJsHIk%2BCct6EpPI%3D; Max-Age=604800; Path=/; HttpOnly; SameSite=Lax
+[BODY_EXCERPT] {"redirect":true,"token":"6TN5qBaCUMNH97jGQWITtQ6FdlZnYCL7","url":"/cms","user":{"name":"Stage6 Admin","email":"stage6-admin-1795357221307@example.jp"
+
+=== Compile CMS server actions in dev ===
+
+[cms page] $ curl -i -X GET 'http://127.0.0.1:3110/cms' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/cs
+[E2E_ACTIONS_READY] createPost / updatePost / publishPost present in dev manifest
+
+=== Trap A — draft must not ping IndexNow ===
+
+[create draft] $ curl -i -X POST 'http://127.0.0.1:3110/cms/posts/new' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 303 See Other
+location: /cms/posts/5e1b081e-7179-4151-98d9-b804fa92c207/edit?notice=%5BCMS_DRAFT_CREATED%5D
+[BODY_EXCERPT] 
+[E2E_POST_ID] 5e1b081e-7179-4151-98d9-b804fa92c207
+
+[update draft] $ curl -i -X POST 'http://127.0.0.1:3110/cms/posts/5e1b081e-7179-4151-98d9-b804fa92c207/edit' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 303 See Other
+location: /cms/posts/5e1b081e-7179-4151-98d9-b804fa92c207/edit?notice=%5BCMS_DRAFT_UPDATED%5D
+[BODY_EXCERPT] 
+[E2E_TRAP_A] draft create/update produced zero IndexNow POSTs
+
+=== Trap B — publish pings exactly once ===
+
+[publish post] $ curl -i -X POST 'http://127.0.0.1:3110/cms' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 303 See Other
+location: /cms?notice=%5BCMS_POST_PUBLISHED%5D
+[BODY_EXCERPT] 
+[E2E_TRAP_B] one POST, status 202, body={"host":"127.0.0.1:3110","key":"dev-indexnow-key-9f3a1c7b","keyLocation":"http://127.0.0.1:3110/dev-indexnow-key-9f3a1c7b.txt","urlList":["http://127.0.0.1:3110/blog/stage6-post-1795357221307"]}
+[E2E_TRAP_B_LOG] next-dev.log contains request body and response status 202
+
+=== Trap C — SSR page: BlogPosting JSON-LD, FAQ, rendered markdown ===
+
+[blog article] $ curl -i -X GET 'http://127.0.0.1:3110/blog/stage6-post-1795357221307'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/app/layout.css?v=1795357237257" data-precedence="next_static/css/app/layout.css"/><link rel="prelo
+[E2E_TRAP_C_TYPE] BlogPosting
+[E2E_TRAP_C_FAQ] FAQPage JSON-LD present
+[E2E_TRAP_C_MARKDOWN] <h2>Heading</h2> and <strong>bold</strong> rendered, no literal markdown
+
+[blog index] $ curl -i -X GET 'http://127.0.0.1:3110/blog'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/cs
+[E2E_BLOG_INDEX] published post listed
+
+=== Trap D — disabled ping logs and makes no HTTP call ===
+[E2E_TRAP_D] logged 'indexnow: disabled' and stub call count stayed at 1
+
+[E2E_OK] traps A/B/C/D passed

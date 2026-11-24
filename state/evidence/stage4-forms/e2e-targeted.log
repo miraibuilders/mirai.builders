@@ -1,0 +1,9 @@
+
+Running 4 tests using 1 worker
+
+[1/4] tests/stage4-forms.spec.ts:4:1 › lead and post forms use Stage 1 field primitives
+[2/4] tests/stage4-forms.spec.ts:18:1 › document form keeps success feedback with a status banner
+[3/4] tests/stage4-forms.spec.ts:42:1 › site settings uses accessible tabs and an error summary
+[4/4] tests/stage4-forms.spec.ts:59:1 › DNC settings adds and removes a normalized entry
+  4 passed (17.1s)
+E2E_TARGETED_EXIT=0

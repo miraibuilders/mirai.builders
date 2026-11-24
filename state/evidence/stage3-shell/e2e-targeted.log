@@ -1,0 +1,9 @@
+
+Running 4 tests using 1 worker
+
+[1/4] tests/stage3-shell.spec.ts:4:1 › admin shell renders navigation, breadcrumbs and role-aware sections
+[2/4] tests/stage3-shell.spec.ts:16:1 › editor shell hides admin navigation and palette commands
+[3/4] tests/stage3-shell.spec.ts:31:1 › command palette opens with Control+K, filters and navigates
+[4/4] tests/stage3-shell.spec.ts:51:1 › mobile shell exposes drawer navigation and quick bar
+  4 passed (9.2s)
+E2E_TARGETED_EXIT=0

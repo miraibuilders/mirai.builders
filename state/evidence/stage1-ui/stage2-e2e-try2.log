@@ -1,0 +1,41 @@
+
+Running 4 tests using 1 worker
+
+[1/4] tests/stage2-primitives.spec.ts:3:1 › demo table sorts, filters, paginates, selects and bulk-actions 100 rows
+[2/4] tests/stage2-primitives.spec.ts:31:1 › demo table shows loading, error, empty and virtualised states
+[3/4] tests/stage2-primitives.spec.ts:52:1 › demo kanban drags with optimistic update and persists the move
+  1) tests/stage2-primitives.spec.ts:52:1 › demo kanban drags with optimistic update and persists the move 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('section[aria-label^="Contacted,"]')
+    Expected substring: "Company 1"
+    Received string:    "Contacted3Company 2Tier BScore 45Enter to moveRollback companyTier AScore 60Enter to moveCompany 8Tier BScore 75Enter to move"
+    Timeout: 30000ms
+
+    Call log:
+      - Expect "toContainText" locator('section[aria-label^="Contacted,"]') with timeout 30000ms
+      - waiting for locator('section[aria-label^="Contacted,"]')
+        63 × locator resolved to <section class="ui-kanban-column" aria-label="Contacted, 3 cards">…</section>
+           - unexpected value "Contacted3Company 2Tier BScore 45Enter to moveRollback companyTier AScore 60Enter to moveCompany 8Tier BScore 75Enter to move"
+
+
+      63 |
+      64 |   await page.reload();
+    > 65 |   await expect(contactedColumn).toContainText("Company 1");
+         |                                 ^
+      66 | });
+      67 |
+      68 | test("demo kanban moves by keyboard and rolls back on failure", async ({ page }) => {
+        at /home/morpheus/Downloads/mirai-lab/apps/web/tests/stage2-primitives.spec.ts:65:33
+
+    Error Context: test-results/stage2-primitives-demo-kan-42e20-pdate-and-persists-the-move/error-context.md
+
+
+[4/4] tests/stage2-primitives.spec.ts:68:1 › demo kanban moves by keyboard and rolls back on failure
+  1 failed
+    tests/stage2-primitives.spec.ts:52:1 › demo kanban drags with optimistic update and persists the move 
+  3 passed (37.0s)
+undefined
+/home/morpheus/Downloads/mirai-lab/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: playwright test --config playwright.config.ts tests/stage2-primitives.spec.ts

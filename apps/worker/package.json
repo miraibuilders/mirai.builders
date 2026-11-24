@@ -1,0 +1,27 @@
+{
+  "name": "worker",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/index.ts",
+    "lint": "eslint .",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test dist/scoring/score.test.js dist/scanner/privacy.test.js dist/scheduler.test.js dist/detail-brief.test.js dist/leadbot/normalize.test.js dist/leadbot/dnc.test.js dist/leadbot/erasure.test.js dist/leadbot/audit.test.js dist/leadbot/sources/registry.test.js dist/leadbot/db-constraints.test.js",
+    "start": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@mirai/db": "workspace:*",
+    "dotenv": "^16.4.0",
+    "libphonenumber-js": "^1.13.17",
+    "psl": "^1.15.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "eslint": "^9.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.0.0"
+  }
+}

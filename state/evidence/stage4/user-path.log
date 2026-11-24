@@ -1,0 +1,158 @@
+
+=== Database and server preflight ===
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "select current_database(), current_setting('server_version') as version;"
+ current_database |            version             
+------------------+--------------------------------
+ mirai_lab        | 15.10 (Debian 15.10-0+deb12u1)
+(1 row)
+
+[health] $ curl -i -X GET 'http://localhost:3102/api/health'
+HTTP/1.1 200 OK
+content-type: application/json
+[BODY_EXCERPT] {"status":"ok","database":"connected"}
+
+=== Authenticated session ===
+
+[sign-up] $ curl -i -X POST 'http://localhost:3102/api/auth/sign-up/email'
+HTTP/1.1 200 OK
+content-type: application/json
+set-cookie: better-auth.session_token=FnfFDAv3d0q0jepN6rCJEKEnfudrNduN.7wwKktdN7Q%2FbQXCO5RnxH4Y%2FfXIov%2BAhTYkNcKwojGs%3D; Max-Age=604800; Path=/; HttpOnly; SameSite=Lax
+[BODY_EXCERPT] {"token":"FnfFDAv3d0q0jepN6rCJEKEnfudrNduN","user":{"name":"Stage4 Admin","email":"stage4-admin-1795318019689@example.jp","emailVerified":false,"image":null,"createdAt":"2026-11-22T03:27:02.683Z","updatedAt":"2026-11-22T03:27:02.683Z","role":"user","banned":false,"banReason":null,"banExpires":null,"
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "UPDATE users SET role = 'admin' WHERE email = 'stage4-admin-1795318019689@example.jp' RETURNING id, email, role;"
+                id                |                 email                 | role  
+----------------------------------+---------------------------------------+-------
+ exbxrUTxWeLnUKumlTgi8MPquHMeHYwC | stage4-admin-1795318019689@example.jp | admin
+(1 row)
+
+UPDATE 1
+
+=== Scan API authorization ===
+
+[unauthenticated scan] $ curl -i -X POST 'http://localhost:3102/api/scans'
+HTTP/1.1 401 Unauthorized
+content-type: application/json
+[BODY_EXCERPT] {"error":"UNAUTHORIZED"}
+
+=== Contact request visible in CRM list ===
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "INSERT INTO contact_requests (name, company, email, phone, message) VALUES ('Stage4 Contact', 'Stage4 Contact Company', 'stage4-contact-1795318019689@example.jp', '090-9999-8888', 'Stage4 promotion evidence message') RETURNING id, name, company, email, phone, message;"
+                  id                  |      name      |        company         |                  email                  |     phone     |              message              
+--------------------------------------+----------------+------------------------+-----------------------------------------+---------------+-----------------------------------
+ 9ec8ac18-0d6b-48f3-9143-2378507254c8 | Stage4 Contact | Stage4 Contact Company | stage4-contact-1795318019689@example.jp | 090-9999-8888 | Stage4 promotion evidence message
+(1 row)
+
+INSERT 0 1
+
+[contact requests before promotion] $ curl -i -X GET 'http://localhost:3102/contact-requests' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/app/layout.css?v=1795318024753" data-precedence="next_static/css/app/layout.css"/><link rel="stylesheet" href="/_next/static/css/app/(app)/contact-requests/page.css?v=1795318024753" data-precedence="next_static/css/app/(app)/contact-requests/page.css"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack.js?v=1795318024753"/><script src="/_next/static/chunks/main-app.js?v=1795318024753" async=""></script><script src="/_next/static/chunks/app-pages-internals.js" async=""></script><script src="/_next/static/chunks/app/(app)/contact-requests/page.js" async=""></script><meta name="next-size-adjust" content=""/><title>MIRAI Lab</title><meta name="description" c
+
+=== Promote contact request to lead ===
+
+[promote] $ curl -i -X POST 'http://localhost:3102/contact-requests' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 303 See Other
+location: /leads/8fca0c44-ae56-4878-9e0d-97838e2c3001
+[BODY_EXCERPT] 
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT cr.id AS contact_request_id, cr.name, cr.email, cr.phone, cr.lead_id, l.id AS lead_id, l.company FROM contact_requests cr LEFT JOIN leads l ON l.id = cr.lead_id WHERE cr.id = '9ec8ac18-0d6b-48f3-9143-2378507254c8';"
+          contact_request_id          |      name      |                  email                  |     phone     |               lead_id                |               lead_id                |        company         
+--------------------------------------+----------------+-----------------------------------------+---------------+--------------------------------------+--------------------------------------+------------------------
+ 9ec8ac18-0d6b-48f3-9143-2378507254c8 | Stage4 Contact | stage4-contact-1795318019689@example.jp | 090-9999-8888 | 8fca0c44-ae56-4878-9e0d-97838e2c3001 | 8fca0c44-ae56-4878-9e0d-97838e2c3001 | Stage4 Contact Company
+(1 row)
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT lead_id FROM contact_requests WHERE id = '9ec8ac18-0d6b-48f3-9143-2378507254c8';"
+               lead_id                
+--------------------------------------
+ 8fca0c44-ae56-4878-9e0d-97838e2c3001
+(1 row)
+
+[contact requests after promotion] $ curl -i -X GET 'http://localhost:3102/contact-requests' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/app/layout.css?v=1795318025250" data-precedence="next_static/css/app/layout.css"/><link rel="stylesheet" href="/_next/static/css/app/(app)/contact-requests/page.css?v=1795318025250" data-precedence="next_static/css/app/(app)/contact-requests/page.css"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack.js?v=1795318025250"/><script src="/_next/static/chunks/main-app.js?v=1795318025250" async=""></script><script src="/_next/static/chunks/app-pages-internals.js" async=""></script><script src="/_next/static/chunks/app/(app)/contact-requests/page.js" async=""></script><meta name="next-size-adjust" content=""/><title>MIRAI Lab</title><meta name="description" c
+
+[board after promotion] $ curl -i -X GET 'http://localhost:3102/leads' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/app/layout.css?v=1795318027379" data-precedence="next_static/css/app/layout.css"/><link rel="stylesheet" href="/_next/static/css/app/(app)/leads/page.css?v=1795318027379" data-precedence="next_static/css/app/(app)/leads/page.css"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack.js?v=1795318027379"/><script src="/_next/static/chunks/main-app.js?v=1795318027379" async=""></script><script src="/_next/static/chunks/app-pages-internals.js" async=""></script><script src="/_next/static/chunks/app/(app)/leads/page.js" async=""></script><meta name="next-size-adjust" content=""/><title>MIRAI Lab</title><meta name="description" content="[META_DESCRIPTION]"/><scr
+
+=== Create lead in UI path ===
+
+[new lead page] $ curl -i -X GET 'http://localhost:3102/leads/new' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/app/layout.css?v=1795318028473" data-precedence="next_static/css/app/layout.css"/><link rel="stylesheet" href="/_next/static/css/app/(app)/leads/new/page.css?v=1795318028473" data-precedence="next_static/css/app/(app)/leads/new/page.css"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack.js?v=1795318028473"/><script src="/_next/static/chunks/main-app.js?v=1795318028473" async=""></script><script src="/_next/static/chunks/app-pages-internals.js" async=""></script><script src="/_next/static/chunks/app/(app)/leads/new/page.js" async=""></script><meta name="next-size-adjust" content=""/><title>MIRAI Lab</title><meta name="description" content="[META_DESCRIP
+
+[create lead] $ curl -i -X POST 'http://localhost:3102/leads/new' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 303 See Other
+location: /leads/879d4256-8981-4c67-9a1b-530fcabe14d2
+[BODY_EXCERPT] 
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT id, company, website_url, segment, reachability, size_proxy, stage, score FROM leads WHERE company = 'Stage4 Scan Lead 1795318019689';"
+                  id                  |            company             |      website_url       |       segment       | reachability | size_proxy | stage | score 
+--------------------------------------+--------------------------------+------------------------+---------------------+--------------+------------+-------+-------
+ 879d4256-8981-4c67-9a1b-530fcabe14d2 | Stage4 Scan Lead 1795318019689 | http://127.0.0.1:3200/ | professional_office | referral     |          4 | new   |     0
+(1 row)
+
+=== Trigger scan from Kanban path ===
+
+[Kanban board before scan] $ curl -i -X GET 'http://localhost:3102/leads' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/app/layout.css?v=1795318028931" data-precedence="next_static/css/app/layout.css"/><link rel="stylesheet" href="/_next/static/css/app/(app)/leads/page.css?v=1795318028931" data-precedence="next_static/css/app/(app)/leads/page.css"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack.js?v=1795318028931"/><script src="/_next/static/chunks/main-app.js?v=1795318028931" async=""></script><script src="/_next/static/chunks/app-pages-internals.js" async=""></script><script src="/_next/static/chunks/app/(app)/leads/page.js" async=""></script><meta name="next-size-adjust" content=""/><title>MIRAI Lab</title><meta name="description" content="[META_DESCRIPTION]"/><scr
+
+[trigger scan from Kanban] $ curl -i -X POST 'http://localhost:3102/leads' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/app/layout.css?v=1795318029021" data-precedence="next_static/css/app/layout.css"/><link rel="stylesheet" href="/_next/static/css/app/(app)/leads/page.css?v=1795318029021" data-precedence="next_stati
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT id, lead_id, status, created_at FROM scans WHERE lead_id = '879d4256-8981-4c67-9a1b-530fcabe14d2' ORDER BY created_at DESC LIMIT 1;"
+                  id                  |               lead_id                | status |          created_at           
+--------------------------------------+--------------------------------------+--------+-------------------------------
+ b768fe71-ce16-4cfc-a222-0e799da597c6 | 879d4256-8981-4c67-9a1b-530fcabe14d2 | done   | 2026-11-22 04:27:09.301373+01
+(1 row)
+
+=== Worker completion and score appears without manual refresh ===
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT s.status, s.result_json->'score'->>'score' AS score, s.result_json->'score'->>'tier' AS tier FROM scans s WHERE s.id = 'b768fe71-ce16-4cfc-a222-0e799da597c6';"
+ status | score | tier 
+--------+-------+------
+ done   | 79    | B
+(1 row)
+
+[board polling attempt 1] $ curl -i -X GET 'http://localhost:3102/leads' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/app/layout.css?v=1795318029956" data-precedence="next_static/css/app/layout.css"/><link rel="style
+
+=== Drag card from New to Contacted ===
+
+[board before drag] $ curl -i -X GET 'http://localhost:3102/leads' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/app/layout.css?v=1795318030039" data-precedence="next_static/css/app/layout.css"/><link rel="stylesheet" href="/_next/static/css/app/(app)/leads/page.css?v=1795318030039" data-precedence="next_static/css/app/(app)/leads/page.css"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack.js?v=1795318030039"/><script src="/_next/static/chunks/main-app.js?v=1795318030039" async=""></script><script src="/_next/static/chunks/app-pages-internals.js" async=""></script><script src="/_next/static/chunks/app/(app)/leads/page.js" async=""></script><meta name="next-size-adjust" content=""/><title>MIRAI Lab</title><meta name="description" content="[META_DESCRIPTION]"/><scr
+
+[move stage via drag handler action] $ curl -i -X POST 'http://localhost:3102/leads' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/app/layout.css?v=1795318030125" data-precedence="next_static/css/app/layout.css"/><link rel="stylesheet" href="/_next/static/css/app/(app)/leads/page.css?v=1795318030125" data-precedence="next_stati
+
+[board after drag and reload] $ curl -i -X GET 'http://localhost:3102/leads' -H 'Cookie: <SESSION_COOKIE>'
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+[BODY_EXCERPT] <!DOCTYPE html><html lang="ja" class="__variable_dc45e9"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/app/layout.css?v=1795318030221" data-precedence="next_static/css/app/layout.css"/><link rel="stylesheet" href="/_next/static/css/app/(app)/leads/page.css?v=1795318030221" data-precedence="next_static/css/app/(app)/leads/page.css"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack.js?v=1795318030221"/><script src="/_next/static/chunks/main-app.js?v=1795318030221" async=""></script><script src="/_next/static/chunks/app-pages-internals.js" async=""></script><script src="/_next/static/chunks/app/(app)/leads/page.js" async=""></script><meta name="next-size-adjust" content=""/><title>MIRAI Lab</title><meta name="description" content="[META_DESCRIPTION]"/><scr
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT id, company, stage, score FROM leads WHERE id = '879d4256-8981-4c67-9a1b-530fcabe14d2';"
+                  id                  |            company             |   stage   | score 
+--------------------------------------+--------------------------------+-----------+-------
+ 879d4256-8981-4c67-9a1b-530fcabe14d2 | Stage4 Scan Lead 1795318019689 | contacted |    79
+(1 row)
+
+=== Scan result contents ===
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT id, lead_id, status, result_json FROM scans WHERE id = 'b768fe71-ce16-4cfc-a222-0e799da597c6';"
+                  id                  |               lead_id                | status |                                                                                                                                                                                                                                                                                                                                                                                                                                             result_json                                                                                                                                                                                                                                                                                                                                                                                                                                              
+--------------------------------------+--------------------------------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ b768fe71-ce16-4cfc-a222-0e799da597c6 | 879d4256-8981-4c67-9a1b-530fcabe14d2 | done   | {"dns": {"a": false, "mx": false, "spf": false, "aaaa": false, "dmarc": false, "dkimSelectors": []}, "tls": {"sans": [], "valid": false, "issuer": null, "daysLeft": null, "expiring": false, "protocol": null}, "url": "http://127.0.0.1:3200/", "http": {"status": 200, "headers": {"server": "SimpleHTTP/0.6 Python/3.13.5"}}, "score": {"tier": "B", "score": 79, "breakdown": {"total": 79, "sizeProxy": 4, "segmentFit": 25, "reachability": 20, "technicalDecay": 20, "websitePresence": 10}, "painFlags": ["outdated_cms", "missing_dmarc", "expiring_tls"]}, "exposed": [], "scannedAt": "2026-11-22T03:27:09.456Z", "cookieNames": [], "technologies": {"cms": {"name": "WordPress", "version": "5.8", "outdated": true}, "via": null, "cfRay": false, "phpEol": false, "server": "SimpleHTTP/0.6 Python/3.13.5", "poweredBy": null, "generators": ["WordPress 5.8"], "phpVersion": null}}
+(1 row)
+$ PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d mirai_lab -c "SELECT lead_id, note, next_step, next_step_date, created_at FROM lead_activities WHERE lead_id = '879d4256-8981-4c67-9a1b-530fcabe14d2' ORDER BY created_at DESC;"
+               lead_id                |                 note                  |        next_step        | next_step_date |          created_at           
+--------------------------------------+---------------------------------------+-------------------------+----------------+-------------------------------
+ 879d4256-8981-4c67-9a1b-530fcabe14d2 | [STAGE_CHANGED_PLACEHOLDER] contacted |                         |                | 2026-11-22 04:27:10.134756+01
+ 879d4256-8981-4c67-9a1b-530fcabe14d2 | [ACTIVITY_NOTE_PLACEHOLDER]           | [NEXT_STEP_PLACEHOLDER] | 2026-12-01     | 2026-11-22 04:27:08.87797+01
+(2 rows)
+
+[E2E_OK] contactRequest=9ec8ac18-0d6b-48f3-9143-2378507254c8 promotedLead=8fca0c44-ae56-4878-9e0d-97838e2c3001 scanLead=879d4256-8981-4c67-9a1b-530fcabe14d2 scan=b768fe71-ce16-4cfc-a222-0e799da597c6 score=79
